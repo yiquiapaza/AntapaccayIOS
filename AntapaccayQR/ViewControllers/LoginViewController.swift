@@ -9,34 +9,42 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var userLoginVC: UITextField!
+    @IBOutlet weak var passLoginVC: UITextField!
+    
     override func viewDidLoad() {
-        saveUser(user: userLoginVC)
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    func saveUser(user: UITextField!) -> String {
-        if (user.text == ""){
-            print("Hacer una alerta")
-            return ""
+    @IBAction func rememberLoginVC(_ sender: Any) {
+    }
+    @IBAction func loginLoginVC(_ sender: Any) {
+        if (!userLoginVC.text!.isEmpty && !passLoginVC.text!.isEmpty){
+            print("estoy aca")
+            print(userLoginVC.text)
         }
-        else{
-            print("Esta Guardado Data")
-            return user.text!
+        if(!userLoginVC.text!.isEmpty && passLoginVC.text!.isEmpty) {
+            let alertUser = UIAlertController(title: "Ingrese Usuario", message: "El usuario es un campo Obligatorio", preferredStyle: UIAlertControllerStyle.alert)
+            let exit = UIAlertAction(title: "Regresar", style: UIAlertActionStyle.cancel, handler: nil)
+            alertUser.addAction(exit)
+            
+            self.present(alertUser, animated: true, completion: nil)
+        }
+        if(userLoginVC.text!.isEmpty && !passLoginVC.text!.isEmpty) {
+            let alertPass = UIAlertController(title: "Ingrese Contraseña", message: "La contraseña es un campo Obligatorio", preferredStyle: UIAlertControllerStyle.alert)
+            let exit = UIAlertAction(title: "Regresar", style: UIAlertActionStyle.cancel, handler: nil)
+            alertPass.addAction(exit)
+            
+            self.present(alertPass, animated: true, completion: nil)
+        }
+        if(userLoginVC.text!.isEmpty && passLoginVC.text!.isEmpty) {
+            let alertPass = UIAlertController(title: "Ingrese el Usuario y Contraseña", message: "Ambos son campos Obligatorios", preferredStyle: UIAlertControllerStyle.alert)
+            let exit = UIAlertAction(title: "Regresar", style: UIAlertActionStyle.cancel, handler: nil)
+            alertPass.addAction(exit)
+            
+            self.present(alertPass, animated: true, completion: nil)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
