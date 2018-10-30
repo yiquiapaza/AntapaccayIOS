@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
+		FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE22188D47700F0466F /* ConstSegen.swift */; };
 		FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE813692187942A00669625 /* AppDelegate.swift */; };
 		FBE8136C2187942A00669625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8136B2187942A00669625 /* ViewController.swift */; };
 		FBE8136F2187942A00669625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE8136D2187942A00669625 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FB7C9EE22188D47700F0466F /* ConstSegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstSegen.swift; sourceTree = "<group>"; };
 		FBE813662187942A00669625 /* AntapaccayQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntapaccayQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE813692187942A00669625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBE8136B2187942A00669625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB7C9EDD2188D14000F0466F /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				FB7C9EE22188D47700F0466F /* ConstSegen.swift */,
+			);
+			path = Constans;
+			sourceTree = "<group>";
+		};
+		FB7C9EDE2188D15700F0466F /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		FB7C9EDF2188D16400F0466F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB7C9EE02188D17C00F0466F /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		FBE8135D2187942A00669625 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +124,9 @@
 		FBE813682187942A00669625 /* AntapaccayQR */ = {
 			isa = PBXGroup;
 			children = (
+				FB7C9EDF2188D16400F0466F /* ViewControllers */,
+				FB7C9EDE2188D15700F0466F /* EndPoints */,
+				FB7C9EDD2188D14000F0466F /* Constans */,
 				FBE813692187942A00669625 /* AppDelegate.swift */,
 				FBE8136B2187942A00669625 /* ViewController.swift */,
 				FBE8136D2187942A00669625 /* Main.storyboard */,
@@ -259,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
+				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
 			);
