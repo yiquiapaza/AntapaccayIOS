@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZs-z6-k9m">
-                                <rect key="frame" x="25" y="170" width="325" height="240"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iZs-z6-k9m">
+                                <rect key="frame" x="32" y="170" width="311" height="149"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="M0a-Xx-eL8"/>
-                                    <constraint firstAttribute="height" constant="240" id="qRV-uE-OsM"/>
+                                    <constraint firstAttribute="height" constant="149" id="OHl-nw-MAg"/>
+                                    <constraint firstAttribute="width" constant="311" id="XzR-jS-tW1"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.27865455868469458" blue="0.37599986376025563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iZs-z6-k9m" secondAttribute="trailing" constant="25" id="0FO-rc-f9w"/>
-                            <constraint firstItem="iZs-z6-k9m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Nvu-A9-bGA"/>
-                            <constraint firstItem="iZs-z6-k9m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Viw-d8-MgP"/>
+                            <constraint firstItem="iZs-z6-k9m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="F8j-eB-QeW"/>
+                            <constraint firstItem="iZs-z6-k9m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="N6c-OE-deE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iZs-z6-k9m" secondAttribute="trailing" constant="32" id="mg7-uo-2Lu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -50,7 +50,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-f4-vtQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-f4-vtQ">
                                 <rect key="frame" x="50" y="70" width="275" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="NI6-g4-U86"/>
@@ -76,7 +76,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvD-jX-tkb">
                                 <rect key="frame" x="65" y="343" width="245" height="30"/>
@@ -245,4 +245,7 @@
             <point key="canvasLocation" x="3254" y="-260"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="255" height="149"/>
+    </resources>
 </document>
