@@ -15,6 +15,10 @@
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
 		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
 		FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE22188D47700F0466F /* ConstSegen.swift */; };
+		FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C466218A4EA6000E6684 /* RoutesApi.swift */; };
+		FB94C469218A4EF1000E6684 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C468218A4EF1000E6684 /* Util.swift */; };
+		FB94C46B218A4F63000E6684 /* ApiOrden.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C46A218A4F63000E6684 /* ApiOrden.swift */; };
+		FB9BE786218A47370044690B /* Orden.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BE785218A47370044690B /* Orden.swift */; };
 		FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE813692187942A00669625 /* AppDelegate.swift */; };
 		FBE8136C2187942A00669625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8136B2187942A00669625 /* ViewController.swift */; };
 		FBE8136F2187942A00669625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE8136D2187942A00669625 /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE22188D47700F0466F /* ConstSegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstSegen.swift; sourceTree = "<group>"; };
+		FB94C466218A4EA6000E6684 /* RoutesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesApi.swift; sourceTree = "<group>"; };
+		FB94C468218A4EF1000E6684 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		FB94C46A218A4F63000E6684 /* ApiOrden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiOrden.swift; sourceTree = "<group>"; };
+		FB9BE785218A47370044690B /* Orden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orden.swift; sourceTree = "<group>"; };
 		FBE813662187942A00669625 /* AntapaccayQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntapaccayQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE813692187942A00669625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBE8136B2187942A00669625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 		FB3F04C52188FE0700287DAB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB9BE785218A47370044690B /* Orden.swift */,
 				FB3F04C62188FE2700287DAB /* User.swift */,
 			);
 			path = Models;
@@ -134,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				FB7C9EE22188D47700F0466F /* ConstSegen.swift */,
+				FB94C466218A4EA6000E6684 /* RoutesApi.swift */,
+				FB94C468218A4EF1000E6684 /* Util.swift */,
 			);
 			path = Constans;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 		FB7C9EDE2188D15700F0466F /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
+				FB94C46A218A4F63000E6684 /* ApiOrden.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -389,11 +401,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,12 +440,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
+				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
+				FB94C469218A4EF1000E6684 /* Util.swift in Sources */,
+				FB9BE786218A47370044690B /* Orden.swift in Sources */,
 				FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */,
+				FB94C46B218A4F63000E6684 /* ApiOrden.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

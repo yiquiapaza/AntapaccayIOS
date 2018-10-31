@@ -7,25 +7,28 @@
 //
 
 import UIKit
+import DropDown
 
 class SeguimientoCargaViewController: UIViewController {
 
+ 
+    @IBOutlet var prueba: UIView!
+    let nuevo = DropDown()
+    var nuevo2 = Orden(_valorOrden: "M43401", _tipoOrden: "OC", _idComprador: "", _codigoDistrito: "XTAN", _priceCode: "")
+    
+    
+    @IBAction func menu(_ sender: Any) {
+        ObtenerOrdenDet(_parametros: nuevo2)
+        nuevo.anchorView = prueba
+        nuevo.dataSource = ["Car", "Motorcycle", "Truck"]
+        nuevo.show()
+    }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-       
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
