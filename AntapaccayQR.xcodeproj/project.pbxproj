@@ -10,6 +10,7 @@
 		6569B2D841ADF8575FBDDCE0 /* Pods_AntapaccayQRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8C1B470DBB7272BDA94AF3 /* Pods_AntapaccayQRUITests.framework */; };
 		90F45C81E0C2FD04ECE2B62C /* Pods_AntapaccayQRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8201295BAEBC1F18C3A73D66 /* Pods_AntapaccayQRTests.framework */; };
 		BCE72F27153F30DF5BCEC89C /* Pods_AntapaccayQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7662CDF3623852F2D613726F /* Pods_AntapaccayQR.framework */; };
+		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
 		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
@@ -50,6 +51,7 @@
 		9D8C1B470DBB7272BDA94AF3 /* Pods_AntapaccayQRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntapaccayQRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D308793767C53330691C399F /* Pods-AntapaccayQRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRTests/Pods-AntapaccayQRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F73EBF6CFE4E82570AE5A442 /* Pods-AntapaccayQRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRUITests/Pods-AntapaccayQRUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				FB7C9EE02188D17C00F0466F /* LoginViewController.swift */,
 				FB40348321890B8D005C7792 /* MenuViewController.swift */,
+				FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -386,11 +389,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -428,6 +431,7 @@
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
+				FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,16 +1,16 @@
 PODS:
-  - SideMenu (4.0.0)
+  - Dropper (2.7.6)
 
 DEPENDENCIES:
-  - SideMenu (~> 4.0.0)
+  - Dropper (~> 2.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - SideMenu
+    - Dropper
 
 SPEC CHECKSUMS:
-  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
 
-PODFILE CHECKSUM: 22d6f8847a57a9074f0aa447f6236dd336d48bb0
+PODFILE CHECKSUM: f601ba0c6a83008a9a4f7eacc053af6fc4907300
 
 COCOAPODS: 1.5.2
