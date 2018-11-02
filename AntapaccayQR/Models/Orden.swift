@@ -8,11 +8,11 @@
 
 import Foundation
 class Orden {
-    private var _valorOrden: String?
-    private var _tipoOrden: String?
-    private var _idComprador: String?
-    private var _codigoDistrito: String?
-    private var _priceCode: String?
+    private var _valorOrden: String!
+    private var _tipoOrden: String!
+    private var _idComprador: String!
+    private var _codigoDistrito: String!
+    private var _priceCode: String!
     
     init() {
         self._valorOrden = ""
@@ -22,7 +22,7 @@ class Orden {
         self._priceCode = ""
     }
     
-    init(_valorOrden: String?, _tipoOrden: String?, _idComprador: String? ,_codigoDistrito: String?, _priceCode: String?) {
+    init(_valorOrden: String, _tipoOrden: String, _idComprador: String ,_codigoDistrito: String, _priceCode: String) {
         self._valorOrden = _valorOrden
         self._tipoOrden = _tipoOrden
         self._idComprador = _idComprador
@@ -30,46 +30,39 @@ class Orden {
         self._priceCode = _priceCode
     }
     
-    var idComprador :String? {
-        set{
-            _idComprador = idComprador
-        }
-        get{
-            return _idComprador
-        }
+    func setIdComprador(idComprador: String){
+        _idComprador = idComprador
+    }
+    func getIdCmprador() -> String {
+        return _idComprador
     }
     
-    var valorOrden: String?{
-        set{
-            _valorOrden = valorOrden
-        }
-        get{
-            return _valorOrden
-        }
+    func setValorOrden(valorOrden: String) -> Void {
+        _valorOrden = valorOrden
+    }
+    func getValorOrden() -> String {
+        return _valorOrden
     }
     
-    var tipoOrden: String?{
-        set{
-            _tipoOrden = tipoOrden
-        }
-        get{
-            return _tipoOrden
-        }
+    func setTipoOrden(tipoOrden:String)-> Void {
+        _tipoOrden = tipoOrden
     }
-    var codigoDistrito: String? {
-        set{
-            _codigoDistrito = codigoDistrito
-        }
-        get{
-            return _codigoDistrito
-        }
+    func getTipoOrden()->String {
+        return _tipoOrden
     }
-    var priceCode: String?{
-        set {
-            _priceCode = priceCode
-        }
-        get {
-            return _priceCode
-        }
+    
+    func setCodigoDistrito(codigoDistrito: String) ->Void{
+        _codigoDistrito = codigoDistrito
+    }
+    func getCodigoDistrito() -> String {
+        return _codigoDistrito
+    }
+    
+    func setPriceCode(priceCode: String) -> Void {
+        _priceCode = priceCode
+    }
+    
+    func getPriceCode() -> String {
+        return _priceCode
     }
 }
