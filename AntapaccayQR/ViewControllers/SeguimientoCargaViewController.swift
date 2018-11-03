@@ -22,22 +22,64 @@ class SeguimientoCargaViewController: UIViewController {
     
     var orden = Orden()
     var listItems = Array<String>()
+    var listaOrdenDetalle = Array<OrdenDetalle>()
     @IBOutlet var prueba: UIView!
     
-    let nuevo = DropDown()
-    var nuevo2 = Orden(_valorOrden: "M43401", _tipoOrden: "OC", _idComprador: "", _codigoDistrito: "XTAN", _priceCode: "")
+    @IBOutlet weak var numeroItem: UILabel!
+    var _numeroItem: String = VACIO
+    
+    
+    @IBOutlet weak var nombreProveedor: UILabel!
+    @IBOutlet weak var descripcion: UILabel!
+    @IBOutlet weak var unidad: UILabel!
+    @IBOutlet weak var almacen: UILabel!
+    @IBOutlet weak var disponible: UILabel!
+    
+    let dropDown = DropDown()
     
     
     @IBAction func menu(_ sender: Any) {
         //ObtenerOrdenDet(_parametros: nuevo2)
-        nuevo.anchorView = prueba
-        nuevo.dataSource = listItems
-        nuevo.show()
+        dropDown.anchorView = prueba
+        dropDown.dataSource = listItems
+        dropDown.selectionAction = {[unowned self] (index ,item) in
+            self.numeroItem.text = item
+            self._numeroItem = item
+            print(item)
+        }
+        dropDown.show()
     }
     
+    @IBAction func buscarItem(_ sender: UIButton) {
+        if self._numeroItem != VACIO {
+            var _item = OrdenDetalle()
+            for item in self.listaOrdenDetalle{
+                if item.getNumeroItem() == self._numeroItem{
+                    _item = item
+                    break
+                }
+            }
+            self.nombreProveedor.text = _item.getNombreProveedor()
+            //self.descripcion.adjustsFontSizeToFitWidth = true
+            self.descripcion.numberOfLines = 0
+            self.descripcion.text = _item.getDescripcion()
+            self.unidad.text = _item.getUnidad()
+            self.almacen.text = _item.getAlmace()
+            self.disponible.text = String(_item.getDisponibilidad())
+        }
+        else{
+            self.nombreProveedor.text = "Nombre del Proveedor"
+            self.descripcion.text = "Descripcion"
+            self.unidad.text = "Unidad"
+            self.almacen.text = "Almacen"
+            self.disponible.text = "0"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationController?.view.backgroundColor = UIColor.red
+        self.navigationController?.title = "ANTAPACCAI"
     }
     
     @IBAction func buscarOrden(_ sender: UIButton) {
@@ -47,8 +89,6 @@ class SeguimientoCargaViewController: UIViewController {
             orden.setPriceCode(priceCode: VACIO)
             orden.setCodigoDistrito(codigoDistrito: CONST_CODIGO_DISTRITO)
             
-            
-            var listaOrdenDetalle =  Array<OrdenDetalle>()
             let parametros: Parameters = [
                 VALOR_ORDEN : orden.getValorOrden(),
                 TIPO_ORDEN: orden.getTipoOrden(),
@@ -76,9 +116,9 @@ class SeguimientoCargaViewController: UIViewController {
                             cantidad_po = ordenDetalle[CANTIDAD_PO] as! Int
                             cantidad_recibida = ordenDetalle[CANTIDAD_RECIBIDA] as! Int
                             item.setDisponibilidad(disponibilidad: cantidad_po-cantidad_recibida)
-                            listaOrdenDetalle.append(item)
+                            self.listaOrdenDetalle.append(item)
                         }
-                        for item in listaOrdenDetalle {
+                        for item in self.listaOrdenDetalle {
                             self.listItems.append(item.getNumeroItem())
                         }
                     case .failure( let error):
