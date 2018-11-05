@@ -9,3 +9,4 @@
 import Foundation
 
 let LIST_ORDEN_DET: String = BASE_URL + "EllipseItems/GetListaOrdenDetalle"
+let CREATE_BULTO: String = BASE_URL + "Bulto/SaveConjuntoBultos"
