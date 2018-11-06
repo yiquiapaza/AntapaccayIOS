@@ -12,13 +12,13 @@
 		BCE72F27153F30DF5BCEC89C /* Pods_AntapaccayQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7662CDF3623852F2D613726F /* Pods_AntapaccayQR.framework */; };
 		FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15844E218CE78200592ED1 /* OrdenDetalle.swift */; };
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
+		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
 		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
 		FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE22188D47700F0466F /* ConstSegen.swift */; };
 		FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C466218A4EA6000E6684 /* RoutesApi.swift */; };
 		FB94C469218A4EF1000E6684 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C468218A4EF1000E6684 /* Util.swift */; };
-		FB94C46B218A4F63000E6684 /* ApiOrden.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C46A218A4F63000E6684 /* ApiOrden.swift */; };
 		FB9BE786218A47370044690B /* Orden.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BE785218A47370044690B /* Orden.swift */; };
 		FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE813692187942A00669625 /* AppDelegate.swift */; };
 		FBE8136C2187942A00669625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8136B2187942A00669625 /* ViewController.swift */; };
@@ -58,13 +58,13 @@
 		F73EBF6CFE4E82570AE5A442 /* Pods-AntapaccayQRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRUITests/Pods-AntapaccayQRUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FB15844E218CE78200592ED1 /* OrdenDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenDetalle.swift; sourceTree = "<group>"; };
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
+		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE22188D47700F0466F /* ConstSegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstSegen.swift; sourceTree = "<group>"; };
 		FB94C466218A4EA6000E6684 /* RoutesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesApi.swift; sourceTree = "<group>"; };
 		FB94C468218A4EF1000E6684 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		FB94C46A218A4F63000E6684 /* ApiOrden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiOrden.swift; sourceTree = "<group>"; };
 		FB9BE785218A47370044690B /* Orden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orden.swift; sourceTree = "<group>"; };
 		FBE813662187942A00669625 /* AntapaccayQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntapaccayQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE813692187942A00669625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +138,7 @@
 				FB9BE785218A47370044690B /* Orden.swift */,
 				FB3F04C62188FE2700287DAB /* User.swift */,
 				FB15844E218CE78200592ED1 /* OrdenDetalle.swift */,
+				FB2141ED2191E10C00953269 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,14 +151,6 @@
 				FB94C468218A4EF1000E6684 /* Util.swift */,
 			);
 			path = Constans;
-			sourceTree = "<group>";
-		};
-		FB7C9EDE2188D15700F0466F /* EndPoints */ = {
-			isa = PBXGroup;
-			children = (
-				FB94C46A218A4F63000E6684 /* ApiOrden.swift */,
-			);
-			path = EndPoints;
 			sourceTree = "<group>";
 		};
 		FB7C9EDF2188D16400F0466F /* ViewControllers */ = {
@@ -197,7 +190,6 @@
 			children = (
 				FB3F04C52188FE0700287DAB /* Models */,
 				FB7C9EDF2188D16400F0466F /* ViewControllers */,
-				FB7C9EDE2188D15700F0466F /* EndPoints */,
 				FB7C9EDD2188D14000F0466F /* Constans */,
 				FBE813692187942A00669625 /* AppDelegate.swift */,
 				FBE8136B2187942A00669625 /* ViewController.swift */,
@@ -449,6 +441,7 @@
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
+				FB2141EE2191E10C00953269 /* Item.swift in Sources */,
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
@@ -456,7 +449,6 @@
 				FB94C469218A4EF1000E6684 /* Util.swift in Sources */,
 				FB9BE786218A47370044690B /* Orden.swift in Sources */,
 				FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */,
-				FB94C46B218A4F63000E6684 /* ApiOrden.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
