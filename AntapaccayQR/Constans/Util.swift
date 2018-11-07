@@ -45,4 +45,25 @@ let CONST_ROW_VERSION: String = "000000000000"
 let CONST_ID_ORDEN_DETALLE = "00000000-0000-0000-0000-000000000000"
 let CONST_TRANSPORTISTA = "CIVA"
 
+var NACIONAL: Bool = false
+var IMPORTACION: Bool = false
+
+var PESO: String = ""
+var ALTO: String = ""
+var ANCHO: String = ""
+var LARGO: String = ""
+
+var FRAGIL: Bool = false
+var SOBREDIMENSIONADO: Bool = false
+var CARGA_PELIGROSA:Bool = false
+var GENERAL: Bool = false
+var COMPONENTE: Bool = false
+var PALETA_CONSOLIDADA: Bool = false
+var UNIDAD_COMPLETA:Bool = false
+
+
+
+
+
+
 let VACIO: String = ""

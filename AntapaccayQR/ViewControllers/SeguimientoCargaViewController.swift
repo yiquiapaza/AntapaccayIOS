@@ -102,7 +102,7 @@ class SeguimientoCargaViewController: UIViewController {
             orden.setIdComprador(idComprador: VACIO)
             orden.setPriceCode(priceCode: VACIO)
             orden.setCodigoDistrito(codigoDistrito: CONST_CODIGO_DISTRITO)
-            
+            dropDown.dataSource = []
             let parametros: Parameters = [
                 VALOR_ORDEN : orden.getValorOrden(),
                 TIPO_ORDEN: orden.getTipoOrden(),
@@ -117,6 +117,7 @@ class SeguimientoCargaViewController: UIViewController {
                         //print(response.result.value)
                         let ordenesDetalle = response.result.value as! [Dictionary<String, AnyObject>]
                         var item: OrdenDetalle
+                        var temp = Array<String>()
                         var cantidad_po: Int = 0
                         var cantidad_recibida:Int = 0
                         for ordenDetalle in ordenesDetalle {
@@ -132,9 +133,13 @@ class SeguimientoCargaViewController: UIViewController {
                             item.setDisponibilidad(disponibilidad: cantidad_po-cantidad_recibida)
                             self.listaOrdenDetalle.append(item)
                         }
+                    
                         for item in self.listaOrdenDetalle {
-                            self.listItems.append(item.getNumeroItem())
+                            temp.append(item.getNumeroItem())
                         }
+                        self.listItems = temp
+                        temp.removeAll()
+                        
                     case .failure( let error):
                         print(error)
                     }
