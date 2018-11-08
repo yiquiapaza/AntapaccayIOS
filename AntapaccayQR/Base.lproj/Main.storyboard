@@ -1288,6 +1288,7 @@
                                 </state>
                                 <connections>
                                     <action selector="crearBulto:" destination="JGr-GA-620" eventType="touchUpInside" id="yEI-rp-r9a"/>
+                                    <action selector="terminar:" destination="s63-4R-COn" eventType="touchUpInside" id="4tn-zd-8ms"/>
                                     <segue destination="wYW-fz-qui" kind="show" id="9vf-uW-qUf"/>
                                 </connections>
                             </button>

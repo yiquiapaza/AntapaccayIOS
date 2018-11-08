@@ -9,7 +9,7 @@
 import UIKit
 
 class GaleriaViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

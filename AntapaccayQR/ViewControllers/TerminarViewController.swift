@@ -9,14 +9,44 @@
 import UIKit
 
 class TerminarViewController: UIViewController {
-
+    
+    var objectoCarga = Array<Item>()
+    
     override func viewDidLoad() {
+        
+        let data = self.parent as! TabBarViewController
+        self.objectoCarga =  data.objetoCarga
+        
+        for item in self.objectoCarga {
+            print(item.getCantidad())
+        }
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
+    @IBAction func terminar(_ sender: UIButton) {
+        let bulto = Bulto()
+        bulto.setIdAlmacenRecepcion(idAlmacenRecepcion: "")
+        bulto.setAlmacenDestino(almacenDestino: "")
+        bulto.setNombreProveedor(nombreProveedor: "")
+        bulto.setNombreAlmacen(nombreAlmacen: "")
+        bulto.setTipoOrden(tipoOrden: "esto desde la primera vista")
+        bulto.setValorOrden(valorOrden: "esto desde la primera vista")
+        bulto.setEstadoBulto(estadoBulto: "1")
+        bulto.setPeso(peso: PESO)
+        bulto.setAlto(alto: ALTO)
+        bulto.setAncho(ancho: ANCHO)
+        bulto.setLargo(largo: LARGO)
+        bulto.setFragil(fragil: FRAGIL)
+        bulto.setsobredimensionado(sobredimensionamiento: SOBREDIMENSIONADO)
+        bulto.setCargaPeligrosa(cargaPeligrosa: CARGA_PELIGROSA)
+        bulto.setImportacion(importacion: IMPORTACION)
+        bulto.setNacional(nacional: NACIONAL)
+        bulto.setFechaRecepcion(fechaRecepcion: Calendar.current.component(.year, from: Date()))
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -7,7 +7,25 @@
 		<key>AntapaccayQR.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FBE813652187942A00669625</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBE813792187942A00669625</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBE813842187942A00669625</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

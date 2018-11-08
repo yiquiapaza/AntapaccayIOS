@@ -47,9 +47,10 @@ class SeguimientoCargaViewController: UIViewController {
     
     @IBAction func menu(_ sender: Any) {
         //ObtenerOrdenDet(_parametros: nuevo2)
-        dropDown.anchorView = prueba
-        dropDown.dataSource = listItems
-        dropDown.selectionAction = {[unowned self] (index ,item) in
+        self.dropDown.dataSource.removeAll()
+        self.dropDown.anchorView = prueba
+        self.dropDown.dataSource = listItems
+        self.dropDown.selectionAction = {[unowned self] (index ,item) in
             self.numeroItem.text = item
             self._numeroItem = item
             print(item)
@@ -58,6 +59,7 @@ class SeguimientoCargaViewController: UIViewController {
     }
     
     @IBAction func buscarItem(_ sender: UIButton) {
+        dropDown.dataSource.removeAll()
         if self._numeroItem != VACIO {
             var _item = OrdenDetalle()
             for item in self.listaOrdenDetalle{
@@ -97,6 +99,8 @@ class SeguimientoCargaViewController: UIViewController {
     }
     
     @IBAction func buscarOrden(_ sender: UIButton) {
+        self.listaOrdenDetalle.removeAll()
+        self.dropDown.dataSource.removeAll()
         if (numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) != VACIO && orden.getTipoOrden() != VACIO) {
             orden.setValorOrden(valorOrden: numeroOrden.text!)
             orden.setIdComprador(idComprador: VACIO)
@@ -118,6 +122,9 @@ class SeguimientoCargaViewController: UIViewController {
                         let ordenesDetalle = response.result.value as! [Dictionary<String, AnyObject>]
                         var item: OrdenDetalle
                         var temp = Array<String>()
+                        var temp_orden = Array<OrdenDetalle>()
+                        temp_orden.removeAll()
+                        temp.removeAll()
                         var cantidad_po: Int = 0
                         var cantidad_recibida:Int = 0
                         for ordenDetalle in ordenesDetalle {
@@ -131,9 +138,9 @@ class SeguimientoCargaViewController: UIViewController {
                             cantidad_po = ordenDetalle[CANTIDAD_PO] as! Int
                             cantidad_recibida = ordenDetalle[CANTIDAD_RECIBIDA] as! Int
                             item.setDisponibilidad(disponibilidad: cantidad_po-cantidad_recibida)
-                            self.listaOrdenDetalle.append(item)
+                            temp_orden.append(item)
                         }
-                    
+                        self.listaOrdenDetalle = temp_orden
                         for item in self.listaOrdenDetalle {
                             temp.append(item.getNumeroItem())
                         }
@@ -245,6 +252,14 @@ class SeguimientoCargaViewController: UIViewController {
         for item in self._listaItem {
             print(item.getNumeroItem())
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is TabBarViewController
+        {
+            let vs = segue.destination as? TabBarViewController
+            vs!.objetoCarga = self._listaItem
         }
     }
 }

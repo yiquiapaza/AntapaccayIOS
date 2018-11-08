@@ -10,7 +10,12 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    var objetoCarga = Array<Item>()
+    
     override func viewDidLoad() {
+        for item in objetoCarga{
+            print(item.getCantidad())
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

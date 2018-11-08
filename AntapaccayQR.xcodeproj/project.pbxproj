@@ -10,6 +10,7 @@
 		6569B2D841ADF8575FBDDCE0 /* Pods_AntapaccayQRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8C1B470DBB7272BDA94AF3 /* Pods_AntapaccayQRUITests.framework */; };
 		90F45C81E0C2FD04ECE2B62C /* Pods_AntapaccayQRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8201295BAEBC1F18C3A73D66 /* Pods_AntapaccayQRTests.framework */; };
 		BCE72F27153F30DF5BCEC89C /* Pods_AntapaccayQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7662CDF3623852F2D613726F /* Pods_AntapaccayQR.framework */; };
+		FB142BF62194CDA100FC9FB6 /* Bulto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB142BF52194CDA100FC9FB6 /* Bulto.swift */; };
 		FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15844E218CE78200592ED1 /* OrdenDetalle.swift */; };
 		FB1A9D2F21933C2800F8ED32 /* NacionaliadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D2E21933C2800F8ED32 /* NacionaliadViewController.swift */; };
 		FB1A9D3121933C4C00F8ED32 /* TipoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D3021933C4C00F8ED32 /* TipoViewController.swift */; };
@@ -62,6 +63,7 @@
 		9D8C1B470DBB7272BDA94AF3 /* Pods_AntapaccayQRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntapaccayQRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D308793767C53330691C399F /* Pods-AntapaccayQRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRTests/Pods-AntapaccayQRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F73EBF6CFE4E82570AE5A442 /* Pods-AntapaccayQRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRUITests/Pods-AntapaccayQRUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FB142BF52194CDA100FC9FB6 /* Bulto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulto.swift; sourceTree = "<group>"; };
 		FB15844E218CE78200592ED1 /* OrdenDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenDetalle.swift; sourceTree = "<group>"; };
 		FB1A9D2E21933C2800F8ED32 /* NacionaliadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NacionaliadViewController.swift; sourceTree = "<group>"; };
 		FB1A9D3021933C4C00F8ED32 /* TipoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				FB3F04C62188FE2700287DAB /* User.swift */,
 				FB15844E218CE78200592ED1 /* OrdenDetalle.swift */,
 				FB2141ED2191E10C00953269 /* Item.swift */,
+				FB142BF52194CDA100FC9FB6 /* Bulto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */,
+				FB142BF62194CDA100FC9FB6 /* Bulto.swift in Sources */,
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
