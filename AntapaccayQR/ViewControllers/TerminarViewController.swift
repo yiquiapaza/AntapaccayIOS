@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class TerminarViewController: UIViewController {
     
     var objectoCarga = Array<Item>()
-    
+    var objectoOrden = OrdenDTO()
+
     override func viewDidLoad() {
         
         let data = self.parent as! TabBarViewController
         self.objectoCarga =  data.objetoCarga
-        
+        self.objectoOrden = data.objetoOrden
         for item in self.objectoCarga {
             print(item.getCantidad())
         }
@@ -27,13 +30,107 @@ class TerminarViewController: UIViewController {
     }
 
     @IBAction func terminar(_ sender: UIButton) {
+        let bulto: Bulto = inicarBulto()
+        let _headers = [
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+        ]
+        var items : [Parameters] = []
+        
+        for item in self.objectoCarga{
+            let temp:Parameters = [
+                ID: CONST_ID,
+                ROW_VERSION: CONST_ROW_VERSION,
+                NUMERO_ITEM: item.getNumeroItem(),
+                DESCRIPCION: item.getDescripcion(),
+                CANTIDAD_GENERAL: item.getCantidad(),
+                ID_ORDEN_DETALLE: item.getIdOrdenDetalle(),
+                ID_PROVEEDOR : item.getIdProveedor(),
+                TRANSPORTISTA: item.getTransportista(),
+                VERIFICADO_ALMACEN: item.getVerificadoAlmacen()
+            ]
+            items.append(temp)
+        }
+        
+        let datos: Parameters = [
+            
+                "bulto": [
+                    ID_ALMACEN_RECEPCION : VACIO,
+                    ALMACEN_DESTINO : VACIO,
+                    NOMBRE_PROVEEDOR : VACIO,
+                    NOMBRE_ALMACEN : VACIO,
+                    TIPO_ORDEN : self.objectoOrden.getTipoOrden(),
+                    VALOR_ORDEN : self.objectoOrden.getValorOrden(),
+                    ESTADO_BULTO: bulto.getEstadoBulto(),
+                    JSON_PESO : bulto.getPeso(),
+                    JSON_ALTO : bulto.getAlto(),
+                    JSON_ANCHO : bulto.getAncho(),
+                    JSON_LARGO : bulto.getLargo(),
+                    JSON_FRAGIL : bulto.getFragil(),
+                    JSON_SOBREDIMENSIONADO : bulto.getSobredimensionado(),
+                    JSON_CARGA_PELIGROSA : bulto.getCargaPeligrosa(),
+                    JSON_IMPORTACION : bulto.getImportacion(),
+                    JSON_NACIONAL : bulto.getNacional(),
+                    OS : VACIO,
+                    PR : VACIO,
+                    PLAQUETEO :VACIO,
+                    CAMPO_ID:VACIO,
+                    COMENTARIO: bulto.getComentario(),
+                    COMENTARIO_ID: bulto.getComentarioID(),
+                    FECHA_RECEPCION:bulto.getFechaRecepcion(),
+                    CODIGO_TRANSPORTISTA: VACIO,
+                    TRANSPORTISTA : VACIO,
+                    UBICACION: VACIO,
+                    JSON_GENERAL: bulto.getGeneral(),
+                    JSON_COMPONENTE : bulto.getComponente(),
+                    JSON_PALETA_CONSOLIDADA : bulto.getPaletaCOnsolidada(),
+                    JSON_UNIDAD_COMPLETA : bulto.getUnidadCompleta(),
+                    ID: bulto.getId(),
+                    ROW_VERSION : bulto.getRowVersion()
+                ],
+                "Orden": [
+                    TIPO_ORDEN: objectoOrden.getTipoOrden(),
+                    VALOR_ORDEN : objectoOrden.getValorOrden()
+                ],
+                "listaBO":[
+                    items
+                ],
+                "listaGuia": [
+                    []
+                ],
+                "listaOD": [
+                    []
+                ]
+            
+        ]
+        print(datos)
+        if !datos.isEmpty {
+            Alamofire.request(CREATE_BULTO, method: HTTPMethod.post, parameters: datos, encoding: JSONEncoding.default,headers: _headers)
+                .validate(contentType: ["application/json"])
+                .responseJSON(){ response in
+                    switch response.result {
+                    case .success:
+                        print("esta bien")
+                    case .failure(let error):
+                        print(response.data)
+                        print(error)
+                    }
+                    
+            }
+        }
+        print(datos)
+        //Alamofire.request(CREATE_BULTO, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        
+    }
+    
+    func inicarBulto() -> Bulto {
         let bulto = Bulto()
-        bulto.setIdAlmacenRecepcion(idAlmacenRecepcion: "")
-        bulto.setAlmacenDestino(almacenDestino: "")
-        bulto.setNombreProveedor(nombreProveedor: "")
-        bulto.setNombreAlmacen(nombreAlmacen: "")
-        bulto.setTipoOrden(tipoOrden: "esto desde la primera vista")
-        bulto.setValorOrden(valorOrden: "esto desde la primera vista")
+        bulto.setIdAlmacenRecepcion(idAlmacenRecepcion: VACIO)
+        bulto.setAlmacenDestino(almacenDestino: VACIO)
+        bulto.setNombreProveedor(nombreProveedor: VACIO)
+        bulto.setNombreAlmacen(nombreAlmacen: VACIO)
+        bulto.setTipoOrden(tipoOrden: objectoOrden.getTipoOrden())
+        bulto.setValorOrden(valorOrden: objectoOrden.getValorOrden())
         bulto.setEstadoBulto(estadoBulto: "1")
         bulto.setPeso(peso: PESO)
         bulto.setAlto(alto: ALTO)
@@ -44,17 +141,25 @@ class TerminarViewController: UIViewController {
         bulto.setCargaPeligrosa(cargaPeligrosa: CARGA_PELIGROSA)
         bulto.setImportacion(importacion: IMPORTACION)
         bulto.setNacional(nacional: NACIONAL)
-        bulto.setFechaRecepcion(fechaRecepcion: Calendar.current.component(.year, from: Date()))
+        bulto.setFechaRecepcion(fechaRecepcion: obtenerFecha())
+        bulto.setCodigoTransportista(codigoTransportista: "No hay")
+        bulto.setTransportista(transportista: "No Hay")
+        bulto.setGeneral(general: GENERAL)
+        bulto.setComponente(componente: COMPONENTE)
+        bulto.setPaletaConsolidada(paletaConsolidada: PALETA_CONSOLIDADA)
+        bulto.setUnidadCompleta(unidadCompleta: UNIDAD_COMPLETA)
+        bulto.setId(id: CONST_ID)
+        bulto.setRowVersion(rowVersion: CONST_ROW_VERSION)
+        return bulto
+    }
+    
+    func obtenerFecha() -> Int {
         
+        let anio = Calendar.current.component(.year, from: Date())
+        let mes = Calendar.current.component(.month, from: Date())
+        let dia = Calendar.current.component(.day, from: Date())
+        let fechaCadena: String = String(anio) + String(mes) + String(dia)
+        
+        return Int(fechaCadena)!
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -294,4 +294,10 @@ class Bulto {
         return self.rowVersion
     }
     
+    func setCodigoTransportista(codigoTransportista: String) -> Void {
+        self.codigoTransportista = codigoTransportista
+    }
+    func getCodigoTransportista() -> String {
+        return self.codigoTransportista
+    }
 }

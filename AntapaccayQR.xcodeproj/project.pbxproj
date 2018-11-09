@@ -22,6 +22,8 @@
 		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
+		FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */; };
+		FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB735B302195E16E00707D9D /* ListaGuia.swift */; };
 		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
 		FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE22188D47700F0466F /* ConstSegen.swift */; };
 		FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C466218A4EA6000E6684 /* RoutesApi.swift */; };
@@ -75,6 +77,8 @@
 		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenDTO.swift; sourceTree = "<group>"; };
+		FB735B302195E16E00707D9D /* ListaGuia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaGuia.swift; sourceTree = "<group>"; };
 		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE22188D47700F0466F /* ConstSegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstSegen.swift; sourceTree = "<group>"; };
 		FB94C466218A4EA6000E6684 /* RoutesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesApi.swift; sourceTree = "<group>"; };
@@ -154,8 +158,17 @@
 				FB15844E218CE78200592ED1 /* OrdenDetalle.swift */,
 				FB2141ED2191E10C00953269 /* Item.swift */,
 				FB142BF52194CDA100FC9FB6 /* Bulto.swift */,
+				FB735B302195E16E00707D9D /* ListaGuia.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FB735B2D2195DC9F00707D9D /* Dtos */ = {
+			isa = PBXGroup;
+			children = (
+				FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */,
+			);
+			path = Dtos;
 			sourceTree = "<group>";
 		};
 		FB7C9EDD2188D14000F0466F /* Constans */ = {
@@ -209,6 +222,7 @@
 		FBE813682187942A00669625 /* AntapaccayQR */ = {
 			isa = PBXGroup;
 			children = (
+				FB735B2D2195DC9F00707D9D /* Dtos */,
 				FB3F04C52188FE0700287DAB /* Models */,
 				FB7C9EDF2188D16400F0466F /* ViewControllers */,
 				FB7C9EDD2188D14000F0466F /* Constans */,
@@ -466,9 +480,11 @@
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
 				FB2141EE2191E10C00953269 /* Item.swift in Sources */,
 				FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */,
+				FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */,
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
 				FB1A9D3121933C4C00F8ED32 /* TipoViewController.swift in Sources */,
+				FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
 				FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,

@@ -30,6 +30,8 @@ class SeguimientoCargaViewController: UIViewController {
     
     var _listaItem = Array<Item>()
     var _idProveedor: String = VACIO
+
+    var _ordenDTO = OrdenDTO()
     
     var _cantidadesItem:Dictionary<String, String> = [:]
     
@@ -123,6 +125,8 @@ class SeguimientoCargaViewController: UIViewController {
                         var item: OrdenDetalle
                         var temp = Array<String>()
                         var temp_orden = Array<OrdenDetalle>()
+                        self._ordenDTO.setTipoOrden(tipoOrden: self.orden.getTipoOrden())
+                        self._ordenDTO.setValorOrden(valorOrden: self.numeroOrden.text!)
                         temp_orden.removeAll()
                         temp.removeAll()
                         var cantidad_po: Int = 0
@@ -260,6 +264,7 @@ class SeguimientoCargaViewController: UIViewController {
         {
             let vs = segue.destination as? TabBarViewController
             vs!.objetoCarga = self._listaItem
+            vs!.objetoOrden = self._ordenDTO
         }
     }
 }
