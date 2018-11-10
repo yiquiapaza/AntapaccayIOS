@@ -35,7 +35,7 @@ class TerminarViewController: UIViewController {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
         ]
-        var items : [Parameters] = []
+        var items : [[String: Any]] = []
         
         for item in self.objectoCarga{
             let temp:Parameters = [
@@ -52,8 +52,8 @@ class TerminarViewController: UIViewController {
             items.append(temp)
         }
         
-        let datos: Parameters = [
-            
+        let datos: [[String:Any]] = [
+            [
                 "bulto": [
                     ID_ALMACEN_RECEPCION : VACIO,
                     ALMACEN_DESTINO : VACIO,
@@ -101,24 +101,38 @@ class TerminarViewController: UIViewController {
                 "listaOD": [
                     []
                 ]
-            
+            ]
         ]
-        print(datos)
-        if !datos.isEmpty {
-            Alamofire.request(CREATE_BULTO, method: HTTPMethod.post, parameters: datos, encoding: JSONEncoding.default,headers: _headers)
-                .validate(contentType: ["application/json"])
-                .responseJSON(){ response in
-                    switch response.result {
-                    case .success:
-                        print("esta bien")
-                    case .failure(let error):
-                        print(response.data)
-                        print(error)
-                    }
-                    
+        //print(datos)
+//        if !datos.isEmpty {
+//            Alamofire.request(CREATE_BULTO, method: HTTPMethod.post, parameters: datos, encoding: JSONEncoding.default,headers: _headers)
+//                .validate(contentType: ["application/json"])
+//                .responseJSON(){ response in
+//                    switch response.result {
+//                    case .success:
+//                        print("esta bien")
+//                    case .failure(let error):
+//                        print(response.data)
+//                        print(error)
+//                    }
+//
+//            }
+//        }
+        var request = URLRequest(url: URL(string: CREATE_BULTO)!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let json = try? JSONSerialization.data(withJSONObject: datos)
+        request.httpBody = json
+        Alamofire.request(request).responseJSON{ response in
+            switch (response.result){
+            case .success:
+                print(response.value)
+            case .failure(let error):
+                print(error)
             }
         }
-        print(datos)
+        
+       // print(datos)
         //Alamofire.request(CREATE_BULTO, method: .post, parameters: parameters, encoding: JSONEncoding.default)
         
     }
