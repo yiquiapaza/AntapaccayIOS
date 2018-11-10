@@ -1313,7 +1313,7 @@
         <!--View Controller-->
         <scene sceneID="mgv-xa-d68">
             <objects>
-                <viewController id="wYW-fz-qui" sceneMemberID="viewController">
+                <viewController id="wYW-fz-qui" customClass="QRViewController" customModule="AntapaccayQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jp8-ud-de6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1328,19 +1328,39 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6jU-5m-Vc5">
+                                <rect key="frame" x="77" y="190" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="jzF-pr-haq"/>
+                                    <constraint firstAttribute="height" constant="200" id="pnu-3g-E2C"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkl-1d-1s5">
+                                <rect key="frame" x="166" y="380" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fKf-tk-gEm" firstAttribute="trailing" secondItem="EH0-m3-HOv" secondAttribute="trailing" id="21F-VD-N9z"/>
+                            <constraint firstItem="6jU-5m-Vc5" firstAttribute="top" secondItem="fKf-tk-gEm" secondAttribute="bottom" constant="86" id="T9R-8j-ACp"/>
                             <constraint firstItem="fKf-tk-gEm" firstAttribute="top" secondItem="EH0-m3-HOv" secondAttribute="top" id="XWl-tY-UEm"/>
                             <constraint firstItem="fKf-tk-gEm" firstAttribute="leading" secondItem="EH0-m3-HOv" secondAttribute="leading" id="Xcp-4O-STQ"/>
+                            <constraint firstItem="6jU-5m-Vc5" firstAttribute="leading" secondItem="EH0-m3-HOv" secondAttribute="leading" constant="77" id="eC7-vb-Wxd"/>
+                            <constraint firstItem="EH0-m3-HOv" firstAttribute="trailing" secondItem="6jU-5m-Vc5" secondAttribute="trailing" constant="58" id="zQo-Yf-9A3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EH0-m3-HOv"/>
                     </view>
+                    <connections>
+                        <outlet property="s" destination="6jU-5m-Vc5" id="iZ2-cf-Yby"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRU-TT-PNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7442" y="-1978"/>
+            <point key="canvasLocation" x="7440.8000000000002" y="-1978.56071964018"/>
         </scene>
     </scenes>
     <resources>

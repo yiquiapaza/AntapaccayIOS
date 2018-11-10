@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "38D328436167403FA09F3553A83CAF22"
-               BlueprintName = "Pods-AntapaccayQR"
+               BlueprintIdentifier = "2B53685B166D62F6BD959B2CA4347234"
+               BlueprintName = "QRCoder"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-AntapaccayQR.framework">
+               BuildableName = "QRCoder.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

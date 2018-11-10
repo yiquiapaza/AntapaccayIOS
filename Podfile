@@ -7,6 +7,7 @@ target 'AntapaccayQR' do
   # Pods for AntapaccayQR
   pod 'DropDown', '~> 2.3.2'
   pod 'Alamofire', '~> 4.7'
+  pod 'QRCoder', '~> 1.0'
   target 'AntapaccayQRTests' do
     inherit! :search_paths
     # Pods for testing
