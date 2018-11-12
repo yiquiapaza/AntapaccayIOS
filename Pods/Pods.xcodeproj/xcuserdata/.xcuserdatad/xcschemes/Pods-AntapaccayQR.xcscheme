@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "38D328436167403FA09F3553A83CAF22"
+               BlueprintIdentifier = "73211C05B771F8B033F183CC1EEB59B7"
                BlueprintName = "Pods-AntapaccayQR"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-AntapaccayQR.framework">

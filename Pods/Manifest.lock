@@ -2,23 +2,27 @@ PODS:
   - Alamofire (4.7.3)
   - DropDown (2.3.12)
   - QRCoder (1.0.0)
+  - SwiftSpinner (1.6.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - DropDown (~> 2.3.2)
   - QRCoder (~> 1.0)
+  - SwiftSpinner (~> 1.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - DropDown
     - QRCoder
+    - SwiftSpinner
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   QRCoder: 488f6869fb89ffcc3de3b4de2dabd200a6573f3c
+  SwiftSpinner: 3a4c6dea425e5a31b908a8b1dd5dcd1ad4d96340
 
-PODFILE CHECKSUM: a4356118a3e23660bfa2d7ee2c751437567afd08
+PODFILE CHECKSUM: 2935e71bdf94548f26ea8844f62ac8329ed3902d
 
 COCOAPODS: 1.5.2

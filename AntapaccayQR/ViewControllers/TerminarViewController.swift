@@ -14,6 +14,7 @@ class TerminarViewController: UIViewController {
     
     var objectoCarga = Array<Item>()
     var objectoOrden = OrdenDTO()
+    var id_qr = ""
 
     override func viewDidLoad() {
         
@@ -31,10 +32,6 @@ class TerminarViewController: UIViewController {
 
     @IBAction func terminar(_ sender: UIButton) {
         let bulto: Bulto = inicarBulto()
-        let _headers = [
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-        ]
         var items : [[String: Any]] = []
         
         for item in self.objectoCarga{
@@ -126,6 +123,8 @@ class TerminarViewController: UIViewController {
         Alamofire.request(request).responseJSON{ response in
             switch (response.result){
             case .success:
+                let response_nuevo = response.result.value as! [Dictionary<String, AnyObject>]
+                self.id_qr = response_nuevo[0]["Id"] as! String
                 print(response.value)
             case .failure(let error):
                 print(error)
@@ -175,5 +174,12 @@ class TerminarViewController: UIViewController {
         let fechaCadena: String = String(anio) + String(mes) + String(dia)
         
         return Int(fechaCadena)!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is QRViewController {
+            let vc = segue.destination as! QRViewController
+            vc.id_qr_code = self.id_qr
+        }
     }
 }

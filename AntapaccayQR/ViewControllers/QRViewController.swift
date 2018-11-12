@@ -12,12 +12,16 @@ import QRCoder
 class QRViewController: UIViewController {
 
     @IBOutlet weak var s: UIImageView!
+    var id_qr_code:String = ""
+    
+    @IBOutlet weak var id: UILabel!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         let generador = QRCodeGenerator()
-        s.image = generador.createImage(value: "Dende Puto",size: CGSize(width: 200, height: 200))
+        s.image = generador.createImage(value: "B:" + self.id_qr_code,size: CGSize(width: 355, height: 355))
+        id.text = "ID: " + self.id_qr_code
         // Do any additional setup after loading the view.
     }
     

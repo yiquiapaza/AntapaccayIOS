@@ -54,6 +54,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>iOSDropDown.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
