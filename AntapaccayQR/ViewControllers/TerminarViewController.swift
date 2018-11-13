@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SwiftSpinner
 
 class TerminarViewController: UIViewController {
     
@@ -21,13 +21,7 @@ class TerminarViewController: UIViewController {
         let data = self.parent as! TabBarViewController
         self.objectoCarga =  data.objetoCarga
         self.objectoOrden = data.objetoOrden
-        for item in self.objectoCarga {
-            print(item.getCantidad())
-        }
-        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func terminar(_ sender: UIButton) {
@@ -100,40 +94,25 @@ class TerminarViewController: UIViewController {
                 ]
             ]
         ]
-        //print(datos)
-//        if !datos.isEmpty {
-//            Alamofire.request(CREATE_BULTO, method: HTTPMethod.post, parameters: datos, encoding: JSONEncoding.default,headers: _headers)
-//                .validate(contentType: ["application/json"])
-//                .responseJSON(){ response in
-//                    switch response.result {
-//                    case .success:
-//                        print("esta bien")
-//                    case .failure(let error):
-//                        print(response.data)
-//                        print(error)
-//                    }
-//
-//            }
-//        }
         var request = URLRequest(url: URL(string: CREATE_BULTO)!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let json = try? JSONSerialization.data(withJSONObject: datos)
         request.httpBody = json
-        Alamofire.request(request).responseJSON{ response in
-            switch (response.result){
-            case .success:
-                let response_nuevo = response.result.value as! [Dictionary<String, AnyObject>]
-                self.id_qr = response_nuevo[0]["Id"] as! String
-                print(response.value)
-            case .failure(let error):
-                print(error)
+        self.delay(seconds: 5.0, completion: {
+            SwiftSpinner.show("Verificando API")
+            Alamofire.request(request).responseJSON{ response in
+                switch (response.result){
+                case .success:
+                    let response_nuevo = response.result.value as! [Dictionary<String, AnyObject>]
+                    self.id_qr = response_nuevo[0]["Id"] as! String
+                    SwiftSpinner.hide()
+                case .failure(let error):
+                    print(error)
+                    SwiftSpinner.hide()
+                }
             }
-        }
-        
-       // print(datos)
-        //Alamofire.request(CREATE_BULTO, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-        
+        })
     }
     
     func inicarBulto() -> Bulto {
@@ -180,6 +159,14 @@ class TerminarViewController: UIViewController {
         if segue.destination is QRViewController {
             let vc = segue.destination as! QRViewController
             vc.id_qr_code = self.id_qr
+        }
+    }
+    
+    func delay(seconds: Double, completion: @escaping () -> ()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
         }
     }
 }
