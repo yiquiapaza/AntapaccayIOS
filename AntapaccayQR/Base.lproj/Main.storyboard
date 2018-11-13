@@ -716,6 +716,7 @@
                     </view>
                     <connections>
                         <outlet property="almacen" destination="8Gv-CG-c8z" id="09u-7l-8FE"/>
+                        <outlet property="buscarItem" destination="3uj-zJ-YwP" id="Woc-uw-4uQ"/>
                         <outlet property="cantidadItems" destination="EzW-X4-uFa" id="Sjm-ep-J5J"/>
                         <outlet property="cantidadRequerida" destination="KuC-AM-LKj" id="3At-3j-yKd"/>
                         <outlet property="descripcion" destination="DoZ-d1-gEN" id="amv-rR-9gs"/>
@@ -724,6 +725,7 @@
                         <outlet property="numeroItem" destination="sK0-rJ-7lP" id="FcS-lD-CNM"/>
                         <outlet property="numeroOrden" destination="tHN-dt-Ao3" id="suA-JD-HRn"/>
                         <outlet property="prueba" destination="gnu-pz-0xB" id="lAx-M4-co6"/>
+                        <outlet property="selectState" destination="Oha-pD-Pdf" id="uXE-c5-vsn"/>
                         <outlet property="switchID" destination="98s-eJ-Zw9" id="Ct8-Ph-dz0"/>
                         <outlet property="switchOC" destination="gLn-32-YtI" id="877-8r-we4"/>
                         <outlet property="switchOR" destination="F2m-9o-MLy" id="V39-6m-yTW"/>

@@ -48,6 +48,11 @@ class SeguimientoCargaViewController: UIViewController {
     @IBOutlet weak var cantidadRequerida: UITextField!
     
     
+    @IBOutlet weak var selectState: UIButton!
+    @IBOutlet weak var buscarItem: UIButton!
+    
+    
+    
     @IBAction func menu(_ sender: Any) {
         //ObtenerOrdenDet(_parametros: nuevo2)
         self.dropDown.dataSource.removeAll()
@@ -56,7 +61,7 @@ class SeguimientoCargaViewController: UIViewController {
         self.dropDown.selectionAction = {[unowned self] (index ,item) in
             self.numeroItem.text = item
             self._numeroItem = item
-            print(item)
+            self.buscarItem.isEnabled = true
         }
         dropDown.show()
     }
@@ -64,6 +69,7 @@ class SeguimientoCargaViewController: UIViewController {
     @IBAction func buscarItem(_ sender: UIButton) {
         dropDown.dataSource.removeAll()
         if self._numeroItem != VACIO {
+            self.cantidadRequerida.isEnabled = true
             var _item = OrdenDetalle()
             for item in self.listaOrdenDetalle{
                 if item.getNumeroItem() == self._numeroItem{
@@ -82,6 +88,7 @@ class SeguimientoCargaViewController: UIViewController {
                 self.disponible.text = String(_item.getDisponibilidad() - Int(self._cantidadesItem[_item.getNumeroItem()]!)!)
             }
             else{
+                self.cantidadRequerida.isEnabled = true
                 self.disponible.text = String(_item.getDisponibilidad())
             }
             
@@ -95,10 +102,15 @@ class SeguimientoCargaViewController: UIViewController {
         }
     }
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.navigationController?.view.backgroundColor = UIColor.red
         self.navigationController?.title = "ANTAPACCAI"
+        self.selectState.isEnabled = false
+        self.buscarItem.isEnabled = false
+        self.cantidadRequerida.isEnabled = false
+        self.cantidadRequerida.keyboardType = .numberPad
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func buscarOrden(_ sender: UIButton) {
@@ -153,9 +165,10 @@ class SeguimientoCargaViewController: UIViewController {
                                 }
                                 self.listItems = temp
                                 temp.removeAll()
-                                
+                                self.selectState.isEnabled = true
                                 SwiftSpinner.hide()
                             case .failure( let error):
+                                self.selectState.isEnabled = false
                                 print(error)
                                 SwiftSpinner.hide()
                             }
@@ -232,37 +245,64 @@ class SeguimientoCargaViewController: UIViewController {
     
     
     @IBAction func agregarItem(_ sender: UIButton) {
-        let nuevoItem = Item()
-        nuevoItem.setId(id: CONST_ID)
-        nuevoItem.setRowVersion(rowVersion: CONST_ROW_VERSION)
-        nuevoItem.setNumeroItem(numeroItem: self._numeroItem)
-        nuevoItem.setDescripcion(descripcion: self.descripcion.text!)
-        self.descripcion.text = "Descripcion"
-        self.unidad.text = "Unidad"
-        self.disponible.text = "0"
-        self.almacen.text = "Almacen"
-        nuevoItem.setCantida(cantidad: self.cantidadRequerida.text!)
-        
-        nuevoItem.setIdOrdenDetalle(idOrdenDetalle: CONST_ID_ORDEN_DETALLE)
-        nuevoItem.setIdProveedor(idProveedor: self._idProveedor)
-        self._idProveedor = VACIO
-        nuevoItem.setTransportista(transportista: CONST_TRANSPORTISTA)
-        nuevoItem.setVerificadoAlmacen(verificadoAlmacen: false)
-        self._listaItem.append(nuevoItem)
-        self.cantidadItems.text = String(self._listaItem.count)
-        if self._cantidadesItem.keys.contains(self._numeroItem){
-            self._cantidadesItem[self._numeroItem] = String( Int(self._cantidadesItem[self._numeroItem]!)! + Int(self.cantidadRequerida.text!)! )
+        if Int(self.cantidadRequerida.text!) != nil {
+            let nuevoItem = Item()
+            nuevoItem.setId(id: CONST_ID)
+            nuevoItem.setRowVersion(rowVersion: CONST_ROW_VERSION)
+            nuevoItem.setNumeroItem(numeroItem: self._numeroItem)
+            nuevoItem.setDescripcion(descripcion: self.descripcion.text!)
+            self.descripcion.text = "Descripcion"
+            self.unidad.text = "Unidad"
+            self.disponible.text = "0"
+            self.almacen.text = "Almacen"
+            nuevoItem.setCantida(cantidad: self.cantidadRequerida.text!)
+            
+            nuevoItem.setIdOrdenDetalle(idOrdenDetalle: CONST_ID_ORDEN_DETALLE)
+            nuevoItem.setIdProveedor(idProveedor: self._idProveedor)
+            self._idProveedor = VACIO
+            nuevoItem.setTransportista(transportista: CONST_TRANSPORTISTA)
+            nuevoItem.setVerificadoAlmacen(verificadoAlmacen: false)
+            self._listaItem.append(nuevoItem)
+            self.cantidadItems.text = String(self._listaItem.count)
+            if self._cantidadesItem.keys.contains(self._numeroItem){
+                if ( Int(self._cantidadesItem[self._numeroItem]!)! >= Int(nuevoItem.getCantidad())! ) {
+                    self._cantidadesItem[self._numeroItem] = String( Int(self._cantidadesItem[self._numeroItem]!)! + Int(self.cantidadRequerida.text!)! )
+                }
+                else {
+                    let alertOrden = UIAlertController(title: "Error", message: "La Cantidad no puede exceder al total", preferredStyle: UIAlertController.Style.alert)
+                    let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+                    alertOrden.addAction(exit)
+                    self.present(alertOrden, animated: true, completion: nil)
+                }
+                
+            }
+            else{
+                if ( currentAmountByItem(numeroItem: self._numeroItem)  >= Int(nuevoItem.getCantidad())! ) {
+                    self._cantidadesItem[self._numeroItem] = self.cantidadRequerida.text!
+                }
+                else {
+                    let alertOrden = UIAlertController(title: "Error", message: "La Cantidad no puede exceder al total", preferredStyle: UIAlertController.Style.alert)
+                    let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+                    alertOrden.addAction(exit)
+                    self.present(alertOrden, animated: true, completion: nil)
+                }
+            }
+            self.cantidadRequerida.text = VACIO
         }
-        else{
-            self._cantidadesItem[self._numeroItem] = self.cantidadRequerida.text!
+        else {
+            let alertOrden = UIAlertController(title: "Error", message: "Solo estan Permitidos caracteres Numericos", preferredStyle: UIAlertController.Style.alert)
+            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+            alertOrden.addAction(exit)
+            self.present(alertOrden, animated: true, completion: nil)
         }
-        self.cantidadRequerida.text = VACIO
     }
     
     @IBAction func crearBulto(_ sender: UIButton) {
-        for item in self._listaItem {
-            print(item.getNumeroItem())
-            
+        if self._listaItem.isEmpty{
+            let alertOrden = UIAlertController(title: "Error", message: "Su bulto debe de tener minimo un elemento", preferredStyle: UIAlertController.Style.alert)
+            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+            alertOrden.addAction(exit)
+            self.present(alertOrden, animated: true, completion: nil)
         }
     }
     
@@ -281,6 +321,15 @@ class SeguimientoCargaViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: popTime) {
             completion()
         }
+    }
+    
+    func currentAmountByItem(numeroItem:String) -> Int {
+        for item in self.listaOrdenDetalle{
+            if item.getNumeroItem() == numeroItem {
+                return item.getDisponibilidad()
+            }
+        }
+        return 0
     }
 }
 
