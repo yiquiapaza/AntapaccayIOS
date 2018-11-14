@@ -7,19 +7,19 @@
 //
 
 import UIKit
-import Alamofire
 
 class TabBarViewController: UITabBarController {
 
     var objetoCarga = Array<Item>()
     var objetoOrden = OrdenDTO()
     override func viewDidLoad() {
-        for item in objetoCarga{
-            print(item.getCantidad())
-        }
+        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
 

@@ -27,6 +27,7 @@
 		FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB735B302195E16E00707D9D /* ListaGuia.swift */; };
 		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
 		FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE22188D47700F0466F /* ConstSegen.swift */; };
+		FB89359F219CCC31007A04E3 /* TransportistaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89359E219CCC31007A04E3 /* TransportistaViewController.swift */; };
 		FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C466218A4EA6000E6684 /* RoutesApi.swift */; };
 		FB94C469218A4EF1000E6684 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94C468218A4EF1000E6684 /* Util.swift */; };
 		FB9BE786218A47370044690B /* Orden.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9BE785218A47370044690B /* Orden.swift */; };
@@ -83,6 +84,7 @@
 		FB735B302195E16E00707D9D /* ListaGuia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaGuia.swift; sourceTree = "<group>"; };
 		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB7C9EE22188D47700F0466F /* ConstSegen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstSegen.swift; sourceTree = "<group>"; };
+		FB89359E219CCC31007A04E3 /* TransportistaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportistaViewController.swift; sourceTree = "<group>"; };
 		FB94C466218A4EA6000E6684 /* RoutesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesApi.swift; sourceTree = "<group>"; };
 		FB94C468218A4EF1000E6684 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		FB9BE785218A47370044690B /* Orden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orden.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */,
 				FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */,
 				FB491CB421975A3300B0CC29 /* QRViewController.swift */,
+				FB89359E219CCC31007A04E3 /* TransportistaViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */,
 				FB142BF62194CDA100FC9FB6 /* Bulto.swift in Sources */,
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
+				FB89359F219CCC31007A04E3 /* TransportistaViewController.swift in Sources */,
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
 				FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */,
