@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "66B8D215C422CD6A5E13D3AB91623A45"
-               BlueprintName = "QRCoder"
+               BlueprintIdentifier = "19E0681BCD57CBA61F6F50F6135987CD"
+               BlueprintName = "Presentr"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "QRCoder.framework">
+               BuildableName = "Presentr.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -10,21 +10,37 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet var menuView: UIView!
+    @IBOutlet weak var viewItemMenu: UIView!
+    @IBOutlet weak var imagenMenu: UIImageView!
+    @IBOutlet weak var userMenu: UILabel!
+    @IBOutlet weak var correoMenu: UILabel!
+    
     override func viewDidLoad() {
+        imageViewIntro(image: imagenMenu)
+        startView(vistaIntro: menuView)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func startView(vistaIntro:UIView) -> Void {
+        let layer = CAGradientLayer()
+        layer.frame = vistaIntro.bounds
+        layer.colors = [UIColor(red:1.00, green:0.60, blue:0.20, alpha:1.0).cgColor,UIColor(red:0.82, green:0.27, blue:0.27, alpha:1.0).cgColor]
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.endPoint = CGPoint(x: 1, y: 1)
+        vistaIntro.layer.addSublayer(layer)
+        vistaIntro.addSubview(viewItemMenu)
+        vistaIntro.addSubview(imagenMenu)
+        vistaIntro.addSubview(userMenu)
+        vistaIntro.addSubview(correoMenu)
     }
-    */
-
+    
+    func imageViewIntro(image: UIImageView) -> Void {
+        image.image = UIImage(imageLiteralResourceName: "logo")
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.white.cgColor
+        image.clipsToBounds = true
+    }
 }
