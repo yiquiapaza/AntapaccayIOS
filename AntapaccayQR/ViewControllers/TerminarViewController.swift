@@ -12,19 +12,29 @@ import SwiftSpinner
 
 class TerminarViewController: UIViewController {
     
+    var shouldHideNavBar = false
+    
+    
+    @IBOutlet weak var generarQR: UIButton!
     var objectoCarga = Array<Item>()
     var objectoOrden = OrdenDTO()
+    var objectoTransporte = TransporteDTO()
     var id_qr = ""
 
     override func viewDidLoad() {
         
-        let data = self.parent as! TabBarViewController
-        self.objectoCarga =  data.objetoCarga
-        self.objectoOrden = data.objetoOrden
+//        let data = self.parent as! TabBarViewController
+//        self.objectoCarga =  data.objetoCarga
+//        self.objectoOrden = data.objetoOrden
+        self.generarQR.isEnabled = false
+        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
     }
 
-    @IBAction func terminar(_ sender: UIButton) {
+    
+    @IBAction func terminarBulto(_ sender: UIButton) {
+    
+    
         let bulto: Bulto = inicarBulto()
         var items : [[String: Any]] = []
         
@@ -49,7 +59,7 @@ class TerminarViewController: UIViewController {
                     ID_ALMACEN_RECEPCION : VACIO,
                     ALMACEN_DESTINO : VACIO,
                     NOMBRE_PROVEEDOR : VACIO,
-                    NOMBRE_ALMACEN : VACIO,
+                    NOMBRE_ALMACEN : self.objectoTransporte.getNombreAlmacen(),
                     TIPO_ORDEN : self.objectoOrden.getTipoOrden(),
                     VALOR_ORDEN : self.objectoOrden.getValorOrden(),
                     ESTADO_BULTO: bulto.getEstadoBulto(),
@@ -69,8 +79,8 @@ class TerminarViewController: UIViewController {
                     COMENTARIO: bulto.getComentario(),
                     COMENTARIO_ID: bulto.getComentarioID(),
                     FECHA_RECEPCION:bulto.getFechaRecepcion(),
-                    CODIGO_TRANSPORTISTA: VACIO,
-                    TRANSPORTISTA : VACIO,
+                    CODIGO_TRANSPORTISTA: self.objectoTransporte.getCodigoTransportista(),
+                    TRANSPORTISTA : self.objectoTransporte.getNombreTransportista(),
                     UBICACION: VACIO,
                     JSON_GENERAL: bulto.getGeneral(),
                     JSON_COMPONENTE : bulto.getComponente(),
@@ -106,6 +116,7 @@ class TerminarViewController: UIViewController {
                 case .success:
                     let response_nuevo = response.result.value as! [Dictionary<String, AnyObject>]
                     self.id_qr = response_nuevo[0]["Id"] as! String
+                    self.generarQR.isEnabled = true
                     SwiftSpinner.hide()
                 case .failure(let error):
                     print(error)
@@ -168,5 +179,12 @@ class TerminarViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: popTime) {
             completion()
         }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(shouldHideNavBar, animated: animated)
     }
 }

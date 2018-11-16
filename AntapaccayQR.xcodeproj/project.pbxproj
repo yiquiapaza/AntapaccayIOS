@@ -18,6 +18,7 @@
 		FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D342193456400F8ED32 /* CamaraViewController.swift */; };
 		FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */; };
 		FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */; };
+		FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */; };
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
 		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
@@ -75,6 +76,7 @@
 		FB1A9D342193456400F8ED32 /* CamaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraViewController.swift; sourceTree = "<group>"; };
 		FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaViewController.swift; sourceTree = "<group>"; };
 		FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarViewController.swift; sourceTree = "<group>"; };
+		FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteDTO.swift; sourceTree = "<group>"; };
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
 		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */,
+				FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */,
 			);
 			path = Dtos;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
 				FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */,
+				FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */,
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
 				FB2141EE2191E10C00953269 /* Item.swift in Sources */,
 				FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */,
