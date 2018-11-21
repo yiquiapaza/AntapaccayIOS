@@ -16,6 +16,7 @@ class TerminarViewController: UIViewController {
     
     
     @IBOutlet weak var generarQR: UIButton!
+    var listaGuias = Array<String>()
     var objectoCarga = Array<Item>()
     var objectoOrden = OrdenDTO()
     var objectoTransporte = TransporteDTO()

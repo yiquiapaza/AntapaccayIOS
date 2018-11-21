@@ -20,6 +20,7 @@
 		FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */; };
 		FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */; };
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
+		FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */; };
 		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
@@ -78,6 +79,7 @@
 		FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarViewController.swift; sourceTree = "<group>"; };
 		FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteDTO.swift; sourceTree = "<group>"; };
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
+		FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
 		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */,
 				FB491CB421975A3300B0CC29 /* QRViewController.swift */,
 				FB89359E219CCC31007A04E3 /* TransportistaViewController.swift */,
+				FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				FB1A9D3121933C4C00F8ED32 /* TipoViewController.swift in Sources */,
 				FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
+				FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */,
 				FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
 				FB1A9D2F21933C2800F8ED32 /* NacionaliadViewController.swift in Sources */,

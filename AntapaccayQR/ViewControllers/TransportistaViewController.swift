@@ -11,8 +11,15 @@ import Alamofire
 import DropDown
 import SwiftSpinner
 
-class TransportistaViewController: UIViewController {
-
+class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    @IBOutlet var vista: UIView!
+    
+    var listaGuias: Array<String> = Array<String>()
+    @IBOutlet weak var tablaGuias: UITableView!
+    @IBOutlet weak var guia: UITextField!
+    var index:Int = -1
+    let cellReuseIdentifier = "cell"
+    
     var objectoCarga = Array<Item>()
     var objectoOrden = OrdenDTO()
     
@@ -24,21 +31,30 @@ class TransportistaViewController: UIViewController {
     
     var objTransporte: TransporteDTO = TransporteDTO()
     
-    @IBOutlet weak var viewAlmacenes: UIView!
-    @IBOutlet weak var viewTransporte: UIView!
-    @IBOutlet weak var almacenesActivate: UIButton!
+    @IBOutlet var viewAlmacenes: UIView!
+    @IBOutlet var viewTransporte: UIView!
+    
+    
+    @IBOutlet var almacenesActivate: UIButton!
     @IBOutlet weak var transporteActive: UIButton!
     
     @IBOutlet weak var nombreAlmacen: UILabel!
     @IBOutlet weak var nombreTransportista: UILabel!
+    var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
     
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
         self.almacenesActivate.isEnabled = false
         self.transporteActive.isEnabled = false
         let data = self.parent as! TabBarViewController
         self.objectoCarga =  data.objetoCarga
         self.objectoOrden = data.objetoOrden
         self.dropDownAlmacenes.direction = .top
+        
+        self.viewAlmacenes.frame(forAlignmentRect: rect)
+        
         let parametres: Parameters = [
             "Logial": "AND",
             "PropertyName":"tipo",
@@ -75,7 +91,11 @@ class TransportistaViewController: UIViewController {
                     }
             }
         })
-        super.viewDidLoad()
+        
+        tablaGuias.delegate = self
+        tablaGuias.dataSource = self
+        tablaGuias.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        self.vista.addSubview(tablaGuias)
         // Do any additional setup after loading the view.
     }
 //*****************************************Action*****************************************
@@ -85,6 +105,7 @@ class TransportistaViewController: UIViewController {
     @IBAction func almacenesButton(_ sender: UIButton) {
         self.dropDownAlmacenes.dataSource.removeAll()
         self.dropDownAlmacenes.anchorView = self.viewAlmacenes
+        self.dropDownAlmacenes.direction = .any
         self.dropDownAlmacenes.dataSource = getListaNombres(lista: self._almacenes)
         self.dropDownAlmacenes.selectionAction = {[unowned self] (index ,item) in
             self.nombreAlmacen.text = item
@@ -137,6 +158,41 @@ class TransportistaViewController: UIViewController {
             vs!.objectoCarga = self.objectoCarga
             vs!.objectoOrden = self.objectoOrden
             vs!.objectoTransporte = self.objTransporte
+            vs!.listaGuias = self.listaGuias
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.listaGuias.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tablaGuias.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = self.listaGuias[indexPath.row].description
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 300))
+        button.addTarget(self, action: #selector(quitar(_:)), for: .touchDown)
+        button.setTitle("", for : .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.setImage(UIImage(named:"icons8-delete_filled"), for: .normal)
+        cell.accessoryView = button
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.index = indexPath.row
+        print(indexPath.row)
+    }
+    
+    @IBAction func agregarGuia(_ sender: Any) {
+        self.listaGuias.append(self.guia.text!)
+        tablaGuias.reloadData()
+        self.guia.text = VACIO
+    }
+    
+    @objc func quitar(_ sneder: UIButton){
+        print("Elimine la filas")
+        self.listaGuias.remove(at: index)
+        print(index)
+        tablaGuias.reloadData()
     }
 }

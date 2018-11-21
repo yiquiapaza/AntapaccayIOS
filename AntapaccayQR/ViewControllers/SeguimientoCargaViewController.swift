@@ -307,9 +307,9 @@ class SeguimientoCargaViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is TabBarViewController
+        if segue.destination is ListaViewController
         {
-            let vs = segue.destination as? TabBarViewController
+            let vs = segue.destination as? ListaViewController
             vs!.objetoCarga = self._listaItem
             vs!.objetoOrden = self._ordenDTO
         }

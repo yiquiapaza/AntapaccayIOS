@@ -39,10 +39,15 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>QRCoder.xcscheme</key>
+		<key>Presentr.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
+		</dict>
+		<key>QRCoder.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>SideMenu.xcscheme</key>
 		<dict>
@@ -57,7 +62,7 @@
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>8</integer>
 		</dict>
 		<key>iOSDropDown.xcscheme</key>
 		<dict>

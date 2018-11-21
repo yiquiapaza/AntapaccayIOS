@@ -15,6 +15,9 @@ class QRViewController: UIViewController {
     
     @IBOutlet weak var s: UIImageView!
     var id_qr_code:String = ""
+    var imagePrint: UIImage = UIImage()
+    
+    var nuevoData: Data = Data()
     
     @IBOutlet weak var id: UILabel!
     
@@ -23,7 +26,10 @@ class QRViewController: UIViewController {
         super.viewDidLoad()
         let generador = QRCodeGenerator()
         s.image = generador.createImage(value: "B:" + self.id_qr_code,size: CGSize(width: 355, height: 355))
+        imagePrint = generador.createImage(value: "B:" + self.id_qr_code, size: CGSize(width: 10, height: 10))!
         id.text = "ID: " + self.id_qr_code
+        createDirectory(image: self.s.image!)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -34,14 +40,48 @@ class QRViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(shouldHideNavBar, animated: animated)
     }
-    /*
-    // MARK: - Navigation
+    
+    
+    @IBAction func imprimir(_ sender: Any) {
+        //let image = URL(self.s.data,nil)
+        
+       // if UIPrintInteractionController.canPrint(){
+            
+       // }
+            
+        let printController = UIPrintInteractionController.shared
+        // 2
+        let printInfo = UIPrintInfo(dictionary:nil)
+        printInfo.jobName = "print Job"
+        printInfo.outputType =  .general
+        printController.printInfo = printInfo
+        
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        // 3
+        //let nuevo = UISimpleTextPrintFormatter()
+        //nuevo.perPageContentInsets = UIEdgeInsets(top: 72, left: 72, bottom: 72, right: 72)
+        //printController.printFormatter = nuevo
+        printController.printingItem = self.s.image
+        // 4
+        printController.present(animated: true, completionHandler: nil)
     }
-    */
 
+    func createDirectory(image:UIImage) -> Void {
+        let mainPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        print(mainPath)
+        let qrcodeDirectoryPath = mainPath + "qrcode"
+        var ojeCtBool:ObjCBool = true
+        
+        let isExit = FileManager.default.fileExists(atPath: qrcodeDirectoryPath, isDirectory: &ojeCtBool)
+        
+        if isExit == false {
+            do {
+                try FileManager.default.createDirectory(atPath: qrcodeDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+            }catch{
+                print("Error")
+            }
+        }
+    }
+    
 }
