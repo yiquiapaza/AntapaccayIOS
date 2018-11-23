@@ -89,4 +89,6 @@ let CANTIDAD_GENERAL = "cantidad"
 let ID_PROVEEDOR = "idProveedor"
 let VERIFICADO_ALMACEN = "verificadoAlmacen"
 
+let NUMERO_GUIA = "numeroGuia"
+
 let VACIO: String = ""

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import DropDown
 import SwiftSpinner
+import SwiftMessages
 
 class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet var vista: UIView!
@@ -191,8 +192,20 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
     
     @objc func quitar(_ sneder: UIButton){
         print("Elimine la filas")
-        self.listaGuias.remove(at: index)
-        print(index)
-        tablaGuias.reloadData()
+        if index == -1{
+            let error = MessageView.viewFromNib(layout: .tabView)
+            error.configureTheme(.error)
+            error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
+            error.button?.isHidden = true
+            var configError = SwiftMessages.defaultConfig
+            configError.presentationStyle = .center
+            configError.duration = .seconds(seconds: 2)
+            SwiftMessages.show(config: configError , view:error)
+        }
+        else{
+            self.listaGuias.remove(at: index)
+            index = -1
+            tablaGuias.reloadData()
+        }
     }
 }

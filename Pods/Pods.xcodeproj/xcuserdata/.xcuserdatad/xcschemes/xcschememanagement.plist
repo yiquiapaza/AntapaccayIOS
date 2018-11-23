@@ -29,12 +29,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Presentr.xcscheme</key>
+		<key>QRCoder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>QRCoder.xcscheme</key>
+		<key>SwiftMessages-SwiftMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

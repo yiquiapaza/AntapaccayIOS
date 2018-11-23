@@ -47,7 +47,7 @@
 		<key>QRCoder.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>SideMenu.xcscheme</key>
 		<dict>
@@ -59,10 +59,20 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>SwiftSpinner.xcscheme</key>
+		<key>SwiftMessages-SwiftMessages.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>SwiftMessages.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>iOSDropDown.xcscheme</key>
 		<dict>

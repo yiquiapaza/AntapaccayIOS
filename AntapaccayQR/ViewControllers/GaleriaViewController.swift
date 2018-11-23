@@ -7,24 +7,50 @@
 //
 
 import UIKit
+import Photos
 
-class GaleriaViewController: UIViewController {
+class GaleriaViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
+
+    var listaImagenes = Array<UIImageView>()
+    @IBOutlet var collectionFotos: UICollectionView!
+    let cellReuseIdentifier = "cell"
+    
+    //var screenSize: CGRect!
+    //var screenWidth: CGFloat!
+    //var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.listaImagenes.append(UIImageView(image: UIImage(named: "uno")))
+        self.listaImagenes.append(UIImageView(image: UIImage(named: "dos")))
+        self.listaImagenes.append(UIImageView(image: UIImage(named: "tres")))
+        self.collectionFotos.delegate = self
+        self.collectionFotos.dataSource = self
+        
+        //screenSize = UIScreen.main.bounds
+        //screenWidth = screenSize.width
+        //screenHeight = screenSize.height
+        
+        //let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        //layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        //layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
+        //self.collectionFotos = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        
+        self.collectionFotos.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+        self.view.addSubview(self.collectionFotos)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.collectionFotos.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.autoresizesSubviews = true
+        cell.contentView.addSubview(listaImagenes[indexPath.row])
+        return cell
     }
-    */
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listaImagenes.count
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }

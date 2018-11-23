@@ -35,7 +35,16 @@ class TerminarViewController: UIViewController {
     
     @IBAction func terminarBulto(_ sender: UIButton) {
     
-    
+        var guias : [[String:Any]] = []
+        for item in self.listaGuias {
+            let temp : Parameters = [
+                ID: CONST_ID,
+                ROW_VERSION : CONST_ROW_VERSION,
+                NUMERO_GUIA : item
+            ]
+            guias.append(temp)
+        }
+        
         let bulto: Bulto = inicarBulto()
         var items : [[String: Any]] = []
         
@@ -98,7 +107,7 @@ class TerminarViewController: UIViewController {
                     items
                 ],
                 "listaGuia": [
-                    []
+                    guias
                 ],
                 "listaOD": [
                     []

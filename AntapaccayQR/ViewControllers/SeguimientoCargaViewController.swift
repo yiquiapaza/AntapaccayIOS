@@ -10,6 +10,7 @@ import UIKit
 import DropDown
 import Alamofire
 import SwiftSpinner
+import SwiftMessages
 
 class SeguimientoCargaViewController: UIViewController {
 
@@ -176,22 +177,48 @@ class SeguimientoCargaViewController: UIViewController {
             })
         }
         if (orden.getTipoOrden() == VACIO && numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) != VACIO) {
-            let alertOrden = UIAlertController(title: "Seleccione un Tipo de Orden", message: "Es Obligatorio", preferredStyle: UIAlertController.Style.alert)
-            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            alertOrden.addAction(exit)
-            self.present(alertOrden, animated: true, completion: nil)
+            //let alertOrden = UIAlertController(title: "Seleccione un Tipo de Orden", message: "Es Obligatorio", preferredStyle: UIAlertController.Style.alert)
+            //let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+            //alertOrden.addAction(exit)
+            //self.present(alertOrden, animated: true, completion: nil)
+            let error = MessageView.viewFromNib(layout: .tabView)
+            error.configureTheme(.error)
+            error.configureContent(title:"Seleccione un Tipo de Orden",body:"Es un campo obligatorio" )
+            error.button?.isHidden = true
+            var configError = SwiftMessages.defaultConfig
+            configError.presentationStyle = .center
+            configError.duration = .seconds(seconds: 2)
+            SwiftMessages.show(config: configError , view:error)
         }
         if (numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) == VACIO && orden.getTipoOrden() != VACIO) {
-            let alertOrden = UIAlertController(title: "Ingrese Numero de Orden", message: "Es un campo Obligatorio", preferredStyle: UIAlertController.Style.alert)
-            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            alertOrden.addAction(exit)
-            self.present(alertOrden, animated: true, completion: nil)
+            let error = MessageView.viewFromNib(layout: .tabView)
+            error.configureTheme(.error)
+            error.configureContent(title:"Ingrese Numero de Orden",body:"Es un campo obligatorio" )
+            error.button?.isHidden = true
+            var configError = SwiftMessages.defaultConfig
+            configError.presentationStyle = .center
+            configError.duration = .seconds(seconds: 2)
+            SwiftMessages.show(config: configError , view:error)
+            
+            //let alertOrden = UIAlertController(title: "Ingrese Numero de Orden", message: "Es un campo Obligatorio", preferredStyle: UIAlertController.Style.alert)
+            //let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+            //alertOrden.addAction(exit)
+            //self.present(alertOrden, animated: true, completion: nil)
         }
         if(numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) == VACIO && orden.getTipoOrden() == VACIO) {
-            let alertOrden = UIAlertController(title: "Ingrese Numero y Tipo de Orden", message: "Son Obligatorio", preferredStyle: UIAlertController.Style.alert)
-            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            alertOrden.addAction(exit)
-            self.present(alertOrden, animated: true, completion: nil)
+            
+            let error = MessageView.viewFromNib(layout: .tabView)
+            error.configureTheme(.error)
+            error.configureContent(title:"Ingrese Numero y Tipo de Orden",body:"Es un campo obligatorio" )
+            error.button?.isHidden = true
+            var configError = SwiftMessages.defaultConfig
+            configError.presentationStyle = .center
+            configError.duration = .seconds(seconds: 2)
+            SwiftMessages.show(config: configError , view:error)
+            //let alertOrden = UIAlertController(title: "Ingrese Numero y Tipo de Orden", message: "Son Obligatorio", preferredStyle: UIAlertController.Style.alert)
+            //let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
+            //alertOrden.addAction(exit)
+            //self.present(alertOrden, animated: true, completion: nil)
         }
 
         

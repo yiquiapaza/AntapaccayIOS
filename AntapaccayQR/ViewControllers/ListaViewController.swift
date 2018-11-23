@@ -7,13 +7,7 @@
 //
 
 import UIKit
-
-class MyCell: UITableViewCell {
-    
-    
-    
-}
-
+import SwiftMessages
 
 class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewDataSource {
     
@@ -80,11 +74,25 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
     }
     
     @objc func quitar(_ sneder: UIButton){
-        print("Elimine la filas")
-        self.listaSting.remove(at: index)
-        self.objetoCarga.remove(at: index)
-        print(index)
-        tableLista.reloadData()
+        if index == -1 {
+            let error = MessageView.viewFromNib(layout: .tabView)
+            error.configureTheme(.error)
+            error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
+            error.button?.isHidden = true
+            var configError = SwiftMessages.defaultConfig
+            configError.presentationStyle = .center
+            configError.duration = .seconds(seconds: 2)
+            SwiftMessages.show(config: configError , view:error)
+        }
+        else{
+            print("Elimine la filas")
+            self.listaSting.remove(at: index)
+            self.objetoCarga.remove(at: index)
+            index = -1
+            print(index)
+            tableLista.reloadData()
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
