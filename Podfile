@@ -10,6 +10,7 @@ target 'AntapaccayQR' do
   pod 'QRCoder', '~> 1.0'
   pod 'SwiftSpinner', '~> 1.6'
   pod 'SwiftMessages'
+  pod 'QRCodeScannerFramework', '~> 1.0'
   target 'AntapaccayQRTests' do
     inherit! :search_paths
     # Pods for testing

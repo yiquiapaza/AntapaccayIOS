@@ -92,3 +92,8 @@ let VERIFICADO_ALMACEN = "verificadoAlmacen"
 let NUMERO_GUIA = "numeroGuia"
 
 let VACIO: String = ""
+
+var PESO_BULTO: String = ""
+var ALTO_BULTO: String = ""
+var ANCHO_BULTO: String = ""
+var LARGO_BULTO: String = ""

@@ -71,7 +71,7 @@ public class QRCodeGenerator : NSObject {
     private func createNonInterpolatedImageFromCIImage(image:CIImage, size:CGSize) -> QRImage? {
     
         #if (arch(i386) || arch(x86_64))
-        let contextOptions = [kCIContextUseSoftwareRenderer : false]
+        let contextOptions = [CIContextOption.useSoftwareRenderer : false]
         #else
         let contextOptions = [kCIContextUseSoftwareRenderer : true]
         #endif

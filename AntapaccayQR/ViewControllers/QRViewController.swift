@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QRCoder
+//import QRCoder
 
 class QRViewController: UIViewController {
 
@@ -24,9 +24,9 @@ class QRViewController: UIViewController {
     override func viewDidLoad() {
         self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
-        let generador = QRCodeGenerator()
-        s.image = generador.createImage(value: "B:" + self.id_qr_code,size: CGSize(width: 355, height: 355))
-        imagePrint = generador.createImage(value: "B:" + self.id_qr_code, size: CGSize(width: 10, height: 10))!
+        //let generador = QRCodeGenerator()
+        //s.image = generador.createImage(value: "B:" + self.id_qr_code,size: CGSize(width: 355, height: 355))
+        //imagePrint = generador.createImage(value: "B:" + self.id_qr_code, size: CGSize(width: 10, height: 10))!
         id.text = "ID: " + self.id_qr_code
         createDirectory(image: self.s.image!)
         
