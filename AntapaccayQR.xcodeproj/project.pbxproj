@@ -22,6 +22,8 @@
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
 		FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */; };
 		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
+		FB345CF821ADA44500B5BF5E /* Unidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB345CF721ADA44500B5BF5E /* Unidad.swift */; };
+		FB345CFA21ADC53500B5BF5E /* DataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB345CF921ADC53500B5BF5E /* DataDTO.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
 		FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB491CB421975A3300B0CC29 /* QRViewController.swift */; };
@@ -91,6 +93,8 @@
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
 		FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
 		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FB345CF721ADA44500B5BF5E /* Unidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unidad.swift; sourceTree = "<group>"; };
+		FB345CF921ADC53500B5BF5E /* DataDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDTO.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FB491CB421975A3300B0CC29 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				FB142BF52194CDA100FC9FB6 /* Bulto.swift */,
 				FB735B302195E16E00707D9D /* ListaGuia.swift */,
 				FBD3C23B21AC1B4800221C3C /* Paleta.swift */,
+				FB345CF721ADA44500B5BF5E /* Unidad.swift */,
+				FB345CF921ADC53500B5BF5E /* DataDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				FBD3C24C21ACAA8C00221C3C /* TabBarUnidadViewController.swift in Sources */,
 				FBD3C24821AC5CEA00221C3C /* DimensionesBultoViewController.swift in Sources */,
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
+				FB345CFA21ADC53500B5BF5E /* DataDTO.swift in Sources */,
 				FB89359F219CCC31007A04E3 /* TransportistaViewController.swift in Sources */,
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
@@ -538,6 +545,7 @@
 				FB2141EE2191E10C00953269 /* Item.swift in Sources */,
 				FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */,
 				FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */,
+				FB345CF821ADA44500B5BF5E /* Unidad.swift in Sources */,
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBD3C23C21AC1B4800221C3C /* Paleta.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,

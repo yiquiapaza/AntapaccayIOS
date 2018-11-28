@@ -1015,6 +1015,22 @@
             </objects>
             <point key="canvasLocation" x="12657" y="1375"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="oPS-s3-8Xz">
+            <objects>
+                <viewController id="j9N-4R-3Je" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ddi-te-iaR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="o6d-0i-TnP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="MCP-Eq-A9d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ii-ex-H36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12646" y="2110"/>
+        </scene>
         <!--Item 1-->
         <scene sceneID="V3O-Lc-DVT">
             <objects>
@@ -1088,6 +1104,9 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="almacenDestiono:" destination="lKS-Js-vqW" eventType="touchUpInside" id="bmM-bw-bMY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almacen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjx-Kz-OKv">
                                 <rect key="frame" x="30" y="241" width="315" height="18"/>
@@ -1114,6 +1133,9 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="registro:" destination="lKS-Js-vqW" eventType="touchUpInside" id="ckW-Gh-I5G"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almacen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vr2-wu-1Ob">
                                 <rect key="frame" x="30" y="312" width="315" height="18"/>
@@ -1130,8 +1152,8 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-JM-Db1">
-                                <rect key="frame" x="25" y="358" width="325" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-JM-Db1">
+                                <rect key="frame" x="25" y="357" width="325" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="4oS-bv-GeR"/>
@@ -1140,6 +1162,9 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tipo:" destination="lKS-Js-vqW" eventType="touchUpInside" id="eiD-R8-OeO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almacen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-Re-2B4">
                                 <rect key="frame" x="30" y="383" width="315" height="18"/>
@@ -1166,6 +1191,9 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="placa:" destination="lKS-Js-vqW" eventType="touchUpInside" id="8jA-65-Izh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almacen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCm-J4-Xwe">
                                 <rect key="frame" x="30" y="454" width="315" height="18"/>
@@ -1191,6 +1219,10 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbu-ZP-Mxv" userLabel="bue">
+                                <rect key="frame" x="0.0" y="472" width="375" height="146"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1232,6 +1264,7 @@
                             <constraint firstItem="nbB-Pc-SyR" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="25" id="NH7-dW-vaJ"/>
                             <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="RZB-US-LNc" secondAttribute="trailing" constant="20" id="NS8-mi-dAI"/>
                             <constraint firstItem="8E7-JM-Db1" firstAttribute="top" secondItem="2dY-RS-YG1" secondAttribute="bottom" constant="5" id="NYR-gm-Hvd"/>
+                            <constraint firstItem="rbu-ZP-Mxv" firstAttribute="top" secondItem="RCm-J4-Xwe" secondAttribute="bottom" id="O5f-3d-WzQ"/>
                             <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="2dY-RS-YG1" secondAttribute="trailing" constant="20" id="PXH-57-uw5"/>
                             <constraint firstItem="NqK-RA-BvN" firstAttribute="top" secondItem="b36-nN-Wrr" secondAttribute="bottom" constant="15" id="Pbh-v4-OCx"/>
                             <constraint firstItem="tjx-Kz-OKv" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="30" id="Pff-Bf-k3g"/>
@@ -1252,6 +1285,7 @@
                             <constraint firstItem="fuc-OW-sOg" firstAttribute="leading" secondItem="b36-nN-Wrr" secondAttribute="trailing" constant="48" id="boC-ER-f5I"/>
                             <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="vr2-wu-1Ob" secondAttribute="trailing" constant="30" id="dy2-q2-5Rw"/>
                             <constraint firstItem="Zsa-Re-2B4" firstAttribute="top" secondItem="8E7-JM-Db1" secondAttribute="bottom" constant="5" id="gCi-ft-iRN"/>
+                            <constraint firstItem="rbu-ZP-Mxv" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" id="iXU-RB-Nth"/>
                             <constraint firstItem="fuc-OW-sOg" firstAttribute="leading" secondItem="K5P-KQ-48M" secondAttribute="trailing" constant="-134" id="iZf-U3-L2Z"/>
                             <constraint firstItem="b36-nN-Wrr" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="20" id="lPy-ix-Yjr"/>
                             <constraint firstItem="fuc-OW-sOg" firstAttribute="centerY" secondItem="lak-mp-DCo" secondAttribute="centerY" id="nZR-0i-3lc"/>
@@ -1263,6 +1297,7 @@
                             <constraint firstItem="RZB-US-LNc" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="20" id="seK-wF-NAX"/>
                             <constraint firstItem="3HJ-jh-1mb" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="25" id="shr-c5-gU1"/>
                             <constraint firstItem="RCm-J4-Xwe" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="30" id="t6o-Ba-noV"/>
+                            <constraint firstItem="rbu-ZP-Mxv" firstAttribute="bottom" secondItem="Qkv-Ne-281" secondAttribute="bottom" id="tOh-tS-7x0"/>
                             <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="8E7-JM-Db1" secondAttribute="trailing" constant="25" id="tca-W9-8oy"/>
                             <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="z93-eg-8B4" secondAttribute="trailing" constant="20" id="uAw-sG-dho"/>
                             <constraint firstItem="lak-mp-DCo" firstAttribute="leading" secondItem="fuc-OW-sOg" secondAttribute="trailing" constant="21" id="uXs-Hs-v4k"/>
@@ -1270,10 +1305,14 @@
                             <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="tjx-Kz-OKv" secondAttribute="trailing" constant="30" id="wZZ-LA-f0Y"/>
                             <constraint firstItem="8E7-JM-Db1" firstAttribute="top" secondItem="2dY-RS-YG1" secondAttribute="bottom" constant="5" id="xMA-zu-q2s"/>
                             <constraint firstItem="8E7-JM-Db1" firstAttribute="leading" secondItem="Qkv-Ne-281" secondAttribute="leading" constant="25" id="zIU-xf-bN2"/>
+                            <constraint firstItem="Qkv-Ne-281" firstAttribute="trailing" secondItem="rbu-ZP-Mxv" secondAttribute="trailing" id="zna-pg-4n2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qkv-Ne-281"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="XYv-NW-cwM"/>
+                    <connections>
+                        <outlet property="vista" destination="hCA-ZV-Pzt" id="mR2-zO-ceV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MsN-aT-de9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1292,6 +1331,7 @@
                         <segue destination="lKS-Js-vqW" kind="relationship" relationship="viewControllers" id="wkd-an-KI8"/>
                         <segue destination="unT-Sl-tc5" kind="relationship" relationship="viewControllers" id="aOH-zv-bNW"/>
                         <segue destination="Uu3-Dd-VoU" kind="relationship" relationship="viewControllers" id="wfj-MJ-gio"/>
+                        <segue destination="j9N-4R-3Je" kind="relationship" relationship="viewControllers" id="PKg-77-ngu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="es7-3j-8Sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
