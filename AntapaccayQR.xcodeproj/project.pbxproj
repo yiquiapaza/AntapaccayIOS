@@ -45,6 +45,10 @@
 		FBD3C24A21AC7A7D00221C3C /* TerminarBultoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3C24921AC7A7D00221C3C /* TerminarBultoViewController.swift */; };
 		FBD3C24C21ACAA8C00221C3C /* TabBarUnidadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3C24B21ACAA8C00221C3C /* TabBarUnidadViewController.swift */; };
 		FBD3C24E21ACAB5900221C3C /* UnidadTransporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3C24D21ACAB5900221C3C /* UnidadTransporteViewController.swift */; };
+		FBE7D0F021AEEE7600590AB3 /* SalidaCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0EF21AEEE7600590AB3 /* SalidaCargaViewController.swift */; };
+		FBE7D0F221AEEE8500590AB3 /* PartidaCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */; };
+		FBE7D0F421AF121800590AB3 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0F321AF121800590AB3 /* Entrada.swift */; };
+		FBE7D0F621AF24CB00590AB3 /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0F521AF24CB00590AB3 /* Registro.swift */; };
 		FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE813692187942A00669625 /* AppDelegate.swift */; };
 		FBE8136C2187942A00669625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8136B2187942A00669625 /* ViewController.swift */; };
 		FBE8136F2187942A00669625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE8136D2187942A00669625 /* Main.storyboard */; };
@@ -116,6 +120,10 @@
 		FBD3C24921AC7A7D00221C3C /* TerminarBultoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarBultoViewController.swift; sourceTree = "<group>"; };
 		FBD3C24B21ACAA8C00221C3C /* TabBarUnidadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUnidadViewController.swift; sourceTree = "<group>"; };
 		FBD3C24D21ACAB5900221C3C /* UnidadTransporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadTransporteViewController.swift; sourceTree = "<group>"; };
+		FBE7D0EF21AEEE7600590AB3 /* SalidaCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalidaCargaViewController.swift; sourceTree = "<group>"; };
+		FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartidaCargaViewController.swift; sourceTree = "<group>"; };
+		FBE7D0F321AF121800590AB3 /* Entrada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
+		FBE7D0F521AF24CB00590AB3 /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		FBE813662187942A00669625 /* AntapaccayQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntapaccayQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE813692187942A00669625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBE8136B2187942A00669625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 				FBD3C23B21AC1B4800221C3C /* Paleta.swift */,
 				FB345CF721ADA44500B5BF5E /* Unidad.swift */,
 				FB345CF921ADC53500B5BF5E /* DataDTO.swift */,
+				FBE7D0F521AF24CB00590AB3 /* Registro.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +212,7 @@
 			children = (
 				FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */,
 				FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */,
+				FBE7D0F321AF121800590AB3 /* Entrada.swift */,
 			);
 			path = Dtos;
 			sourceTree = "<group>";
@@ -241,6 +251,8 @@
 				FBD3C24921AC7A7D00221C3C /* TerminarBultoViewController.swift */,
 				FBD3C24B21ACAA8C00221C3C /* TabBarUnidadViewController.swift */,
 				FBD3C24D21ACAB5900221C3C /* UnidadTransporteViewController.swift */,
+				FBE7D0EF21AEEE7600590AB3 /* SalidaCargaViewController.swift */,
+				FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -542,8 +554,10 @@
 				FBD3C24A21AC7A7D00221C3C /* TerminarBultoViewController.swift in Sources */,
 				FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */,
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
+				FBE7D0F621AF24CB00590AB3 /* Registro.swift in Sources */,
 				FB2141EE2191E10C00953269 /* Item.swift in Sources */,
 				FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */,
+				FBE7D0F221AEEE8500590AB3 /* PartidaCargaViewController.swift in Sources */,
 				FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */,
 				FB345CF821ADA44500B5BF5E /* Unidad.swift in Sources */,
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
@@ -561,10 +575,12 @@
 				FBD3C24421AC5A9000221C3C /* CameraBultoViewController.swift in Sources */,
 				FB94C469218A4EF1000E6684 /* Util.swift in Sources */,
 				FB9BE786218A47370044690B /* Orden.swift in Sources */,
+				FBE7D0F021AEEE7600590AB3 /* SalidaCargaViewController.swift in Sources */,
 				FB1A9D332193443A00F8ED32 /* TabBarViewController.swift in Sources */,
 				FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */,
 				FBD3C24E21ACAB5900221C3C /* UnidadTransporteViewController.swift in Sources */,
 				FBD3C24221AC5A4A00221C3C /* TabBarBultoViewController.swift in Sources */,
+				FBE7D0F421AF121800590AB3 /* Entrada.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

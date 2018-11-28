@@ -19,3 +19,7 @@ let INSERT_BULTO: String = BASE_URL + "Bulto/InsertPaletaBultos"
 let ALMACENES_DESTINO: String = BASE_URL + "PuntoControl/GetAll"
 let TIPO_SEMIREMOLQUE: String = BASE_URL + "TipoRemolque/GetAll"
 let PLACAS_SEMIREMOLQUE: String = BASE_URL + "NombreVehiculo/GetListaVehiculos"
+
+let BUSQUEDA_GUIA_ENTRADA: String = BASE_URL + "TransporteConsolidado/GetTransporteByGuiaAntapaccay"
+let ALMACEN_GUIA_ENTRADA: String = BASE_URL + "Bulto/GetBultoByGuiaAntapaccay"
+let REGISTRO_ENTRADA: String = BASE_URL + "TransporteConsolidado/UpdateTCTVTR"
