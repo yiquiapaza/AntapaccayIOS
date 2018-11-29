@@ -27,7 +27,7 @@ class PartidaCargaViewController: UIViewController {
         
         let parametres : Parameters = [
             "numeroGuia" : numeroGuia.text!,
-            "estadoTransporte" :"3"
+            "estadoTransporte" :"1"
         ]
         
         Alamofire.request(BUSQUEDA_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
@@ -140,7 +140,7 @@ class PartidaCargaViewController: UIViewController {
             "nombreConductor" : lista[0].getNombreConductor(),
             "servicioExpreso" : lista[0].getServicioExpreso(),
             "precio" : lista[0].getPrecio(),
-            "estadoTransporte" : lista[0].getEstadoTransporte(),// este cambiar
+            "estadoTransporte" : 2,// este cambiar
             "codigoConfiguracionRemolque" : lista[0].getCodigoConfiguracionRemolque(),
             "configuracionRemolque": lista[0].getConfiguracionRemolque(),
             "fechaInicio" : obtenerFecha(),

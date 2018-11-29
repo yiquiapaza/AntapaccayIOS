@@ -152,7 +152,7 @@ class SeguimientoCargaViewController: UIViewController {
                                     //item.setId(id: ordenDetalle[ID] as! String)
                                     item.setNumeroItem(numeroItem: ordenDetalle[NUMERO_ITEM] as! String)
                                     item.setNombreProoveedor(nombreProveedor: ordenDetalle[NOMBRE_PROVEEDOR] as! String)
-                                    item.setDescripcion(descripcion: ordenDetalle[DESCRIPCION] as! String)
+                                    item.setDescripcion(descripcion: ordenDetalle[DESCRIPCION] as? String ?? "")
                                     item.setUnidad(unidad: ordenDetalle[UNIDAD] as! String)
                                     item.setAlmacen(almacen: ordenDetalle[ALMACEN] as! String)
                                     cantidad_po = ordenDetalle[CANTIDAD_PO] as! Int
