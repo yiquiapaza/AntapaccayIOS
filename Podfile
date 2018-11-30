@@ -9,7 +9,7 @@ target 'AntapaccayQR' do
   pod 'Alamofire', '~> 4.7'
   pod 'QRCoder', '~> 1.0'
   pod 'SwiftSpinner', '~> 1.6'
-  pod 'SwiftMessages'
+  pod 'SwiftMessages', '~> 6.0'
   pod 'QRCodeScannerFramework', '~> 1.0'
   target 'AntapaccayQRTests' do
     inherit! :search_paths

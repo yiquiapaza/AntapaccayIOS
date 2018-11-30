@@ -71,12 +71,12 @@ public class QRCodeGenerator : NSObject {
     private func createNonInterpolatedImageFromCIImage(image:CIImage, size:CGSize) -> QRImage? {
     
         #if (arch(i386) || arch(x86_64))
-        let contextOptions = [CIContextOption.useSoftwareRenderer : false]
+        let contextOptions = [convertFromCIContextOption(CIContextOption.useSoftwareRenderer) : false]
         #else
         let contextOptions = [kCIContextUseSoftwareRenderer : true]
         #endif
     
-        guard let cgImage = CIContext(options: contextOptions).createCGImage(image, from: image.extent) else { return nil }
+        guard let cgImage = CIContext(options: convertToOptionalCIContextOptionDictionary(contextOptions)).createCGImage(image, from: image.extent) else { return nil }
         UIGraphicsBeginImageContextWithOptions(size,false,0.0)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         
@@ -114,4 +114,15 @@ public class QRCodeGenerator : NSObject {
     }
     #endif
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromCIContextOption(_ input: CIContextOption) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalCIContextOptionDictionary(_ input: [String: Any]?) -> [CIContextOption: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (CIContextOption(rawValue: key), value)})
 }
