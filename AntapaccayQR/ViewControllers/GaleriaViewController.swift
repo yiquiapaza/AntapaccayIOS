@@ -36,20 +36,31 @@ class GaleriaViewController: UIViewController,UICollectionViewDelegate, UICollec
         //layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
         //self.collectionFotos = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         
-        self.collectionFotos.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
-        self.view.addSubview(self.collectionFotos)
+        //self.collectionFotos.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+        self.collectionFotos.register(UINib(nibName: "CellComponentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        //self.view.addSubview(self.collectionFotos)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionFotos.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.autoresizesSubviews = true
-        cell.contentView.addSubview(listaImagenes[indexPath.row])
+        //let row = listaImagenes[indexPath.row]
+        let cell = self.collectionFotos.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CellComponentCollectionViewCell
+        //cell.autoresizesSubviews = true
+        //cell.contentView.addSubview(listaImagenes[indexPath.row])
+        //cell.imageView = listaImagenes[indexPath.row]
+        cell.imageView = self.listaImagenes[indexPath.row]
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listaImagenes.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = collectionView.frame.size.width
+        return CGSize(width: cellWidth, height: cellWidth*0.8)
+    
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }

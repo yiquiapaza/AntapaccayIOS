@@ -2317,20 +2317,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EBi-xi-JD2">
-                                <rect key="frame" x="16" y="134" width="343" height="348"/>
+                                <rect key="frame" x="16" y="134" width="343" height="465"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fwi-0W-ehU">
-                                    <size key="itemSize" width="280" height="342"/>
+                                    <size key="itemSize" width="289" height="459"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SLy-5i-ZTC">
-                                        <rect key="frame" x="31.5" y="0.0" width="280" height="342"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="SLy-5i-ZTC">
+                                        <rect key="frame" x="27" y="0.0" width="289" height="459"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="342"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="289" height="459"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>
@@ -2342,8 +2342,8 @@
                             <constraint firstItem="EBi-xi-JD2" firstAttribute="top" secondItem="OM9-35-Rhd" secondAttribute="bottom" constant="30" id="6xf-zK-mYA"/>
                             <constraint firstItem="OM9-35-Rhd" firstAttribute="top" secondItem="SzH-xI-425" secondAttribute="top" id="FwB-21-trj"/>
                             <constraint firstItem="SzH-xI-425" firstAttribute="trailing" secondItem="EBi-xi-JD2" secondAttribute="trailing" constant="16" id="VDp-cg-rfR"/>
+                            <constraint firstItem="SzH-xI-425" firstAttribute="bottom" secondItem="EBi-xi-JD2" secondAttribute="bottom" constant="19" id="ivR-5N-lKP"/>
                             <constraint firstItem="EBi-xi-JD2" firstAttribute="leading" secondItem="SzH-xI-425" secondAttribute="leading" constant="16" id="r6D-Cr-bDP"/>
-                            <constraint firstItem="SzH-xI-425" firstAttribute="bottom" secondItem="EBi-xi-JD2" secondAttribute="bottom" constant="136" id="soq-RI-V3q"/>
                             <constraint firstItem="OM9-35-Rhd" firstAttribute="trailing" secondItem="SzH-xI-425" secondAttribute="trailing" id="w3W-0u-t02"/>
                             <constraint firstItem="OM9-35-Rhd" firstAttribute="leading" secondItem="SzH-xI-425" secondAttribute="leading" id="wZb-fH-A28"/>
                         </constraints>

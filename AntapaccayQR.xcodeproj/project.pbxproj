@@ -46,6 +46,8 @@
 		FBD3C24A21AC7A7D00221C3C /* TerminarBultoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3C24921AC7A7D00221C3C /* TerminarBultoViewController.swift */; };
 		FBD3C24C21ACAA8C00221C3C /* TabBarUnidadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3C24B21ACAA8C00221C3C /* TabBarUnidadViewController.swift */; };
 		FBD3C24E21ACAB5900221C3C /* UnidadTransporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD3C24D21ACAB5900221C3C /* UnidadTransporteViewController.swift */; };
+		FBDAB0A021B1D0C4006C15F6 /* CellComponentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDAB09E21B1D0C4006C15F6 /* CellComponentCollectionViewCell.swift */; };
+		FBDAB0A121B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDAB09F21B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib */; };
 		FBE7D0F021AEEE7600590AB3 /* SalidaCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0EF21AEEE7600590AB3 /* SalidaCargaViewController.swift */; };
 		FBE7D0F221AEEE8500590AB3 /* PartidaCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */; };
 		FBE7D0F421AF121800590AB3 /* Entrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7D0F321AF121800590AB3 /* Entrada.swift */; };
@@ -122,6 +124,8 @@
 		FBD3C24921AC7A7D00221C3C /* TerminarBultoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarBultoViewController.swift; sourceTree = "<group>"; };
 		FBD3C24B21ACAA8C00221C3C /* TabBarUnidadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUnidadViewController.swift; sourceTree = "<group>"; };
 		FBD3C24D21ACAB5900221C3C /* UnidadTransporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadTransporteViewController.swift; sourceTree = "<group>"; };
+		FBDAB09E21B1D0C4006C15F6 /* CellComponentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponentCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBDAB09F21B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComponentCollectionViewCell.xib; sourceTree = "<group>"; };
 		FBE7D0EF21AEEE7600590AB3 /* SalidaCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalidaCargaViewController.swift; sourceTree = "<group>"; };
 		FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartidaCargaViewController.swift; sourceTree = "<group>"; };
 		FBE7D0F321AF121800590AB3 /* Entrada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrada.swift; sourceTree = "<group>"; };
@@ -260,6 +264,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		FBDAB09B21B1CF49006C15F6 /* Commponents */ = {
+			isa = PBXGroup;
+			children = (
+				FBDAB09E21B1D0C4006C15F6 /* CellComponentCollectionViewCell.swift */,
+				FBDAB09F21B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib */,
+			);
+			path = Commponents;
+			sourceTree = "<group>";
+		};
 		FBE8135D2187942A00669625 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +298,7 @@
 		FBE813682187942A00669625 /* AntapaccayQR */ = {
 			isa = PBXGroup;
 			children = (
+				FBDAB09B21B1CF49006C15F6 /* Commponents */,
 				FB735B2D2195DC9F00707D9D /* Dtos */,
 				FB3F04C52188FE0700287DAB /* Models */,
 				FB7C9EDF2188D16400F0466F /* ViewControllers */,
@@ -433,6 +447,7 @@
 			files = (
 				FBE813742187942A00669625 /* LaunchScreen.storyboard in Resources */,
 				FBE813712187942A00669625 /* Assets.xcassets in Resources */,
+				FBDAB0A121B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib in Resources */,
 				FBE8136F2187942A00669625 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +599,7 @@
 				FB2FAB1621B076A1003AB115 /* Llegada.swift in Sources */,
 				FBD3C24E21ACAB5900221C3C /* UnidadTransporteViewController.swift in Sources */,
 				FBD3C24221AC5A4A00221C3C /* TabBarBultoViewController.swift in Sources */,
+				FBDAB0A021B1D0C4006C15F6 /* CellComponentCollectionViewCell.swift in Sources */,
 				FBE7D0F421AF121800590AB3 /* Entrada.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

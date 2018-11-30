@@ -290,7 +290,7 @@ class SeguimientoCargaViewController: UIViewController {
             nuevoItem.setTransportista(transportista: CONST_TRANSPORTISTA)
             nuevoItem.setVerificadoAlmacen(verificadoAlmacen: false)
             self._listaItem.append(nuevoItem)
-            self.cantidadItems.text = String(self._listaItem.count)
+            //self.cantidadItems.text = String(self._listaItem.count)
             if self._cantidadesItem.keys.contains(self._numeroItem){
                 if ( Int(self._cantidadesItem[self._numeroItem]!)! >= Int(nuevoItem.getCantidad())! ) {
                     self._cantidadesItem[self._numeroItem] = String( Int(self._cantidadesItem[self._numeroItem]!)! + Int(self.cantidadRequerida.text!)! )
