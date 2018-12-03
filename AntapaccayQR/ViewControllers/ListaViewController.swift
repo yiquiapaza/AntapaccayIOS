@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftMessages
 
 class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewDataSource {
     
@@ -75,14 +74,14 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
     
     @objc func quitar(_ sneder: UIButton){
         if index == -1 {
-            let error = MessageView.viewFromNib(layout: .tabView)
-            error.configureTheme(.error)
-            error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
-            error.button?.isHidden = true
-            var configError = SwiftMessages.defaultConfig
-            configError.presentationStyle = .center
-            configError.duration = .seconds(seconds: 2)
-            SwiftMessages.show(config: configError , view:error)
+            //let error = MessageView.viewFromNib(layout: .tabView)
+            //error.configureTheme(.error)
+            //error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
+            //error.button?.isHidden = true
+            //var configError = SwiftMessages.defaultConfig
+            //configError.presentationStyle = .center
+            //configError.duration = .seconds(seconds: 2)
+            //SwiftMessages.show(config: configError , view:error)
         }
         else{
             print("Elimine la filas")

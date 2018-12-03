@@ -227,9 +227,9 @@
 		FB7C9EDD2188D14000F0466F /* Constans */ = {
 			isa = PBXGroup;
 			children = (
+				FB94C468218A4EF1000E6684 /* Util.swift */,
 				FB7C9EE22188D47700F0466F /* ConstSegen.swift */,
 				FB94C466218A4EA6000E6684 /* RoutesApi.swift */,
-				FB94C468218A4EF1000E6684 /* Util.swift */,
 			);
 			path = Constans;
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 		FBE813682187942A00669625 /* AntapaccayQR */ = {
 			isa = PBXGroup;
 			children = (
-				FBDAB09B21B1CF49006C15F6 /* Commponents */,
 				FB735B2D2195DC9F00707D9D /* Dtos */,
+				FBDAB09B21B1CF49006C15F6 /* Commponents */,
 				FB3F04C52188FE0700287DAB /* Models */,
 				FB7C9EDF2188D16400F0466F /* ViewControllers */,
 				FB7C9EDD2188D14000F0466F /* Constans */,
@@ -342,7 +342,7 @@
 				FBE813622187942A00669625 /* Sources */,
 				FBE813632187942A00669625 /* Frameworks */,
 				FBE813642187942A00669625 /* Resources */,
-				619F8547E0FB52FBFAE21440 /* [CP] Embed Pods Frameworks */,
+				BF8E38F8516A5A14C0AFAE12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -487,34 +487,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		619F8547E0FB52FBFAE21440 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCodeScannerFramework/QRCodeScannerFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCoder/QRCoder.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeScannerFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCoder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BAC71F528C3C0AF20EFE0CA8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -531,6 +503,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF8E38F8516A5A14C0AFAE12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeScannerFramework/QRCodeScannerFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCoder/QRCoder.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeScannerFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCoder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0B16455C06E4AA921A667C3 /* [CP] Check Pods Manifest.lock */ = {

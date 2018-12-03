@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
-import SwiftMessages
 
 class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -113,14 +112,14 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     
     @objc func quitar(_ sneder: UIButton){
         if index == -1 {
-            let error = MessageView.viewFromNib(layout: .tabView)
-            error.configureTheme(.error)
-            error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
-            error.button?.isHidden = true
-            var configError = SwiftMessages.defaultConfig
-            configError.presentationStyle = .center
-            configError.duration = .seconds(seconds: 2)
-            SwiftMessages.show(config: configError , view:error)
+            //let error = MessageView.viewFromNib(layout: .tabView)
+            //error.configureTheme(.error)
+            //error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
+            //error.button?.isHidden = true
+            //var configError = SwiftMessages.defaultConfig
+            //configError.presentationStyle = .center
+            //configError.duration = .seconds(seconds: 2)
+            //SwiftMessages.show(config: configError , view:error)
         }
         else{
             print("Elimine la filas")

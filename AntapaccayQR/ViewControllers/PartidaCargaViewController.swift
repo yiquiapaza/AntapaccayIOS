@@ -91,6 +91,10 @@ class PartidaCargaViewController: UIViewController {
                 }
         }
     }
+    //paleta arreglar
+    //areglar la lista
+    //los botones primera vista
+    //defecto de los dropdown
     @IBAction func registrarPartida(_ sender: Any) {
         
         let transporteRecorrido : Parameters = [

@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
-import SwiftMessages
 
 class SalidaCargaViewController: UIViewController {
 
@@ -76,14 +75,14 @@ class SalidaCargaViewController: UIViewController {
                         print(data)
                         if self.lista.isEmpty {
                             print("no hay nada ????")
-                            let error = MessageView.viewFromNib(layout: .tabView)
-                            error.configureTheme(.error)
-                            error.configureContent(title:"Error en la buqueda",body:"verifique si la guia es valida" )
-                            error.button?.isHidden = true
-                            var configError = SwiftMessages.defaultConfig
-                            configError.presentationStyle = .center
-                            configError.duration = .seconds(seconds: 2)
-                            SwiftMessages.show(config: configError , view:error)
+                            //let error = MessageView.viewFromNib(layout: .tabView)
+                            //error.configureTheme(.error)
+                            //error.configureContent(title:"Error en la buqueda",body:"verifique si la guia es valida" )
+                            //error.button?.isHidden = true
+                            //var configError = SwiftMessages.defaultConfig
+                            //configError.presentationStyle = .center
+                            //configError.duration = .seconds(seconds: 2)
+                            //SwiftMessages.show(config: configError , view:error)
                         }
                         else {
                             self.almacenDestino.text = self.lista[0].getNombreDestino()
@@ -113,36 +112,36 @@ class SalidaCargaViewController: UIViewController {
                                         }
                                         if self.llegada.isEmpty {
                                             print("no hay nada ????")
-                                            let error = MessageView.viewFromNib(layout: .tabView)
-                                            error.configureTheme(.warning)
-                                            error.configureContent(title:"El transporte todavia no ha salido de almacen",body:"verifique si la guia es valida caso contrario" )
-                                            error.button?.isHidden = true
-                                            var configError = SwiftMessages.defaultConfig
-                                            configError.presentationStyle = .center
-                                            configError.duration = .seconds(seconds: 2)
-                                            SwiftMessages.show(config: configError , view:error)
+                                            //let error = MessageView.viewFromNib(layout: .tabView)
+                                            //error.configureTheme(.warning)
+                                            //error.configureContent(title:"El transporte todavia no ha salido de almacen",body:"verifique si la guia es valida caso contrario" )
+                                            //error.button?.isHidden = true
+                                            //var configError = SwiftMessages.defaultConfig
+                                            //configError.presentationStyle = .center
+                                            //configError.duration = .seconds(seconds: 2)
+                                            //SwiftMessages.show(config: configError , view:error)
 
                                         }
                                         else {
                                             if self.llegada[0].getTipoOperacion() == "PARTIDA"{
-                                                let error = MessageView.viewFromNib(layout: .tabView)
-                                                error.configureTheme(.warning)
-                                                error.configureContent(title:"Registro de Salida",body:"no se registro salida de " + self.llegada[0].getNombrePuntoControl() )
-                                                error.button?.isHidden = true
-                                                var configError = SwiftMessages.defaultConfig
-                                                configError.presentationStyle = .center
-                                                configError.duration = .seconds(seconds: 2)
-                                                SwiftMessages.show(config: configError , view:error)
+                                                //let error = MessageView.viewFromNib(layout: .tabView)
+                                                //error.configureTheme(.warning)
+                                                //error.configureContent(title:"Registro de Salida",body:"no se registro salida de " + self.llegada[0].getNombrePuntoControl() )
+                                                //error.button?.isHidden = true
+                                                //var configError = SwiftMessages.defaultConfig
+                                                //configError.presentationStyle = .center
+                                                //configError.duration = .seconds(seconds: 2)
+                                                //SwiftMessages.show(config: configError , view:error)
                                             }
                                             if (self.llegada[0].getCodigoPuntoControl() == "008" || self.llegada[0].getCodigoPuntoControl() == "ALMC"){
-                                                let error = MessageView.viewFromNib(layout: .tabView)
-                                                error.configureTheme(.warning)
-                                                error.configureContent(title:"Registro de Salida",body:"Ya se registro la llegada " + self.llegada[0].getNombrePuntoControl() )
-                                                error.button?.isHidden = true
-                                                var configError = SwiftMessages.defaultConfig
-                                                configError.presentationStyle = .center
-                                                configError.duration = .seconds(seconds: 2)
-                                                SwiftMessages.show(config: configError , view:error)
+                                                //let error = MessageView.viewFromNib(layout: .tabView)
+                                                //error.configureTheme(.warning)
+                                                //error.configureContent(title:"Registro de Salida",body:"Ya se registro la llegada " + self.llegada[0].getNombrePuntoControl() )
+                                                //error.button?.isHidden = true
+                                                //var configError = SwiftMessages.defaultConfig
+                                                //configError.presentationStyle = .center
+                                                //configError.duration = .seconds(seconds: 2)
+                                                //SwiftMessages.show(config: configError , view:error)
                                             }
                                             else {
                                                 self.llegadaButton.isEnabled = false

@@ -3,9 +3,6 @@ PODS:
   - DropDown (2.3.12)
   - QRCoder (1.0.0)
   - QRCodeScannerFramework (1.0.2)
-  - SwiftMessages (6.0.0):
-    - SwiftMessages/App (= 6.0.0)
-  - SwiftMessages/App (6.0.0)
   - SwiftSpinner (1.6.2)
 
 DEPENDENCIES:
@@ -13,7 +10,6 @@ DEPENDENCIES:
   - DropDown (~> 2.3.2)
   - QRCoder (~> 1.0)
   - QRCodeScannerFramework (~> 1.0)
-  - SwiftMessages (~> 6.0)
   - SwiftSpinner (~> 1.6)
 
 SPEC REPOS:
@@ -22,7 +18,6 @@ SPEC REPOS:
     - DropDown
     - QRCoder
     - QRCodeScannerFramework
-    - SwiftMessages
     - SwiftSpinner
 
 SPEC CHECKSUMS:
@@ -30,9 +25,8 @@ SPEC CHECKSUMS:
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   QRCoder: 488f6869fb89ffcc3de3b4de2dabd200a6573f3c
   QRCodeScannerFramework: f758083c97f42034c802dea95064c445c97c4b3f
-  SwiftMessages: da7c981256a65b3e58022d9027a36584cf4eccf5
   SwiftSpinner: 3a4c6dea425e5a31b908a8b1dd5dcd1ad4d96340
 
-PODFILE CHECKSUM: b0293f343ef76b59393267adcc38dd0dbfd7933c
+PODFILE CHECKSUM: 6caee3cc6c1a4df58148d88066fd7f2e55c9866f
 
 COCOAPODS: 1.5.2
