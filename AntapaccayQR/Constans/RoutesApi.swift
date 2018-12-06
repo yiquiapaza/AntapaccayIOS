@@ -25,3 +25,6 @@ let ALMACEN_GUIA_ENTRADA: String = BASE_URL + "Bulto/GetBultoByGuiaAntapaccay"
 let REGISTRO_ENTRADA: String = BASE_URL + "TransporteConsolidado/UpdateTCTVTR"
 let ESTADO_RECORRIDO: String = BASE_URL + "TransporteRecorrido/GetTransporteRecorrido"
 let REGISTRO_LLEGADA: String = BASE_URL + "TransporteConsolidado/UpdateTCandTRinsTP"
+
+
+let OBTENER_GUIAS: String = BASE_URL + "TransporteRecorrido/GetSegComItemReporte"
