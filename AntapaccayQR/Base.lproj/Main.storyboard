@@ -1736,10 +1736,10 @@
             </objects>
             <point key="canvasLocation" x="4540" y="846"/>
         </scene>
-        <!--View Controller-->
+        <!--Almacen View Controller-->
         <scene sceneID="am5-sW-O2I">
             <objects>
-                <viewController id="JMH-pX-CrJ" sceneMemberID="viewController">
+                <viewController id="JMH-pX-CrJ" customClass="AlmacenViewController" customModule="AntapaccayQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Nw-gg-f5P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1771,6 +1771,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-OW-egy">
                                 <rect key="frame" x="16" y="173" width="343" height="30"/>
                                 <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="obtenerGuias:" destination="JMH-pX-CrJ" eventType="touchUpInside" id="L0X-Yp-HKo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1794,6 +1797,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iae-TH-HBq"/>
                     </view>
+                    <connections>
+                        <outlet property="buscarGuia" destination="3Za-or-XO4" id="sAa-4Y-QUg"/>
+                        <outlet property="tableAlamacen" destination="CcC-bO-FcS" id="Mgl-eC-Vtd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jt2-yp-DIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

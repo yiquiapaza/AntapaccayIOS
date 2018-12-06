@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="191" id="KGk-i7-Jjw" customClass="AlmacenComponentTableViewCell" customModule="AntapaccayQR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="190.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEn-iz-lBy">
+                        <rect key="frame" x="16" y="11" width="288" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero Producto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ws-cs-nT3">
+                        <rect key="frame" x="16" y="37" width="114" height="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="textColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Preveedor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoq-0n-4M7">
+                        <rect key="frame" x="16" y="61" width="198" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="NmG-Lf-vWQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Almacen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96B-vz-ofa">
+                        <rect key="frame" x="16" y="91" width="198" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="fbf-Lr-2ns"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transporte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amf-0a-4Tr">
+                        <rect key="frame" x="16" y="126" width="198" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="h57-mw-ocj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mni-sw-WMR">
+                        <rect key="frame" x="222" y="53" width="82" height="99"/>
+                        <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="99" id="qdj-Q1-5wM"/>
+                            <constraint firstAttribute="width" constant="82" id="xd4-al-wfL"/>
+                        </constraints>
+                        <state key="normal" image="icons8-checkmark_filled"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="amf-0a-4Tr" firstAttribute="top" secondItem="96B-vz-ofa" secondAttribute="bottom" constant="15" id="2W0-Ar-nBk"/>
+                    <constraint firstAttribute="trailing" secondItem="4ws-cs-nT3" secondAttribute="trailing" constant="190" id="3HE-6s-trt"/>
+                    <constraint firstItem="amf-0a-4Tr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7oE-zN-Jp8"/>
+                    <constraint firstAttribute="trailing" secondItem="kEn-iz-lBy" secondAttribute="trailing" constant="16" id="DcO-t2-5eT"/>
+                    <constraint firstItem="Mni-sw-WMR" firstAttribute="leading" secondItem="amf-0a-4Tr" secondAttribute="trailing" constant="8" id="ELM-KH-3hY"/>
+                    <constraint firstItem="kEn-iz-lBy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="KDX-6c-c7S"/>
+                    <constraint firstItem="kEn-iz-lBy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="L9l-eT-Qp7"/>
+                    <constraint firstAttribute="bottom" secondItem="Mni-sw-WMR" secondAttribute="bottom" constant="38.5" id="Nx6-F1-VVN"/>
+                    <constraint firstItem="96B-vz-ofa" firstAttribute="top" secondItem="uoq-0n-4M7" secondAttribute="bottom" constant="10" id="SeP-GY-MjI"/>
+                    <constraint firstItem="uoq-0n-4M7" firstAttribute="top" secondItem="4ws-cs-nT3" secondAttribute="bottom" constant="8" id="WZf-o9-KEu"/>
+                    <constraint firstItem="Mni-sw-WMR" firstAttribute="top" secondItem="kEn-iz-lBy" secondAttribute="bottom" constant="24" id="au2-pJ-w66"/>
+                    <constraint firstItem="Mni-sw-WMR" firstAttribute="leading" secondItem="uoq-0n-4M7" secondAttribute="trailing" constant="8" id="bEQ-Yr-XVb"/>
+                    <constraint firstItem="uoq-0n-4M7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bPK-o6-Cys"/>
+                    <constraint firstItem="Mni-sw-WMR" firstAttribute="leading" secondItem="96B-vz-ofa" secondAttribute="trailing" constant="8" id="ceS-mp-zxV"/>
+                    <constraint firstItem="4ws-cs-nT3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="e42-Og-jc3"/>
+                    <constraint firstAttribute="trailing" secondItem="Mni-sw-WMR" secondAttribute="trailing" constant="16" id="fOa-D7-l4i"/>
+                    <constraint firstItem="96B-vz-ofa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xEK-hL-QTg"/>
+                    <constraint firstItem="4ws-cs-nT3" firstAttribute="top" secondItem="kEn-iz-lBy" secondAttribute="bottom" constant="8" id="yq2-lN-DoB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="buttonConfirm" destination="Mni-sw-WMR" id="n5v-BX-20l"/>
+                <outlet property="nombreAlmacen" destination="96B-vz-ofa" id="vBV-3z-Nzj"/>
+                <outlet property="nombreProveedor" destination="uoq-0n-4M7" id="yng-vS-gxt"/>
+                <outlet property="nombreTransporte" destination="amf-0a-4Tr" id="gK9-w6-VAc"/>
+                <outlet property="numeroItem" destination="kEn-iz-lBy" id="HLt-i6-gW3"/>
+                <outlet property="numeroProducto" destination="4ws-cs-nT3" id="lAs-OC-xNN"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="219.94002998500753"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icons8-checkmark_filled" width="25" height="25"/>
+    </resources>
+</document>

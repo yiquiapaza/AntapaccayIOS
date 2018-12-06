@@ -27,6 +27,9 @@
 		FB345CFA21ADC53500B5BF5E /* DataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB345CF921ADC53500B5BF5E /* DataDTO.swift */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
+		FB43FD2D21B9871A00ABA054 /* AlmacenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */; };
+		FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43FD3221B9882700ABA054 /* AlmacenComponentTableViewCell.swift */; };
+		FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB43FD3321B9882700ABA054 /* AlmacenComponentTableViewCell.xib */; };
 		FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB491CB421975A3300B0CC29 /* QRViewController.swift */; };
 		FB5738BD21B8408500C22703 /* CellComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5738BB21B8408500C22703 /* CellComponentTableViewCell.swift */; };
 		FB5738BE21B8408500C22703 /* CellComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */; };
@@ -109,6 +112,9 @@
 		FB345CF921ADC53500B5BF5E /* DataDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDTO.swift; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmacenViewController.swift; sourceTree = "<group>"; };
+		FB43FD3221B9882700ABA054 /* AlmacenComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmacenComponentTableViewCell.swift; sourceTree = "<group>"; };
+		FB43FD3321B9882700ABA054 /* AlmacenComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlmacenComponentTableViewCell.xib; sourceTree = "<group>"; };
 		FB491CB421975A3300B0CC29 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		FB5738BB21B8408500C22703 /* CellComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponentTableViewCell.swift; sourceTree = "<group>"; };
 		FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComponentTableViewCell.xib; sourceTree = "<group>"; };
@@ -270,6 +276,7 @@
 				FBE7D0EF21AEEE7600590AB3 /* SalidaCargaViewController.swift */,
 				FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */,
 				FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */,
+				FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +288,8 @@
 				FBDAB09F21B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib */,
 				FB5738BB21B8408500C22703 /* CellComponentTableViewCell.swift */,
 				FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */,
+				FB43FD3221B9882700ABA054 /* AlmacenComponentTableViewCell.swift */,
+				FB43FD3321B9882700ABA054 /* AlmacenComponentTableViewCell.xib */,
 			);
 			path = Commponents;
 			sourceTree = "<group>";
@@ -460,6 +469,7 @@
 				FBE813742187942A00669625 /* LaunchScreen.storyboard in Resources */,
 				FBE813712187942A00669625 /* Assets.xcassets in Resources */,
 				FB5738BE21B8408500C22703 /* CellComponentTableViewCell.xib in Resources */,
+				FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */,
 				FBDAB0A121B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib in Resources */,
 				FBE8136F2187942A00669625 /* Main.storyboard in Resources */,
 			);
@@ -570,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */,
+				FB43FD2D21B9871A00ABA054 /* AlmacenViewController.swift in Sources */,
 				FB142BF62194CDA100FC9FB6 /* Bulto.swift in Sources */,
 				FBD3C24C21ACAA8C00221C3C /* TabBarUnidadViewController.swift in Sources */,
 				FBD3C24821AC5CEA00221C3C /* DimensionesBultoViewController.swift in Sources */,
@@ -597,6 +608,7 @@
 				FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
 				FB5738C221B853F800C22703 /* Reporte.swift in Sources */,
+				FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */,
 				FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */,
 				FBD3C24621AC5AEE00221C3C /* GaleriaBultoViewController.swift in Sources */,
 				FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */,

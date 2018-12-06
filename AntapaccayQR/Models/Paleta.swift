@@ -11,6 +11,7 @@ class Paleta  {
     private var Id:String
     private var IdPaleta: String
     private var IdAlmacenRecepcion:String
+    private var AlmacenDestino:String
     private var NumeroBulto: Int
     private var Codigo: String
     private var NombreProveedor: String
@@ -34,6 +35,15 @@ class Paleta  {
     private var Componente : Bool
     private var UnidadCompleta: Bool
     private var RowVersion : String
+    
+    private var OS : String
+    private var PR : String
+    private var Plaqueteo: String
+    private var CampoID: String
+    private var Comentario: String
+    private var ComentarioID: String
+    private var IdDiscrepancia: String
+    private var CampoDiscrepancia: String
     
     init() {
         self.Id = VACIO
@@ -62,6 +72,16 @@ class Paleta  {
         self.Componente = false
         self.UnidadCompleta = false
         self.RowVersion = VACIO
+        self.AlmacenDestino = VACIO
+        
+        self.OS = VACIO
+        self.PR = VACIO
+        self.Plaqueteo = VACIO
+        self.CampoID = VACIO
+        self.Comentario = VACIO
+        self.ComentarioID = VACIO
+        self.IdDiscrepancia = VACIO
+        self.CampoDiscrepancia = VACIO
     }
     
     func setId(Id:String) -> Void {
@@ -244,5 +264,68 @@ class Paleta  {
     }
     func getRowVersion() -> String {
         return self.RowVersion
+    }
+    
+    func setAlmacenDestino(AlmacenDestino: String) -> Void {
+        self.AlmacenDestino = AlmacenDestino
+    }
+    func getAlmacenDestino() -> String {
+        return self.AlmacenDestino
+    }
+    
+    func setOS(OS:String) -> Void {
+        self.OS = OS
+    }
+    func getOS() -> String {
+        return self.OS
+    }
+    
+    func setPR(PR:String) -> Void {
+        self.PR = PR
+    }
+    func getPR() -> String {
+        return self.PR
+    }
+    
+    func setPlaqueteo(Plaqueteo: String) -> Void {
+        self.Plaqueteo = Plaqueteo
+    }
+    func getPlaqueteo() -> String {
+        return self.Plaqueteo
+    }
+    
+    func setCampoID(CampoID: String) -> Void {
+        self.CampoID = CampoID
+    }
+    func getCampoId() -> String {
+        return self.CampoID
+    }
+    
+    func setComentario(Comentario:String) -> Void {
+        self.Comentario = Comentario
+    }
+    func getComentario() -> String {
+        return self.Comentario
+    }
+    
+    func setComentarioID(ComentarioID:String) -> Void {
+        self.ComentarioID = ComentarioID
+    }
+    func getComentarioID() -> String {
+        return self.ComentarioID
+    }
+    
+    func setIdDiscrepancia(IdDiscrepancia: String) -> Void {
+        self.IdDiscrepancia = IdDiscrepancia
+    }
+    func getIdDiscrepancia() -> String {
+        return self.IdDiscrepancia
+    }
+    
+    func setCampoDiscrepancia(CampoDiscrepancia: String) -> Void {
+        self.CampoDiscrepancia  = CampoDiscrepancia
+    }
+    func getCampoDiscrepancia() -> String {
+        return self.CampoDiscrepancia
     }
 }

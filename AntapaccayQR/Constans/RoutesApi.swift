@@ -28,3 +28,5 @@ let REGISTRO_LLEGADA: String = BASE_URL + "TransporteConsolidado/UpdateTCandTRin
 
 
 let OBTENER_GUIAS: String = BASE_URL + "TransporteRecorrido/GetSegComItemReporte"
+let OBTENER_OBJECTO_GUI: String = BASE_URL + "GuiaAntapaccay/GetGuiaAntapaccayById"
+let OBTENER_BULTO_BY_GUIA: String = BASE_URL + "Bulto/GetListaBultoByGuiaAntapaccay"
