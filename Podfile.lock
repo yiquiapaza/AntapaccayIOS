@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.3)
+  - Alamofire (4.8.0)
   - DropDown (2.3.12)
   - SwiftSpinner (1.6.2)
 
@@ -15,7 +15,7 @@ SPEC REPOS:
     - SwiftSpinner
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   SwiftSpinner: 3a4c6dea425e5a31b908a8b1dd5dcd1ad4d96340
 

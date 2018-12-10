@@ -26,23 +26,38 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
         tablaBulto.delegate = self
         tablaBulto.dataSource = self
         tablaBulto.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        
         self.view.addSubview(tablaBulto)
     }
     
     @IBAction func findBulto(_ sender: UIButton) {
-        let parametres : Parameters = [
-            "listaOrdenes": "'" + getBulto.text! + "'",
-            "tipoOrden": "-",
-            "consolidado": "T"
-        ]
+        
+        var parametres = Parameters()
+        if QR_CONST_PALETA == VACIO {
+            parametres = [
+                "logical": "AND",
+                "PropertyName": "codigo",
+                "Value": getBulto.text!,
+                "Operator": "Equals"
+            ]
+        }
+        else {
+            getBulto.text! = QR_CONST_PALETA
+            parametres = [
+                "logical" : "AND",
+                "PropertyName": "Id",
+                "Value": getBulto.text!,
+                "Operator": "Equals"
+            ]
+        }
         self.delay(secons: 3.0, completatio: {
             SwiftSpinner.show("Verificando API")
-            Alamofire.request(BUSQUEDA_BULTO, method: .post, parameters: parametres, encoding: JSONEncoding.default)
+            Alamofire.request(BUSQUEDA_BULTO_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                 .responseJSON() {
                     response in switch response.result{
                     case .success:
                         //print(response.result.value)
-                        let outList = response.result.value as! [Dictionary<String, AnyObject>]
+                        let outList = response.result.value as! [Dictionary<String, Any>]
                         for item in outList {
                             let nuevo = Paleta()
                             nuevo.setId(Id: item["Id"] as? String ?? "")

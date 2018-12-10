@@ -36,6 +36,8 @@
 		FB5738BE21B8408500C22703 /* CellComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */; };
 		FB5738C021B84F3600C22703 /* ReporteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */; };
 		FB5738C221B853F800C22703 /* Reporte.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5738C121B853F800C22703 /* Reporte.swift */; };
+		FB59B65321BEE29A006E1F2D /* PaletaQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59B65221BEE29A006E1F2D /* PaletaQRViewController.swift */; };
+		FB59B65521BEE2F6006E1F2D /* UnidadQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59B65421BEE2F6006E1F2D /* UnidadQRViewController.swift */; };
 		FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */; };
 		FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB735B302195E16E00707D9D /* ListaGuia.swift */; };
 		FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C9EE02188D17C00F0466F /* LoginViewController.swift */; };
@@ -122,6 +124,8 @@
 		FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComponentTableViewCell.xib; sourceTree = "<group>"; };
 		FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteUserViewController.swift; sourceTree = "<group>"; };
 		FB5738C121B853F800C22703 /* Reporte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporte.swift; sourceTree = "<group>"; };
+		FB59B65221BEE29A006E1F2D /* PaletaQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletaQRViewController.swift; sourceTree = "<group>"; };
+		FB59B65421BEE2F6006E1F2D /* UnidadQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadQRViewController.swift; sourceTree = "<group>"; };
 		FB735B2E2195DCBA00707D9D /* OrdenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenDTO.swift; sourceTree = "<group>"; };
 		FB735B302195E16E00707D9D /* ListaGuia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaGuia.swift; sourceTree = "<group>"; };
 		FB7C9EE02188D17C00F0466F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */,
 				FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */,
 				FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */,
+				FB59B65221BEE29A006E1F2D /* PaletaQRViewController.swift */,
+				FB59B65421BEE2F6006E1F2D /* UnidadQRViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,7 +372,7 @@
 				FBE813622187942A00669625 /* Sources */,
 				FBE813632187942A00669625 /* Frameworks */,
 				FBE813642187942A00669625 /* Resources */,
-				BF8E38F8516A5A14C0AFAE12 /* [CP] Embed Pods Frameworks */,
+				96C81A41085152A246CF1492 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -513,25 +519,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BAC71F528C3C0AF20EFE0CA8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AntapaccayQRTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF8E38F8516A5A14C0AFAE12 /* [CP] Embed Pods Frameworks */ = {
+		96C81A41085152A246CF1492 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -551,6 +539,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAC71F528C3C0AF20EFE0CA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AntapaccayQRTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0B16455C06E4AA921A667C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -604,10 +610,12 @@
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBD3C23C21AC1B4800221C3C /* Paleta.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
+				FB59B65321BEE29A006E1F2D /* PaletaQRViewController.swift in Sources */,
 				FB1A9D3121933C4C00F8ED32 /* TipoViewController.swift in Sources */,
 				FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
 				FB5738C221B853F800C22703 /* Reporte.swift in Sources */,
+				FB59B65521BEE2F6006E1F2D /* UnidadQRViewController.swift in Sources */,
 				FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */,
 				FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */,
 				FBD3C24621AC5AEE00221C3C /* GaleriaBultoViewController.swift in Sources */,

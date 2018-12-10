@@ -26,14 +26,29 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
     
     
     @IBAction func getUnidades(_ sender: Any) {
-        let parametres : Parameters = [
-            "listaOrdenes": "'" + unidades.text! + "'",
-            "tipoOrden": "N",
-            "consolidado": "T"
-        ]
+        
+        var parametres = Parameters()
+        
+        if QR_CONST_PALETA == VACIO {
+            parametres = [
+                "Logical": "AND",
+                "PropertyName": "codigo",
+                "Value": unidades.text!,
+                "Operator": "Equals"
+            ]
+        }
+        else{
+            unidades.text = QR_CONST_PALETA
+            parametres = [
+                "Logical":"AND",
+                "PropertyName": "Id",
+                "Value": unidades.text!,
+                "Operator": "Equals"
+            ]
+        }
         self.delay(secons: 3.0, completatio: {
             SwiftSpinner.show("Verificando API")
-            Alamofire.request(BUSQUEDA_PALETA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
+            Alamofire.request(BUSQUEDA_PALETA_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                 .responseJSON() {
                     response in switch response.result{
                     case .success:

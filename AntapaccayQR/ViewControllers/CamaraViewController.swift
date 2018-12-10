@@ -8,8 +8,7 @@
 
 import UIKit
 import AVFoundation
-//import QRCoder
-import QRCodeScannerFramework
+
 
 class CamaraViewController: UIViewController {
 //class CamaraViewController: QRCodeScannerViewController {

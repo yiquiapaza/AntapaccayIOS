@@ -32,3 +32,6 @@ let OBTENER_OBJECTO_GUI: String = BASE_URL + "GuiaAntapaccay/GetGuiaAntapaccayBy
 let OBTENER_BULTO_BY_GUIA: String = BASE_URL + "Bulto/GetListaBultoByGuiaAntapaccay"
 
 let UPDATE_BULTO: String = BASE_URL + "Bulto/UpdateList"
+
+let BUSQUEDA_BULTO_BY_ID: String = BASE_URL + "Bulto/GetBultoById"
+let BUSQUEDA_PALETA_BY_ID: String = BASE_URL + "PaletaConsolidada/GetPaletaConsolidadaById"

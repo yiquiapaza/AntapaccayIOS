@@ -97,3 +97,9 @@ var PESO_BULTO: String = ""
 var ALTO_BULTO: String = ""
 var ANCHO_BULTO: String = ""
 var LARGO_BULTO: String = ""
+
+
+
+
+var QR_CONST_PALETA: String = VACIO
+var QR_CONST_BULTO: String = VACIO
