@@ -1761,11 +1761,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CcC-bO-FcS">
-                                <rect key="frame" x="0.0" y="236" width="375" height="334"/>
+                                <rect key="frame" x="0.0" y="236" width="375" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktq-g1-Fax">
-                                <rect key="frame" x="16" y="604" width="343" height="30"/>
+                                <rect key="frame" x="16" y="590" width="343" height="30"/>
                                 <state key="normal" title="Buscar"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-OW-egy">
@@ -1775,22 +1775,32 @@
                                     <action selector="obtenerGuias:" destination="JMH-pX-CrJ" eventType="touchUpInside" id="L0X-Yp-HKo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-wz-kpr">
+                                <rect key="frame" x="16" y="628" width="343" height="30"/>
+                                <state key="normal" title="Click"/>
+                                <connections>
+                                    <segue destination="gqm-el-XUW" kind="show" id="WAK-Bc-Iap"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3Za-or-XO4" firstAttribute="leading" secondItem="iae-TH-HBq" secondAttribute="leading" constant="16" id="5kE-dq-svy"/>
-                            <constraint firstItem="iae-TH-HBq" firstAttribute="bottom" secondItem="ktq-g1-Fax" secondAttribute="bottom" constant="33" id="67y-LB-eSf"/>
                             <constraint firstItem="iae-TH-HBq" firstAttribute="trailing" secondItem="ktq-g1-Fax" secondAttribute="trailing" constant="16" id="6rA-L6-mcR"/>
                             <constraint firstItem="biW-wd-d3v" firstAttribute="trailing" secondItem="iae-TH-HBq" secondAttribute="trailing" id="BgP-Rz-inU"/>
+                            <constraint firstItem="eUJ-wz-kpr" firstAttribute="leading" secondItem="iae-TH-HBq" secondAttribute="leading" constant="16" id="JsG-Jd-lTo"/>
                             <constraint firstItem="MFe-OW-egy" firstAttribute="leading" secondItem="iae-TH-HBq" secondAttribute="leading" constant="16" id="PWH-6D-Szg"/>
+                            <constraint firstItem="iae-TH-HBq" firstAttribute="trailing" secondItem="eUJ-wz-kpr" secondAttribute="trailing" constant="16" id="UqB-3A-W38"/>
                             <constraint firstItem="iae-TH-HBq" firstAttribute="trailing" secondItem="MFe-OW-egy" secondAttribute="trailing" constant="16" id="V93-TS-fag"/>
                             <constraint firstItem="iae-TH-HBq" firstAttribute="trailing" secondItem="3Za-or-XO4" secondAttribute="trailing" constant="16" id="WLb-bV-330"/>
                             <constraint firstItem="ktq-g1-Fax" firstAttribute="leading" secondItem="iae-TH-HBq" secondAttribute="leading" constant="16" id="ZMk-gY-tmu"/>
                             <constraint firstItem="CcC-bO-FcS" firstAttribute="trailing" secondItem="iae-TH-HBq" secondAttribute="trailing" id="ZeI-NN-luS"/>
                             <constraint firstItem="CcC-bO-FcS" firstAttribute="top" secondItem="MFe-OW-egy" secondAttribute="bottom" constant="33" id="a1E-8I-Sjk"/>
+                            <constraint firstItem="iae-TH-HBq" firstAttribute="bottom" secondItem="eUJ-wz-kpr" secondAttribute="bottom" constant="9" id="avK-OL-T1w"/>
                             <constraint firstItem="ktq-g1-Fax" firstAttribute="top" secondItem="CcC-bO-FcS" secondAttribute="bottom" constant="34" id="dVb-bT-vtE"/>
                             <constraint firstItem="biW-wd-d3v" firstAttribute="leading" secondItem="iae-TH-HBq" secondAttribute="leading" id="f1z-cF-Ar9"/>
                             <constraint firstItem="MFe-OW-egy" firstAttribute="top" secondItem="3Za-or-XO4" secondAttribute="bottom" constant="15" id="hTB-Az-vZE"/>
+                            <constraint firstItem="eUJ-wz-kpr" firstAttribute="top" secondItem="ktq-g1-Fax" secondAttribute="bottom" constant="8" id="jhE-XK-ogh"/>
                             <constraint firstItem="biW-wd-d3v" firstAttribute="top" secondItem="iae-TH-HBq" secondAttribute="top" id="sY2-vt-nKS"/>
                             <constraint firstItem="3Za-or-XO4" firstAttribute="top" secondItem="biW-wd-d3v" secondAttribute="bottom" constant="24" id="t8J-Bt-xwA"/>
                             <constraint firstItem="CcC-bO-FcS" firstAttribute="leading" secondItem="iae-TH-HBq" secondAttribute="leading" id="wMO-Gg-86k"/>
@@ -1805,6 +1815,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jt2-yp-DIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2656.8000000000002" y="1280.5097451274364"/>
+        </scene>
+        <!--Lista Bultos View Controller-->
+        <scene sceneID="J7k-Oa-BCv">
+            <objects>
+                <viewController id="gqm-el-XUW" customClass="ListaBultosViewController" customModule="AntapaccayQR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1sn-7s-SZb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="my0-o5-BnH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F6k-5J-jFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3518" y="1807"/>
         </scene>
         <!--Salida Carga View Controller-->
         <scene sceneID="hKM-s0-5vS">

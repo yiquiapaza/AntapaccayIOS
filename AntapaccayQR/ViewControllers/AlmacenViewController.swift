@@ -8,10 +8,12 @@
 
 import UIKit
 import Alamofire
+import SwiftSpinner
 
 class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var bultos = Array<Paleta>()
+    var bultosConfi = Array<Paleta>()
     var indice: Int = -1
     var cellReuseIdentifier:String = "cell"
     var dto = Paleta()
@@ -71,10 +73,10 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
                                         _a.setTipoOrden(tipoOrden: item["tipoOrden"] as! String)
                                         _a.setValorOrden(valorOrden: item["valorOrden"] as! String)
                                         _a.setEstadoBulto(EstadoBulto: item["estadoBulto"] as! String)
-                                        _a.setPeso(peso: item["peso"] as! Float)
-                                        _a.setAlto(alto: item["alto"] as! Float)
-                                        _a.setAncho(ancho: item["ancho"] as! Float)
-                                        _a.setLargo(largo: item["largo"] as! Float)
+                                        _a.setPeso(peso: item["peso"] as! Double)
+                                        _a.setAlto(alto: item["alto"] as! Double)
+                                        _a.setAncho(ancho: item["ancho"] as! Double)
+                                        _a.setLargo(largo: item["largo"] as! Double)
                                         _a.setFragil(fragil: item["fragil"] as! Bool)
                                         _a.setSobredimensionado(sobredimensionado: item["sobredimensionado"] as! Bool)
                                         _a.setCargaPeligrosa(cargaPeligrosa: item["cargaPeligrosa"] as! Bool)
@@ -86,11 +88,30 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
                                         _a.setCampoID(CampoID: item["campoID"] as! String)
                                         _a.setComentario(Comentario: item["comentario"] as! String)
                                         _a.setComentarioID(ComentarioID: item["comentarioID"] as! String)
-                                        _a.setIdDiscrepancia(IdDiscrepancia: item["idDiscrepancia"] as! String)
-                                        _a.setCampoDiscrepancia(CampoDiscrepancia: item["campoDiscrepancia"] as! String)
+                                        _a.setIdDiscrepancia(IdDiscrepancia: item["idDiscrepancia"] as? String ?? "")
+                                        _a.setCampoDiscrepancia(CampoDiscrepancia: item["campoDiscrepancia"] as? String ?? "")
+                                        _a.setFechaRecepcion(fecha: item["fechaRecepcion"] as! Int)
+                                        _a.setRecepcionAlmacen(RecepcionAlmacen: item["recepcionAlmacen"] as? Bool ?? false)
+                                        _a.setFechaRecepcionAlmacen(FechaRecepcionAlmacen: item["fechaRecepcionAlmacen"] as? Int ?? 0)
+                                        _a.setCodigoTransportista(CodigoTransportista: item["codigoTransportista"] as! String)
                                         _a.setTransportista(transportista: item["transportista"] as! String)
+                                        _a.setUbicacion(ubicacion: item["ubicacion"] as? String ?? "")
+                                        _a.setGeneral(general: item["general"] as? Bool ?? false)
+                                        _a.setComponente(componente: item["componente"] as? Bool ?? false)
+                                        _a.setPaletaConsolidada(PaletaConsolidada: item["paletaConsolidada"] as? Bool ?? false)
+                                        _a.setUnidadCompleta(unidad: item["unidadCompleta"] as? Bool ?? false)
+                                        _a.setImagenes(Imagenes: item["imagenes"] as? String ?? "" )
+                                        _a.setCompleteOrder(CompleteOrder: item["completeOrder"] as? Bool ?? false)
+                                        _a.setDistrictCode(DistrictCode: item["districtCode"] as? String ?? "")
                                         _a.setRowVersion(rowVersion: item["RowVersion"] as! String)
-                                        self.bultos.append(_a)
+                                        _a.setCodigoQR(CodigoQr: item["codigoQR"] as? String ?? "")
+                                        if _a.getEstadoBulto() == "3" {
+                                            self.bultos.append(_a)
+                                        }
+                                        else {
+                                            self.bultosConfi.append(_a)
+                                        }
+                                        
                                         self.tableAlamacen.reloadData()
                                     }
                                     print(data)
@@ -124,12 +145,101 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @objc func hacerClick( _ sender: UIButton){
         print("Funciono Carajo")
+        let item = self.bultos[indice]
+        self.bultos.remove(at: indice)
+        self.tableAlamacen.reloadData()
+        self.bultosConfi.append(item)
+        
+        var nuevo = Array<Dictionary<String,Any>>()
+        let _item : Dictionary<String,Any> = [
+            "Id": item.getId(),
+            "idPaleta":  item.getIdPaleta(),
+            "idAlmacenRecepcion": item.getIdAlmacenRecepcion(),
+            "almacenDestino": item.getAlmacenDestino(),
+            "numeroBulto": item.getNumeroBulto(),
+            "codigo": item.getCodigo(),
+            "nombreProveedor": item.getNombreProveedor(),
+            "nombreAlmacen": item.getNombreAlmacen(),
+            "tipoOrden": item.getTipoOrden(),
+            "valorOrden": item.getValorOrden(),
+            "estadoBulto": "4",
+            "peso": item.getPeso(),
+            "alto": item.getAlto(),
+            "ancho": item.getAncho(),
+            "largo": item.getLarog(),
+            "fragil": item.getFragil(),
+            "sobredimensionado": item.getSobredimensionado(),
+            "cargaPeligrosa": item.getCargaPeligrosa(),
+            "importacion": item.getImportacion(),
+            "nacional": item.getNacional(),
+            "os": item.getOS(),
+            "pr": item.getPR(),
+            "plaqueteo": item.getPlaqueteo(),
+            "campoID": item.getCampoId(),
+            "comentario": item.getComentario(),
+            "comentarioID": item.getComentarioID(),
+            "idDiscrepancia": item.getIdDiscrepancia(),
+            "campoDiscrepancia": item.getCampoDiscrepancia(),
+            "fechaRecepcion": item.getFechaRecepcion(),
+            "recepcionAlmacen": item.getRecepcionAlmacen(),
+            "fechaRecepcionAlmacen": item.getFechaRecepcionAlmacen(),
+            "codigoTransportista": item.getCodigoTransportista(),
+            "transportista": item.getTransportista(),
+            "ubicacion": item.getUbicacion(),
+            "general": item.getGeneral(),
+            "componente": item.getComponente(),
+            "paletaConsolidada": item.getPaletaConsolidada(),
+            "unidadCompleta": item.getUnidadCompleta(),
+            "imagenes": item.getImagenes(),
+            "completeOrder": item.getCompleteOrder(),
+            "districtCode": item.getDistrictCode(),
+            "RowVersion": item.getRowVersion(),
+            "codigoQR": item.getCodigoQR()
+        ]
+        nuevo.append(_item)
+        print(nuevo)
+        var request = URLRequest(url: URL(string: UPDATE_BULTO)!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let json = try? JSONSerialization.data(withJSONObject: nuevo)
+        request.httpBody = json
+        self.delay(seconds: 5.0, completion: {
+            SwiftSpinner.show("Cargando")
+            Alamofire.request(request).responseString(){
+            //Alamofire.request(UPDATE_BULTO, method:.post, parameters: [nuevo] as! [Dictionary<String,Any>], encoding: JSONEncoding.default){
+                response in switch response.result{
+                case .success(let data):
+                    print(data)
+                    SwiftSpinner.hide()
+                case .failure(let error):
+                    print(error)
+                    SwiftSpinner.hide()
+                }
+            }
+        })
+        
         print(self.indice)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dto = bultos[indexPath.row]
-        print(dto.getCodigo())
+        self.indice = indexPath.row
+        print(indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ListaBultosViewController{
+            let vs = segue.destination as? ListaBultosViewController
+            vs!.bultosConfi = self.bultosConfi
+        }
+    }
+    
+    func delay(seconds: Double, completion: @escaping () -> ()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
+        }
     }
     
 }

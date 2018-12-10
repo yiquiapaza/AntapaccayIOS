@@ -19,10 +19,10 @@ class Paleta  {
     private var TipoOrden : String
     private var ValorOrden: String
     private var EstadoBulto: String
-    private var Peso: Float
-    private var Alto: Float
-    private var Ancho: Float
-    private var Largo: Float
+    private var Peso: Double
+    private var Alto: Double
+    private var Ancho: Double
+    private var Largo: Double
     private var Fragil: Bool
     private var Sobredimensionado: Bool
     private var CargaPeligrosa: Bool
@@ -44,6 +44,14 @@ class Paleta  {
     private var ComentarioID: String
     private var IdDiscrepancia: String
     private var CampoDiscrepancia: String
+    private var RecepcionAlmacen: Bool
+    private var FechaRecepcionAlmacen: Int
+    private var CodigoTransportista : String
+    private var PaletaConsolidada: Bool
+    private var Imagenes: String
+    private var CompleteOrder: Bool
+    private var DistrictCode: String
+    private var CodigoQR: String
     
     init() {
         self.Id = VACIO
@@ -82,6 +90,14 @@ class Paleta  {
         self.ComentarioID = VACIO
         self.IdDiscrepancia = VACIO
         self.CampoDiscrepancia = VACIO
+        self.RecepcionAlmacen = false
+        self.FechaRecepcionAlmacen = 0
+        self.CodigoTransportista = VACIO
+        self.PaletaConsolidada = false
+        self.Imagenes = VACIO
+        self.CompleteOrder = false
+        self.DistrictCode = VACIO
+        self.CodigoQR = VACIO
     }
     
     func setId(Id:String) -> Void {
@@ -154,31 +170,31 @@ class Paleta  {
         return self.EstadoBulto
     }
     
-    func setPeso(peso: Float) -> Void {
+    func setPeso(peso: Double) -> Void {
         self.Peso = peso
     }
-    func getPeso() -> Float {
+    func getPeso() -> Double {
         return self.Peso
     }
     
-    func setAlto(alto: Float) -> Void {
+    func setAlto(alto: Double) -> Void {
         self.Alto = alto
     }
-    func getAlto() -> Float {
+    func getAlto() -> Double {
         return self.Alto
     }
     
-    func setAncho(ancho: Float) -> Void {
+    func setAncho(ancho: Double) -> Void {
         self.Ancho = ancho
     }
-    func getAncho() -> Float {
+    func getAncho() -> Double {
         return self.Ancho
     }
     
-    func setLargo(largo: Float) -> Void {
+    func setLargo(largo: Double) -> Void {
         self.Largo = largo
     }
-    func getLarog() -> Float {
+    func getLarog() -> Double {
         return self.Largo
     }
     
@@ -327,5 +343,61 @@ class Paleta  {
     }
     func getCampoDiscrepancia() -> String {
         return self.CampoDiscrepancia
+    }
+    
+    func setRecepcionAlmacen(RecepcionAlmacen:Bool) -> Void {
+        self.RecepcionAlmacen = RecepcionAlmacen
+    }
+    func getRecepcionAlmacen() -> Bool {
+        return self.RecepcionAlmacen
+    }
+    
+    func setFechaRecepcionAlmacen(FechaRecepcionAlmacen:Int) -> Void {
+        self.FechaRecepcionAlmacen = FechaRecepcionAlmacen
+    }
+    func getFechaRecepcionAlmacen() -> Int {
+        return self.FechaRecepcionAlmacen
+    }
+    
+    func setCodigoTransportista(CodigoTransportista:String) -> Void {
+        self.CodigoTransportista = CodigoTransportista
+    }
+    func getCodigoTransportista() -> String {
+        return self.CodigoTransportista
+    }
+    
+    func setPaletaConsolidada(PaletaConsolidada:Bool) -> Void {
+        self.PaletaConsolidada = PaletaConsolidada
+    }
+    func getPaletaConsolidada() -> Bool {
+        return self.PaletaConsolidada
+    }
+    
+    func setImagenes(Imagenes:String) -> Void {
+        self.Imagenes = Imagenes
+    }
+    func getImagenes() -> String {
+        return self.Imagenes
+    }
+    
+    func setCompleteOrder(CompleteOrder: Bool) -> Void {
+        self.CompleteOrder = CompleteOrder
+    }
+    func getCompleteOrder() -> Bool {
+        return self.CompleteOrder
+    }
+    
+    func setDistrictCode(DistrictCode:String) -> Void {
+        self.DistrictCode = DistrictCode
+    }
+    func getDistrictCode() -> String {
+        return self.DistrictCode
+    }
+    
+    func setCodigoQR(CodigoQr: String) -> Void {
+        self.CodigoQR = CodigoQr
+    }
+    func getCodigoQR() -> String {
+        return self.CodigoQR
     }
 }

@@ -11,7 +11,7 @@ import DropDown
 import Alamofire
 import SwiftSpinner
 
-class SeguimientoCargaViewController: UIViewController {
+class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
  
     @IBOutlet weak var switchOC: UISwitch!
     @IBOutlet weak var switchOS: UISwitch!
@@ -102,6 +102,7 @@ class SeguimientoCargaViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.numeroOrden.delegate = self
         self.navigationController?.view.backgroundColor = UIColor.red
         self.navigationController?.title = "ANTAPACCAI"
         self.selectState.isEnabled = false
@@ -357,6 +358,11 @@ class SeguimientoCargaViewController: UIViewController {
             }
         }
         return 0
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.numeroOrden.resignFirstResponder()
+        return true
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var viewLogin: UIView!
     @IBOutlet weak var imagenLogin: UIImageView!
@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
         roundTexField(text: buttonLogin)
         imageViewIntro(image: imagenLogin)
         startView(vistaIntro: viewLogin)
+        passLoginVC.delegate = self
         super.viewDidLoad()
     }
     
@@ -88,4 +89,9 @@ class LoginViewController: UIViewController {
         text.layer.borderColor = UIColor.red.cgColor
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passLoginVC.resignFirstResponder()
+        return true
+    }
+    
 }

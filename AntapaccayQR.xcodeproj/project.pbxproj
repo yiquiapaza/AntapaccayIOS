@@ -20,6 +20,7 @@
 		FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */; };
 		FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */; };
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
+		FB1F08BC21BB00C700AAFE81 /* ListaBultosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */; };
 		FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */; };
 		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
 		FB2FAB1621B076A1003AB115 /* Llegada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2FAB1521B076A1003AB115 /* Llegada.swift */; };
@@ -105,6 +106,7 @@
 		FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarViewController.swift; sourceTree = "<group>"; };
 		FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteDTO.swift; sourceTree = "<group>"; };
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
+		FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaBultosViewController.swift; sourceTree = "<group>"; };
 		FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
 		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB2FAB1521B076A1003AB115 /* Llegada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Llegada.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				FBE7D0F121AEEE8500590AB3 /* PartidaCargaViewController.swift */,
 				FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */,
 				FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */,
+				FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -537,16 +540,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AntapaccayQR/Pods-AntapaccayQR-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCodeScannerFramework/QRCodeScannerFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCoder/QRCoder.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeScannerFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +586,7 @@
 				FB5738C021B84F3600C22703 /* ReporteUserViewController.swift in Sources */,
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
 				FB345CFA21ADC53500B5BF5E /* DataDTO.swift in Sources */,
+				FB1F08BC21BB00C700AAFE81 /* ListaBultosViewController.swift in Sources */,
 				FB89359F219CCC31007A04E3 /* TransportistaViewController.swift in Sources */,
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
@@ -798,9 +798,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8P248MVDEB;
 				INFOPLIST_FILE = AntapaccayQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.innnovacis.unsa.AntapaccayQR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innnovacis.AntapaccayQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -813,9 +814,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8P248MVDEB;
 				INFOPLIST_FILE = AntapaccayQR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.innnovacis.unsa.AntapaccayQR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.innnovacis.AntapaccayQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

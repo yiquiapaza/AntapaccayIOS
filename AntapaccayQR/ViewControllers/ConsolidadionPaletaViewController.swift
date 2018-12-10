@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftSpinner
 
-class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var listaPaleta = Array<Paleta>()
     
@@ -22,6 +22,7 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getBulto.delegate = self
         tablaBulto.delegate = self
         tablaBulto.dataSource = self
         tablaBulto.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -54,10 +55,10 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
                             nuevo.setTipoOrden(tipoOrden: item["tipoOrden"] as? String ?? "")
                             nuevo.setValorOrden(valorOrden: item["valorOrden"] as? String ?? "")
                             nuevo.setEstadoBulto(EstadoBulto: item["estadoBulto"] as? String ?? "")
-                            nuevo.setPeso(peso: item["peso"] as? Float ?? 0.0)
-                            nuevo.setAlto(alto: item["alto"] as? Float ?? 0.0)
-                            nuevo.setAncho(ancho: item["ancho"] as? Float ?? 0.0)
-                            nuevo.setLargo(largo: item["largo"] as? Float ?? 0.0)
+                            nuevo.setPeso(peso: item["peso"] as! Double)
+                            nuevo.setAlto(alto: item["alto"] as! Double)
+                            nuevo.setAncho(ancho: item["ancho"] as! Double)
+                            nuevo.setLargo(largo: item["largo"] as! Double)
                             nuevo.setFragil(fragil: item["fragil"] as? Bool ?? false)
                             nuevo.setSobredimensionado(sobredimensionado: item["sobredimensionado"] as? Bool ?? false)
                             nuevo.setCargaPeligrosa(cargaPeligrosa: item["cargaPeligrosa"] as? Bool ?? false)
@@ -148,5 +149,10 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
             fechaCadena = String(anio) + String(mes) + String(dia)
         }
         return Int(fechaCadena)!
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.getBulto.resignFirstResponder()
+        return true
     }
 }
