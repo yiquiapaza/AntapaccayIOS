@@ -19,29 +19,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer By InnnovacisAQP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoI-9Y-Fcz">
-                                <rect key="frame" x="114" y="619" width="147" height="12"/>
+                                <rect key="frame" x="114" y="569" width="147.5" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147.5" id="obA-Rn-W5J"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-nc-FL3">
-                                <rect key="frame" x="25" y="210" width="325" height="189"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="189" id="4Oe-LS-VuG"/>
-                                    <constraint firstAttribute="width" constant="325" id="R9y-d0-vCg"/>
-                                </constraints>
+                                <rect key="frame" x="55" y="80" width="264" height="166"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="omH-Do-N02" firstAttribute="bottom" secondItem="SoI-9Y-Fcz" secondAttribute="bottom" constant="36" id="2VN-tm-yLJ"/>
-                            <constraint firstItem="wP9-nc-FL3" firstAttribute="leading" secondItem="omH-Do-N02" secondAttribute="leading" constant="25" id="DUx-Ic-5Nu"/>
-                            <constraint firstItem="wP9-nc-FL3" firstAttribute="centerX" secondItem="omH-Do-N02" secondAttribute="centerX" id="Htw-yR-KZp"/>
-                            <constraint firstItem="omH-Do-N02" firstAttribute="trailing" secondItem="wP9-nc-FL3" secondAttribute="trailing" constant="25" id="Jto-8D-mnd"/>
-                            <constraint firstItem="SoI-9Y-Fcz" firstAttribute="centerX" secondItem="omH-Do-N02" secondAttribute="centerX" id="Rgs-dp-t3L"/>
-                            <constraint firstItem="wP9-nc-FL3" firstAttribute="centerX" secondItem="omH-Do-N02" secondAttribute="centerX" id="a9N-bh-iA8"/>
-                            <constraint firstItem="wP9-nc-FL3" firstAttribute="top" secondItem="omH-Do-N02" secondAttribute="top" constant="190" id="k71-o0-Sjl"/>
-                            <constraint firstItem="SoI-9Y-Fcz" firstAttribute="top" secondItem="omH-Do-N02" secondAttribute="top" constant="599" id="nBQ-82-tfD"/>
+                            <constraint firstItem="SoI-9Y-Fcz" firstAttribute="leading" relation="lessThanOrEqual" secondItem="omH-Do-N02" secondAttribute="leading" constant="114" id="3rl-J6-62D"/>
+                            <constraint firstItem="SoI-9Y-Fcz" firstAttribute="top" secondItem="wP9-nc-FL3" secondAttribute="bottom" constant="323" id="3yw-gE-d4h"/>
+                            <constraint firstItem="wP9-nc-FL3" firstAttribute="top" secondItem="omH-Do-N02" secondAttribute="top" constant="60" id="7uC-o8-pfb"/>
+                            <constraint firstItem="omH-Do-N02" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SoI-9Y-Fcz" secondAttribute="trailing" constant="113.5" id="qN6-tx-FT1"/>
+                            <constraint firstItem="omH-Do-N02" firstAttribute="trailing" secondItem="wP9-nc-FL3" secondAttribute="trailing" constant="56" id="uIJ-uf-W65"/>
+                            <constraint firstItem="omH-Do-N02" firstAttribute="bottom" secondItem="SoI-9Y-Fcz" secondAttribute="bottom" constant="86" id="y17-Dz-LVL"/>
+                            <constraint firstItem="wP9-nc-FL3" firstAttribute="leading" secondItem="omH-Do-N02" secondAttribute="leading" constant="55" id="yvJ-Bl-9QP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="omH-Do-N02"/>
                     </view>
@@ -385,13 +383,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oha-pD-Pdf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oha-pD-Pdf" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="236" width="335" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Seleccione un Item" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="menu:" destination="JGr-GA-620" eventType="touchUpInside" id="HqX-7F-F1r"/>
                                 </connections>
@@ -418,50 +421,70 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-32-YtI">
-                                <rect key="frame" x="30" y="132" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gLn-32-YtI" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="37.650000000000006" y="136.65000000000001" width="36.55714285714285" height="21.699999999999989"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="MJT-Fd-0e3"/>
                                     <constraint firstAttribute="width" constant="49" id="V4m-6E-6DO"/>
                                 </constraints>
                                 <color key="onTintColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="switchChangeOC:" destination="JGr-GA-620" eventType="valueChanged" id="Ucw-w9-Bah"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PTf-1B-gdV">
-                                <rect key="frame" x="111" y="132" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PTf-1B-gdV" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="118.65000000000001" y="136.65000000000001" width="36.55714285714285" height="21.699999999999989"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="1RA-J4-NtB"/>
                                     <constraint firstAttribute="height" constant="31" id="YNO-Vw-WAv"/>
                                 </constraints>
                                 <color key="onTintColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="switchChangeOS:" destination="JGr-GA-620" eventType="valueChanged" id="QsT-ab-r0O"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F2m-9o-MLy">
-                                <rect key="frame" x="191" y="132" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F2m-9o-MLy" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="198.65000000000001" y="136.65000000000001" width="36.55714285714285" height="21.699999999999989"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="1ZA-ap-RFu"/>
                                     <constraint firstAttribute="width" constant="49" id="ZfN-zg-Rb9"/>
                                 </constraints>
                                 <color key="onTintColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="switchChangeOR:" destination="JGr-GA-620" eventType="valueChanged" id="7ke-Ls-3Xg"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="98s-eJ-Zw9">
-                                <rect key="frame" x="272" y="132" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="98s-eJ-Zw9" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="279.64999999999998" y="136.65000000000001" width="36.557142857142878" height="21.699999999999989"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Q9S-hR-2Jq"/>
                                     <constraint firstAttribute="width" constant="49" id="ftc-XU-Xk7"/>
                                 </constraints>
                                 <color key="onTintColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="switchChangeID:" destination="JGr-GA-620" eventType="valueChanged" id="IAD-Tf-IoO"/>
                                 </connections>
@@ -490,7 +513,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Orden" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-dt-Ao3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Orden" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-dt-Ao3" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="201" width="201" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="201" id="3eV-md-8uU"/>
@@ -499,8 +522,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBr-aP-wPq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBr-aP-wPq" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="248" y="201" width="111" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -509,6 +537,11 @@
                                 <state key="normal" title="Buscar Orden">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buscarOrden:" destination="JGr-GA-620" eventType="touchUpInside" id="lbg-Cf-I81"/>
                                 </connections>
@@ -598,23 +631,33 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uj-zJ-YwP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uj-zJ-YwP" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="299" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Buscar Item">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buscarItem:" destination="JGr-GA-620" eventType="touchUpInside" id="Jug-3I-Ku9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2D-qy-gsW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2D-qy-gsW" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="604" width="335" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Agregar Item" image="icons8-plus_math_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="agregarItem:" destination="JGr-GA-620" eventType="touchUpInside" id="qg7-29-J9s"/>
                                 </connections>
@@ -629,13 +672,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXf-QB-9aQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXf-QB-9aQ" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="10" y="637" width="355" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Crear Bulto" image="icons8-box_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="crearBulto:" destination="JGr-GA-620" eventType="touchUpInside" id="x8s-Qt-KKj"/>
                                     <segue destination="3wI-NL-vQM" kind="show" id="bdv-9f-0fd"/>
@@ -791,7 +839,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Bulto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz2-hP-v2f">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Bulto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz2-hP-v2f" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="137" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="XRw-im-4ko"/>
@@ -799,8 +847,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84s-sb-UrF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84s-sb-UrF" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="187" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -809,6 +862,11 @@
                                 <state key="normal" title="Escanear Codigo">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Shw-CK-bRi" kind="show" id="Aa4-11-7GP"/>
                                 </connections>
@@ -817,7 +875,7 @@
                                 <rect key="frame" x="20" y="245" width="335" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsv-8m-s4A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsv-8m-s4A" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="599" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -826,11 +884,16 @@
                                 <state key="normal" title="Cosolidar Bultos">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="fKH-61-xHa" kind="show" id="FeB-QZ-gKS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-dC-dbW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-dC-dbW" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="205" y="135" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -839,6 +902,11 @@
                                 <state key="normal" title="Buscar Bulto">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="findBulto:" destination="BiT-Yw-uDc" eventType="touchUpInside" id="wAZ-0L-xFG"/>
                                 </connections>
@@ -980,8 +1048,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKR-bF-Ulr">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="148" y="318" width="61" height="30"/>
+                                <state key="normal" title="Terminar"/>
                                 <connections>
                                     <action selector="terminar:" destination="3aa-Kg-hkp" eventType="touchUpInside" id="FY6-zh-sen"/>
                                 </connections>
@@ -990,11 +1058,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZmW-iI-gJp" firstAttribute="trailing" secondItem="TRv-Lq-xo8" secondAttribute="trailing" id="2Wr-Aa-egu"/>
+                            <constraint firstItem="TRv-Lq-xo8" firstAttribute="trailing" secondItem="FKR-bF-Ulr" secondAttribute="trailing" constant="166" id="QAi-7Y-AHn"/>
                             <constraint firstItem="FKR-bF-Ulr" firstAttribute="top" secondItem="ZmW-iI-gJp" secondAttribute="bottom" constant="214" id="Rpd-5h-ibd"/>
                             <constraint firstItem="TRv-Lq-xo8" firstAttribute="bottom" secondItem="FKR-bF-Ulr" secondAttribute="bottom" constant="270" id="XyA-hX-2xw"/>
                             <constraint firstItem="ZmW-iI-gJp" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" id="aEn-Sl-wx0"/>
-                            <constraint firstItem="TRv-Lq-xo8" firstAttribute="trailing" secondItem="FKR-bF-Ulr" secondAttribute="trailing" constant="165" id="mT7-y9-uYA"/>
-                            <constraint firstItem="FKR-bF-Ulr" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" constant="164" id="t3i-Yh-iiE"/>
+                            <constraint firstItem="FKR-bF-Ulr" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" constant="148" id="m9g-Hl-KwT"/>
                             <constraint firstItem="ZmW-iI-gJp" firstAttribute="top" secondItem="TRv-Lq-xo8" secondAttribute="top" id="uuf-dH-A3D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TRv-Lq-xo8"/>
@@ -1003,7 +1071,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YG-BL-6hD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9950" y="318"/>
+            <point key="canvasLocation" x="9949.6000000000004" y="317.99100449775113"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="M3S-Mu-VUs">
@@ -1116,7 +1184,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HJ-jh-1mb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HJ-jh-1mb" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="219" width="325" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1126,6 +1194,11 @@
                                 <state key="normal" title="Selecciones un Almacen" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="almacenDestiono:" destination="lKS-Js-vqW" eventType="touchUpInside" id="bmM-bw-bMY"/>
                                 </connections>
@@ -1136,7 +1209,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KZ-kl-kVM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KZ-kl-kVM" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="311" width="325" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1146,6 +1219,11 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registro:" destination="lKS-Js-vqW" eventType="touchUpInside" id="ckW-Gh-I5G"/>
                                 </connections>
@@ -1162,7 +1240,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-JM-Db1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-JM-Db1" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="406" width="325" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1172,6 +1250,11 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tipo:" destination="lKS-Js-vqW" eventType="touchUpInside" id="eiD-R8-OeO"/>
                                 </connections>
@@ -1188,7 +1271,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-1H-inx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-1H-inx" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="502" width="325" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1198,6 +1281,11 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="placa:" destination="lKS-Js-vqW" eventType="touchUpInside" id="8jA-65-Izh"/>
                                 </connections>
@@ -1483,7 +1571,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Paleta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IbP-ac-aJ7">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Paleta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IbP-ac-aJ7" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="137" width="201" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ELN-5T-rzt"/>
@@ -1492,8 +1580,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c4-L2-A6o">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c4-L2-A6o" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="226" y="135" width="129" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1502,11 +1595,16 @@
                                 <state key="normal" title="Buscar Paleta">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="getUnidades:" destination="CZ8-cN-wvb" eventType="touchUpInside" id="ODg-yv-nVp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYW-ci-agp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYW-ci-agp" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="187" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1515,11 +1613,16 @@
                                 <state key="normal" title="Escanear Codigo">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="hJr-7l-lqG" kind="show" id="ONM-zw-JA1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmc-qX-llq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmc-qX-llq" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="599" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1528,6 +1631,11 @@
                                 <state key="normal" title="Cosolidar Paleta">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="owv-sq-Gjb" kind="show" id="JgN-x0-lp4"/>
                                 </connections>
@@ -1614,7 +1722,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Orden" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGw-F9-SfC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Orden" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGw-F9-SfC" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="137" width="201" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="201" id="a93-z4-Xyg"/>
@@ -1623,8 +1731,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOA-Ao-5bT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOA-Ao-5bT" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="226" y="135" width="129" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1633,6 +1746,11 @@
                                 <state key="normal" title="Buscar Orden">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buscar:" destination="3DN-XT-gw0" eventType="touchUpInside" id="GhG-Cg-KpW"/>
                                 </connections>
@@ -1688,7 +1806,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wv-Nj-RhG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wv-Nj-RhG" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="507" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1697,6 +1815,11 @@
                                 <state key="normal" title="Registro Partida">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registrarPartida:" destination="3DN-XT-gw0" eventType="touchUpInside" id="eN6-7Z-8IV"/>
                                 </connections>
@@ -1790,30 +1913,50 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-or-XO4">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-or-XO4" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="128" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CcC-bO-FcS">
                                 <rect key="frame" x="0.0" y="236" width="375" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktq-g1-Fax">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktq-g1-Fax" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="590" width="343" height="30"/>
-                                <state key="normal" title="Buscar"/>
+                                <state key="normal" title="Escaner QR"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-OW-egy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-OW-egy" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="173" width="343" height="30"/>
                                 <state key="normal" title="Buscar"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="obtenerGuias:" destination="JMH-pX-CrJ" eventType="touchUpInside" id="L0X-Yp-HKo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-wz-kpr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-wz-kpr" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="628" width="343" height="30"/>
-                                <state key="normal" title="Click"/>
+                                <state key="normal" title="Verificar Items"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="gqm-el-XUW" kind="show" id="WAK-Bc-Iap"/>
                                 </connections>
@@ -1891,7 +2034,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Guia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8H-GC-3ej">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Guia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H8H-GC-3ej" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="137" width="201" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BCr-fL-q5a"/>
@@ -1900,8 +2043,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0g-8e-0ll">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0g-8e-0ll" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="226" y="135" width="129" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1910,6 +2058,11 @@
                                 <state key="normal" title="Buscar Guia">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buquedarGuia:" destination="f8c-UH-WfK" eventType="touchUpInside" id="OCn-Nl-I57"/>
                                 </connections>
@@ -1953,7 +2106,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-T4-oh4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-T4-oh4" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="500" width="335" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1962,6 +2115,11 @@
                                 <state key="normal" title="Registrar Llegada">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registroLlegada:" destination="f8c-UH-WfK" eventType="touchUpInside" id="1sE-pR-YMM"/>
                                 </connections>
@@ -2062,18 +2220,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fx-TA-mRR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fx-TA-mRR" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="174" width="343" height="30"/>
                                 <state key="normal" title="Buscar"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="obtenerData:" destination="mqR-z0-atg" eventType="touchUpInside" id="yxN-rI-fHo"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmX-rm-nML">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmX-rm-nML" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="16" y="119" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pHe-tq-lY0">
                                 <rect key="frame" x="0.0" y="233" width="375" height="382"/>
@@ -2169,11 +2337,16 @@
                                     <action selector="internacionalSwitch:" destination="dTr-hD-1nb" eventType="valueChanged" id="cfu-wY-RfS"/>
                                 </connections>
                             </switch>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Peso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeC-02-6j9">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Peso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeC-02-6j9" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="63" y="284" width="145" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pesoIntro:" destination="dTr-hD-1nb" eventType="editingDidEnd" id="hMa-BQ-nVM"/>
                                 </connections>
@@ -2184,11 +2357,16 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuN-FB-I1m">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuN-FB-I1m" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="65" y="346" width="143" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="altoIntro:" destination="dTr-hD-1nb" eventType="editingDidEnd" id="tGz-9i-fIl"/>
                                 </connections>
@@ -2199,20 +2377,30 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ancho" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r3Y-j3-mzE">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ancho" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r3Y-j3-mzE" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="65" y="409" width="143" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="anchoIntro:" destination="dTr-hD-1nb" eventType="editingDidEnd" id="nVS-ID-x8N"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Largo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRe-UK-gV9">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Largo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRe-UK-gV9" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="65" y="477" width="143" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="largoIntro:" destination="dTr-hD-1nb" eventType="editingDidEnd" id="gTd-Tz-cPs"/>
                                 </connections>
@@ -2299,10 +2487,15 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DZK-b1-cCJ">
-                                <rect key="frame" x="310" y="112" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DZK-b1-cCJ" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="310" y="112" width="51.857142857142833" height="31"/>
                                 <color key="onTintColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="fragilSwitch:" destination="jCV-Rq-bZW" eventType="valueChanged" id="Fyc-63-ETL"/>
                                 </connections>
@@ -2313,10 +2506,15 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Yp-6C-X9q">
-                                <rect key="frame" x="310" y="151" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Yp-6C-X9q" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="310" y="151" width="51.85714285714289" height="31"/>
                                 <color key="onTintColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sobreDimension:" destination="jCV-Rq-bZW" eventType="valueChanged" id="TNq-Ex-fJf"/>
                                 </connections>
@@ -2327,10 +2525,15 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-aa-B8o">
-                                <rect key="frame" x="310" y="190" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-aa-B8o" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="310" y="190" width="51.85714285714289" height="31"/>
                                 <color key="onTintColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="cargaPeligrosa:" destination="jCV-Rq-bZW" eventType="valueChanged" id="yua-LG-8i0"/>
                                 </connections>
@@ -2341,10 +2544,15 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-wE-Uhe">
-                                <rect key="frame" x="310" y="229" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-wE-Uhe" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="310" y="229" width="51.85714285714289" height="31"/>
                                 <color key="onTintColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="general:" destination="jCV-Rq-bZW" eventType="valueChanged" id="dkA-Zd-53d"/>
                                 </connections>
@@ -2355,10 +2563,15 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-M5-3UD">
-                                <rect key="frame" x="310" y="268" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-M5-3UD" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="310" y="268" width="51.85714285714289" height="31"/>
                                 <color key="onTintColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="componente:" destination="jCV-Rq-bZW" eventType="valueChanged" id="Cpq-TU-yGa"/>
                                 </connections>
@@ -2369,10 +2582,15 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-by-zoV">
-                                <rect key="frame" x="310" y="307" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xjo-by-zoV" customClass="SwitchComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="310" y="307" width="51.85714285714289" height="31"/>
                                 <color key="onTintColor" red="0.99873739480000001" green="0.28017336129999998" blue="0.37557911869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" red="0.80293881379999998" green="0.80293881379999998" blue="0.80293881379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizeSwitch">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="unidadCompleta:" destination="jCV-Rq-bZW" eventType="valueChanged" id="zw3-Ot-Xge"/>
                                 </connections>
@@ -2440,14 +2658,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAW-S2-p6R">
-                                <rect key="frame" x="16" y="122" width="343" height="452"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAW-S2-p6R">
+                                <rect key="frame" x="0.0" y="122" width="375" height="452"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-xF-rpq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-xF-rpq" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="155" y="617" width="64" height="30"/>
                                 <state key="normal" title="Siguiente"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="D8N-dh-QDl" kind="show" id="PKn-Aa-c27"/>
                                 </connections>
@@ -2455,9 +2677,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5Y6-xF-rpq" firstAttribute="top" secondItem="FAW-S2-p6R" secondAttribute="bottom" constant="43" id="28C-gx-jd9"/>
                             <constraint firstItem="F29-bX-cUi" firstAttribute="top" secondItem="XQz-5u-2av" secondAttribute="top" id="EpM-bL-rEl"/>
+                            <constraint firstItem="FAW-S2-p6R" firstAttribute="leading" secondItem="XQz-5u-2av" secondAttribute="leading" id="HBC-ny-Bp1"/>
                             <constraint firstItem="5Y6-xF-rpq" firstAttribute="leading" secondItem="XQz-5u-2av" secondAttribute="leading" constant="155" id="J3f-Ut-Ybj"/>
                             <constraint firstItem="XQz-5u-2av" firstAttribute="bottom" secondItem="5Y6-xF-rpq" secondAttribute="bottom" constant="20" id="R9H-lP-Bxq"/>
+                            <constraint firstItem="FAW-S2-p6R" firstAttribute="trailing" secondItem="XQz-5u-2av" secondAttribute="trailing" id="bQ0-9F-qFV"/>
+                            <constraint firstItem="FAW-S2-p6R" firstAttribute="top" secondItem="F29-bX-cUi" secondAttribute="bottom" constant="18" id="dGF-yV-qeT"/>
+                            <constraint firstItem="5Y6-xF-rpq" firstAttribute="top" secondItem="XQz-5u-2av" secondAttribute="top" constant="553" id="e75-Sa-APl"/>
                             <constraint firstItem="F29-bX-cUi" firstAttribute="leading" secondItem="XQz-5u-2av" secondAttribute="leading" id="f8v-N6-1jA"/>
                             <constraint firstItem="XQz-5u-2av" firstAttribute="trailing" secondItem="5Y6-xF-rpq" secondAttribute="trailing" constant="156" id="keO-rz-T8u"/>
                             <constraint firstItem="F29-bX-cUi" firstAttribute="trailing" secondItem="XQz-5u-2av" secondAttribute="trailing" id="pvT-vM-uJ4"/>
@@ -2614,22 +2841,32 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6m-Ez-paF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6m-Ez-paF" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="10" y="304" width="355" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Guardar Datos">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="terminarBulto:" destination="s63-4R-COn" eventType="touchUpInside" id="vxP-ts-ROk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olT-y6-8NA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olT-y6-8NA" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="10" y="344" width="355" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Generar QR">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="wYW-fz-qui" kind="show" id="XrA-9f-R74"/>
                                 </connections>
@@ -2689,9 +2926,14 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGI-kQ-NlK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGI-kQ-NlK" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="127" y="578" width="57" height="30"/>
                                 <state key="normal" title="Imprimir"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="imprimir:" destination="wYW-fz-qui" eventType="touchUpInside" id="Bu0-Kp-PNR"/>
                                 </connections>
@@ -2760,7 +3002,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CM-t1-aT9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CM-t1-aT9" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="137" width="325" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2770,11 +3012,16 @@
                                 <state key="normal" title="Almacenes" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="almacenesButton:" destination="08V-PR-tUc" eventType="touchUpInside" id="HIx-5I-4V0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-dN-hQZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-dN-hQZ" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="185" width="325" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2785,11 +3032,16 @@
                                 <state key="normal" title="Transportista" image="icons8-chevron_down_filled">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="transportistasButton:" destination="08V-PR-tUc" eventType="touchUpInside" id="bC7-x1-9ct"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21Y-3H-Oi2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21Y-3H-Oi2" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="200" y="271" width="150" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.2786545587" blue="0.3759998638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -2799,6 +3051,11 @@
                                 <state key="normal" title="Agregar">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="agregarGuia:" destination="08V-PR-tUc" eventType="touchUpInside" id="iVh-NE-UOC"/>
                                 </connections>
@@ -2821,7 +3078,7 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-46-X6N">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-46-X6N" customClass="TextFieldComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="25" y="271" width="150" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="zLj-GN-qQW"/>
@@ -2830,14 +3087,12 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XB-zO-Xed">
-                                <rect key="frame" x="164" y="562" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="s63-4R-COn" kind="show" id="TG7-HD-zvE"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0SQ-d4-IX4">
                                 <rect key="frame" x="0.0" y="326" width="375" height="202"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2852,6 +3107,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XB-zO-Xed" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="152" y="562" width="61" height="30"/>
+                                <state key="normal" title="Terminar"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="s63-4R-COn" kind="show" id="TG7-HD-zvE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -2862,7 +3129,6 @@
                             <constraint firstItem="o2O-dN-hQZ" firstAttribute="top" secondItem="Blt-cg-jaV" secondAttribute="bottom" constant="5" id="5eF-Eg-Wfl"/>
                             <constraint firstItem="o2O-dN-hQZ" firstAttribute="leading" secondItem="yj2-Mk-0SF" secondAttribute="leading" constant="25" id="9jg-IP-1wp"/>
                             <constraint firstAttribute="trailing" secondItem="0SQ-d4-IX4" secondAttribute="trailing" id="BfM-DO-nXC"/>
-                            <constraint firstItem="6XB-zO-Xed" firstAttribute="leading" secondItem="yj2-Mk-0SF" secondAttribute="leading" constant="164" id="Bj4-1u-swM"/>
                             <constraint firstItem="9CM-t1-aT9" firstAttribute="top" secondItem="emr-q6-EMe" secondAttribute="bottom" constant="5" id="Cig-0v-sn4"/>
                             <constraint firstItem="yj2-Mk-0SF" firstAttribute="trailing" secondItem="Blt-cg-jaV" secondAttribute="trailing" constant="30" id="Faw-4V-J32"/>
                             <constraint firstItem="yj2-Mk-0SF" firstAttribute="trailing" secondItem="9CM-t1-aT9" secondAttribute="trailing" constant="25" id="JD5-be-kZX"/>
@@ -2879,11 +3145,12 @@
                             <constraint firstItem="21Y-3H-Oi2" firstAttribute="top" secondItem="1cp-Re-ANi" secondAttribute="bottom" constant="5" id="YgD-wi-18d"/>
                             <constraint firstItem="bIZ-Ix-Tpv" firstAttribute="top" secondItem="yj2-Mk-0SF" secondAttribute="top" id="bp6-Zp-Ybk"/>
                             <constraint firstItem="emr-q6-EMe" firstAttribute="top" secondItem="bIZ-Ix-Tpv" secondAttribute="bottom" constant="10" id="d7N-JV-WyM"/>
+                            <constraint firstItem="6XB-zO-Xed" firstAttribute="leading" secondItem="yj2-Mk-0SF" secondAttribute="leading" constant="152" id="dYw-Kx-KGl"/>
                             <constraint firstItem="bIZ-Ix-Tpv" firstAttribute="trailing" secondItem="yj2-Mk-0SF" secondAttribute="trailing" id="dy3-JS-yBh"/>
                             <constraint firstItem="yj2-Mk-0SF" firstAttribute="trailing" secondItem="1eb-jL-Lvo" secondAttribute="trailing" constant="30" id="g2u-fQ-6H1"/>
                             <constraint firstItem="9CM-t1-aT9" firstAttribute="leading" secondItem="yj2-Mk-0SF" secondAttribute="leading" constant="25" id="glN-Az-PVq"/>
                             <constraint firstItem="1cp-Re-ANi" firstAttribute="leading" secondItem="yj2-Mk-0SF" secondAttribute="leading" constant="20" id="gw7-ky-tlx"/>
-                            <constraint firstItem="yj2-Mk-0SF" firstAttribute="trailing" secondItem="6XB-zO-Xed" secondAttribute="trailing" constant="165" id="r6B-Rl-iNw"/>
+                            <constraint firstItem="yj2-Mk-0SF" firstAttribute="trailing" secondItem="6XB-zO-Xed" secondAttribute="trailing" constant="162" id="mwZ-cc-RUl"/>
                             <constraint firstItem="Blt-cg-jaV" firstAttribute="leading" secondItem="yj2-Mk-0SF" secondAttribute="leading" constant="30" id="rdH-oT-Gsu"/>
                             <constraint firstItem="Blt-cg-jaV" firstAttribute="leading" secondItem="MAq-c1-eQg" secondAttribute="trailing" id="svr-il-4S4"/>
                             <constraint firstItem="0SQ-d4-IX4" firstAttribute="leading" secondItem="7Mt-wy-Qzd" secondAttribute="leading" id="u2j-25-ycW"/>

@@ -16,21 +16,14 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
     
     @IBOutlet weak var tableLista: UITableView!
     let cellReuseIdentifier = "cell"
-    var listaSting: Array<String> = Array<String>()
-    var index:Int = -1
-    
     
     override func viewDidLoad() {
         self.navigationController?.isNavigationBarHidden = true
-        for item in objetoCarga{
-            let nuevo = item.getDescripcion()
-            listaSting.append(nuevo)
-        }
         super.viewDidLoad()
 
         tableLista.delegate = self
         tableLista.dataSource = self
-        tableLista.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableLista.register(UINib(nibName: "BultoComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         self.view.addSubview(tableLista)
         // Do any additional setup after loading the view.
     }
@@ -51,47 +44,21 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.listaSting.count
+        return self.objetoCarga.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableLista.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.listaSting[indexPath.row]
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 300))
-        button.addTarget(self, action: #selector(quitar(_:)), for: .touchDown)
-        button.setTitle("", for : .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.setImage(UIImage(named:"icons8-delete_filled"), for: .normal)
-        cell.accessoryView = button
-
+        let cell = self.tableLista.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BultoComponentTableViewCell
+        cell.numeroOrden.text! = objetoCarga[indexPath.row].getNumeroItem()
+        cell.descripcionOrden.text! = objetoCarga[indexPath.row].getDescripcion()
+        cell.quitarButton.addTarget(self, action: #selector(quitar(_: )), for: .touchDown)
+        cell.quitarButton.tag = indexPath.row
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.index = indexPath.row
-        print(indexPath.row)
-    }
-    
-    @objc func quitar(_ sneder: UIButton){
-        if index == -1 {
-            //let error = MessageView.viewFromNib(layout: .tabView)
-            //error.configureTheme(.error)
-            //error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
-            //error.button?.isHidden = true
-            //var configError = SwiftMessages.defaultConfig
-            //configError.presentationStyle = .center
-            //configError.duration = .seconds(seconds: 2)
-            //SwiftMessages.show(config: configError , view:error)
-        }
-        else{
-            print("Elimine la filas")
-            self.listaSting.remove(at: index)
-            self.objetoCarga.remove(at: index)
-            index = -1
-            print(index)
-            tableLista.reloadData()
-            
-        }
+    @objc func quitar(_ sender: UIButton){
+        objetoCarga.remove(at: sender.tag)
+        tableLista.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

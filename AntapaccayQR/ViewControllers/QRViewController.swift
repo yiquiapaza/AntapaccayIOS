@@ -27,10 +27,25 @@ class QRViewController: UIViewController {
         //let generador = QRCodeGenerator()
         //s.image = generador.createImage(value: "B:" + self.id_qr_code,size: CGSize(width: 355, height: 355))
         //imagePrint = generador.createImage(value: "B:" + self.id_qr_code, size: CGSize(width: 10, height: 10))!
-        //id.text = "ID: " + self.id_qr_code
+        s.image = generatorQRCode(from: "B: " + self.id_qr_code)
+        id.text = "ID: " + self.id_qr_code
         //createDirectory(image: self.s.image!)
         
         // Do any additional setup after loading the view.
+    }
+    
+    func generatorQRCode(from string:String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        
+        if let filter = CIFilter(name: "CIQRCodeGenerator"){
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3 )
+            if let output = filter.outputImage?.transformed(by: transform){
+                return UIImage(ciImage: output)
+            }
+        }
+        
+        return nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {

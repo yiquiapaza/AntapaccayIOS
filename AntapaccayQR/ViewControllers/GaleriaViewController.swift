@@ -47,7 +47,10 @@ class GaleriaViewController: UIViewController,UICollectionViewDelegate, UICollec
         //cell.autoresizesSubviews = true
         //cell.contentView.addSubview(listaImagenes[indexPath.row])
         //cell.imageView = listaImagenes[indexPath.row]
-        cell.imageView = self.listaImagenes[indexPath.row]
+        //cell.imageView = self.listaImagenes[indexPath.row]
+        let vistaImagen = UIImageView()
+        vistaImagen.image = resize(image: self.listaImagenes[indexPath.row].image!, newWidth: 200)
+        cell.imageView = vistaImagen
         return cell
     }
 
@@ -63,5 +66,15 @@ class GaleriaViewController: UIViewController,UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+    
+    func resize(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }

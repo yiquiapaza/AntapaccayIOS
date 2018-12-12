@@ -150,8 +150,8 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableAlamacen.reloadData()
         self.bultosConfi.append(item)
         
-        var nuevo = Array<Dictionary<String,Any>>()
-        let _item : Dictionary<String,Any> = [
+        var nuevo : [[String:Any]] = []
+        let _item : [String:Any] = [
             "Id": item.getId(),
             "idPaleta":  item.getIdPaleta(),
             "idAlmacenRecepcion": item.getIdAlmacenRecepcion(),
@@ -205,7 +205,7 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
         request.httpBody = json
         self.delay(seconds: 5.0, completion: {
             SwiftSpinner.show("Cargando")
-            Alamofire.request(request).responseString(){
+            Alamofire.request(request).responseJSON(){
             //Alamofire.request(UPDATE_BULTO, method:.post, parameters: [nuevo] as! [Dictionary<String,Any>], encoding: JSONEncoding.default){
                 response in switch response.result{
                 case .success(let data):

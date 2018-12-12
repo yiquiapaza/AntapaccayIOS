@@ -10,6 +10,8 @@
 		6569B2D841ADF8575FBDDCE0 /* Pods_AntapaccayQRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8C1B470DBB7272BDA94AF3 /* Pods_AntapaccayQRUITests.framework */; };
 		90F45C81E0C2FD04ECE2B62C /* Pods_AntapaccayQRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8201295BAEBC1F18C3A73D66 /* Pods_AntapaccayQRTests.framework */; };
 		BCE72F27153F30DF5BCEC89C /* Pods_AntapaccayQR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7662CDF3623852F2D613726F /* Pods_AntapaccayQR.framework */; };
+		FB09C03721C1B9B60040086F /* SwitchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB09C03621C1B9B60040086F /* SwitchComponent.swift */; };
+		FB09C03921C1C0600040086F /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB09C03821C1C0600040086F /* TextFieldComponent.swift */; };
 		FB142BF62194CDA100FC9FB6 /* Bulto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB142BF52194CDA100FC9FB6 /* Bulto.swift */; };
 		FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15844E218CE78200592ED1 /* OrdenDetalle.swift */; };
 		FB1A9D2F21933C2800F8ED32 /* NacionaliadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D2E21933C2800F8ED32 /* NacionaliadViewController.swift */; };
@@ -20,6 +22,9 @@
 		FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */; };
 		FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */; };
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
+		FB1E559C21C1747B00F37866 /* BultoComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E559A21C1747B00F37866 /* BultoComponentTableViewCell.swift */; };
+		FB1E559D21C1747B00F37866 /* BultoComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1E559B21C1747B00F37866 /* BultoComponentTableViewCell.xib */; };
+		FB1E55A121C1B21500F37866 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E55A021C1B21500F37866 /* ButtonComponent.swift */; };
 		FB1F08BC21BB00C700AAFE81 /* ListaBultosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */; };
 		FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */; };
 		FB2141EE2191E10C00953269 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2141ED2191E10C00953269 /* Item.swift */; };
@@ -98,6 +103,8 @@
 		9D8C1B470DBB7272BDA94AF3 /* Pods_AntapaccayQRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntapaccayQRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D308793767C53330691C399F /* Pods-AntapaccayQRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRTests/Pods-AntapaccayQRTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F73EBF6CFE4E82570AE5A442 /* Pods-AntapaccayQRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntapaccayQRUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntapaccayQRUITests/Pods-AntapaccayQRUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FB09C03621C1B9B60040086F /* SwitchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchComponent.swift; sourceTree = "<group>"; };
+		FB09C03821C1C0600040086F /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		FB142BF52194CDA100FC9FB6 /* Bulto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulto.swift; sourceTree = "<group>"; };
 		FB15844E218CE78200592ED1 /* OrdenDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenDetalle.swift; sourceTree = "<group>"; };
 		FB1A9D2E21933C2800F8ED32 /* NacionaliadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NacionaliadViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +115,9 @@
 		FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarViewController.swift; sourceTree = "<group>"; };
 		FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteDTO.swift; sourceTree = "<group>"; };
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
+		FB1E559A21C1747B00F37866 /* BultoComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BultoComponentTableViewCell.swift; sourceTree = "<group>"; };
+		FB1E559B21C1747B00F37866 /* BultoComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BultoComponentTableViewCell.xib; sourceTree = "<group>"; };
+		FB1E55A021C1B21500F37866 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaBultosViewController.swift; sourceTree = "<group>"; };
 		FB20AFA321A30E3600B98FE6 /* ListaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
 		FB2141ED2191E10C00953269 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -299,6 +309,11 @@
 				FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */,
 				FB43FD3221B9882700ABA054 /* AlmacenComponentTableViewCell.swift */,
 				FB43FD3321B9882700ABA054 /* AlmacenComponentTableViewCell.xib */,
+				FB1E559A21C1747B00F37866 /* BultoComponentTableViewCell.swift */,
+				FB1E559B21C1747B00F37866 /* BultoComponentTableViewCell.xib */,
+				FB1E55A021C1B21500F37866 /* ButtonComponent.swift */,
+				FB09C03621C1B9B60040086F /* SwitchComponent.swift */,
+				FB09C03821C1C0600040086F /* TextFieldComponent.swift */,
 			);
 			path = Commponents;
 			sourceTree = "<group>";
@@ -481,6 +496,7 @@
 				FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */,
 				FBDAB0A121B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib in Resources */,
 				FBE8136F2187942A00669625 /* Main.storyboard in Resources */,
+				FB1E559D21C1747B00F37866 /* BultoComponentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,11 +615,13 @@
 				FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */,
 				FBD3C23E21AC221F00221C3C /* ConsolidadoUnidadViewController.swift in Sources */,
 				FBD3C24A21AC7A7D00221C3C /* TerminarBultoViewController.swift in Sources */,
+				FB09C03721C1B9B60040086F /* SwitchComponent.swift in Sources */,
 				FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */,
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
 				FBE7D0F621AF24CB00590AB3 /* Registro.swift in Sources */,
 				FB2141EE2191E10C00953269 /* Item.swift in Sources */,
 				FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */,
+				FB1E559C21C1747B00F37866 /* BultoComponentTableViewCell.swift in Sources */,
 				FBE7D0F221AEEE8500590AB3 /* PartidaCargaViewController.swift in Sources */,
 				FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */,
 				FB345CF821ADA44500B5BF5E /* Unidad.swift in Sources */,
@@ -615,6 +633,7 @@
 				FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
 				FB5738C221B853F800C22703 /* Reporte.swift in Sources */,
+				FB09C03921C1C0600040086F /* TextFieldComponent.swift in Sources */,
 				FB59B65521BEE2F6006E1F2D /* UnidadQRViewController.swift in Sources */,
 				FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */,
 				FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */,
@@ -623,6 +642,7 @@
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
 				FBD3C23A21AC107B00221C3C /* ConsolidadionPaletaViewController.swift in Sources */,
 				FB1A9D2F21933C2800F8ED32 /* NacionaliadViewController.swift in Sources */,
+				FB1E55A121C1B21500F37866 /* ButtonComponent.swift in Sources */,
 				FBD3C24421AC5A9000221C3C /* CameraBultoViewController.swift in Sources */,
 				FB94C469218A4EF1000E6684 /* Util.swift in Sources */,
 				FB9BE786218A47370044690B /* Orden.swift in Sources */,
