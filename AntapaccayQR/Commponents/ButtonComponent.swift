@@ -28,6 +28,42 @@ class ButtonComponent: UIButton {
         }
     }
 
+
+    @IBInspectable
+    var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
     override func prepareForInterfaceBuilder() {
         sharedInit()
     }
@@ -39,6 +75,4 @@ class ButtonComponent: UIButton {
     func refreshCorners(value: CGFloat) -> Void {
         layer.cornerRadius = value
     }
-    
-    
 }

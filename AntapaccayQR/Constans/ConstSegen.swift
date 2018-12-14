@@ -7,3 +7,4 @@
 //
 
 let LOGIN_SEGEN : String = "LoginSegen"
+let SESSION_SEGUE: String = "SessionSegue"

@@ -26,16 +26,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         imageViewIntro(image: imagenLogin)
         startView(vistaIntro: viewLogin)
         passLoginVC.delegate = self
+        switchIntro.isOn = false
         super.viewDidLoad()
+        if (UserDefaults.standard.string(forKey: "user") != VACIO && UserDefaults.standard.string(forKey: "pass") != VACIO){
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.performSegue(withIdentifier: SESSION_SEGUE, sender: self)
+            }
+        }
     }
     
-    @IBAction func rememberLoginVC(_ sender: Any) {
+    @IBAction func rememberLoginVC(_ sender: UISwitch) {
+        if ( sender.isOn == true ){
+            UserDefaults.standard.set(userLoginVC.text, forKey: "user")
+            UserDefaults.standard.set(userLoginVC.text, forKey: "pass")
+        }
+        else if (sender.isOn == false ){
+            UserDefaults.standard.set(VACIO, forKey: "user")
+            UserDefaults.standard.set(VACIO, forKey: "pass")
+        }
     }
     @IBAction func loginLoginVC(_ sender: Any) {
         if (!userLoginVC.text!.isEmpty && !passLoginVC.text!.isEmpty){
-            //print("estoy aca")
-            //Cuando este el Login
-            //print(userLoginVC.text)
+           
         }
         if(!userLoginVC.text!.isEmpty && passLoginVC.text!.isEmpty) {
             let alertUser = UIAlertController(title: "Ingrese Usuario", message: "El usuario es un campo Obligatorio", preferredStyle: UIAlertController.Style.alert)
