@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A766B9462C70718BC66E609FA54C1B33"
-               BlueprintName = "Pods-AntapaccayQR"
+               BlueprintIdentifier = "D54FDD5C741942E89778C6F1AD56A429"
+               BlueprintName = "PMAlertController-PMAlertController"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-AntapaccayQR.framework">
+               BuildableName = "PMAlertController-PMAlertController.bundle">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -10,6 +10,7 @@ import UIKit
 import DropDown
 import Alamofire
 import SwiftSpinner
+import PMAlertController
 
 class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
  
@@ -110,6 +111,10 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         self.cantidadRequerida.isEnabled = false
         self.cantidadRequerida.keyboardType = .numberPad
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
+
         // Do any additional setup after loading the view.
         
     }
@@ -131,7 +136,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 PRICE_CODE: orden.getPriceCode()
             ]
             self.delay(seconds: 3.0, completion: {
-                SwiftSpinner.show("Verificando API")
+                SwiftSpinner.show("Consultando Orden")
                     Alamofire.request(LIST_ORDEN_DET, method: .post,parameters: parametros, encoding: JSONEncoding.default)
                         .responseJSON(){ response in
                             switch response.result {
@@ -177,49 +182,19 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             })
         }
         if (orden.getTipoOrden() == VACIO && numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) != VACIO) {
-            
-            //let alertOrden = UIAlertController(title: "Seleccione un Tipo de Orden", message: "Es Obligatorio", preferredStyle: UIAlertController.Style.alert)
-            //let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            //alertOrden.addAction(exit)
-            //self.present(alertOrden, animated: true, completion: nil)
-            //let error = MessageView.viewFromNib(layout: .tabView)
-            //error.configureTheme(.error)
-            //error.configureContent(title:"Seleccione un Tipo de Orden",body:"Es un campo obligatorio" )
-            //error.button?.isHidden = true
-            //var configError = SwiftMessages.defaultConfig
-            //configError.presentationStyle = .center
-            //configError.duration = .seconds(seconds: 2)
-            //SwiftMessages.show(config: configError , view:error)
+            let alertOrden = PMAlertController(title: "Ingrese un Tipo Orden", description: "Es un Campo Obligatorio", image: UIImage( named: "precaucion"), style: .alert)
+            alertOrden.addAction( PMAlertAction(title: "Aceptar", style: .cancel, action: nil))
+            self.present(alertOrden, animated: true, completion: nil)
         }
         if (numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) == VACIO && orden.getTipoOrden() != VACIO) {
-            //let error = MessageView.viewFromNib(layout: .tabView)
-            //error.configureTheme(.error)
-            //error.configureContent(title:"Ingrese Numero de Orden",body:"Es un campo obligatorio" )
-            //error.button?.isHidden = true
-            //var configError = SwiftMessages.defaultConfig
-            //configError.presentationStyle = .center
-            //configError.duration = .seconds(seconds: 2)
-            //SwiftMessages.show(config: configError , view:error)
-            
-            //let alertOrden = UIAlertController(title: "Ingrese Numero de Orden", message: "Es un campo Obligatorio", preferredStyle: UIAlertController.Style.alert)
-            //let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            //alertOrden.addAction(exit)
-            //self.present(alertOrden, animated: true, completion: nil)
+            let alertOrden = PMAlertController(title: "Escriba el Numero de Orden", description: "Es un Campo Obligatorio", image: UIImage( named: "precaucion"), style: .alert)
+            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(alertOrden, animated: true, completion: nil)
         }
         if(numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) == VACIO && orden.getTipoOrden() == VACIO) {
-            
-            //let error = MessageView.viewFromNib(layout: .tabView)
-            //error.configureTheme(.error)
-            //error.configureContent(title:"Ingrese Numero y Tipo de Orden",body:"Es un campo obligatorio" )
-            //error.button?.isHidden = true
-            //var configError = SwiftMessages.defaultConfig
-            //configError.presentationStyle = .center
-            //configError.duration = .seconds(seconds: 2)
-            //SwiftMessages.show(config: configError , view:error)
-            //let alertOrden = UIAlertController(title: "Ingrese Numero y Tipo de Orden", message: "Son Obligatorio", preferredStyle: UIAlertController.Style.alert)
-            //let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            //alertOrden.addAction(exit)
-            //self.present(alertOrden, animated: true, completion: nil)
+            let alertOrden = PMAlertController(title: "Escriba y Ingrese la orden", description: "Son Campos Obligatorios", image: UIImage(named: "precaucion"), style: .alert)
+            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(alertOrden, animated: true, completion: nil)
         }
 
         
@@ -309,27 +284,24 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                     self._cantidadesItem[self._numeroItem] = self.cantidadRequerida.text!
                 }
                 else {
-                    let alertOrden = UIAlertController(title: "Error", message: "La Cantidad no puede exceder al total", preferredStyle: UIAlertController.Style.alert)
-                    let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-                    alertOrden.addAction(exit)
+                    let alertOrden = PMAlertController(title: "Error", description: "La cantidad no puede exceder al total", image: UIImage(named: "error"), style: .alert)
+                    alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                     self.present(alertOrden, animated: true, completion: nil)
                 }
             }
             self.cantidadRequerida.text = VACIO
         }
         else {
-            let alertOrden = UIAlertController(title: "Error", message: "Solo estan Permitidos caracteres Numericos", preferredStyle: UIAlertController.Style.alert)
-            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            alertOrden.addAction(exit)
+            let alertOrden = PMAlertController(title: "Error", description: "Solo estan Permitidos caracteres Numericos", image: UIImage(named: "error"), style: .alert)
+            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
             self.present(alertOrden, animated: true, completion: nil)
         }
     }
     
     @IBAction func crearBulto(_ sender: UIButton) {
         if self._listaItem.isEmpty{
-            let alertOrden = UIAlertController(title: "Error", message: "Su bulto debe de tener minimo un elemento", preferredStyle: UIAlertController.Style.alert)
-            let exit = UIAlertAction(title: "Regresar", style: UIAlertAction.Style.cancel, handler: nil)
-            alertOrden.addAction(exit)
+            let alertOrden = PMAlertController(title: "Error", description: "Su bulto debe de tener minimo un elemento", image: UIImage(named: "error"), style: .alert)
+            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
             self.present(alertOrden, animated: true, completion: nil)
         }
     }
@@ -364,5 +336,6 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         self.numeroOrden.resignFirstResponder()
         return true
     }
+    
 }
 

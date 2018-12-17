@@ -18,14 +18,13 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
     let cellReuseIdentifier = "cell"
     
     override func viewDidLoad() {
-        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
-
         tableLista.delegate = self
         tableLista.dataSource = self
         tableLista.register(UINib(nibName: "BultoComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         self.view.addSubview(tableLista)
-        // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: nil, action: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,14 +59,6 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
         objetoCarga.remove(at: sender.tag)
         tableLista.reloadData()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableLista.reloadData()
-    }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-    }
 }
 

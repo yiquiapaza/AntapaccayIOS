@@ -8,6 +8,7 @@ target 'AntapaccayQR' do
   pod 'DropDown', '~> 2.3.2'
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftSpinner', '~> 1.6'
+  pod 'PMAlertController', '~> 3.5'
   target 'AntapaccayQRTests' do
     inherit! :search_paths
     # Pods for testing

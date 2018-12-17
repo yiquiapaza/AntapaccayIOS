@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import QRCoder
 
 class QRViewController: UIViewController {
 
@@ -24,6 +23,8 @@ class QRViewController: UIViewController {
     override func viewDidLoad() {
         self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: nil, action: nil)
         //let generador = QRCodeGenerator()
         //s.image = generador.createImage(value: "B:" + self.id_qr_code,size: CGSize(width: 355, height: 355))
         //imagePrint = generador.createImage(value: "B:" + self.id_qr_code, size: CGSize(width: 10, height: 10))!
@@ -97,6 +98,11 @@ class QRViewController: UIViewController {
                 print("Error")
             }
         }
+    }
+    
+    @IBAction func backMenu(_ sender: UIButton) {
+        let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        navigationController?.pushViewController( menuViewController, animated: true)
     }
     
 }

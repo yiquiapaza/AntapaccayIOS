@@ -10,36 +10,17 @@ import UIKit
 import AVFoundation
 
 
-class CamaraViewController: UIViewController {
-//class CamaraViewController: QRCodeScannerViewController {
+class CamaraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //cv.qrScannerDelegate = self
-        // Do any additional setup after loading the view.
     }
-  
-    //override func processQRCodeContent(qrCodeContent: String) -> Bool {
-    //    print(qrCodeContent)
-    //    dismiss(animated: true, completion: nil)
-    //    return true
-    //}
     
-    @IBOutlet weak var resultado: UILabel!
-    
-    //let cv = QRScannerController()
-    
-    
+    @IBOutlet weak var imageView: UIImageView!
 
-    @IBAction func back(_ sender: Any) {
-        //dismiss(animated: true, completion: nil)
-        //self.navigationController?.pushViewController(cv, animated: true)
+    
+    @IBAction func openCameraButton(sender: AnyObject) {
         
     }
-}
-//extension CamaraViewController : QrScannerDelegate{
-//    func getScannedData(data: String) {
-//        resultado.text = data
-//    }
-//}
 
+}

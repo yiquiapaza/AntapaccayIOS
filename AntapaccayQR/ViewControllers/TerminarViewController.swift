@@ -24,12 +24,13 @@ class TerminarViewController: UIViewController {
 
     override func viewDidLoad() {
         
-//        let data = self.parent as! TabBarViewController
-//        self.objectoCarga =  data.objetoCarga
-//        self.objectoOrden = data.objetoOrden
-        self.generarQR.isEnabled = false
-        self.navigationController?.isNavigationBarHidden = true
+        //let data = self.parent as! TabBarViewController
+        //self.objectoCarga =  data.objetoCarga
+        //self.objectoOrden = data.objetoOrden
+        //self.generarQR.isEnabled = false
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: nil, action: nil)
     }
 
     
@@ -189,12 +190,5 @@ class TerminarViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: popTime) {
             completion()
         }
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(shouldHideNavBar, animated: animated)
     }
 }

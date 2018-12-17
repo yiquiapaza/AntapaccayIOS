@@ -25,6 +25,7 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableAlamacen.delegate = self
         tableAlamacen.dataSource = self
         tableAlamacen.register(UINib(nibName: "AlmacenComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+      
         super.viewDidLoad()
     }
 
@@ -144,7 +145,7 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func hacerClick( _ sender: UIButton){
-        print("Funciono Carajo")
+        //print("Funciono Carajo")
         let item = self.bultos[indice]
         self.bultos.remove(at: indice)
         self.tableAlamacen.reloadData()
@@ -181,8 +182,8 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
             "idDiscrepancia": item.getIdDiscrepancia(),
             "campoDiscrepancia": item.getCampoDiscrepancia(),
             "fechaRecepcion": item.getFechaRecepcion(),
-            "recepcionAlmacen": item.getRecepcionAlmacen(),
-            "fechaRecepcionAlmacen": item.getFechaRecepcionAlmacen(),
+            "recepcionAlmacen": true,
+            "fechaRecepcionAlmacen": NSDate().timeIntervalSince1970,
             "codigoTransportista": item.getCodigoTransportista(),
             "transportista": item.getTransportista(),
             "ubicacion": item.getUbicacion(),
@@ -199,7 +200,7 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
         nuevo.append(_item)
         print(nuevo)
         var request = URLRequest(url: URL(string: UPDATE_BULTO)!)
-        request.httpMethod = "POST"
+        request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let json = try? JSONSerialization.data(withJSONObject: nuevo)
         request.httpBody = json
