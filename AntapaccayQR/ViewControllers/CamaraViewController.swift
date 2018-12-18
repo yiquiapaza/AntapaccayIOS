@@ -10,10 +10,11 @@ import UIKit
 import AVFoundation
 
 
-class CamaraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CamaraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = UIImage(named: "error")
     }
     
     @IBOutlet weak var imageView: UIImageView!

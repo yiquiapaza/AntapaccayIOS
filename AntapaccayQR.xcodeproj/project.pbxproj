@@ -14,6 +14,9 @@
 		FB09C03921C1C0600040086F /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB09C03821C1C0600040086F /* TextFieldComponent.swift */; };
 		FB142BF62194CDA100FC9FB6 /* Bulto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB142BF52194CDA100FC9FB6 /* Bulto.swift */; };
 		FB15844F218CE78200592ED1 /* OrdenDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB15844E218CE78200592ED1 /* OrdenDetalle.swift */; };
+		FB19FE3821C9684E006553A5 /* CameraUnidaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB19FE3721C9684E006553A5 /* CameraUnidaViewController.swift */; };
+		FB19FE3A21C968F7006553A5 /* GaleriaUnidadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB19FE3921C968F7006553A5 /* GaleriaUnidadViewController.swift */; };
+		FB19FE3C21C9691F006553A5 /* TerminarUnidadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB19FE3B21C9691F006553A5 /* TerminarUnidadViewController.swift */; };
 		FB1A9D2F21933C2800F8ED32 /* NacionaliadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D2E21933C2800F8ED32 /* NacionaliadViewController.swift */; };
 		FB1A9D3121933C4C00F8ED32 /* TipoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D3021933C4C00F8ED32 /* TipoViewController.swift */; };
 		FB1A9D332193443A00F8ED32 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D322193443A00F8ED32 /* TabBarViewController.swift */; };
@@ -108,6 +111,9 @@
 		FB09C03821C1C0600040086F /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		FB142BF52194CDA100FC9FB6 /* Bulto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulto.swift; sourceTree = "<group>"; };
 		FB15844E218CE78200592ED1 /* OrdenDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenDetalle.swift; sourceTree = "<group>"; };
+		FB19FE3721C9684E006553A5 /* CameraUnidaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUnidaViewController.swift; sourceTree = "<group>"; };
+		FB19FE3921C968F7006553A5 /* GaleriaUnidadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaUnidadViewController.swift; sourceTree = "<group>"; };
+		FB19FE3B21C9691F006553A5 /* TerminarUnidadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarUnidadViewController.swift; sourceTree = "<group>"; };
 		FB1A9D2E21933C2800F8ED32 /* NacionaliadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NacionaliadViewController.swift; sourceTree = "<group>"; };
 		FB1A9D3021933C4C00F8ED32 /* TipoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipoViewController.swift; sourceTree = "<group>"; };
 		FB1A9D322193443A00F8ED32 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +304,9 @@
 				FB1F08BB21BB00C700AAFE81 /* ListaBultosViewController.swift */,
 				FB59B65221BEE29A006E1F2D /* PaletaQRViewController.swift */,
 				FB59B65421BEE2F6006E1F2D /* UnidadQRViewController.swift */,
+				FB19FE3721C9684E006553A5 /* CameraUnidaViewController.swift */,
+				FB19FE3921C968F7006553A5 /* GaleriaUnidadViewController.swift */,
+				FB19FE3B21C9691F006553A5 /* TerminarUnidadViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -637,11 +646,13 @@
 				FB1A9D3121933C4C00F8ED32 /* TipoViewController.swift in Sources */,
 				FB735B312195E16E00707D9D /* ListaGuia.swift in Sources */,
 				FB3F04C72188FE2700287DAB /* User.swift in Sources */,
+				FB19FE3C21C9691F006553A5 /* TerminarUnidadViewController.swift in Sources */,
 				FB5738C221B853F800C22703 /* Reporte.swift in Sources */,
 				FB09C03921C1C0600040086F /* TextFieldComponent.swift in Sources */,
 				FB59B65521BEE2F6006E1F2D /* UnidadQRViewController.swift in Sources */,
 				FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */,
 				FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */,
+				FB19FE3821C9684E006553A5 /* CameraUnidaViewController.swift in Sources */,
 				FBD3C24621AC5AEE00221C3C /* GaleriaBultoViewController.swift in Sources */,
 				FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
@@ -651,6 +662,7 @@
 				FBD3C24421AC5A9000221C3C /* CameraBultoViewController.swift in Sources */,
 				FB94C469218A4EF1000E6684 /* Util.swift in Sources */,
 				FB9BE786218A47370044690B /* Orden.swift in Sources */,
+				FB19FE3A21C968F7006553A5 /* GaleriaUnidadViewController.swift in Sources */,
 				FBE7D0F021AEEE7600590AB3 /* SalidaCargaViewController.swift in Sources */,
 				FB1A9D332193443A00F8ED32 /* TabBarViewController.swift in Sources */,
 				FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */,

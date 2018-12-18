@@ -57,8 +57,11 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
                             let paleta = Unidad()
                             paleta.setId(id: item["Id"] as! String)
                             paleta.setIdAlmacenRecepcion(idAlmacenRecepcion: item["idAlmacenRecepcion"] as! String)
+                            paleta.setIdTransporteConsolidado(idTransporteConsolidado: CONST_ID)
                             paleta.setNumeroPaleta(numeroPaleta: item["numeroPaleta"] as! String)
                             paleta.setCodigo(codigo: item["codigo"] as! String)
+                            paleta.setCodigoQR(codigoQR: item["codigoQR"] as! String)
+                            paleta.setNumeroWaybill(numeroWaybill: item["numeroWaybill"] as! String)
                             paleta.setPeso(peso: item["peso"] as! Float)
                             paleta.setAlto(alto: item["alto"] as! Float)
                             paleta.setLargo(largo: item["largo"] as! Float)
@@ -69,7 +72,14 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
                             paleta.setImportacion(importacion: item["importacion"] as! Bool)
                             paleta.setNacional(nacional: item["nacional"] as! Bool)
                             paleta.setFechaRecepcion(fechaRecepcion: item["fechaRecepcion"] as! Int)
+                            paleta.setIdDiscrepancia(idDiscrepancia: item["idDiscrepancia"] as! String)
+                            paleta.setCampoDiscrepancia(campoDiscrepancia: item["campoDiscrepancia"] as! String)
+                            paleta.setImagenes(imagenes: item["imagenes"] as? String ?? "")
                             paleta.setRowVersion(rowVersion: item["RowVersion"] as! String)
+                            
+                            paleta.setCodigoTransportista(codigoTransportista: item["codigoTransportista"] as! String)
+                            paleta.setTransportista(transportista: item["transportista"] as! String)
+                            
                             self.listaPaletas.append(paleta)
                         }
                         //print(response.result.value)

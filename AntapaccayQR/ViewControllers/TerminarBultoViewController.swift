@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftSpinner
+import PMAlertController
 
 class TerminarBultoViewController: UIViewController {
 
@@ -80,15 +82,38 @@ class TerminarBultoViewController: UIViewController {
             "listaBultos": listaBultos
         ]
         
-        Alamofire.request(INSERT_BULTO, method: .post, parameters: paleta, encoding: JSONEncoding.default)
-        .responseJSON(){
-            response in switch response.result{
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
+        self.delay(seconds: 3.0, completion: {
+            SwiftSpinner.show("Verficando Datos")
+            Alamofire.request(INSERT_BULTO, method: .post, parameters: paleta, encoding: JSONEncoding.default)
+                .responseJSON(){
+                    response in switch response.result{
+                    case .success(let data):
+                        print(data)
+                        SwiftSpinner.hide()
+                        let datos = PMAlertController(title: "Exit", description: "La operacion se realizo exitasamente", image: UIImage(named: "exito"), style: .alert)
+                        datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(datos, animated: true, completion: nil)
+                    case .failure(let error):
+                        print(error)
+                        SwiftSpinner.hide()
+                        let datos = PMAlertController(title: "Error", description: "Verifique los datos ingresados y su conneccion a Internet", image: UIImage(named: "error"), style: .alert)
+                        datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(datos, animated: true, completion: nil)
+                    }
             }
+        })
+    }
+    
+    func delay(seconds: Double, completion: @escaping () -> ()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
         }
     }
     
+    @IBAction func backMenu(_ sender: UIButton) {
+        let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        navigationController?.pushViewController( menuViewController, animated: true)
+    }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
+import PMAlertController
 
 class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
@@ -50,53 +51,71 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
                 "Operator": "Equals"
             ]
         }
-        self.delay(secons: 3.0, completatio: {
-            SwiftSpinner.show("Verificando API")
-            Alamofire.request(BUSQUEDA_BULTO_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
-                .responseJSON() {
-                    response in switch response.result{
-                    case .success:
-                        //print(response.result.value)
-                        let outList = response.result.value as! [Dictionary<String, Any>]
-                        for item in outList {
-                            let nuevo = Paleta()
-                            nuevo.setId(Id: item["Id"] as? String ?? "")
-                            nuevo.setIdPaleta(IdPaleta: item["idPaleta"] as? String ?? "")
-                            nuevo.setIdAlmacenRecepcion(IdAlmacenRecepcion: item["idAlmacenRecepcion"] as? String ?? "")
-                            nuevo.setNumeroBulto(numeroBulto: item["numeroBulto"] as? Int ?? 0)
-                            nuevo.setCodigo(Codigo: item["codigo"] as? String ?? "")
-                            nuevo.setNombreProveedor(nombreProveedor: item["nombreProveedor"] as? String ?? "")
-                            nuevo.setNombreAlmacen(nombreAlmacen: item["nombreAlmacen"] as? String ?? "")
-                            nuevo.setTipoOrden(tipoOrden: item["tipoOrden"] as? String ?? "")
-                            nuevo.setValorOrden(valorOrden: item["valorOrden"] as? String ?? "")
-                            nuevo.setEstadoBulto(EstadoBulto: item["estadoBulto"] as? String ?? "")
-                            nuevo.setPeso(peso: item["peso"] as! Double)
-                            nuevo.setAlto(alto: item["alto"] as! Double)
-                            nuevo.setAncho(ancho: item["ancho"] as! Double)
-                            nuevo.setLargo(largo: item["largo"] as! Double)
-                            nuevo.setFragil(fragil: item["fragil"] as? Bool ?? false)
-                            nuevo.setSobredimensionado(sobredimensionado: item["sobredimensionado"] as? Bool ?? false)
-                            nuevo.setCargaPeligrosa(cargaPeligrosa: item["cargaPeligrosa"] as? Bool ?? false)
-                            nuevo.setImportacion(importancia: item["importacion"] as? Bool ?? false)
-                            nuevo.setNacional(nacional: item["nacional"] as? Bool ?? false)
-                            nuevo.setFechaRecepcion(fecha: self.obtenerFecha())
-                            nuevo.setTransportista(transportista: item["transportista"] as? String ?? "")
-                            nuevo.setUbicacion(ubicacion: item["ubicacion"] as? String ?? "")
-                            nuevo.setGeneral(general: item["general"] as? Bool ?? false)
-                            nuevo.setComponente(componente: item["componente"] as? Bool ?? false)
-                            nuevo.setUnidadCompleta(unidad: item["unidadCompleta"] as? Bool ?? false)
-                            nuevo.setRowVersion(rowVersion: item["RowVersion"] as? String ?? "")
-                            self.listaPaleta.append(nuevo)
+        
+        if getBulto.text! == ""{
+            let alertBulto = PMAlertController(title: "Ingrese un codigo de un Bulto", description: "Es un campo Obligatorio", image: UIImage(named: "precaucion"), style: .alert)
+            alertBulto.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(alertBulto, animated: true, completion: nil)
+        }
+        else {
+            self.delay(secons: 3.0, completatio: {
+                SwiftSpinner.show("Verificando API")
+                Alamofire.request(BUSQUEDA_BULTO_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
+                    .responseJSON() {
+                        response in switch response.result{
+                        case .success:
+                            let outList = response.result.value as! [Dictionary<String, Any>]
+                            if outList.isEmpty {
+                                let alertOrden = PMAlertController(title: "Error", description: "Numero de Bulto erroneo", image: UIImage(named: "error"), style: .alert)
+                                alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertOrden, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                            }
+                            else {
+                                for item in outList {
+                                    let nuevo = Paleta()
+                                    nuevo.setId(Id: item["Id"] as? String ?? "")
+                                    nuevo.setIdPaleta(IdPaleta: item["idPaleta"] as? String ?? "")
+                                    nuevo.setIdAlmacenRecepcion(IdAlmacenRecepcion: item["idAlmacenRecepcion"] as? String ?? "")
+                                    nuevo.setNumeroBulto(numeroBulto: item["numeroBulto"] as? Int ?? 0)
+                                    nuevo.setCodigo(Codigo: item["codigo"] as? String ?? "")
+                                    nuevo.setNombreProveedor(nombreProveedor: item["nombreProveedor"] as? String ?? "")
+                                    nuevo.setNombreAlmacen(nombreAlmacen: item["nombreAlmacen"] as? String ?? "")
+                                    nuevo.setTipoOrden(tipoOrden: item["tipoOrden"] as? String ?? "")
+                                    nuevo.setValorOrden(valorOrden: item["valorOrden"] as? String ?? "")
+                                    nuevo.setEstadoBulto(EstadoBulto: item["estadoBulto"] as? String ?? "")
+                                    nuevo.setPeso(peso: item["peso"] as! Double)
+                                    nuevo.setAlto(alto: item["alto"] as! Double)
+                                    nuevo.setAncho(ancho: item["ancho"] as! Double)
+                                    nuevo.setLargo(largo: item["largo"] as! Double)
+                                    nuevo.setFragil(fragil: item["fragil"] as? Bool ?? false)
+                                    nuevo.setSobredimensionado(sobredimensionado: item["sobredimensionado"] as? Bool ?? false)
+                                    nuevo.setCargaPeligrosa(cargaPeligrosa: item["cargaPeligrosa"] as? Bool ?? false)
+                                    nuevo.setImportacion(importancia: item["importacion"] as? Bool ?? false)
+                                    nuevo.setNacional(nacional: item["nacional"] as? Bool ?? false)
+                                    nuevo.setFechaRecepcion(fecha: self.obtenerFecha())
+                                    nuevo.setTransportista(transportista: item["transportista"] as? String ?? "")
+                                    nuevo.setUbicacion(ubicacion: item["ubicacion"] as? String ?? "")
+                                    nuevo.setGeneral(general: item["general"] as? Bool ?? false)
+                                    nuevo.setComponente(componente: item["componente"] as? Bool ?? false)
+                                    nuevo.setUnidadCompleta(unidad: item["unidadCompleta"] as? Bool ?? false)
+                                    nuevo.setRowVersion(rowVersion: item["RowVersion"] as? String ?? "")
+                                    self.listaPaleta.append(nuevo)
+                                    SwiftSpinner.hide()
+                                }
+                            }
+                            self.tablaBulto.reloadData()
+                            self.getBulto.text = ""
+                        case .failure(let error):
+                            print(error)
+                            let alertOrden = PMAlertController(title: "Error", description: "revise su conexion de Internet", image: UIImage(named: "error"), style: .alert)
+                            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                            self.present(alertOrden, animated: true, completion: nil)
+                            SwiftSpinner.hide()
                         }
-                        SwiftSpinner.hide()
-                        self.tablaBulto.reloadData()
-                        self.getBulto.text = ""
-                    case .failure(let error):
-                        print(error)
-                        SwiftSpinner.hide()
-                    }
-            }
-        })
+                }
+            })
+        }
     }
     
     func delay(secons:Double, completatio: @escaping () -> ()) -> Void {

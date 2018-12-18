@@ -35,3 +35,4 @@ let UPDATE_BULTO: String = BASE_URL + "Bulto/UpdateList"
 
 let BUSQUEDA_BULTO_BY_ID: String = BASE_URL + "Bulto/GetBultoById"
 let BUSQUEDA_PALETA_BY_ID: String = BASE_URL + "PaletaConsolidada/GetPaletaConsolidadaById"
+let CONSOLIDAR_TRANSPORTE: String = BASE_URL + "PaletaConsolidada/SaveTransporte"

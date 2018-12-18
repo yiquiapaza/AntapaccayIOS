@@ -1100,7 +1100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmW-iI-gJp" customClass="LabelComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminar Proceso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmW-iI-gJp" customClass="LabelComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="84" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jO8-OY-TYl"/>
@@ -1121,7 +1121,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKR-bF-Ulr" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
-                                <rect key="frame" x="40" y="224" width="295" height="30"/>
+                                <rect key="frame" x="20" y="224" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Terminar">
                                     <color key="titleColor" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1144,15 +1144,39 @@
                                     <action selector="terminar:" destination="3aa-Kg-hkp" eventType="touchUpInside" id="FY6-zh-sen"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoB-xd-1DC" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="274" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Regresar al Menu">
+                                    <color key="titleColor" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backMenu:" destination="3aa-Kg-hkp" eventType="touchUpInside" id="uaf-yD-v5X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TRv-Lq-xo8" firstAttribute="trailing" secondItem="FKR-bF-Ulr" secondAttribute="trailing" constant="40" id="3be-ZV-KnJ"/>
+                            <constraint firstItem="zoB-xd-1DC" firstAttribute="top" secondItem="FKR-bF-Ulr" secondAttribute="bottom" constant="20" id="2bZ-du-eMv"/>
+                            <constraint firstItem="TRv-Lq-xo8" firstAttribute="trailing" secondItem="FKR-bF-Ulr" secondAttribute="trailing" constant="20" id="3be-ZV-KnJ"/>
                             <constraint firstItem="FKR-bF-Ulr" firstAttribute="top" secondItem="ZmW-iI-gJp" secondAttribute="bottom" constant="100" id="End-Nd-5Tk"/>
                             <constraint firstItem="ZmW-iI-gJp" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" constant="20" id="XW7-tw-Gtb"/>
                             <constraint firstItem="ZmW-iI-gJp" firstAttribute="top" secondItem="TRv-Lq-xo8" secondAttribute="top" constant="20" id="aA1-TG-0vQ"/>
                             <constraint firstItem="TRv-Lq-xo8" firstAttribute="trailing" secondItem="ZmW-iI-gJp" secondAttribute="trailing" constant="20" id="avJ-Jk-jU7"/>
-                            <constraint firstItem="FKR-bF-Ulr" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" constant="40" id="xdq-49-Xfl"/>
+                            <constraint firstItem="TRv-Lq-xo8" firstAttribute="trailing" secondItem="zoB-xd-1DC" secondAttribute="trailing" constant="20" id="sFX-lP-6Vu"/>
+                            <constraint firstItem="zoB-xd-1DC" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" constant="20" id="tzx-cd-3dS"/>
+                            <constraint firstItem="FKR-bF-Ulr" firstAttribute="leading" secondItem="TRv-Lq-xo8" secondAttribute="leading" constant="20" id="xdq-49-Xfl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TRv-Lq-xo8"/>
                     </view>
@@ -1165,7 +1189,7 @@
         <!--Camara-->
         <scene sceneID="M3S-Mu-VUs">
             <objects>
-                <viewController id="unT-Sl-tc5" sceneMemberID="viewController">
+                <viewController id="unT-Sl-tc5" customClass="CameraUnidaViewController" customModule="AntapaccayQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NHf-zh-4hS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1199,7 +1223,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gon-XL-qi1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camara" selectedImage="icons8-camera" id="DQl-K8-AFm"/>
+                    <tabBarItem key="tabBarItem" title="Camara" image="icons8-camera" selectedImage="icons8-camera" id="DQl-K8-AFm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3A-6A-OvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1208,7 +1232,7 @@
         <!--Galeria-->
         <scene sceneID="doR-Af-XrM">
             <objects>
-                <viewController id="Uu3-Dd-VoU" sceneMemberID="viewController">
+                <viewController id="Uu3-Dd-VoU" customClass="GaleriaUnidadViewController" customModule="AntapaccayQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQy-C3-yUV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1242,7 +1266,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="owi-Ta-FcK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Galeria" selectedImage="icons8-opened_folder" id="O7O-8d-zPU"/>
+                    <tabBarItem key="tabBarItem" title="Galeria" image="icons8-opened_folder" selectedImage="icons8-opened_folder" id="O7O-8d-zPU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEI-mc-lcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1251,7 +1275,7 @@
         <!--Termnar-->
         <scene sceneID="oPS-s3-8Xz">
             <objects>
-                <viewController id="j9N-4R-3Je" sceneMemberID="viewController">
+                <viewController id="j9N-4R-3Je" customClass="TerminarUnidadViewController" customModule="AntapaccayQR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddi-te-iaR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1276,16 +1300,64 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOa-gZ-v3E" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="252" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Regresara al Menu">
+                                    <color key="titleColor" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backMenu:" destination="j9N-4R-3Je" eventType="touchUpInside" id="bvz-5i-gra"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-MW-xz9" customClass="ButtonComponent" customModule="AntapaccayQR" customModuleProvider="target">
+                                <rect key="frame" x="20" y="322" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Terminar Proceso">
+                                    <color key="titleColor" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="terminarProceso:" destination="j9N-4R-3Je" eventType="touchUpInside" id="1LF-Pf-Mao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uOa-gZ-v3E" firstAttribute="leading" secondItem="o6d-0i-TnP" secondAttribute="leading" constant="20" id="6pa-8b-gA2"/>
                             <constraint firstItem="rnP-SQ-mLC" firstAttribute="leading" secondItem="o6d-0i-TnP" secondAttribute="leading" constant="20" id="8qf-q5-nQx"/>
+                            <constraint firstItem="Zwl-MW-xz9" firstAttribute="top" secondItem="uOa-gZ-v3E" secondAttribute="bottom" constant="40" id="B6d-xe-Wpq"/>
+                            <constraint firstItem="uOa-gZ-v3E" firstAttribute="top" secondItem="rnP-SQ-mLC" secondAttribute="bottom" constant="128" id="CE4-54-zJ6"/>
                             <constraint firstItem="rnP-SQ-mLC" firstAttribute="top" secondItem="o6d-0i-TnP" secondAttribute="top" constant="20" id="Hkk-vc-WRf"/>
+                            <constraint firstItem="o6d-0i-TnP" firstAttribute="trailing" secondItem="uOa-gZ-v3E" secondAttribute="trailing" constant="20" id="K6d-Hm-tJp"/>
+                            <constraint firstItem="Zwl-MW-xz9" firstAttribute="leading" secondItem="o6d-0i-TnP" secondAttribute="leading" constant="20" id="WwO-zy-iW9"/>
+                            <constraint firstItem="o6d-0i-TnP" firstAttribute="trailing" secondItem="Zwl-MW-xz9" secondAttribute="trailing" constant="20" id="XlD-KD-ODm"/>
                             <constraint firstItem="o6d-0i-TnP" firstAttribute="trailing" secondItem="rnP-SQ-mLC" secondAttribute="trailing" constant="20" id="lyw-Tf-8ad"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o6d-0i-TnP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Termnar" selectedImage="icons8-checkmark_filled" id="MCP-Eq-A9d"/>
+                    <tabBarItem key="tabBarItem" title="Termnar" image="icons8-checkmark_filled" selectedImage="icons8-checkmark_filled" id="MCP-Eq-A9d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ii-ex-H36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1346,8 +1418,11 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lak-mp-DCo">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lak-mp-DCo">
                                 <rect key="frame" x="279" y="168" width="51" height="31"/>
+                                <connections>
+                                    <action selector="tipoServicio:" destination="lKS-Js-vqW" eventType="valueChanged" id="Pep-bJ-lhP"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almacen Destino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqK-RA-BvN">
                                 <rect key="frame" x="20" y="203" width="124" height="18"/>
@@ -1442,7 +1517,7 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almacen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCm-J4-Xwe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placa de Semiremolque" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCm-J4-Xwe">
                                 <rect key="frame" x="40" y="475" width="295" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1566,8 +1641,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qkv-Ne-281"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Transporte" selectedImage="icons8-truck" id="XYv-NW-cwM"/>
+                    <tabBarItem key="tabBarItem" title="Transporte" image="icons8-truck" selectedImage="icons8-truck" id="XYv-NW-cwM"/>
                     <connections>
+                        <outlet property="destino" destination="tjx-Kz-OKv" id="4fZ-KL-Obr"/>
+                        <outlet property="origen" destination="vr2-wu-1Ob" id="luJ-Iu-nob"/>
+                        <outlet property="placa" destination="RCm-J4-Xwe" id="S2f-CQ-Zm8"/>
+                        <outlet property="semiremolque" destination="Zsa-Re-2B4" id="Nrd-Wn-eC9"/>
                         <outlet property="vista" destination="hCA-ZV-Pzt" id="mR2-zO-ceV"/>
                     </connections>
                 </viewController>
@@ -3169,7 +3248,7 @@
                         <color key="badgeColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="imagePicked" destination="5El-zw-b8V" id="pQx-q6-c08"/>
+                        <outlet property="imageView" destination="5El-zw-b8V" id="ycU-cl-bWW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSQ-vi-t0T" userLabel="First Responder" sceneMemberID="firstResponder"/>

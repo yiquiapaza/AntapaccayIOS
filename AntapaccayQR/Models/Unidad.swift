@@ -25,6 +25,17 @@ class Unidad  {
     private var fechaRecepcion: Int
     private var RowVersion: String
     
+    
+    private var idTransporteConsolidado: String
+    private var codigoQR: String
+    private var numeroWaybill: String
+    private var idDiscrepancia: String
+    private var campoDiscrepancia : String
+    private var imagenes: String
+    
+    private var codigoTransportista: String
+    private var transportista: String
+    
     init() {
         self.id = VACIO
         self.idAlmacenRecepcion = VACIO
@@ -41,6 +52,16 @@ class Unidad  {
         self.nacional = false
         self.fechaRecepcion = 0
         self.RowVersion = VACIO
+        
+        self.idTransporteConsolidado = VACIO
+        self.codigoQR = VACIO
+        self.numeroWaybill = VACIO
+        self.idDiscrepancia = VACIO
+        self.campoDiscrepancia = VACIO
+        self.imagenes = VACIO
+        
+        self.codigoTransportista = VACIO
+        self.transportista = VACIO
     }
     
     func setId(id : String) -> Void {
@@ -146,5 +167,62 @@ class Unidad  {
     }
     func getRowVersion  () ->String {
         return self.RowVersion
+    }
+    
+    func setCodigoTransportista(codigoTransportista : String) -> Void {
+        self.codigoTransportista = codigoTransportista
+    }
+    
+    func getCodigoTransportista() -> String {
+        return self.codigoTransportista
+    }
+    
+    func setTransportista(transportista: String) -> Void {
+        self.transportista = transportista
+    }
+    func getTransportista() -> String {
+        return self.transportista
+    }
+    
+    func setIdTransporteConsolidado(idTransporteConsolidado: String) -> Void {
+        self.idTransporteConsolidado = idTransporteConsolidado
+    }
+    func getIdTransporteConsolidado() -> String {
+        return self.idTransporteConsolidado
+    }
+    
+    func setCodigoQR(codigoQR: String) -> Void {
+        self.codigoQR = codigoQR
+    }
+    func getCodigoQR() -> String {
+        return self.codigoQR
+    }
+    
+    func setNumeroWaybill(numeroWaybill: String) -> Void {
+        self.numeroWaybill = numeroWaybill
+    }
+    func getNumeroWaybill() -> String {
+        return self.numeroWaybill
+    }
+    
+    func setIdDiscrepancia(idDiscrepancia: String) -> Void {
+        self.idDiscrepancia = idDiscrepancia
+    }
+    func getIdDiscrepancia() -> String {
+        return self.idDiscrepancia
+    }
+    
+    func setCampoDiscrepancia(campoDiscrepancia: String) -> Void {
+        self.campoDiscrepancia = campoDiscrepancia
+    }
+    func getCampoDiscrepancia() -> String {
+        return self.campoDiscrepancia
+    }
+    
+    func setImagenes(imagenes: String) -> Void {
+        self.imagenes = imagenes
+    }
+    func getImagenes() -> String {
+        return self.imagenes
     }
 }
