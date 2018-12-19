@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
+import PMAlertController
 
 class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -46,52 +47,67 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
                 "Operator": "Equals"
             ]
         }
-        self.delay(secons: 3.0, completatio: {
-            SwiftSpinner.show("Verificando API")
-            Alamofire.request(BUSQUEDA_PALETA_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
-                .responseJSON() {
-                    response in switch response.result{
-                    case .success:
-                        let paletas = response.result.value as! [Dictionary<String, AnyObject>]
-                        for item in paletas{
-                            let paleta = Unidad()
-                            paleta.setId(id: item["Id"] as! String)
-                            paleta.setIdAlmacenRecepcion(idAlmacenRecepcion: item["idAlmacenRecepcion"] as! String)
-                            paleta.setIdTransporteConsolidado(idTransporteConsolidado: CONST_ID)
-                            paleta.setNumeroPaleta(numeroPaleta: item["numeroPaleta"] as! String)
-                            paleta.setCodigo(codigo: item["codigo"] as! String)
-                            paleta.setCodigoQR(codigoQR: item["codigoQR"] as! String)
-                            paleta.setNumeroWaybill(numeroWaybill: item["numeroWaybill"] as! String)
-                            paleta.setPeso(peso: item["peso"] as! Float)
-                            paleta.setAlto(alto: item["alto"] as! Float)
-                            paleta.setLargo(largo: item["largo"] as! Float)
-                            paleta.setAncho(ancho: item["ancho"] as! Float)
-                            paleta.setFragil(fragil: item["fragil"] as! Bool)
-                            paleta.setSobredimensionado(sobredimensionado: item["sobredimensionado"] as! Bool)
-                            paleta.setCargaPeligrosa(cargaPeligrosa: item["cargaPeligrosa"] as! Bool)
-                            paleta.setImportacion(importacion: item["importacion"] as! Bool)
-                            paleta.setNacional(nacional: item["nacional"] as! Bool)
-                            paleta.setFechaRecepcion(fechaRecepcion: item["fechaRecepcion"] as! Int)
-                            paleta.setIdDiscrepancia(idDiscrepancia: item["idDiscrepancia"] as! String)
-                            paleta.setCampoDiscrepancia(campoDiscrepancia: item["campoDiscrepancia"] as! String)
-                            paleta.setImagenes(imagenes: item["imagenes"] as? String ?? "")
-                            paleta.setRowVersion(rowVersion: item["RowVersion"] as! String)
-                            
-                            paleta.setCodigoTransportista(codigoTransportista: item["codigoTransportista"] as! String)
-                            paleta.setTransportista(transportista: item["transportista"] as! String)
-                            
-                            self.listaPaletas.append(paleta)
+        
+        if unidades.text! == VACIO {
+            let alertBulto = PMAlertController(title: "Ingrese un codigo de una Paleta", description: "Es un campo Obligatorio", image: UIImage(named: "precaucion"), style: .alert)
+            alertBulto.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(alertBulto, animated: true, completion: nil)
+        }
+        else {
+            self.delay(secons: 3.0, completatio: {
+                SwiftSpinner.show("Verificando API")
+                Alamofire.request(BUSQUEDA_PALETA_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
+                    .responseJSON() {
+                        response in switch response.result{
+                        case .success:
+                            let paletas = response.result.value as! [Dictionary<String, AnyObject>]
+                            if paletas.isEmpty {
+                                let alertOrden = PMAlertController(title: "Error", description: "Numero de Paleta erroneo", image: UIImage(named: "error"), style: .alert)
+                                alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertOrden, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                            }
+                            else {
+                                for item in paletas{
+                                    let paleta = Unidad()
+                                    paleta.setId(id: item["Id"] as! String)
+                                    paleta.setIdAlmacenRecepcion(idAlmacenRecepcion: item["idAlmacenRecepcion"] as! String)
+                                    paleta.setIdTransporteConsolidado(idTransporteConsolidado: CONST_ID)
+                                    paleta.setNumeroPaleta(numeroPaleta: item["numeroPaleta"] as! String)
+                                    paleta.setCodigo(codigo: item["codigo"] as! String)
+                                    paleta.setCodigoQR(codigoQR: item["codigoQR"] as! String)
+                                    paleta.setNumeroWaybill(numeroWaybill: item["numeroWaybill"] as! String)
+                                    paleta.setPeso(peso: item["peso"] as! Float)
+                                    paleta.setAlto(alto: item["alto"] as! Float)
+                                    paleta.setLargo(largo: item["largo"] as! Float)
+                                    paleta.setAncho(ancho: item["ancho"] as! Float)
+                                    paleta.setFragil(fragil: item["fragil"] as! Bool)
+                                    paleta.setSobredimensionado(sobredimensionado: item["sobredimensionado"] as! Bool)
+                                    paleta.setCargaPeligrosa(cargaPeligrosa: item["cargaPeligrosa"] as! Bool)
+                                    paleta.setImportacion(importacion: item["importacion"] as! Bool)
+                                    paleta.setNacional(nacional: item["nacional"] as! Bool)
+                                    paleta.setFechaRecepcion(fechaRecepcion: item["fechaRecepcion"] as! Int)
+                                    paleta.setIdDiscrepancia(idDiscrepancia: item["idDiscrepancia"] as! String)
+                                    paleta.setCampoDiscrepancia(campoDiscrepancia: item["campoDiscrepancia"] as! String)
+                                    paleta.setImagenes(imagenes: item["imagenes"] as? String ?? "")
+                                    paleta.setRowVersion(rowVersion: item["RowVersion"] as! String)
+                                    
+                                    paleta.setCodigoTransportista(codigoTransportista: item["codigoTransportista"] as! String)
+                                    paleta.setTransportista(transportista: item["transportista"] as! String)
+                                    
+                                    self.listaPaletas.append(paleta)
+                                    SwiftSpinner.hide()
+                                }
+                            }
+                            self.tablaPaleta.reloadData()
+                            self.unidades.text = ""
+                        case .failure(let error):
+                            print(error)
+                            SwiftSpinner.hide()
                         }
-                        //print(response.result.value)
-                        self.tablaPaleta.reloadData()
-                        SwiftSpinner.hide()
-                        self.unidades.text = ""
-                    case .failure(let error):
-                        print(error)
-                        SwiftSpinner.hide()
-                    }
-            }
-        })
+                }
+            })
+        }
     }
     
     func delay(secons:Double, completatio: @escaping () -> ()) -> Void {

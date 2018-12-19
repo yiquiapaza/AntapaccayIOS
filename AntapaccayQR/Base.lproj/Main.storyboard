@@ -1358,6 +1358,9 @@
                         <viewLayoutGuide key="safeArea" id="o6d-0i-TnP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Termnar" image="icons8-checkmark_filled" selectedImage="icons8-checkmark_filled" id="MCP-Eq-A9d"/>
+                    <connections>
+                        <outlet property="estadoButton" destination="Zwl-MW-xz9" id="Uvl-cR-zIT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ii-ex-H36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

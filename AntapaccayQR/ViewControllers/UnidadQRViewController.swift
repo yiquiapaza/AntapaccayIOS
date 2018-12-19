@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import PMAlertController
 
 class UnidadQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
@@ -59,9 +60,9 @@ class UnidadQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
     }
     
     func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
+        let alertError = PMAlertController(title: "Scanning not supported" ,description: "Your device does not support scanning a code from an item. Please use a device with a camera.", image: UIImage(named: "error") ,style: .alert)
+        alertError.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+        present(alertError, animated: true)
         captureSession = nil
     }
     
@@ -88,10 +89,9 @@ class UnidadQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDe
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: stringValue)
-            let alert = UIAlertController(title: "Se obtuvo su codigo QR", message: "Su codigo es: " + stringValue, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
-            //dismiss(animated: true)
-            self.present(alert, animated: true)
+            let alertCamera = PMAlertController(title: "Exito, se obtuvo su codigo QR", description: "Su codigo es: " + stringValue, image: UIImage(named:"exito"), style: .alert)
+            alertCamera.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(alertCamera, animated: true)
             QR_CONST_PALETA = stringValue
         }
         

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
+import PMAlertController
 
 class SalidaCargaViewController: UIViewController {
 
@@ -35,7 +36,7 @@ class SalidaCargaViewController: UIViewController {
             "estadoTransporte" :"2"
         ]
         self.delay(secons: 3.0, completatio: {
-            SwiftSpinner.show("Verificando API")
+            SwiftSpinner.show("Verificando Datos")
             Alamofire.request(BUSQUEDA_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                 .responseJSON(){
                     response in switch response.result{
@@ -75,14 +76,10 @@ class SalidaCargaViewController: UIViewController {
                         print(data)
                         if self.lista.isEmpty {
                             print("no hay nada ????")
-                            //let error = MessageView.viewFromNib(layout: .tabView)
-                            //error.configureTheme(.error)
-                            //error.configureContent(title:"Error en la buqueda",body:"verifique si la guia es valida" )
-                            //error.button?.isHidden = true
-                            //var configError = SwiftMessages.defaultConfig
-                            //configError.presentationStyle = .center
-                            //configError.duration = .seconds(seconds: 2)
-                            //SwiftMessages.show(config: configError , view:error)
+                            let error = PMAlertController(title: "Error", description: "verifique si la guia es valida", image: UIImage(named: "error"), style: .alert)
+                            error.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                            self.present(error, animated: true, completion: nil)
+                            SwiftSpinner.hide()
                         }
                         else {
                             self.almacenDestino.text = self.lista[0].getNombreDestino()
@@ -112,43 +109,38 @@ class SalidaCargaViewController: UIViewController {
                                         }
                                         if self.llegada.isEmpty {
                                             print("no hay nada ????")
-                                            //let error = MessageView.viewFromNib(layout: .tabView)
-                                            //error.configureTheme(.warning)
-                                            //error.configureContent(title:"El transporte todavia no ha salido de almacen",body:"verifique si la guia es valida caso contrario" )
-                                            //error.button?.isHidden = true
-                                            //var configError = SwiftMessages.defaultConfig
-                                            //configError.presentationStyle = .center
-                                            //configError.duration = .seconds(seconds: 2)
-                                            //SwiftMessages.show(config: configError , view:error)
-
+                                            let error = PMAlertController(title: "El transporte todavia no ha salido de almacen", description: "verifique si la guia es valida caso contrario", image: UIImage(named: "precaucion"), style: .alert)
+                                            error.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                            self.present(error, animated: true, completion: nil)
+                                            SwiftSpinner.hide()
                                         }
                                         else {
                                             if self.llegada[0].getTipoOperacion() == "PARTIDA"{
-                                                //let error = MessageView.viewFromNib(layout: .tabView)
-                                                //error.configureTheme(.warning)
-                                                //error.configureContent(title:"Registro de Salida",body:"no se registro salida de " + self.llegada[0].getNombrePuntoControl() )
-                                                //error.button?.isHidden = true
-                                                //var configError = SwiftMessages.defaultConfig
-                                                //configError.presentationStyle = .center
-                                                //configError.duration = .seconds(seconds: 2)
-                                                //SwiftMessages.show(config: configError , view:error)
+                                                let error = PMAlertController(title: "Registro de Salida", description: "no se registro salida de " + self.llegada[0].getNombrePuntoControl(), image: UIImage(named: "precaucion"), style: .alert)
+                                                error.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                                self.present(error, animated: true, completion: nil)
+                                                SwiftSpinner.hide()
                                             }
                                             if (self.llegada[0].getCodigoPuntoControl() == "008" || self.llegada[0].getCodigoPuntoControl() == "ALMC"){
-                                                //let error = MessageView.viewFromNib(layout: .tabView)
-                                                //error.configureTheme(.warning)
-                                                //error.configureContent(title:"Registro de Salida",body:"Ya se registro la llegada " + self.llegada[0].getNombrePuntoControl() )
-                                                //error.button?.isHidden = true
-                                                //var configError = SwiftMessages.defaultConfig
-                                                //configError.presentationStyle = .center
-                                                //configError.duration = .seconds(seconds: 2)
-                                                //SwiftMessages.show(config: configError , view:error)
+                                                let error = PMAlertController(title: "Registro de Salida", description: "ya se registro la llegada " + self.llegada[0].getNombrePuntoControl(), image: UIImage(named: "precaucion"), style: .alert)
+                                                error.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                                self.present(error, animated: true, completion: nil)
+                                                SwiftSpinner.hide()
                                             }
                                             else {
+                                                let exito = PMAlertController(title: "Exito", description: "Se obtuvieron los datos correctamente", image: UIImage(named: "exito"), style: .alert )
+                                                exito.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                                                 self.llegadaButton.isEnabled = false
+                                                self.present(exito, animated: true, completion: nil)
+                                                SwiftSpinner.hide()
                                             }
                                         }
                                         print(data)
                                     case .failure(let error):
+                                        let errorMessaje = PMAlertController(title: "Error", description: "Verifique si tiene coneccion a Internet", image: UIImage(named: "Aceptar"), style: .alert)
+                                        errorMessaje.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                        self.present(errorMessaje, animated: true, completion: nil)
+                                        SwiftSpinner.hide()
                                         print(error)
                                     }
                             }
@@ -156,6 +148,9 @@ class SalidaCargaViewController: UIViewController {
                         
                     case .failure(let error):
                         print(error)
+                        let errorMessaje = PMAlertController(title: "Error", description: "Verifique si tiene coneccion a Internet", image: UIImage(named: "Aceptar"), style: .alert)
+                        errorMessaje.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(errorMessaje, animated: true, completion: nil)
                         SwiftSpinner.hide()
                     }
             }

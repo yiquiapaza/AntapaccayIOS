@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftSpinner
+import PMAlertController
 
 class PartidaCargaViewController: UIViewController {
 
@@ -30,71 +32,113 @@ class PartidaCargaViewController: UIViewController {
             "estadoTransporte" :"1"
         ]
         
-        Alamofire.request(BUSQUEDA_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
-            .responseJSON(){
-                response in switch response.result{
-                case .success(let data):
-                    var transporte  =  Int()
-                    let nuevo = data as! [Dictionary <String, AnyObject>]
-                    transporte = nuevo[0]["numeroTransporte"] as! Int
-                    self.numero_guia.text = self.numeroGuia.text
-                    self.numero_transporte.text = String(transporte)
-                    for item in nuevo{
-                        let a = Registro()
-                        a.setId(id: item["Id"] as! String)
-                        a.setIdPuntoPartida(idPuntoPartida: item["idPuntoPartida"] as! String)
-                        a.setCodigoDestino(codigoDestino: item["codigoDestino"] as! String)
-                        a.setNumeroTransporte(numeroTransporte: item["numeroTransporte"] as! Int)
-                        a.setCodigo(codigo: item["codigo"] as! String)
-                        a.setNombrePuntoPartida(nombrePuntoPartida: item["nombrePuntoPartida"] as! String)
-                        a.setNombreDestino(nombreDestino: item["nombreDestino"] as! String)
-                        a.setCodigoVehiculo(codigoVehiculo: item["codigoVehiculo"] as! String)
-                        a.setCodigoConfiguracionTracto(codigoConfiguracionTracto: item["codigoConfiguracionTracto"] as! String)
-                        a.setConfiguracionTracto(configuracionTracto: item["configuracionTracto"] as! String)
-                        a.setPlacaRemolque(placaRemolque: item["placaRemolque"] as! String)
-                        a.setCodigoTipoRemolque(codigoTipoRemolque: item["codigoTipoRemolque"] as! String)
-                        a.setTipoRemolque(tipoRemolque: item["tipoRemolque"] as! String)
-                        a.setCodigoConductor(codigoConductor: item["codigoConductor"] as! String)
-                        a.setNombreConductor(nombreConductor: item["nombreConductor"] as! String)
-                        a.setServicioExpreso(servicioExpreso: item["servicioExpreso"] as! Bool)
-                        a.setPrecio(precio: item["precio"] as! Float)
-                        a.setEstadoTransporte(estadoTransporte: item["estadoTransporte"] as! String)
-                        a.setCodigoConfiguracionRemolque(codigoConfiguracionRemolque: item["codigoConfiguracionRemolque"] as! String)
-                        a.setConfiguracionRemolque(configuracionRemolque: item["configuracionRemolque"] as! String)
-                        a.setFechaInicio(fechaInicio: item["fechaInicio"] as! Int)
-                        a.setFechaFin(fechaFin: item["fechaFin"] as! Int)
-                        a.setFechaTentativaFin(fechaTentativaFin: item["fechaTentativaFin"] as! Int)
-                        a.setTotalPaletas(totalPaletas: item["totalPaletas"] as! Int)
-                        a.setGuiaAntapaccay(guiaAntapaccay: item["guiaTransportista"] as! Bool)
-                        a.setGuiaAntapaccay(guiaAntapaccay: item["guiaAntapaccay"] as! Bool)
-                        a.setCodigoTransportista(codigoTransportista: item["codigoTransportista"] as! String)
-                        a.setTransportista(transportista: item["transportista"] as! String)
-                        a.setRowVersion(RowVersion: item["RowVersion"] as! String)
-                        self.lista.append(a)
-                    }
-                    print(data)
-                case .failure(let error):
-                    print(error)
-                }
+        if numeroGuia.text! == "" {
+            let alertTerminar = PMAlertController(title: "Advertencia", description: "El campo del bulto es obligatorio", image: UIImage(named: "precaucion"), style: .alert)
+            alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(alertTerminar, animated: true, completion: nil)
         }
-        
-        Alamofire.request(ALMACEN_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
-            .responseJSON(){
-                response in switch response.result{
-                case .success(let data):
-                    let nuevo = data as! [Dictionary<String,AnyObject>]
-                    self.almacenDestino.text = nuevo[0]["nombreAlmacen"] as? String
-                    self.puntoPartida.text = nuevo[0]["idAlmacenRecepcion"] as? String
-                    print(data)
-                case .failure(let error):
-                    print(error)
+        else {
+            self.delay(secons: 3.0, completatio: {
+                SwiftSpinner.show("Verificando Datos")
+                Alamofire.request(BUSQUEDA_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
+                    .responseJSON(){
+                        response in switch response.result{
+                        case .success(let data):
+                            var transporte  =  Int()
+                            let nuevo = data as! [Dictionary <String, AnyObject>]
+                            if nuevo.isEmpty {
+                                let alertTerminar = PMAlertController(title: "Exito", description: "Se realizo con exito la busqueda", image: UIImage(named: "exito"), style: .alert)
+                                alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertTerminar, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                            }
+                            else {
+                                transporte = nuevo[0]["numeroTransporte"] as? Int ?? 0
+                                self.numero_guia.text = self.numeroGuia.text
+                                self.numero_transporte.text = String(transporte)
+                                for item in nuevo{
+                                    let a = Registro()
+                                    a.setId(id: item["Id"] as! String)
+                                    a.setIdPuntoPartida(idPuntoPartida: item["idPuntoPartida"] as! String)
+                                    a.setCodigoDestino(codigoDestino: item["codigoDestino"] as! String)
+                                    a.setNumeroTransporte(numeroTransporte: item["numeroTransporte"] as! Int)
+                                    a.setCodigo(codigo: item["codigo"] as! String)
+                                    a.setNombrePuntoPartida(nombrePuntoPartida: item["nombrePuntoPartida"] as! String)
+                                    a.setNombreDestino(nombreDestino: item["nombreDestino"] as! String)
+                                    a.setCodigoVehiculo(codigoVehiculo: item["codigoVehiculo"] as! String)
+                                    a.setCodigoConfiguracionTracto(codigoConfiguracionTracto: item["codigoConfiguracionTracto"] as! String)
+                                    a.setConfiguracionTracto(configuracionTracto: item["configuracionTracto"] as! String)
+                                    a.setPlacaRemolque(placaRemolque: item["placaRemolque"] as! String)
+                                    a.setCodigoTipoRemolque(codigoTipoRemolque: item["codigoTipoRemolque"] as! String)
+                                    a.setTipoRemolque(tipoRemolque: item["tipoRemolque"] as! String)
+                                    a.setCodigoConductor(codigoConductor: item["codigoConductor"] as! String)
+                                    a.setNombreConductor(nombreConductor: item["nombreConductor"] as! String)
+                                    a.setServicioExpreso(servicioExpreso: item["servicioExpreso"] as! Bool)
+                                    a.setPrecio(precio: item["precio"] as! Float)
+                                    a.setEstadoTransporte(estadoTransporte: item["estadoTransporte"] as! String)
+                                    a.setCodigoConfiguracionRemolque(codigoConfiguracionRemolque: item["codigoConfiguracionRemolque"] as! String)
+                                    a.setConfiguracionRemolque(configuracionRemolque: item["configuracionRemolque"] as! String)
+                                    a.setFechaInicio(fechaInicio: item["fechaInicio"] as? Int ?? 0)
+                                    a.setFechaFin(fechaFin: item["fechaFin"] as? Int ?? 0)
+                                    a.setFechaTentativaFin(fechaTentativaFin: item["fechaTentativaFin"] as? Int ?? 0)
+                                    a.setTotalPaletas(totalPaletas: item["totalPaletas"] as! Int)
+                                    a.setGuiaAntapaccay(guiaAntapaccay: item["guiaTransportista"] as! Bool)
+                                    a.setGuiaAntapaccay(guiaAntapaccay: item["guiaAntapaccay"] as! Bool)
+                                    a.setCodigoTransportista(codigoTransportista: item["codigoTransportista"] as! String)
+                                    a.setTransportista(transportista: item["transportista"] as! String)
+                                    a.setRowVersion(RowVersion: item["RowVersion"] as! String)
+                                    self.lista.append(a)
+                                }
+                                let alertTerminar = PMAlertController(title: "Exito", description: "Se realizo con exito la busqueda", image: UIImage(named: "exito"), style: .alert)
+                                alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertTerminar, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                        }
+                        print(data)
+                        case .failure(let error):
+                            let errorMessage = PMAlertController(title: "Error", description: "Revise si tiene conexion a Internet", image: UIImage(named: "error"), style: .alert)
+                            errorMessage.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                            self.present(errorMessage, animated: true, completion: nil)
+                            SwiftSpinner.hide()
+                            print(error)
+                        }
                 }
+            })
+            
+            self.delay(secons: 3.0, completatio: {
+                Alamofire.request(ALMACEN_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
+                    .responseJSON(){
+                        response in switch response.result{
+                        case .success(let data):
+                            let nuevo = data as! [Dictionary<String,AnyObject>]
+                            if nuevo.isEmpty {
+                                let alertTerminar = PMAlertController(title: "Exito", description: "Se realizo con exito la busqueda", image: UIImage(named: "exito"), style: .alert)
+                                alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertTerminar, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                            }
+                            else {
+                                self.almacenDestino.text = nuevo[0]["nombreAlmacen"] as? String ?? ""
+                                self.puntoPartida.text = nuevo[0]["idAlmacenRecepcion"] as? String ?? ""
+                                let alertTerminar = PMAlertController(title: "Exito", description: "Se realizo con exito la busqueda", image: UIImage(named: "exito"), style: .alert)
+                                alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertTerminar, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                            }
+                            print(data)
+                        case .failure(let error):
+                            let errorMessage = PMAlertController(title: "Error", description: "Revise si tiene conexion a Internet", image: UIImage(named: "error"), style: .alert)
+                            errorMessage.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                            self.present(errorMessage, animated: true, completion: nil)
+                            SwiftSpinner.hide()
+                            print(error)
+                        }
+                }
+            })
+            
         }
     }
-    //paleta arreglar
-    //areglar la lista
-    //los botones primera vista
-    //defecto de los dropdown
+    
     @IBAction func registrarPartida(_ sender: Any) {
         
         let transporteRecorrido : Parameters = [
@@ -162,15 +206,26 @@ class PartidaCargaViewController: UIViewController {
             "transporte" : transporte
         ]
         
-        Alamofire.request(REGISTRO_ENTRADA, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON(){
-                response in switch response.result{
-                case .success(let data):
-                    print(data)
-                case .failure(let error):
-                    print(error)
-                }
-        }
+        self.delay(secons: 3.0, completatio: {
+            SwiftSpinner.show("Verificando Datos")
+            Alamofire.request(REGISTRO_ENTRADA, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                .responseJSON(){
+                    response in switch response.result{
+                    case .success(let data):
+                        let alertTerminar = PMAlertController(title: "Exito", description: "Se realizo con exito la operacion", image: UIImage(named: "exito"), style: .alert)
+                        alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(alertTerminar, animated: true, completion: nil)
+                        SwiftSpinner.hide()
+                        print(data)
+                    case .failure(let error):
+                        let errorMessage = PMAlertController(title: "Error", description: "Revise si tiene conexion a Internet", image: UIImage(named: "error"), style: .alert)
+                        errorMessage.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(errorMessage, animated: true, completion: nil)
+                        SwiftSpinner.hide()
+                        print(error)
+                    }
+            }
+        })
     }
     
     func delay(secons:Double, completatio: @escaping () -> ()) -> Void {
@@ -193,16 +248,4 @@ class PartidaCargaViewController: UIViewController {
         }
         return Int(fechaCadena)!
     }
-    
 }
-/*
-
- 
- 
- para buscar el consolidado y el bulto con  1
- y cambio de estado a 2
-
- salida consolidado con estado 2
- y cambio estado a 3
- 
- */

@@ -8,10 +8,15 @@
 
 import UIKit
 import Alamofire
+import SwiftSpinner
+import PMAlertController
 
 class TerminarUnidadViewController: UIViewController {
 
     var data = Array<Unidad>()
+    
+    
+    @IBOutlet weak var estadoButton: ButtonComponent!
     
     override func viewDidLoad() {
         let new_data = self.parent as! TabBarUnidadViewController
@@ -90,16 +95,26 @@ class TerminarUnidadViewController: UIViewController {
             "listaGuias": [[]],
             "transporteVehiculo": [[]]
         ]
-        
-        Alamofire.request(CONSOLIDAR_TRANSPORTE, method: .post, parameters: paremetres, encoding: JSONEncoding.default)
-        .responseJSON{
-            response in switch (response.result) {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
+        self.delay(seconds: 3.0, completion: {
+            SwiftSpinner.show("Verificando Datos")
+            Alamofire.request(CONSOLIDAR_TRANSPORTE, method: .post, parameters: paremetres, encoding: JSONEncoding.default)
+                .responseJSON{
+                    response in switch (response.result) {
+                    case .success(let data):
+                        let resultado = PMAlertController(title: "Exito", description: "Se consolido la Paleta" , image: UIImage(named: "exito"), style: .alert)
+                        resultado.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(resultado, animated: true, completion: nil)
+                        self.estadoButton.isEnabled = false
+                        print(data)
+                    case .failure(let error):
+                        let errorMessaje = PMAlertController(title: "Error", description: "Error del servidor, revise su conexion de Internet", image: UIImage(named: "error"), style: .alert)
+                        errorMessaje.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(errorMessaje, animated: true, completion: nil)
+                        print(error)
+                    }
             }
-        }
+        })
+        
     }
     
     func delay(seconds: Double, completion: @escaping () -> ()) {
