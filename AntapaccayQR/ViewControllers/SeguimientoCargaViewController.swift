@@ -84,8 +84,52 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             self.descripcion.text = _item.getDescripcion()
             self.unidad.text = _item.getUnidad()
             self.almacen.text = _item.getAlmace()
+            
+            let parametres : Parameters = [
+                "filtros": [
+                    [
+                        "PropertyName": "valorOrden",
+                        "Operator": "Contains",
+                        "value": self.numeroOrden.text!,
+                        "Logical": "AND"
+                    ],
+                    [
+                        "PropertyName": "numeroItem",
+                        "Operator": "Contains",
+                        "value": _item.getNumeroItem(),
+                        "Logical": "AND"
+                    ]
+                ],
+                "orden": [
+                    [
+                        "OrderType": "DESC",
+                        "Property" : "Id",
+                        "Index": "1"
+                    ]
+                ],
+                "startIndex": 0,
+                "length": 1000
+            ]
+            var cantidad_nueva = 0
+            self.delay(seconds: 3.0, completion: {
+                SwiftSpinner.show("Consultado Cantidad Actual")
+                Alamofire.request(OBTENER_CANTIDAD_ACTUAL, method: .post, parameters: parametres, encoding:  JSONEncoding.default)
+                    .responseJSON() {
+                        response in switch response.result{
+                        case .success(let data):
+                            print(data)
+                            let out = data as! [Dictionary<String, AnyObject>]
+                            cantidad_nueva = out[0]["cantidadPorRecibir"] as! Int
+                            SwiftSpinner.hide()
+                        case .failure(let data):
+                            print(data)
+                            SwiftSpinner.hide()
+                        }
+                    }
+                }
+            )
             if self._cantidadesItem.keys.contains(_item.getNumeroItem()){
-                self.disponible.text = String(_item.getDisponibilidad() - Int(self._cantidadesItem[_item.getNumeroItem()]!)!)
+                self.disponible.text = String(_item.getDisponibilidad() - Int(self._cantidadesItem[_item.getNumeroItem()]!)! + cantidad_nueva)
             }
             else{
                 self.cantidadRequerida.isEnabled = true
@@ -101,7 +145,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             self.disponible.text = "0"
         }
     }
-    
+        
     override func viewDidLoad() {
         self.numeroOrden.delegate = self
         self.navigationController?.view.backgroundColor = UIColor.red
@@ -111,7 +155,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         self.cantidadRequerida.isEnabled = false
         self.cantidadRequerida.keyboardType = .numberPad
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: self, action: #selector(cerrarSession))
         navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
 
@@ -128,6 +172,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             orden.setPriceCode(priceCode: VACIO)
             orden.setCodigoDistrito(codigoDistrito: CONST_CODIGO_DISTRITO)
             dropDown.dataSource = []
+            let RUTA = switchID.isOn ? LIST_ORDEN_DET_ID : LIST_ORDEN_DET
             let parametros: Parameters = [
                 VALOR_ORDEN : orden.getValorOrden(),
                 TIPO_ORDEN: orden.getTipoOrden(),
@@ -137,7 +182,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             ]
             self.delay(seconds: 3.0, completion: {
                 SwiftSpinner.show("Consultando Orden")
-                    Alamofire.request(LIST_ORDEN_DET, method: .post,parameters: parametros, encoding: JSONEncoding.default)
+                    Alamofire.request(RUTA, method: .post,parameters: parametros, encoding: JSONEncoding.default)
                         .responseJSON(){ response in
                             switch response.result {
                             case .success:
@@ -207,6 +252,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             switchOS.setOn(false, animated: true)
             switchOR.setOn(false, animated: true)
             orden.setTipoOrden(tipoOrden: SWITCH_OC)
+            orden.setPriceCode(priceCode: VACIO )
         }
         else{
             orden.setTipoOrden(tipoOrden: VACIO)
@@ -219,6 +265,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             switchOR.setOn(false, animated: true)
             switchID.setOn(false, animated: true)
             orden.setTipoOrden(tipoOrden:SWITCH_OS)
+            orden.setPriceCode(priceCode: VACIO )
         }else{
             orden.setTipoOrden(tipoOrden: VACIO)
         }
@@ -230,6 +277,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             switchOS.setOn(false, animated: true)
             switchID.setOn(false, animated: true)
             orden.setTipoOrden(tipoOrden: SWITCH_OR)
+            orden.setPriceCode(priceCode: "RP" )
         }else{
             orden.setTipoOrden(tipoOrden: VACIO)
         }
@@ -241,6 +289,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             switchOS.setOn(false, animated: true)
             switchOR.setOn(false, animated: true)
             orden.setTipoOrden(tipoOrden: SWITCH_ID)
+            orden.setPriceCode(priceCode: VACIO )
         }else{
             orden.setTipoOrden(tipoOrden: VACIO)
         }
@@ -337,5 +386,10 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    @objc func cerrarSession() -> Void {
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+    }
 }
 

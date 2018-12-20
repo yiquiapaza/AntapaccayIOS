@@ -35,9 +35,9 @@ let ROW_VERSION = "rowVersion"
 let DISPONIBILIDAD = "disponibilidad"
 
 let SWITCH_OC: String = "OC"
-let SWITCH_OS: String = "OS"
-let SWITCH_OR: String = "OR"
-let SWITCH_ID: String = "ID"
+let SWITCH_OS: String = "S"
+let SWITCH_OR: String = "O"
+let SWITCH_ID: String = "F"
 
 let CONST_CODIGO_DISTRITO: String = "XTAN"
 let CONST_ID: String = "00000000-0000-0000-0000-000000000000"
