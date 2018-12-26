@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class CamaraViewController: UIViewController {
+class CamaraViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,12 @@ class CamaraViewController: UIViewController {
 
     
     @IBAction func openCameraButton(sender: AnyObject) {
+        let picker = UIImagePickerController()
+        picker.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+        picker.sourceType = .camera
+        present(picker, animated: true, completion: nil)
         
+        print("the camera was accessed")
     }
 
 }

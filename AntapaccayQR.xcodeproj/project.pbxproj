@@ -35,6 +35,10 @@
 		FB2FAB1621B076A1003AB115 /* Llegada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2FAB1521B076A1003AB115 /* Llegada.swift */; };
 		FB345CF821ADA44500B5BF5E /* Unidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB345CF721ADA44500B5BF5E /* Unidad.swift */; };
 		FB345CFA21ADC53500B5BF5E /* DataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB345CF921ADC53500B5BF5E /* DataDTO.swift */; };
+		FB38FB3321D40B3900D839A3 /* ItemBulto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38FB3221D40B3900D839A3 /* ItemBulto.swift */; };
+		FB38FB3521D421FC00D839A3 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38FB3421D421FC00D839A3 /* ItemsViewController.swift */; };
+		FB38FB3821D4285400D839A3 /* ItemsVerificaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB38FB3621D4285400D839A3 /* ItemsVerificaTableViewCell.swift */; };
+		FB38FB3921D4285400D839A3 /* ItemsVerificaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB38FB3721D4285400D839A3 /* ItemsVerificaTableViewCell.xib */; };
 		FB3F04C72188FE2700287DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3F04C62188FE2700287DAB /* User.swift */; };
 		FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB40348321890B8D005C7792 /* MenuViewController.swift */; };
 		FB43FD2D21B9871A00ABA054 /* AlmacenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */; };
@@ -132,6 +136,10 @@
 		FB2FAB1521B076A1003AB115 /* Llegada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Llegada.swift; sourceTree = "<group>"; };
 		FB345CF721ADA44500B5BF5E /* Unidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unidad.swift; sourceTree = "<group>"; };
 		FB345CF921ADC53500B5BF5E /* DataDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDTO.swift; sourceTree = "<group>"; };
+		FB38FB3221D40B3900D839A3 /* ItemBulto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBulto.swift; sourceTree = "<group>"; };
+		FB38FB3421D421FC00D839A3 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		FB38FB3621D4285400D839A3 /* ItemsVerificaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsVerificaTableViewCell.swift; sourceTree = "<group>"; };
+		FB38FB3721D4285400D839A3 /* ItemsVerificaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsVerificaTableViewCell.xib; sourceTree = "<group>"; };
 		FB3F04C62188FE2700287DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB40348321890B8D005C7792 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FB43FD2C21B9871A00ABA054 /* AlmacenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmacenViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 				FBE7D0F521AF24CB00590AB3 /* Registro.swift */,
 				FB2FAB1521B076A1003AB115 /* Llegada.swift */,
 				FB5738C121B853F800C22703 /* Reporte.swift */,
+				FB38FB3221D40B3900D839A3 /* ItemBulto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,6 +316,7 @@
 				FB19FE3721C9684E006553A5 /* CameraUnidaViewController.swift */,
 				FB19FE3921C968F7006553A5 /* GaleriaUnidadViewController.swift */,
 				FB19FE3B21C9691F006553A5 /* TerminarUnidadViewController.swift */,
+				FB38FB3421D421FC00D839A3 /* ItemsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +336,8 @@
 				FB09C03621C1B9B60040086F /* SwitchComponent.swift */,
 				FB09C03821C1C0600040086F /* TextFieldComponent.swift */,
 				FB1BD5A321C2DE7A00A4A135 /* LabelComponent.swift */,
+				FB38FB3621D4285400D839A3 /* ItemsVerificaTableViewCell.swift */,
+				FB38FB3721D4285400D839A3 /* ItemsVerificaTableViewCell.xib */,
 			);
 			path = Commponents;
 			sourceTree = "<group>";
@@ -507,6 +519,7 @@
 				FB5738BE21B8408500C22703 /* CellComponentTableViewCell.xib in Resources */,
 				FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */,
 				FBDAB0A121B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib in Resources */,
+				FB38FB3921D4285400D839A3 /* ItemsVerificaTableViewCell.xib in Resources */,
 				FBE8136F2187942A00669625 /* Main.storyboard in Resources */,
 				FB1E559D21C1747B00F37866 /* BultoComponentTableViewCell.xib in Resources */,
 			);
@@ -625,6 +638,7 @@
 				FB1F08BC21BB00C700AAFE81 /* ListaBultosViewController.swift in Sources */,
 				FB89359F219CCC31007A04E3 /* TransportistaViewController.swift in Sources */,
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
+				FB38FB3321D40B3900D839A3 /* ItemBulto.swift in Sources */,
 				FB94C467218A4EA6000E6684 /* RoutesApi.swift in Sources */,
 				FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */,
 				FBD3C23E21AC221F00221C3C /* ConsolidadoUnidadViewController.swift in Sources */,
@@ -639,6 +653,7 @@
 				FBE7D0F221AEEE8500590AB3 /* PartidaCargaViewController.swift in Sources */,
 				FB735B2F2195DCBA00707D9D /* OrdenDTO.swift in Sources */,
 				FB345CF821ADA44500B5BF5E /* Unidad.swift in Sources */,
+				FB38FB3821D4285400D839A3 /* ItemsVerificaTableViewCell.swift in Sources */,
 				FB7C9EE12188D17C00F0466F /* LoginViewController.swift in Sources */,
 				FBD3C23C21AC1B4800221C3C /* Paleta.swift in Sources */,
 				FBE8136C2187942A00669625 /* ViewController.swift in Sources */,
@@ -652,6 +667,7 @@
 				FB59B65521BEE2F6006E1F2D /* UnidadQRViewController.swift in Sources */,
 				FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */,
 				FB20AFA421A30E3600B98FE6 /* ListaViewController.swift in Sources */,
+				FB38FB3521D421FC00D839A3 /* ItemsViewController.swift in Sources */,
 				FB19FE3821C9684E006553A5 /* CameraUnidaViewController.swift in Sources */,
 				FBD3C24621AC5AEE00221C3C /* GaleriaBultoViewController.swift in Sources */,
 				FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */,

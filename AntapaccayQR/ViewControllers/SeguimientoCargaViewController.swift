@@ -26,7 +26,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     var listaOrdenDetalle = Array<OrdenDetalle>()
     @IBOutlet var prueba: UIView!
     
-    @IBOutlet weak var numeroItem: UILabel!
+    @IBOutlet weak var numeroItem: UILabel! 
     var _numeroItem: String = VACIO
     
     var _listaItem = Array<Item>()

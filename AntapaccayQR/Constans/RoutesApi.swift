@@ -41,3 +41,5 @@ let CONSOLIDAR_TRANSPORTE: String = BASE_URL + "PaletaConsolidada/SaveTransporte
 let LIST_ORDEN_DET_ID = BASE_URL + "SolicitudDetalle/GetListaOrdenDetalle"
 
 let OBTENER_CANTIDAD_ACTUAL = BASE_URL + "OrdenDetalle/GetPaged"
+
+let OBTENER_ITEMS_BULTO = BASE_URL + "BultoOrden/GetPaged"
