@@ -39,7 +39,7 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
             "Operator": "Equals"
         ]
         delay(seconds: 3.0, completion: {
-            SwiftSpinner.show("Cargado")
+            SwiftSpinner.show("Cargando")
             Alamofire.request(OBTENER_OBJECTO_GUI, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                 .responseJSON(){
                     response in switch response.result{
@@ -66,7 +66,7 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
                                 "recepcionAlmacen": ""
                             ]
                             self.delay(seconds: 3.0, completion: {
-                                SwiftSpinner.show("Cargado")
+                                SwiftSpinner.show("Cargando")
                                 Alamofire.request(OBTENER_BULTO_BY_GUIA, method: .post, parameters: parameter, encoding: JSONEncoding.default)
                                     .responseJSON(){
                                         response in switch response.result{

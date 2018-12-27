@@ -47,7 +47,7 @@ class PartidaCargaViewController: UIViewController {
                             var transporte  =  Int()
                             let nuevo = data as! [Dictionary <String, AnyObject>]
                             if nuevo.isEmpty {
-                                let alertTerminar = PMAlertController(title: "Exito", description: "Se realizo con exito la busqueda", image: UIImage(named: "exito"), style: .alert)
+                                let alertTerminar = PMAlertController(title: "Precaucion", description: "Revise si la Orden es correcta", image: UIImage(named: "precaucion"), style: .alert)
                                 alertTerminar.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                                 self.present(alertTerminar, animated: true, completion: nil)
                                 SwiftSpinner.hide()

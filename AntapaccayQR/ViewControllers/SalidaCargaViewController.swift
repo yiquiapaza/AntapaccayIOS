@@ -116,10 +116,12 @@ class SalidaCargaViewController: UIViewController {
                                         }
                                         else {
                                             if self.llegada[0].getTipoOperacion() == "PARTIDA"{
-                                                let error = PMAlertController(title: "Registro de Salida", description: "no se registro salida de " + self.llegada[0].getNombrePuntoControl(), image: UIImage(named: "precaucion"), style: .alert)
-                                                error.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
-                                                self.present(error, animated: true, completion: nil)
+                                                let exito = PMAlertController(title: "Exito", description: "Se obtuvieron los datos correctamente", image: UIImage(named: "exito"), style: .alert )
+                                                exito.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                                self.llegadaButton.isEnabled = false
+                                                self.present(exito, animated: true, completion: nil)
                                                 SwiftSpinner.hide()
+                                                
                                             }
                                             if (self.llegada[0].getCodigoPuntoControl() == "008" || self.llegada[0].getCodigoPuntoControl() == "ALMC"){
                                                 let error = PMAlertController(title: "Registro de Salida", description: "ya se registro la llegada " + self.llegada[0].getNombrePuntoControl(), image: UIImage(named: "precaucion"), style: .alert)
@@ -128,10 +130,9 @@ class SalidaCargaViewController: UIViewController {
                                                 SwiftSpinner.hide()
                                             }
                                             else {
-                                                let exito = PMAlertController(title: "Exito", description: "Se obtuvieron los datos correctamente", image: UIImage(named: "exito"), style: .alert )
-                                                exito.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
-                                                self.llegadaButton.isEnabled = false
-                                                self.present(exito, animated: true, completion: nil)
+                                                let error = PMAlertController(title: "Registro de Salida", description: "no se registro salida de " + self.llegada[0].getNombrePuntoControl(), image: UIImage(named: "precaucion"), style: .alert)
+                                                error.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                                self.present(error, animated: true, completion: nil)
                                                 SwiftSpinner.hide()
                                             }
                                         }

@@ -19,6 +19,7 @@ class ListaBultosViewController: UIViewController, UITableViewDelegate, UITableV
     var cellReuseIdentifier:String = "cell"
     var idItem = String()
     var bultosConfi = Array<Paleta>()
+    var bultoOrden = Paleta()
     var listaItems = Array<ItemBulsto>()
     
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class ListaBultosViewController: UIViewController, UITableViewDelegate, UITableV
     @objc func hacerClick(_ sender: UIButton){
         codigoItem.text = self.bultosConfi[sender.tag].getCodigo()
         idItem = self.bultosConfi[sender.tag].getId()
+        bultoOrden = self.bultosConfi[sender.tag]
         let parameters : Parameters = [
             "filtros":[
                 [
@@ -132,6 +134,7 @@ class ListaBultosViewController: UIViewController, UITableViewDelegate, UITableV
         {
             let vs = segue.destination as? ItemsViewController
             vs!.listaItems = self.listaItems
+            vs!.bultoOrden = self.bultoOrden
         }
     }
     

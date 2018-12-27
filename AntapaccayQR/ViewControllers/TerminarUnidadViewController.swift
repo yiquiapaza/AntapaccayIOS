@@ -105,11 +105,13 @@ class TerminarUnidadViewController: UIViewController {
                         resultado.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                         self.present(resultado, animated: true, completion: nil)
                         self.estadoButton.isEnabled = false
+                        SwiftSpinner.hide()
                         print(data)
                     case .failure(let error):
                         let errorMessaje = PMAlertController(title: "Error", description: "Error del servidor, revise su conexion de Internet", image: UIImage(named: "error"), style: .alert)
                         errorMessaje.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                         self.present(errorMessaje, animated: true, completion: nil)
+                        SwiftSpinner.hide()
                         print(error)
                     }
             }

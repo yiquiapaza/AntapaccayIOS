@@ -43,3 +43,5 @@ let LIST_ORDEN_DET_ID = BASE_URL + "SolicitudDetalle/GetListaOrdenDetalle"
 let OBTENER_CANTIDAD_ACTUAL = BASE_URL + "OrdenDetalle/GetPaged"
 
 let OBTENER_ITEMS_BULTO = BASE_URL + "BultoOrden/GetPaged"
+
+let VERIFICA_ITEM = BASE_URL + "BultoOrden/UpdateBOandODinsertDis"

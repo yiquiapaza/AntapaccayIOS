@@ -162,6 +162,9 @@ class UnidadTransporteViewController: UIViewController {
         self.dropDownTipo.show()
     }
     
+    /*
+    revusar el servicio de la placa o cambiar todos los servicios para el transporte 
+     */
     @IBAction func placa(_ sender: UIButton) {
         self.dropDownPlaca.dataSource.removeAll()
         self.dropDownPlaca.anchorView = vista
