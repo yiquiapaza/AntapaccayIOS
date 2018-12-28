@@ -92,7 +92,7 @@ class ListaBultosViewController: UIViewController, UITableViewDelegate, UITableV
                                 _nuevo.setIdBulto(idBulto: item["idBulto"] as! String)
                                 _nuevo.setIdProveedor(idProveedor: item["idProveedor"] as! String)
                                 _nuevo.setNumeroItem(numeroItem: item["numeroItem"] as! String)
-                                _nuevo.setDescripcion(descripcion: item["descripcion"] as! String)
+                                _nuevo.setDescripcion(descripcion: item["descripcion"] as? String ?? "")
                                 _nuevo.setCantidad(cantidad: item["cantidad"] as! Int)
                                 _nuevo.setDiscrepancia(discrepancia: item["discrepancia"] as? String ?? "" )
                                 _nuevo.setDescripcionDiscrepancia(descripcionDiscrepancia: item["descripcionDiscrepancia"] as? String ?? "" )
