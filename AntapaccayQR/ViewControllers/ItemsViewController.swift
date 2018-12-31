@@ -209,10 +209,13 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc func cerrarSession(){
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
     
     @IBAction func backMenu(_ sender: UIButton) {
         let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         navigationController?.pushViewController( menuViewController, animated: true)
     }
+    
 }

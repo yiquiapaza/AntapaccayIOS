@@ -19,6 +19,9 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var tablaPaleta: UITableView!
     override func viewDidLoad() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        
         super.viewDidLoad()
         self.tablaPaleta.delegate = self
         self.tablaPaleta.dataSource = self
@@ -131,6 +134,13 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
             let vs = segue.destination as? TabBarUnidadViewController
             vs!.listaPaletas = self.listaPaletas
         }
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
     
 }

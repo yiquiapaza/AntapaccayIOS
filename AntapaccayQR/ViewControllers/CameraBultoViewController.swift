@@ -33,6 +33,8 @@ class CameraBultoViewController: UIViewController, AVCaptureMetadataOutputObject
     @objc func cerrarSession(){
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
     
 }

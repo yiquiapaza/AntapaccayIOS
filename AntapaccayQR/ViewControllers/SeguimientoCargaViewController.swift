@@ -156,7 +156,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         self.cantidadRequerida.keyboardType = .numberPad
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: self, action: #selector(cerrarSession))
-        navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        //navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
 
         // Do any additional setup after loading the view.
@@ -221,6 +221,9 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                             case .failure( let error):
                                 self.selectState.isEnabled = false
                                 print(error)
+                                let alertOrden = PMAlertController(title: "Error", description: "revise si tiene conexion a internet", image: UIImage( named: "error"), style: .alert)
+                                alertOrden.addAction( PMAlertAction(title: "Aceptar", style: .cancel, action: nil))
+                                self.present(alertOrden, animated: true, completion: nil)
                                 SwiftSpinner.hide()
                             }
                     }
@@ -390,6 +393,8 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     @objc func cerrarSession() -> Void {
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
 }
 

@@ -18,6 +18,8 @@ class ReporteUserViewController: UIViewController, UITableViewDelegate,   UITabl
     @IBOutlet weak var numeroGuia: UITextField!
     
     override func viewDidLoad() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         tableReporte.delegate = self
         tableReporte.dataSource = self
         tableReporte.register(UINib(nibName: "CellComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
@@ -123,4 +125,10 @@ class ReporteUserViewController: UIViewController, UITableViewDelegate,   UITabl
         return 492
     }
     
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
+    }
 }

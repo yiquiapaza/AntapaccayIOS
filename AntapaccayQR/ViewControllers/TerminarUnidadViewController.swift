@@ -19,6 +19,9 @@ class TerminarUnidadViewController: UIViewController {
     @IBOutlet weak var estadoButton: ButtonComponent!
     
     override func viewDidLoad() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         let new_data = self.parent as! TabBarUnidadViewController
         self.data = new_data.listaPaletas
         super.viewDidLoad()
@@ -125,5 +128,11 @@ class TerminarUnidadViewController: UIViewController {
             completion()
         }
     }
-    
+ 
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
+    }
 }

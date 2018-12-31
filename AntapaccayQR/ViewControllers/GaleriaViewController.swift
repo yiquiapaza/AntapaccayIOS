@@ -26,7 +26,8 @@ class GaleriaViewController: UIViewController,UICollectionViewDelegate, UICollec
         self.listaImagenes.append(UIImageView(image: UIImage(named: "tres")))
         self.collectionFotos.delegate = self
         self.collectionFotos.dataSource = self
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         //screenSize = UIScreen.main.bounds
         //screenWidth = screenSize.width
         //screenHeight = screenSize.height
@@ -76,5 +77,11 @@ class GaleriaViewController: UIViewController,UICollectionViewDelegate, UICollec
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
 }

@@ -47,6 +47,9 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         self.almacenesActivate.isEnabled = false
         self.transporteActive.isEnabled = false
         let data = self.parent as! TabBarViewController
@@ -207,5 +210,11 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
             index = -1
             tablaGuias.reloadData()
         }
+    }
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
 }

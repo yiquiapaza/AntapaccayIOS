@@ -38,6 +38,9 @@ class UnidadTransporteViewController: UIViewController {
     let dropDownAlmacenDestino = DropDown()
     
     override func viewDidLoad() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        
         let new_listas = self.parent as! TabBarUnidadViewController
         data = new_listas.listaPaletas
         PESO_LISTA = pesototal(lista: data)
@@ -185,4 +188,10 @@ class UnidadTransporteViewController: UIViewController {
         }
     }
     
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
+    }
 }

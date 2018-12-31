@@ -22,6 +22,7 @@ class PartidaCargaViewController: UIViewController {
     @IBOutlet weak var numero_transporte: UILabel!
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         super.viewDidLoad()
     }
     
@@ -247,5 +248,11 @@ class PartidaCargaViewController: UIViewController {
             fechaCadena = String(anio) + String(mes) + String(dia)
         }
         return Int(fechaCadena)!
+    }
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
 }

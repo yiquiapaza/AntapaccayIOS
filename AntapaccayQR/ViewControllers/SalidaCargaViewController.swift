@@ -25,6 +25,7 @@ class SalidaCargaViewController: UIViewController {
     @IBOutlet weak var llegadaButton: UIButton!
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         llegadaButton.isEnabled = true
         super.viewDidLoad()
     }
@@ -240,6 +241,13 @@ class SalidaCargaViewController: UIViewController {
             fechaCadena = String(anio) + String(mes) + String(dia)
         }
         return Int(fechaCadena)!
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        present(loginView, animated: true, completion: nil)
     }
     
 }

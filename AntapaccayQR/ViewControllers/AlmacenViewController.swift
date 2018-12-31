@@ -24,7 +24,6 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableAlamacen.delegate = self
         tableAlamacen.dataSource = self
         tableAlamacen.register(UINib(nibName: "AlmacenComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
