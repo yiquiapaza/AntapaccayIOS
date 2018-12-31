@@ -23,6 +23,8 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var buscarGuia: UITextField!
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableAlamacen.delegate = self
         tableAlamacen.dataSource = self
         tableAlamacen.register(UINib(nibName: "AlmacenComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
@@ -274,5 +276,10 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
             completion()
         }
     }
+ 
     
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+    }
 }

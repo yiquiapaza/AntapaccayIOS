@@ -23,6 +23,8 @@ class ListaBultosViewController: UIViewController, UITableViewDelegate, UITableV
     var listaItems = Array<ItemBulsto>()
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableAlmacen.delegate = self
         tableAlmacen.dataSource = self
         tableAlmacen.register(UINib(nibName: "AlmacenComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
@@ -136,6 +138,11 @@ class ListaBultosViewController: UIViewController, UITableViewDelegate, UITableV
             vs!.listaItems = self.listaItems
             vs!.bultoOrden = self.bultoOrden
         }
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
     }
     
 }

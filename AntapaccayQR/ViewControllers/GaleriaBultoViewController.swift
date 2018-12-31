@@ -11,6 +11,8 @@ import UIKit
 class GaleriaBultoViewController: UIViewController {
 
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -26,5 +28,9 @@ class GaleriaBultoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+    }
 
 }

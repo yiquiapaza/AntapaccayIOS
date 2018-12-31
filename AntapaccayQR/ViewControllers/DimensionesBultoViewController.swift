@@ -11,6 +11,8 @@ import UIKit
 class DimensionesBultoViewController: UIViewController {
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         super.viewDidLoad()
     }
     
@@ -25,6 +27,11 @@ class DimensionesBultoViewController: UIViewController {
     }
     @IBAction func largoAction(_ sender: UITextField) {
         LARGO_BULTO = sender.text!
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
     }
     
 }

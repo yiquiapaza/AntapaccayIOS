@@ -21,6 +21,10 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     var index = -1
     
     override func viewDidLoad() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         super.viewDidLoad()
         
         self.getBulto.delegate = self
@@ -188,5 +192,10 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.getBulto.resignFirstResponder()
         return true
+    }
+    
+    @objc func cerrarSession()-> Void{
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
     }
 }

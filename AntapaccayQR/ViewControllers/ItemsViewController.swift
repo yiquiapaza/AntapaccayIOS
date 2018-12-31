@@ -24,8 +24,8 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         listaItems1.removeAll()
-        
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         if indiceReal == 0 {
             for item in listaItems {
                 var nuevo = ItemBulsto()
@@ -133,69 +133,70 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @objc func disconforme( _ sender : UIButton){
         print("No quiere")
-        var descripcion = String()
+        var comentario = String()
         let alertDescripcion = PMAlertController(title: "Discrepanacia", description: "Escriba el motivo de la Discrepancia", image: UIImage(named: "error"), style: .alert)
         alertDescripcion.addTextField{ (textField) in
             textField?.placeholder = "Ingrese la Discrepancia"
         }
         alertDescripcion.addAction(PMAlertAction(title: "Cancel", style: .cancel))
         alertDescripcion.addAction(PMAlertAction(title: "Aceptar", style: .default, action: { () in
-            descripcion = alertDescripcion.textFields[0].text ?? ""
+            comentario = alertDescripcion.textFields[0].text ?? ""
+            let parameters : Parameters = [
+                "bultoOrden": [
+                    "Id":self.listaItems1[sender.tag].getId(),
+                    "idOrden": CONST_ID,
+                    "idOrdenDetalle": CONST_ID,
+                    "idBulto": self.bultoOrden.getId(),
+                    "idProveedor": self.listaItems1[sender.tag].getIdProveedor(),
+                    "numeroItem": self.listaItems1[sender.tag].getNumeroItem(),
+                    "descripcion": self.listaItems1[sender.tag].getDescripcion(),
+                    "cantidad": self.listaItems1[sender.tag].getCantidad(),
+                    "discrepancia": true,
+                    "descripcionDiscrepancia": comentario,
+                    "transportista": self.listaItems1[sender.tag].getTransportista(),
+                    "verificadoAlmacen": true,
+                    "numeroWaybill": self.listaItems1[sender.tag].getNumeroWaybill(),
+                    "peso": self.listaItems1[sender.tag].getPeso(),
+                    "alto": self.listaItems1[sender.tag].getAlto(),
+                    "ancho": self.listaItems1[sender.tag].getAncho(),
+                    "largo": self.listaItems1[sender.tag].getLargo(),
+                    "numeroGuia": self.listaItems1[sender.tag].getNumeroGuia(),
+                    "RowVersion":self.listaItems1[sender.tag].getRowVersion(),
+                ],
+                "discrepancia": [
+                    "Id": CONST_ID,
+                    "idOrdenDetalle": CONST_ID,
+                    "idBultoOrden": self.listaItems1[sender.tag].getId(),
+                    "valorOrden": "",
+                    "numeroItem": self.listaItems1[sender.tag].getNumeroItem(),
+                    "descripcionItem": self.listaItems1[sender.tag].getDescripcion(),
+                    "numeroWaybill": "",
+                    "comentario": comentario,
+                    "unidad": "",
+                    "cantidad": self.listaItems1[sender.tag].getCantidad(),
+                    "tipoDiscrepancia":"1",
+                    "estadoDiscrepancia": "1",
+                    "RowVersion": "000000000000"
+                ]
+            ]
+            print(parameters)
+            self.delay(seconds: 3.0, completion: {
+                SwiftSpinner.show("Cargando")
+                Alamofire.request(VERIFICA_ITEM, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                    .responseJSON(){
+                        response in switch response.result{
+                        case .success(let data):
+                            print(data)
+                            SwiftSpinner.hide()
+                        case .failure(let error):
+                            print(error)
+                            SwiftSpinner.hide()
+                        }
+                }
+            })
         }))
         self.present(alertDescripcion,animated: true, completion: nil)
-        let parameters : Parameters = [
-            "bultoOrden": [
-                "Id":listaItems1[sender.tag].getId(),
-                "idOrden": CONST_ID,
-                "idOrdenDetalle": CONST_ID,
-                "idBulto": bultoOrden.getId(),
-                "idProveedor": listaItems1[sender.tag].getIdProveedor(),
-                "numeroItem": listaItems1[sender.tag].getNumeroItem(),
-                "descripcion": listaItems1[sender.tag].getDescripcion(),
-                "cantidad": listaItems1[sender.tag].getCantidad(),
-                "discrepancia": true,
-                "descripcionDiscrepancia": "aa",
-                "transportista": listaItems1[sender.tag].getTransportista(),
-                "verificadoAlmacen": true,
-                "numeroWaybill": listaItems1[sender.tag].getNumeroWaybill(),
-                "peso": listaItems1[sender.tag].getPeso(),
-                "alto": listaItems1[sender.tag].getAlto(),
-                "ancho": listaItems1[sender.tag].getAncho(),
-                "largo": listaItems1[sender.tag].getLargo(),
-                "numeroGuia": listaItems1[sender.tag].getNumeroGuia(),
-                "RowVersion":listaItems1[sender.tag].getRowVersion(),
-            ],
-            "discrepancia": [
-                "Id": CONST_ID,
-                "idOrdenDetalle": CONST_ID,
-                "idBultoOrden": listaItems1[sender.tag].getId(),
-                "valorOrden": "",
-                "numeroItem": listaItems1[sender.tag].getNumeroItem(),
-                "descripcionItem": listaItems1[sender.tag].getDescripcion(),
-                "numeroWaybill": "",
-                "comentario": "aa",
-                "unidad": "",
-                "cantidad": listaItems1[sender.tag].getCantidad(),
-                "tipoDiscrepancia":"1",
-                "estadoDiscrepancia": "1",
-                "RowVersion": "000000000000"
-            ]
-        ]
-        print(parameters)
-        self.delay(seconds: 3.0, completion: {
-            SwiftSpinner.show("Cargando")
-            Alamofire.request(VERIFICA_ITEM, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-                .responseJSON(){
-                    response in switch response.result{
-                    case .success(let data):
-                        print(data)
-                        SwiftSpinner.hide()
-                    case .failure(let error):
-                        print(error)
-                        SwiftSpinner.hide()
-                    }
-            }
-        })
+        
     }
     
     func delay(seconds: Double, completion: @escaping () -> ()) {
@@ -203,5 +204,15 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         DispatchQueue.main.asyncAfter(deadline: popTime) {
             completion()
         }
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
+    }
+    
+    @IBAction func backMenu(_ sender: UIButton) {
+        let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        navigationController?.pushViewController( menuViewController, animated: true)
     }
 }

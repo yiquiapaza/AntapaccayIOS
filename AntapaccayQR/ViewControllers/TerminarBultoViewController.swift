@@ -16,6 +16,8 @@ class TerminarBultoViewController: UIViewController {
     var listaPaleta  = Array<Paleta>()
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         let data = self.parent as! TabBarBultoViewController
         self.listaPaleta =  data.listaPaleta
         super.viewDidLoad()
@@ -115,5 +117,10 @@ class TerminarBultoViewController: UIViewController {
     @IBAction func backMenu(_ sender: UIButton) {
         let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         navigationController?.pushViewController( menuViewController, animated: true)
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
     }
 }

@@ -16,6 +16,8 @@ class CameraBultoViewController: UIViewController, AVCaptureMetadataOutputObject
 
     
     override func viewDidLoad() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         super.viewDidLoad()
     }
     
@@ -26,6 +28,11 @@ class CameraBultoViewController: UIViewController, AVCaptureMetadataOutputObject
         present(picker, animated: true, completion: nil)
         
         print("the camera was accessed")
+    }
+    
+    @objc func cerrarSession(){
+        UserDefaults.standard.set(VACIO, forKey: "user")
+        UserDefaults.standard.set(VACIO, forKey: "pass")
     }
     
 }

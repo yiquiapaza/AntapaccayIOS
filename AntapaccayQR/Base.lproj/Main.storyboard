@@ -2596,18 +2596,28 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TEu-Os-4Va">
-                                <rect key="frame" x="0.0" y="144" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-VA-uWn">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Regresar al Menu"/>
+                                <connections>
+                                    <action selector="backMenu:" destination="Ktf-tx-QDa" eventType="touchUpInside" id="EEB-lM-wRb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6bi-g8-Zur" firstAttribute="bottom" secondItem="TEu-Os-4Va" secondAttribute="bottom" constant="20" id="Qb1-Cd-miR"/>
+                            <constraint firstItem="6bi-g8-Zur" firstAttribute="bottom" secondItem="g5Q-VA-uWn" secondAttribute="bottom" constant="20" id="MHk-sw-wEA"/>
                             <constraint firstItem="TEu-Os-4Va" firstAttribute="trailing" secondItem="6bi-g8-Zur" secondAttribute="trailing" id="SY6-td-hvO"/>
+                            <constraint firstItem="g5Q-VA-uWn" firstAttribute="top" secondItem="TEu-Os-4Va" secondAttribute="bottom" constant="18" id="WAA-CV-CeT"/>
+                            <constraint firstItem="g5Q-VA-uWn" firstAttribute="leading" secondItem="6bi-g8-Zur" secondAttribute="leading" constant="20" id="bIe-VV-wxT"/>
                             <constraint firstItem="ZOx-aV-ulR" firstAttribute="top" secondItem="6bi-g8-Zur" secondAttribute="top" constant="20" id="cjB-wo-jEI"/>
                             <constraint firstItem="ZOx-aV-ulR" firstAttribute="leading" secondItem="6bi-g8-Zur" secondAttribute="leading" constant="20" id="fbT-Af-Ju1"/>
                             <constraint firstItem="TEu-Os-4Va" firstAttribute="leading" secondItem="6bi-g8-Zur" secondAttribute="leading" id="nNw-aA-7ZU"/>
                             <constraint firstItem="6bi-g8-Zur" firstAttribute="trailing" secondItem="ZOx-aV-ulR" secondAttribute="trailing" constant="20" id="q9p-Cn-t5N"/>
+                            <constraint firstItem="6bi-g8-Zur" firstAttribute="trailing" secondItem="g5Q-VA-uWn" secondAttribute="trailing" constant="20" id="tQZ-YK-aKw"/>
                             <constraint firstItem="TEu-Os-4Va" firstAttribute="top" secondItem="ZOx-aV-ulR" secondAttribute="bottom" constant="20" id="z1a-fa-Qhp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6bi-g8-Zur"/>
