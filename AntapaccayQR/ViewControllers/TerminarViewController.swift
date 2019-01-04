@@ -120,7 +120,7 @@ class TerminarViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let json = try? JSONSerialization.data(withJSONObject: datos)
         request.httpBody = json
-        self.delay(seconds: 5.0, completion: {
+        self.delay(seconds: 0.0, completion: {
             SwiftSpinner.show("Verificando API")
             Alamofire.request(request).responseJSON{ response in
                 switch (response.result){

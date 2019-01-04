@@ -98,7 +98,7 @@ class TerminarUnidadViewController: UIViewController {
             "listaGuias": [[]],
             "transporteVehiculo": [[]]
         ]
-        self.delay(seconds: 3.0, completion: {
+        self.delay(seconds: 0.0, completion: {
             SwiftSpinner.show("Verificando Datos")
             Alamofire.request(CONSOLIDAR_TRANSPORTE, method: .post, parameters: paremetres, encoding: JSONEncoding.default)
                 .responseJSON{

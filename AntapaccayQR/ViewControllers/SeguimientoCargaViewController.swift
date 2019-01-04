@@ -111,7 +111,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 "length": 1000
             ]
             var cantidad_nueva = 0
-            self.delay(seconds: 3.0, completion: {
+            self.delay(seconds: 0.0, completion: {
                 SwiftSpinner.show("Consultado Cantidad Actual")
                 Alamofire.request(OBTENER_CANTIDAD_ACTUAL, method: .post, parameters: parametres, encoding:  JSONEncoding.default)
                     .responseJSON() {
@@ -180,7 +180,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 CODIGO_DISTRITO: orden.getCodigoDistrito(),
                 PRICE_CODE: orden.getPriceCode()
             ]
-            self.delay(seconds: 3.0, completion: {
+            self.delay(seconds: 0.0, completion: {
                 SwiftSpinner.show("Consultando Orden")
                     Alamofire.request(RUTA, method: .post,parameters: parametros, encoding: JSONEncoding.default)
                         .responseJSON(){ response in

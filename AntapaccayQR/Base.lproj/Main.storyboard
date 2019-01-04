@@ -106,7 +106,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginLoginVC:" destination="nkL-vk-RUw" eventType="touchUpInside" id="KGA-hF-aUo"/>
-                                    <segue destination="8In-kH-1eP" kind="show" identifier="SessionSegue" id="Iyo-fW-uQK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rercordar Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8co-sM-5Jy">
@@ -149,6 +148,7 @@
                         <outlet property="switchIntro" destination="MbS-bd-NJe" id="WLE-D2-ob2"/>
                         <outlet property="userLoginVC" destination="DSo-oq-0iR" id="gnX-JL-8aO"/>
                         <outlet property="viewLogin" destination="lUN-3K-yHb" id="qNo-Uv-PUi"/>
+                        <segue destination="8In-kH-1eP" kind="show" identifier="SessionSegue" id="XQH-7W-W7Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sL-ov-MWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1071,16 +1071,43 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WCq-cI-AAh">
+                                <rect key="frame" x="67" y="197" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvb-VD-wEY">
+                                <rect key="frame" x="20" y="518" width="335" height="30"/>
+                                <state key="normal" title="camara 1"/>
+                                <connections>
+                                    <action selector="openCameraButtonWithSender:" destination="aCC-eN-m6I" eventType="touchUpInside" id="W8G-Ih-GDt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0h-ut-zPZ">
+                                <rect key="frame" x="20" y="568" width="335" height="30"/>
+                                <state key="normal" title="galeria1"/>
+                                <connections>
+                                    <action selector="selectImagen:" destination="aCC-eN-m6I" eventType="touchUpInside" id="XEH-Hj-Ye9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0P2-Ws-8Oj" firstAttribute="trailing" secondItem="M0h-ut-zPZ" secondAttribute="trailing" constant="20" id="4dn-TQ-czN"/>
                             <constraint firstItem="0P2-Ws-8Oj" firstAttribute="trailing" secondItem="RNj-rE-tAt" secondAttribute="trailing" constant="20" id="EDY-5G-qPb"/>
+                            <constraint firstItem="0P2-Ws-8Oj" firstAttribute="trailing" secondItem="Gvb-VD-wEY" secondAttribute="trailing" constant="20" id="Ell-Jg-Nbs"/>
                             <constraint firstItem="RNj-rE-tAt" firstAttribute="leading" secondItem="0P2-Ws-8Oj" secondAttribute="leading" constant="20" id="Nwh-Vl-3YF"/>
+                            <constraint firstItem="0P2-Ws-8Oj" firstAttribute="bottom" secondItem="M0h-ut-zPZ" secondAttribute="bottom" constant="20" id="TqL-Sa-p4C"/>
+                            <constraint firstItem="M0h-ut-zPZ" firstAttribute="leading" secondItem="0P2-Ws-8Oj" secondAttribute="leading" constant="20" id="UyP-Rb-m9c"/>
+                            <constraint firstItem="M0h-ut-zPZ" firstAttribute="top" secondItem="Gvb-VD-wEY" secondAttribute="bottom" constant="20" id="WTN-wo-WLF"/>
+                            <constraint firstItem="Gvb-VD-wEY" firstAttribute="leading" secondItem="0P2-Ws-8Oj" secondAttribute="leading" constant="20" id="f15-bx-SH0"/>
                             <constraint firstItem="RNj-rE-tAt" firstAttribute="top" secondItem="0P2-Ws-8Oj" secondAttribute="top" constant="20" id="gtS-4Y-GX4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0P2-Ws-8Oj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Galeria" image="icons8-opened_folder" selectedImage="icons8-opened_folder" id="oZH-Ag-g7W"/>
+                    <connections>
+                        <outlet property="imageView" destination="WCq-cI-AAh" id="hgc-F9-tbL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NG2-dR-QMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3509,8 +3536,15 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5El-zw-b8V">
-                                <rect key="frame" x="0.0" y="144" width="375" height="404"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="327"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX0-zD-8Wy">
+                                <rect key="frame" x="20" y="518" width="335" height="30"/>
+                                <state key="normal" title="Seleccionar Imagen"/>
+                                <connections>
+                                    <action selector="selectImagen:" destination="o3R-Ab-awu" eventType="touchUpInside" id="6kd-Mg-Tig"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -3519,10 +3553,13 @@
                             <constraint firstItem="tpc-4m-h2A" firstAttribute="leading" secondItem="4Gm-w0-I0x" secondAttribute="leading" constant="20" id="6NX-7P-3sO"/>
                             <constraint firstItem="4Gm-w0-I0x" firstAttribute="trailing" secondItem="tpc-4m-h2A" secondAttribute="trailing" constant="20" id="CPO-rf-nxW"/>
                             <constraint firstItem="4Gm-w0-I0x" firstAttribute="bottom" secondItem="eAq-W7-XP7" secondAttribute="bottom" constant="20" id="DN3-uh-M2g"/>
-                            <constraint firstItem="eAq-W7-XP7" firstAttribute="top" secondItem="5El-zw-b8V" secondAttribute="bottom" constant="20" id="GgB-x0-msg"/>
+                            <constraint firstItem="bX0-zD-8Wy" firstAttribute="leading" secondItem="4Gm-w0-I0x" secondAttribute="leading" constant="20" id="DT0-ey-poB"/>
+                            <constraint firstItem="bX0-zD-8Wy" firstAttribute="top" secondItem="5El-zw-b8V" secondAttribute="bottom" constant="47" id="Lpe-0J-Vpf"/>
                             <constraint firstItem="eAq-W7-XP7" firstAttribute="leading" secondItem="4Gm-w0-I0x" secondAttribute="leading" constant="20" id="Mdh-pC-VeD"/>
                             <constraint firstItem="4Gm-w0-I0x" firstAttribute="trailing" secondItem="eAq-W7-XP7" secondAttribute="trailing" constant="20" id="Szm-zx-8Nf"/>
+                            <constraint firstItem="eAq-W7-XP7" firstAttribute="top" secondItem="bX0-zD-8Wy" secondAttribute="bottom" constant="20" id="av6-bQ-KOr"/>
                             <constraint firstItem="5El-zw-b8V" firstAttribute="top" secondItem="tpc-4m-h2A" secondAttribute="bottom" constant="20" id="fTL-2k-ACH"/>
+                            <constraint firstItem="4Gm-w0-I0x" firstAttribute="trailing" secondItem="bX0-zD-8Wy" secondAttribute="trailing" constant="20" id="kUk-s5-mJd"/>
                             <constraint firstItem="5El-zw-b8V" firstAttribute="leading" secondItem="4Gm-w0-I0x" secondAttribute="leading" id="vRe-fk-jpb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Gm-w0-I0x"/>

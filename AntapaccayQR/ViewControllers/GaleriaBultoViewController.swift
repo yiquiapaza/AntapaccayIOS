@@ -8,8 +8,11 @@
 
 import UIKit
 
-class GaleriaBultoViewController: UIViewController {
+class GaleriaBultoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    let imagenSelect = UIImagePickerController()
+    
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -18,16 +21,42 @@ class GaleriaBultoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func openCameraButton(sender: AnyObject) {
+        
+        let vs = UIImagePickerController()
+        vs.sourceType = .camera
+        vs.allowsEditing = true
+        vs.delegate = self
+        present(vs, animated: true)
+        //let picker = UIImagePickerController()
+        //picker.delegate = (self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+        //picker.sourceType = .camera
+        //present(picker, animated: true, completion: nil)
+        
+        print("the camera was accessed")
     }
-    */
+
+    @IBAction func selectImagen(_ sender: UIButton) {
+        imagenSelect.allowsEditing = false
+        imagenSelect.sourceType = .photoLibrary
+        present(imagenSelect, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickImage = info[.originalImage] as? UIImage{
+            print("Imagen Found")
+            print(pickImage)
+        }
+        else {
+            print("no se puede ")
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
     @objc func cerrarSession(){
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")

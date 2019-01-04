@@ -25,7 +25,7 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
         super.viewDidLoad()
         self.tablaPaleta.delegate = self
         self.tablaPaleta.dataSource = self
-        self.tablaPaleta.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        self.tablaPaleta.register(UINib(nibName: "standarTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
     }
     
     
@@ -57,7 +57,7 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
             self.present(alertBulto, animated: true, completion: nil)
         }
         else {
-            self.delay(secons: 3.0, completatio: {
+            self.delay(secons: 0.0, completatio: {
                 SwiftSpinner.show("Verificando API")
                 Alamofire.request(BUSQUEDA_PALETA_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                     .responseJSON() {
@@ -124,9 +124,19 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tablaPaleta.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = listaPaletas[indexPath.row].getNumeroPaleta()
+        let cell = self.tablaPaleta.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! standarTableViewCell
+   
+        cell.codigo.text = self.listaPaletas[indexPath.row].getCodigo()
+        cell.proveedor.text = "Numero Paleta " +  self.listaPaletas[indexPath.row].getNumeroPaleta()
+        cell.almacen.text = "Transportista " + self.listaPaletas[indexPath.row].getTransportista()
+        cell.eliminar.addTarget(self, action: #selector(quitar(_:)), for: .touchDown)
+        cell.eliminar.tag = indexPath.row
         return cell
+    }
+    
+    @objc func quitar(_ sneder: UIButton){
+        self.listaPaletas.remove(at: sneder.tag)
+        tablaPaleta.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

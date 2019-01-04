@@ -84,7 +84,7 @@ class TerminarBultoViewController: UIViewController {
             "listaBultos": listaBultos
         ]
         
-        self.delay(seconds: 3.0, completion: {
+        self.delay(seconds: 0.0, completion: {
             SwiftSpinner.show("Verficando Datos")
             Alamofire.request(INSERT_BULTO, method: .post, parameters: paleta, encoding: JSONEncoding.default)
                 .responseJSON(){

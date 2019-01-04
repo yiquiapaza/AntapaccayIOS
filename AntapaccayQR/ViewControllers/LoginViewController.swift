@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftSpinner
+import PMAlertController
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
+    
+    var user = Array<User>()
     
     @IBOutlet var viewLogin: UIView!
     @IBOutlet weak var imagenLogin: UIImageView!
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var switchIntro: UISwitch!
     @IBOutlet weak var labelLogin: UILabel!
+    var estado : Bool = false
     
     @IBOutlet weak var userLoginVC: UITextField!
     @IBOutlet weak var passLoginVC: UITextField!
@@ -26,7 +32,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         imageViewIntro(image: imagenLogin)
         startView(vistaIntro: viewLogin)
         passLoginVC.delegate = self
-        switchIntro.isOn = false
         super.viewDidLoad()
         if (UserDefaults.standard.string(forKey: "user") != VACIO && UserDefaults.standard.string(forKey: "pass") != VACIO){
             DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -47,7 +52,59 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func loginLoginVC(_ sender: Any) {
         if (!userLoginVC.text!.isEmpty && !passLoginVC.text!.isEmpty){
-           
+            delay(seconds: 0.0, completion: {
+                SwiftSpinner.show("Verificando al Usuario")
+                let parameters : Parameters = [
+                    "Logical": "AND",
+                    "PropertyName": "userid",
+                    "Value": self.userLoginVC.text!,
+                    "Operator": "Equals"
+                ]
+                Alamofire.request(LOGIN_USER, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                .responseJSON(){
+                    response in switch response.result{
+                    case .success(let data):
+                        let out = data as! [Dictionary<String,AnyObject>]
+                        if out.isEmpty {
+                            let alertOrden = PMAlertController(title: "Error", description: "El Usuario no existe", image: UIImage(named: "error"), style: .alert)
+                            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                            self.present(alertOrden, animated: true, completion: nil)
+                            SwiftSpinner.hide()
+                        }
+                        else {
+                            for item in out {
+                                let nuevo = User()
+                                nuevo.setUserid(userid: item["userid"] as! String)
+                                nuevo.setPassword(password: item["password"] as! String)
+                                self.user.append(nuevo)
+                            }
+                            if self.user[0].getPassword() == self.passLoginVC.text! {
+                                let alertOrden = PMAlertController(title: "Exito", description: "Bienvenido", image: UIImage(named: "exito"), style: .alert)
+                                alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                SwiftSpinner.hide()
+                                //self.present(alertOrden, animated: true, completion: nil)
+                                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                    self.performSegue(withIdentifier: SESSION_SEGUE, sender: self)
+                                }
+                                
+                            }
+                            else{
+                                let alertOrden = PMAlertController(title: "Precaucion", description: "La contraseña es incorrecta", image: UIImage(named: "precaucion"), style: .alert)
+                                alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                                self.present(alertOrden, animated: true, completion: nil)
+                                SwiftSpinner.hide()
+                            }
+                        }
+                        print(data)
+                    case .failure(let error):
+                        print(error)
+                        SwiftSpinner.hide()
+                        let datos = PMAlertController(title: "Error", description: "Verifique los datos ingresados y su conneccion a Internet", image: UIImage(named: "error"), style: .alert)
+                        datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                        self.present(datos, animated: true, completion: nil)
+                    }
+                }
+            })
         }
         if(!userLoginVC.text!.isEmpty && passLoginVC.text!.isEmpty) {
             let alertUser = UIAlertController(title: "Ingrese Usuario", message: "El usuario es un campo Obligatorio", preferredStyle: UIAlertController.Style.alert)
@@ -104,6 +161,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         passLoginVC.resignFirstResponder()
         return true
+    }
+    
+    func delay(seconds: Double, completion: @escaping () -> ()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
+        }
     }
     
 }

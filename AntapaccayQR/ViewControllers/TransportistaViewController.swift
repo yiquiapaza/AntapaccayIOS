@@ -66,7 +66,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
             "Operator":"Equals"
         ]
         
-        self.delay(seconds: 5.0, completion: {
+        self.delay(seconds: 0.0, completion: {
             SwiftSpinner.show("Obteniendo datos de Almacen")
             Alamofire.request(LIST_ALMACENES, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                 .responseJSON{ response in
@@ -80,7 +80,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
                     }
             }
         })
-        self.delay(seconds: 5.0, completion: {
+        self.delay(seconds: 0.0, completion: {
             SwiftSpinner.show("Obteniendo datos de Trasporte")
             Alamofire.request(LIST_TRANSPORTISTAS, method: .get, parameters: nil, encoding: JSONEncoding.default)
                 .responseJSON{ response in

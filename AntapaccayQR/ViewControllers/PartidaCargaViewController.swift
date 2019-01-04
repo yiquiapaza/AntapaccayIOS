@@ -39,7 +39,7 @@ class PartidaCargaViewController: UIViewController {
             self.present(alertTerminar, animated: true, completion: nil)
         }
         else {
-            self.delay(secons: 3.0, completatio: {
+            self.delay(secons: 0.0, completatio: {
                 SwiftSpinner.show("Verificando Datos")
                 Alamofire.request(BUSQUEDA_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                     .responseJSON(){
@@ -106,7 +106,7 @@ class PartidaCargaViewController: UIViewController {
                 }
             })
             
-            self.delay(secons: 3.0, completatio: {
+            self.delay(secons: 0.0, completatio: {
                 Alamofire.request(ALMACEN_GUIA_ENTRADA, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                     .responseJSON(){
                         response in switch response.result{
@@ -207,7 +207,7 @@ class PartidaCargaViewController: UIViewController {
             "transporte" : transporte
         ]
         
-        self.delay(secons: 3.0, completatio: {
+        self.delay(secons: 0.0, completatio: {
             SwiftSpinner.show("Verificando Datos")
             Alamofire.request(REGISTRO_ENTRADA, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .responseJSON(){

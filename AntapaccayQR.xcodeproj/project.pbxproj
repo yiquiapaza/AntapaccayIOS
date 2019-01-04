@@ -24,6 +24,8 @@
 		FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */; };
 		FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */; };
 		FB1BD5A421C2DE7A00A4A135 /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BD5A321C2DE7A00A4A135 /* LabelComponent.swift */; };
+		FB1C7F2A21DEB732002C00B0 /* standarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F2821DEB732002C00B0 /* standarTableViewCell.swift */; };
+		FB1C7F2B21DEB732002C00B0 /* standarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1C7F2921DEB732002C00B0 /* standarTableViewCell.xib */; };
 		FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */; };
 		FB1CDADE2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */; };
 		FB1E559C21C1747B00F37866 /* BultoComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E559A21C1747B00F37866 /* BultoComponentTableViewCell.swift */; };
@@ -125,6 +127,8 @@
 		FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaViewController.swift; sourceTree = "<group>"; };
 		FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarViewController.swift; sourceTree = "<group>"; };
 		FB1BD5A321C2DE7A00A4A135 /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
+		FB1C7F2821DEB732002C00B0 /* standarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = standarTableViewCell.swift; sourceTree = "<group>"; };
+		FB1C7F2921DEB732002C00B0 /* standarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = standarTableViewCell.xib; sourceTree = "<group>"; };
 		FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteDTO.swift; sourceTree = "<group>"; };
 		FB1CDADD2189FCB9003CF2B3 /* SeguimientoCargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguimientoCargaViewController.swift; sourceTree = "<group>"; };
 		FB1E559A21C1747B00F37866 /* BultoComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BultoComponentTableViewCell.swift; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				FB1BD5A321C2DE7A00A4A135 /* LabelComponent.swift */,
 				FB38FB3621D4285400D839A3 /* ItemsVerificaTableViewCell.swift */,
 				FB38FB3721D4285400D839A3 /* ItemsVerificaTableViewCell.xib */,
+				FB1C7F2821DEB732002C00B0 /* standarTableViewCell.swift */,
+				FB1C7F2921DEB732002C00B0 /* standarTableViewCell.xib */,
 			);
 			path = Commponents;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE813742187942A00669625 /* LaunchScreen.storyboard in Resources */,
+				FB1C7F2B21DEB732002C00B0 /* standarTableViewCell.xib in Resources */,
 				FBE813712187942A00669625 /* Assets.xcassets in Resources */,
 				FB5738BE21B8408500C22703 /* CellComponentTableViewCell.xib in Resources */,
 				FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */,
@@ -643,6 +650,7 @@
 				FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */,
 				FBD3C23E21AC221F00221C3C /* ConsolidadoUnidadViewController.swift in Sources */,
 				FBD3C24A21AC7A7D00221C3C /* TerminarBultoViewController.swift in Sources */,
+				FB1C7F2A21DEB732002C00B0 /* standarTableViewCell.swift in Sources */,
 				FB09C03721C1B9B60040086F /* SwitchComponent.swift in Sources */,
 				FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */,
 				FB40348421890B8D005C7792 /* MenuViewController.swift in Sources */,
@@ -863,6 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8P248MVDEB;
 				INFOPLIST_FILE = AntapaccayQR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.innnovacis.AntapaccayQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -880,6 +889,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8P248MVDEB;
 				INFOPLIST_FILE = AntapaccayQR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.innnovacis.AntapaccayQR;
 				PRODUCT_NAME = "$(TARGET_NAME)";

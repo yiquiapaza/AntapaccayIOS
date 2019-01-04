@@ -29,7 +29,7 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
         self.getBulto.delegate = self
         tablaBulto.delegate = self
         tablaBulto.dataSource = self
-        tablaBulto.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tablaBulto.register(UINib(nibName: "standarTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         
         self.view.addSubview(tablaBulto)
     }
@@ -37,7 +37,7 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     @IBAction func findBulto(_ sender: UIButton) {
         
         var parametres = Parameters()
-        if QR_CONST_PALETA == VACIO {
+        if QR_CONST_BULTO == VACIO {
             parametres = [
                 "logical": "AND",
                 "PropertyName": "codigo",
@@ -46,7 +46,7 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
             ]
         }
         else {
-            getBulto.text! = QR_CONST_PALETA
+            getBulto.text = QR_CONST_BULTO
             parametres = [
                 "logical" : "AND",
                 "PropertyName": "Id",
@@ -61,7 +61,7 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
             self.present(alertBulto, animated: true, completion: nil)
         }
         else {
-            self.delay(secons: 3.0, completatio: {
+            self.delay(secons: 0.0, completatio: {
                 SwiftSpinner.show("Verificando API")
                 Alamofire.request(BUSQUEDA_BULTO_BY_ID, method: .post, parameters: parametres, encoding: JSONEncoding.default)
                     .responseJSON() {
@@ -133,14 +133,12 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tablaBulto.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.listaPaleta[indexPath.row].getCodigo()
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 300))
-        button.addTarget(self, action: #selector(quitar(_:)), for: .touchDown)
-        button.setTitle("", for : .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.setImage(UIImage(named:"icons8-delete_filled"), for: .normal)
-        cell.accessoryView = button
+        let cell = self.tablaBulto.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! standarTableViewCell
+        cell.codigo.text = self.listaPaleta[indexPath.row].getCodigo()
+        cell.proveedor.text = self.listaPaleta[indexPath.row].getNombreProveedor()
+        cell.almacen.text = self.listaPaleta[indexPath.row].getNombreAlmacen()
+        cell.eliminar.addTarget(self, action: #selector(quitar(_:)), for: .touchDown)
+        cell.eliminar.tag = indexPath.row
         return cell
     }
     
@@ -149,24 +147,8 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
     }
     
     @objc func quitar(_ sneder: UIButton){
-        if index == -1 {
-            //let error = MessageView.viewFromNib(layout: .tabView)
-            //error.configureTheme(.error)
-            //error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
-            //error.button?.isHidden = true
-            //var configError = SwiftMessages.defaultConfig
-            //configError.presentationStyle = .center
-            //configError.duration = .seconds(seconds: 2)
-            //SwiftMessages.show(config: configError , view:error)
-        }
-        else{
-            print("Elimine la filas")
-            self.listaPaleta.remove(at: index)
-            index = -1
-            print(index)
-            tablaBulto.reloadData()
-            
-        }
+        self.listaPaleta.remove(at: sneder.tag)
+        tablaBulto.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is TabBarBultoViewController{
