@@ -11,7 +11,7 @@ import Alamofire
 import SwiftSpinner
 import PMAlertController
 
-class PartidaCargaViewController: UIViewController {
+class PartidaCargaViewController: UIViewController, UITextFieldDelegate {
 
     var lista = Array<Registro>()
     
@@ -255,4 +255,10 @@ class PartidaCargaViewController: UIViewController {
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        numeroGuia.resignFirstResponder()
+        return true
+    }
+    
 }

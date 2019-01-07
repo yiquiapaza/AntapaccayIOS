@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ReporteUserViewController: UIViewController, UITableViewDelegate,   UITableViewDataSource {
+class ReporteUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
    
     @IBOutlet weak var tableReporte: UITableView!
     var listaReporte = Array<Reporte>()
@@ -130,5 +130,10 @@ class ReporteUserViewController: UIViewController, UITableViewDelegate,   UITabl
         UserDefaults.standard.set(VACIO, forKey: "pass")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        numeroGuia.resignFirstResponder()
+        return true
     }
 }

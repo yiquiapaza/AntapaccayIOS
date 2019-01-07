@@ -12,7 +12,7 @@ import DropDown
 import SwiftSpinner
 
 
-class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     @IBOutlet var vista: UIView!
     
     var listaGuias: Array<String> = Array<String>()
@@ -216,5 +216,10 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         UserDefaults.standard.set(VACIO, forKey: "pass")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guia.resignFirstResponder()
+        return true
     }
 }

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftSpinner
 import PMAlertController
 
-class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var listaPaletas  = Array<Unidad>()
     let cellReuseIdentifier = "cell"
@@ -151,6 +151,11 @@ class ConsolidadoUnidadViewController: UIViewController, UITableViewDelegate, UI
         UserDefaults.standard.set(VACIO, forKey: "pass")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        unidades.resignFirstResponder()
+        return true
     }
     
 }

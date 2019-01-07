@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import Photos
 
 class CamaraViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
@@ -16,6 +16,7 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
     let imagenSelect = UIImagePickerController()
     
     override func viewDidLoad() {
+        checkPermission()
         super.viewDidLoad()
         imagenSelect.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
@@ -39,8 +40,10 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
     }
 
     @IBAction func selectImagen(_ sender: UIButton) {
+        checkPermission()
         imagenSelect.allowsEditing = false
         imagenSelect.sourceType = .photoLibrary
+        imagenSelect.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(imagenSelect, animated: true, completion: nil)
     }
     
@@ -52,12 +55,39 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickImage = info[.originalImage] as? UIImage{
+        if let pickImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             print("Imagen Found")
             print(pickImage)
+            self.imageView.contentMode = .scaleToFill
+            self.imageView.image = pickImage
+            dismiss(animated: true, completion: nil)
         }
         else {
             print("no se puede ")
+        }
+    }
+    
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    /* do stuff here */
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
         }
     }
     

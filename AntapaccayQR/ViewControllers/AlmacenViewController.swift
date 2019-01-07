@@ -11,11 +11,10 @@ import Alamofire
 import SwiftSpinner
 import PMAlertController
 
-class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     var bultos = Array<Paleta>()
     var bultosConfi = Array<Paleta>()
-    var indice: Int = -1
     var cellReuseIdentifier:String = "cell"
     var dto = Paleta()
     
@@ -171,13 +170,13 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.nombreAlmacen.text = self.bultos[indexPath.row].getNombreAlmacen()
         cell.nombreTransporte.text = self.bultos[indexPath.row].getTransportista()
         cell.buttonConfirm.addTarget(self, action: #selector(hacerClick(_:)), for: .touchDown)
-        self.indice = indexPath.row
+        cell.buttonConfirm.tag = indexPath.row
         return cell
     }
     
     @objc func hacerClick( _ sender: UIButton){
-        let item = self.bultos[indice]
-        self.bultos.remove(at: indice)
+        let item = self.bultos[sender.tag]
+        self.bultos.remove(at: sender.tag)
         self.tableAlamacen.reloadData()
         self.bultosConfi.append(item)
         
@@ -251,15 +250,8 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
         })
-        
-        print(self.indice)
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dto = bultos[indexPath.row]
-        self.indice = indexPath.row
-        print(indexPath.row)
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ListaBultosViewController{
@@ -281,4 +273,10 @@ class AlmacenViewController: UIViewController, UITableViewDelegate, UITableViewD
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        buscarGuia.resignFirstResponder()
+        return true
+    }
+    
 }

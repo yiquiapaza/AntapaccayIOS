@@ -11,7 +11,7 @@ import Alamofire
 import SwiftSpinner
 import PMAlertController
 
-class SalidaCargaViewController: UIViewController {
+class SalidaCargaViewController: UIViewController, UITextFieldDelegate {
 
     var lista = Array<Registro>()
     var llegada = Array<Llegada>()
@@ -248,6 +248,11 @@ class SalidaCargaViewController: UIViewController {
         UserDefaults.standard.set(VACIO, forKey: "pass")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        numeroGuia.resignFirstResponder()
+        return true
     }
     
 }

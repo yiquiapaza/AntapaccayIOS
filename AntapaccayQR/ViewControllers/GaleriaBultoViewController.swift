@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class GaleriaBultoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -14,10 +15,11 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
     let imagenSelect = UIImagePickerController()
     
     override func viewDidLoad() {
+        self.imagenSelect.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -47,6 +49,13 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
         if let pickImage = info[.originalImage] as? UIImage{
             print("Imagen Found")
             print(pickImage)
+            self.imageView.image = pickImage
+            let imagenData = pickImage.pngData()
+            LISTA_PALETA.append(imagenData!)
+            for item in LISTA_PALETA{
+                print(item)
+            }
+            dismiss(animated: true, completion: nil)
         }
         else {
             print("no se puede ")
@@ -64,4 +73,6 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
         present(loginView, animated: true, completion: nil)
     }
 
+    
+    
 }

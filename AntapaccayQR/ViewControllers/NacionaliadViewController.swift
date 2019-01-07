@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NacionaliadViewController: UIViewController {
+class NacionaliadViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nacionalidad: UISwitch!
     @IBOutlet weak var internacional: UISwitch!
@@ -68,7 +68,7 @@ class NacionaliadViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
     
     @objc func cerrarSession(){
         UserDefaults.standard.set(VACIO, forKey: "user")

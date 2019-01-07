@@ -181,4 +181,5 @@ class ConsolidadionPaletaViewController: UIViewController, UITableViewDelegate, 
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
     }
+    
 }

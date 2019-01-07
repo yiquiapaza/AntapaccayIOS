@@ -8,7 +8,9 @@
 
 import UIKit
 
-class DimensionesBultoViewController: UIViewController {
+class DimensionesBultoViewController: UIViewController,  UITextFieldDelegate{
+    
+    @IBOutlet weak var salidaIntro: TextFieldComponent!
     
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
@@ -27,6 +29,11 @@ class DimensionesBultoViewController: UIViewController {
     }
     @IBAction func largoAction(_ sender: UITextField) {
         LARGO_BULTO = sender.text!
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        salidaIntro.resignFirstResponder()
+        return true
     }
     
     @objc func cerrarSession(){
