@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58108D8C0EA88ADADDF88B2FF755368F"
-               BlueprintName = "Pods-AntapaccayQR"
+               BlueprintIdentifier = "8BC5395F48973B4ADF8E2DFC2267336C"
+               BlueprintName = "SwiftyJSON"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-AntapaccayQR.framework">
+               BuildableName = "SwiftyJSON.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

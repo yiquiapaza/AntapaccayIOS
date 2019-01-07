@@ -73,6 +73,10 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
         present(loginView, animated: true, completion: nil)
     }
 
-    
-    
+    func convertImageTobase64(image:UIImage) -> String? {
+        var imageData: Data?
+        imageData = image.pngData()
+        return imageData?.base64EncodedString()
+    }
+
 }

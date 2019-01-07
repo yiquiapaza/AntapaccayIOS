@@ -99,6 +99,11 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>iOSDropDown.xcscheme</key>
 		<dict>
 			<key>orderHint</key>

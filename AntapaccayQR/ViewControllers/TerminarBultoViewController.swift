@@ -10,11 +10,12 @@ import UIKit
 import Alamofire
 import SwiftSpinner
 import PMAlertController
+import SwiftyJSON
 
 class TerminarBultoViewController: UIViewController {
 
     var listaPaleta  = Array<Paleta>()
-    
+    var validado = Dictionary<String, Any>()
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -91,6 +92,35 @@ class TerminarBultoViewController: UIViewController {
                     response in switch response.result{
                     case .success(let data):
                         print(data)
+                        self.validado = data as! Dictionary<String, Any>
+                        //let parametros: [String: Any] = [
+                        //    "identificador": self.validado["Id"] as! String
+                        //]
+                        let imagen = UIImage(named: "error")
+                        for item in LISTA_PALETA{
+                            self.delay(seconds: 0.0, completion: {
+                                Alamofire.upload(multipartFormData: { multipartFormData in
+                                    multipartFormData.append((self.validado["Id"] as! String).data(using: String.Encoding.utf8)!, withName: "identificador")
+                                    multipartFormData.append((imagen?.pngData())!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
+                                }, usingThreshold: UInt64.init(),
+                                   to: PALETA_IMAGENES,
+                                   method: .post,
+                                   headers: ["Content-type": "multipart/form-data"]){ (result) in
+                                    switch result {
+                                    case .success(let uploaddos, _, _):
+                                        print("Succesfully uploaded")
+                                        print(uploaddos)
+                                        if let err = response.error{
+                                            print(err)
+                                            return
+                                        }
+                                    case .failure(let error):
+                                        print("Error in upload: \(error.localizedDescription)")
+                                        print(error)
+                                    }
+                                }
+                            })
+                        }
                         SwiftSpinner.hide()
                         let datos = PMAlertController(title: "Exit", description: "La operacion se realizo exitasamente", image: UIImage(named: "exito"), style: .alert)
                         datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
@@ -124,5 +154,47 @@ class TerminarBultoViewController: UIViewController {
         UserDefaults.standard.set(VACIO, forKey: "pass")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
+    }
+    
+    func requestWith(endUrl: String, imageData: Data?, parameters: [String : Any], onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+        
+        let url = PALETA_IMAGENES /* your API url */
+        
+        let headers: HTTPHeaders = [
+            /* "Authorization": "your_access_token",  in case you need authorization header */
+            "Content-Type": "multipart/form-data"
+        ]
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            
+            if let data = imageData{
+                multipartFormData.append(data, withName: "image", fileName: "image.png", mimeType: "image/png")
+            }
+            
+        }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    print("Succesfully uploaded")
+                    if let err = response.error{
+                        onError?(err)
+                        return
+                    }
+                    onCompletion?(nil)
+                }
+            case .failure(let error):
+                print("Error in upload: \(error.localizedDescription)")
+                onError?(error)
+            }
+        }
+    }
+    
+}
+extension Date {
+    func currentTimeMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
     }
 }

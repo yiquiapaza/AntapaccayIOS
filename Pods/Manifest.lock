@@ -3,12 +3,14 @@ PODS:
   - DropDown (2.3.12)
   - PMAlertController (3.5.0)
   - SwiftSpinner (1.6.2)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - DropDown (~> 2.3.2)
   - PMAlertController (~> 3.5)
   - SwiftSpinner (~> 1.6)
+  - SwiftyJSON (~> 4.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - DropDown
     - PMAlertController
     - SwiftSpinner
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
   SwiftSpinner: 3a4c6dea425e5a31b908a8b1dd5dcd1ad4d96340
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 435af89951f0f2e1a04929df68ad4fca5480ed6a
+PODFILE CHECKSUM: e89031316397e667389f8d91b9827ae0ab4e6268
 
 COCOAPODS: 1.5.2

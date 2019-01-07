@@ -1879,11 +1879,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
-            timestampString = "568312589.411275"
+            timestampString = "568597377.299296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "terminar(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2921,6 +2921,788 @@
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "selectImagen(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.301079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.301879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.302712"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.303323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.303857"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.30443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.3048"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.305106"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.305526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597377.929394"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "775">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.MultipartFormData) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597377.9326921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.3060319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597377.943807"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "775">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.MultipartFormData) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597377.947386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.306356"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.306667"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.308256"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.308782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.309124"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.309426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.3097219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.00955"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.MultipartFormData) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.013389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "1579">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.016737"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.3100179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.028188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.MultipartFormData) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.0318381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "1579">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.035763"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.310312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.048149"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.135309"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "146">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.310634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.310955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.1646219"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "222">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in closure #2 (Alamofire.SessionManager.MultipartFormDataEncodingResult) -&gt; () in AntapaccayQR.TerminarBultoViewController.requestWith(endUrl: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, onCompletion: Swift.Optional&lt;(Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()&gt;, onError: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "AntapaccayQR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/innnovacissrl/Documents/Apps/AntapaccayIOS/AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+                  timestampString = "568597378.1690561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.311497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.312404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.312994"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.3135149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.313931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.314204"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.314473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.314738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.31503"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.315485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.31578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.3160501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/GaleriaBultoViewController.swift"
+            timestampString = "568597377.316368"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "openCameraButton(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AntapaccayQR/ViewControllers/TerminarBultoViewController.swift"
+            timestampString = "568597377.316422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "terminar(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
