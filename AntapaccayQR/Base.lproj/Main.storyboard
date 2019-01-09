@@ -1356,29 +1356,42 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rjh-4E-D3u">
-                                <rect key="frame" x="0.0" y="140" width="375" height="408"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="358"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg2-gh-MEP">
+                                <rect key="frame" x="20" y="518" width="335" height="30"/>
+                                <state key="normal" title="Seleccionar Imagen"/>
+                                <connections>
+                                    <action selector="verGaleria:" destination="unT-Sl-tc5" eventType="touchUpInside" id="Lp6-nd-e9K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1039717255" green="0.26632895699999998" blue="0.25318397590000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vog-DJ-l6g" firstAttribute="top" secondItem="gon-XL-qi1" secondAttribute="top" constant="20" id="0Xs-VQ-pcI"/>
                             <constraint firstItem="gon-XL-qi1" firstAttribute="trailing" secondItem="Vog-DJ-l6g" secondAttribute="trailing" constant="20" id="1bE-MT-3tn"/>
                             <constraint firstItem="gon-XL-qi1" firstAttribute="trailing" secondItem="OU6-f5-gsm" secondAttribute="trailing" constant="20" id="9Zf-j2-8D2"/>
-                            <constraint firstItem="OU6-f5-gsm" firstAttribute="top" secondItem="Rjh-4E-D3u" secondAttribute="bottom" constant="20" id="EDV-o6-Lji"/>
                             <constraint firstItem="Rjh-4E-D3u" firstAttribute="leading" secondItem="gon-XL-qi1" secondAttribute="leading" id="FZJ-br-leM"/>
+                            <constraint firstItem="OU6-f5-gsm" firstAttribute="top" secondItem="wg2-gh-MEP" secondAttribute="bottom" constant="20" id="Hw7-1b-XcD"/>
+                            <constraint firstItem="wg2-gh-MEP" firstAttribute="top" secondItem="Rjh-4E-D3u" secondAttribute="bottom" constant="20" id="IAN-l7-0Nb"/>
                             <constraint firstItem="OU6-f5-gsm" firstAttribute="leading" secondItem="gon-XL-qi1" secondAttribute="leading" constant="20" id="KgF-sh-gZ8"/>
                             <constraint firstItem="Vog-DJ-l6g" firstAttribute="leading" secondItem="gon-XL-qi1" secondAttribute="leading" constant="20" id="QXu-4e-8KT"/>
+                            <constraint firstItem="gon-XL-qi1" firstAttribute="trailing" secondItem="wg2-gh-MEP" secondAttribute="trailing" constant="20" id="Rt1-DT-oQa"/>
                             <constraint firstItem="Rjh-4E-D3u" firstAttribute="top" secondItem="Vog-DJ-l6g" secondAttribute="bottom" constant="16" id="Wca-hQ-xot"/>
                             <constraint firstItem="Rjh-4E-D3u" firstAttribute="trailing" secondItem="gon-XL-qi1" secondAttribute="trailing" id="lFr-92-4ES"/>
                             <constraint firstItem="gon-XL-qi1" firstAttribute="bottom" secondItem="OU6-f5-gsm" secondAttribute="bottom" constant="20" id="mEl-57-K4c"/>
+                            <constraint firstItem="wg2-gh-MEP" firstAttribute="leading" secondItem="gon-XL-qi1" secondAttribute="leading" constant="20" id="wfM-bm-UAA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gon-XL-qi1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camara" image="icons8-camera" selectedImage="icons8-camera" id="DQl-K8-AFm"/>
+                    <connections>
+                        <outlet property="imagen" destination="Rjh-4E-D3u" id="vPd-LE-Tf0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3A-6A-OvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12647" y="675"/>
+            <point key="canvasLocation" x="12645.6" y="674.21289355322347"/>
         </scene>
         <!--Galeria-->
         <scene sceneID="doR-Af-XrM">

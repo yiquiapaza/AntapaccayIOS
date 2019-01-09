@@ -43,7 +43,6 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
         checkPermission()
         imagenSelect.allowsEditing = false
         imagenSelect.sourceType = .photoLibrary
-        imagenSelect.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(imagenSelect, animated: true, completion: nil)
     }
     
@@ -58,9 +57,10 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
         if let pickImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             print("Imagen Found")
             print(pickImage)
-            self.imageView.contentMode = .scaleToFill
             self.imageView.image = pickImage
+            saveImageDocumentDirectory(image: pickImage, imageName: "antapaccay2" + String(CONTADOR_IMAGEN_2) + ".png")
             dismiss(animated: true, completion: nil)
+            CONTADOR_IMAGEN_2 = CONTADOR_IMAGEN_2 + 1
         }
         else {
             print("no se puede ")
@@ -93,6 +93,20 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+ 
+    func saveImageDocumentDirectory(image: UIImage, imageName: String) {
+        let fileManager = FileManager.default
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay_2")
+        if !fileManager.fileExists(atPath: path) {
+            try! fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+        }
+        let url = NSURL(string: path)
+        let imagePath = url!.appendingPathComponent(imageName)
+        let urlString: String = imagePath!.absoluteString
+        let imageData = image.pngData()
+        //let imageData = UIImagePNGRepresentation(image)
+        fileManager.createFile(atPath: urlString as String, contents: imageData, attributes: nil)
     }
     
 }

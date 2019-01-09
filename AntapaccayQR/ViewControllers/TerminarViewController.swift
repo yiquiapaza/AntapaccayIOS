@@ -128,6 +128,54 @@ class TerminarViewController: UIViewController {
                     let response_nuevo = response.result.value as! [Dictionary<String, AnyObject>]
                     self.id_qr = response_nuevo[0]["Id"] as! String
                     self.generarQR.isEnabled = true
+                    
+                    self.delay(seconds: 0.0, completion: {
+                        
+                        SwiftSpinner.show("Subiendo Imagenes")
+                        
+                        var imagenes_nuevas =  [UIImage]()
+                        let fileManager = FileManager.default
+                        for i in 0...CONTADOR_IMAGEN_2 - 1 {
+                            let imagePath = (self.getDirectoryPath() as NSURL).appendingPathComponent("antapaccay2\(i).png")
+                            let urlString: String = imagePath!.absoluteString
+                            if fileManager.fileExists(atPath: urlString) {
+                                let image = UIImage(contentsOfFile: urlString)!
+                                imagenes_nuevas.append(image)
+                            } else {
+                                print("No Image")
+                            }
+                        }
+                        CONTADOR_IMAGEN_2 = 0
+                        for item in imagenes_nuevas{
+                            self.delay(seconds: 0.0, completion: {
+                                Alamofire.upload(multipartFormData: { multipartFormData in
+                                    multipartFormData.append((self.id_qr).data(using: String.Encoding.utf8)!, withName: "identificador")
+                                    if item.pngData() != nil {
+                                        multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png",     mimeType: "image/png")
+                                    }
+                                    
+                                }, usingThreshold: UInt64.init(),
+                                   to: PALETA_IMAGENES,
+                                   method: .post,
+                                   headers: ["Content-type": "multipart/form-data"]){ (result) in
+                                    switch result {
+                                    case .success(let uploaddos, _, _):
+                                        print("Succesfully uploaded")
+                                        print(uploaddos)
+                                        self.deleteDirectory()
+                                        if let err = response.error{
+                                            print(err)
+                                            return
+                                        }
+                                    case .failure(let error):
+                                        print("Error in upload: \(error.localizedDescription)")
+                                        print(error)
+                                    }
+                                }
+                            })
+                        }
+                    })
+                    
                     SwiftSpinner.hide()
                 case .failure(let error):
                     print(error)
@@ -196,5 +244,22 @@ class TerminarViewController: UIViewController {
         UserDefaults.standard.set(VACIO, forKey: "pass")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         present(loginView, animated: true, completion: nil)
+    }
+    
+    func deleteDirectory() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay_2")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay_2")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
+    func getDirectoryPath() -> NSURL {
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay_2")
+        let url = NSURL(string: path)
+        return url!
     }
 }

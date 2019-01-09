@@ -2936,8 +2936,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "TerminarBultoViewController"
-            landmarkType = "3">
+            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -3700,7 +3700,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkName = "getImageFromDocumentDirectory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3716,8 +3716,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
             endingLineNumber = "209"
-            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
-            landmarkType = "7">
+            landmarkName = "TerminarBultoViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3732,7 +3732,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
             endingLineNumber = "213"
-            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkName = "getImageFromDocumentDirectory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3764,7 +3764,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "210"
             endingLineNumber = "210"
-            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkName = "getImageFromDocumentDirectory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3988,8 +3988,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
             endingLineNumber = "218"
-            landmarkName = "TerminarBultoViewController"
-            landmarkType = "3">
+            landmarkName = "getImageFromDocumentDirectory()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4148,8 +4148,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
             endingLineNumber = "230"
-            landmarkName = "getImageFromDocumentDirectory()"
-            landmarkType = "7">
+            landmarkName = "TerminarBultoViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4164,7 +4164,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "231"
             endingLineNumber = "231"
-            landmarkName = "getImageFromDocumentDirectory()"
+            landmarkName = "deleteDirectory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4337,7 +4337,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
             endingLineNumber = "217"
-            landmarkName = "requestWith(endUrl:imageData:parameters:onCompletion:onError:)"
+            landmarkName = "getImageFromDocumentDirectory()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

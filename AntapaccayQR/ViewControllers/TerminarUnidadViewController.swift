@@ -15,7 +15,7 @@ import SwiftyJSON
 class TerminarUnidadViewController: UIViewController {
 
     var data = Array<Unidad>()
-    
+    var validado = Dictionary<String, Any>()
     
     @IBOutlet weak var estadoButton: ButtonComponent!
     
@@ -105,6 +105,51 @@ class TerminarUnidadViewController: UIViewController {
                 .responseJSON{
                     response in switch (response.result) {
                     case .success(let data):
+                        
+                        self.validado = data as! Dictionary<String, Any>
+                        var imagenes_nuevas =  [UIImage]()
+                        let fileManager = FileManager.default
+                        for i in 0...CONTADOR_IMAGEN_3 - 1 {
+                            let imagePath = (self.getDirectoryPath() as NSURL).appendingPathComponent("antapaccay3\(i).png")
+                            let urlString: String = imagePath!.absoluteString
+                            if fileManager.fileExists(atPath: urlString) {
+                                let image = UIImage(contentsOfFile: urlString)!
+                                imagenes_nuevas.append(image)
+                            } else {
+                                print("No Image")
+                            }
+                        }
+                        CONTADOR_IMAGEN_3 = 0
+                        
+                        for item in imagenes_nuevas{
+                            self.delay(seconds: 0.0, completion: {
+                                Alamofire.upload(multipartFormData: { multipartFormData in
+                                    multipartFormData.append((self.validado["Id"] as! String).data(using: String.Encoding.utf8)!, withName: "identificador")
+                                    if item.pngData() != nil {
+                                        multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png",     mimeType: "image/png")
+                                    }
+                                    
+                                }, usingThreshold: UInt64.init(),
+                                   to: TRANSPORTE_IMAGENES,
+                                   method: .post,
+                                   headers: ["Content-type": "multipart/form-data"]){ (result) in
+                                    switch result {
+                                    case .success(let uploaddos, _, _):
+                                        print("Succesfully uploaded")
+                                        print(uploaddos)
+                                        self.deleteDirectory()
+                                        if let err = response.error{
+                                            print(err)
+                                            return
+                                        }
+                                    case .failure(let error):
+                                        print("Error in upload: \(error.localizedDescription)")
+                                        print(error)
+                                    }
+                                }
+                            })
+                        }
+                        
                         let resultado = PMAlertController(title: "Exito", description: "Se consolido la Paleta" , image: UIImage(named: "exito"), style: .alert)
                         resultado.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                         self.present(resultado, animated: true, completion: nil)
@@ -171,5 +216,22 @@ class TerminarUnidadViewController: UIViewController {
                 onError?(error)
             }
         }
+    }
+    
+    func deleteDirectory() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay3")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay3")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
+    func getDirectoryPath() -> NSURL {
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay3")
+        let url = NSURL(string: path)
+        return url!
     }
 }

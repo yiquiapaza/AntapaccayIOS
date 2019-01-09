@@ -48,3 +48,4 @@ let VERIFICA_ITEM = BASE_URL + "BultoOrden/UpdateBOandODinsertDis"
 
 let LOGIN_USER = BASE_URL + "Users/GetUserByFilter"
 let PALETA_IMAGENES = BASE_URL + "PaletaConsolidada/UploadImagenes"
+let TRANSPORTE_IMAGENES = BASE_URL + "TransporteConsolidado/UploadImagenes"
