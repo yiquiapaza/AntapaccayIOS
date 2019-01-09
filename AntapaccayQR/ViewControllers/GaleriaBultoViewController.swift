@@ -15,6 +15,8 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
     let imagenSelect = UIImagePickerController()
     
     override func viewDidLoad() {
+        //self.deleteDirectory()
+       // self.getDirectoryPath()
         self.imagenSelect.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -51,11 +53,13 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
             print(pickImage)
             self.imageView.image = pickImage
             let imagenData = pickImage.pngData()
+            saveImageDocumentDirectory(image: pickImage, imageName: "antapaccay" + String(CONTADOR_IMAGEN) + ".png")
             LISTA_PALETA.append(imagenData!)
             for item in LISTA_PALETA{
                 print(item)
             }
             dismiss(animated: true, completion: nil)
+            CONTADOR_IMAGEN = CONTADOR_IMAGEN + 1
         }
         else {
             print("no se puede ")
@@ -79,4 +83,35 @@ class GaleriaBultoViewController: UIViewController, UINavigationControllerDelega
         return imageData?.base64EncodedString()
     }
 
+    func getDirectoryPath() -> Void {
+        //let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay")
+        //let url = NSURL(string: path)
+        //print(url)
+        //return url!
+    }
+    func saveImageDocumentDirectory(image: UIImage, imageName: String) {
+        let fileManager = FileManager.default
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay")
+        if !fileManager.fileExists(atPath: path) {
+            try! fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+        }
+        let url = NSURL(string: path)
+        let imagePath = url!.appendingPathComponent(imageName)
+        let urlString: String = imagePath!.absoluteString
+        let imageData = image.pngData()
+        //let imageData = UIImagePNGRepresentation(image)
+        fileManager.createFile(atPath: urlString as String, contents: imageData, attributes: nil)
+    }
+    
+    func deleteDirectory() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
 }
