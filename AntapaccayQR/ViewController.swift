@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    
     
     @IBOutlet var viewIntro: UIView!
     @IBOutlet weak var imageIntro: UIImageView!

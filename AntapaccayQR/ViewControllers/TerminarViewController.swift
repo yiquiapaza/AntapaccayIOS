@@ -23,11 +23,6 @@ class TerminarViewController: UIViewController {
     var id_qr = ""
 
     override func viewDidLoad() {
-        
-        //let data = self.parent as! TabBarViewController
-        //self.objectoCarga =  data.objetoCarga
-        //self.objectoOrden = data.objetoOrden
-        //self.generarQR.isEnabled = false
         super.viewDidLoad()
         navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: nil, action: nil)
@@ -124,7 +119,9 @@ class TerminarViewController: UIViewController {
             SwiftSpinner.show("Verificando API")
             Alamofire.request(request).responseJSON{ response in
                 switch (response.result){
-                case .success:
+                case .success(let data):
+                    let out_data = data as! [Dictionary<String,AnyObject>]
+                    let paleta_nuevo = out_data[0]["idPaleta"] as! String
                     let response_nuevo = response.result.value as! [Dictionary<String, AnyObject>]
                     self.id_qr = response_nuevo[0]["Id"] as! String
                     self.generarQR.isEnabled = true
@@ -150,8 +147,9 @@ class TerminarViewController: UIViewController {
                             self.delay(seconds: 0.0, completion: {
                                 Alamofire.upload(multipartFormData: { multipartFormData in
                                     multipartFormData.append((self.id_qr).data(using: String.Encoding.utf8)!, withName: "identificador")
+                                    multipartFormData.append("BULTO".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
                                     if item.pngData() != nil {
-                                        multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png",     mimeType: "image/png")
+                                        multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
                                     }
                                     
                                 }, usingThreshold: UInt64.init(),
@@ -162,6 +160,73 @@ class TerminarViewController: UIViewController {
                                     case .success(let uploaddos, _, _):
                                         print("Succesfully uploaded")
                                         print(uploaddos)
+                                        if (paleta_nuevo != "00000000-0000-0000-0000-000000000000"){
+                                            Alamofire.upload(multipartFormData: { multipartFormData in
+                                                multipartFormData.append(paleta_nuevo.data(using: String.Encoding.utf8)!, withName: "identificador")
+                                                multipartFormData.append("PALETA".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+                                                if item.pngData() != nil {
+                                                    multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
+                                                }
+                                            }, usingThreshold: UInt64.init(),
+                                               to: BULTOS_IMAGENES,
+                                               method: .post,
+                                               headers: ["Content-type": "multipart/form-data"]){ (result) in
+                                                switch result {
+                                                case .success(let uploaddos, _ , _):
+                                                    print(uploaddos)
+                                                    let parameters : Parameters = [
+                                                        "Logical": "AND",
+                                                        "PropertyName": "id",
+                                                        "Value": paleta_nuevo,
+                                                        "Operator": "Equals"
+                                                    ]
+                                                    Alamofire.request(TRANSPORTE_CONSOLIDADES_IMAGENES, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                                                        .responseJSON(){
+                                                            response in switch response.result{
+                                                            case .success(let data):
+                                                                let out = data as! [Dictionary<String,Any>]
+                                                                var transporte = String()
+                                                                transporte  = out[0]["idTransporteConsolidado"] as! String
+                                                                let constante = "00000000-0000-0000-0000-000000000000"
+                                                                if !out.isEmpty{
+                                                                    if transporte != constante {
+                                                                        Alamofire.upload(multipartFormData: { multipartFormData in
+                                                                            multipartFormData.append(paleta_nuevo.data(using: String.Encoding.utf8)!, withName: "identificador")
+                                                                            multipartFormData.append("TRANSPORTE".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+
+                                                                        }, usingThreshold: UInt64.init(),
+                                                                           to: BULTOS_IMAGENES,
+                                                                           method: .post,
+                                                                           headers: ["Content-type": "multipart/form-data"]) { (result) in
+                                                                            switch result{
+                                                                            case .success(let uploaddos, _, _):
+                                                                                print(uploaddos)
+                                                                                if let err = response.error{
+                                                                                    print(err)
+                                                                                    return
+                                                                                }
+                                                                            case .failure(let error):
+                                                                                print("Error in upload: \(error.localizedDescription)")
+                                                                                print(error)
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                                print(data)
+                                                            case .failure(let error):
+                                                                print(error)
+                                                            }
+                                                        }
+                                                    if let err = response.error{
+                                                        print(err)
+                                                        return
+                                                    }
+                                                case .failure( let error):
+                                                    print("Error in upload: \(error.localizedDescription)")
+                                                    print(error)
+                                                }
+                                            }
+                                        }
                                         self.deleteDirectory()
                                         if let err = response.error{
                                             print(err)
@@ -203,7 +268,7 @@ class TerminarViewController: UIViewController {
         bulto.setCargaPeligrosa(cargaPeligrosa: CARGA_PELIGROSA)
         bulto.setImportacion(importacion: IMPORTACION)
         bulto.setNacional(nacional: NACIONAL)
-        bulto.setFechaRecepcion(fechaRecepcion: obtenerFecha())
+        bulto.setFechaRecepcion(fechaRecepcion: Int(Date().currentTimeMillis()))
         bulto.setCodigoTransportista(codigoTransportista: "No hay")
         bulto.setTransportista(transportista: "No Hay")
         bulto.setGeneral(general: GENERAL)

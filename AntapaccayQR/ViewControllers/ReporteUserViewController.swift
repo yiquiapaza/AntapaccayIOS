@@ -121,10 +121,6 @@ class ReporteUserViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 492
-    }
-    
     @objc func cerrarSession(){
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")
