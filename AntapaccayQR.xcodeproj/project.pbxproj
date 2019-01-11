@@ -24,6 +24,8 @@
 		FB1A9D372193457000F8ED32 /* GaleriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */; };
 		FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */; };
 		FB1BD5A421C2DE7A00A4A135 /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BD5A321C2DE7A00A4A135 /* LabelComponent.swift */; };
+		FB1BE0B221E941FF00E08411 /* GuiaComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1BE0B021E941FF00E08411 /* GuiaComponentTableViewCell.swift */; };
+		FB1BE0B321E941FF00E08411 /* GuiaComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1BE0B121E941FF00E08411 /* GuiaComponentTableViewCell.xib */; };
 		FB1C7F2A21DEB732002C00B0 /* standarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F2821DEB732002C00B0 /* standarTableViewCell.swift */; };
 		FB1C7F2B21DEB732002C00B0 /* standarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB1C7F2921DEB732002C00B0 /* standarTableViewCell.xib */; };
 		FB1C7F52219E225B00B62DE8 /* TransporteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */; };
@@ -127,6 +129,8 @@
 		FB1A9D362193457000F8ED32 /* GaleriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaViewController.swift; sourceTree = "<group>"; };
 		FB1A9D382193457B00F8ED32 /* TerminarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminarViewController.swift; sourceTree = "<group>"; };
 		FB1BD5A321C2DE7A00A4A135 /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
+		FB1BE0B021E941FF00E08411 /* GuiaComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuiaComponentTableViewCell.swift; sourceTree = "<group>"; };
+		FB1BE0B121E941FF00E08411 /* GuiaComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuiaComponentTableViewCell.xib; sourceTree = "<group>"; };
 		FB1C7F2821DEB732002C00B0 /* standarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = standarTableViewCell.swift; sourceTree = "<group>"; };
 		FB1C7F2921DEB732002C00B0 /* standarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = standarTableViewCell.xib; sourceTree = "<group>"; };
 		FB1C7F51219E225B00B62DE8 /* TransporteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteDTO.swift; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 				FB38FB3721D4285400D839A3 /* ItemsVerificaTableViewCell.xib */,
 				FB1C7F2821DEB732002C00B0 /* standarTableViewCell.swift */,
 				FB1C7F2921DEB732002C00B0 /* standarTableViewCell.xib */,
+				FB1BE0B021E941FF00E08411 /* GuiaComponentTableViewCell.swift */,
+				FB1BE0B121E941FF00E08411 /* GuiaComponentTableViewCell.xib */,
 			);
 			path = Commponents;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */,
 				FBDAB0A121B1D0C4006C15F6 /* CellComponentCollectionViewCell.xib in Resources */,
 				FB38FB3921D4285400D839A3 /* ItemsVerificaTableViewCell.xib in Resources */,
+				FB1BE0B321E941FF00E08411 /* GuiaComponentTableViewCell.xib in Resources */,
 				FBE8136F2187942A00669625 /* Main.storyboard in Resources */,
 				FB1E559D21C1747B00F37866 /* BultoComponentTableViewCell.xib in Resources */,
 			);
@@ -682,6 +689,7 @@
 				FBD3C24621AC5AEE00221C3C /* GaleriaBultoViewController.swift in Sources */,
 				FB1A9D352193456400F8ED32 /* CamaraViewController.swift in Sources */,
 				FBE8136A2187942A00669625 /* AppDelegate.swift in Sources */,
+				FB1BE0B221E941FF00E08411 /* GuiaComponentTableViewCell.swift in Sources */,
 				FBD3C23A21AC107B00221C3C /* ConsolidadionPaletaViewController.swift in Sources */,
 				FB1A9D2F21933C2800F8ED32 /* NacionaliadViewController.swift in Sources */,
 				FB1E55A121C1B21500F37866 /* ButtonComponent.swift in Sources */,

@@ -16,7 +16,6 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
     let imagenSelect = UIImagePickerController()
     
     override func viewDidLoad() {
-        checkPermission()
         super.viewDidLoad()
         imagenSelect.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
@@ -40,7 +39,6 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
     }
 
     @IBAction func selectImagen(_ sender: UIButton) {
-        checkPermission()
         imagenSelect.allowsEditing = false
         imagenSelect.sourceType = .photoLibrary
         present(imagenSelect, animated: true, completion: nil)
@@ -64,30 +62,6 @@ class CamaraViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         else {
             print("no se puede ")
-        }
-    }
-    
-    func checkPermission() {
-        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-        switch photoAuthorizationStatus {
-        case .authorized:
-            print("Access is granted by user")
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization({
-                (newStatus) in
-                print("status is \(newStatus)")
-                if newStatus ==  PHAuthorizationStatus.authorized {
-                    /* do stuff here */
-                    print("success")
-                }
-            })
-            print("It is not determined until now")
-        case .restricted:
-            // same same
-            print("User do not have access to photo album.")
-        case .denied:
-            // same same
-            print("User has denied the permission.")
         }
     }
     

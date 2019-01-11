@@ -13,11 +13,17 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
 
     var objetoCarga = Array<Item>()
     var objetoOrden = OrdenDTO()
+    var lista_guias = Array<String>()
     
     @IBOutlet weak var tableLista: UITableView!
     let cellReuseIdentifier = "cell"
     
     override func viewDidLoad() {
+        for item in objetoCarga {
+            let guia = item.getNumeroGuia()
+            lista_guias.append(guia)
+        }
+            
         super.viewDidLoad()
         tableLista.delegate = self
         tableLista.dataSource = self
@@ -51,6 +57,8 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
         cell.numeroOrden.text! = objetoCarga[indexPath.row].getNumeroItem()
         cell.descripcionOrden.text! = objetoCarga[indexPath.row].getDescripcion()
         cell.quitarButton.addTarget(self, action: #selector(quitar(_: )), for: .touchDown)
+        cell.numeroGuia.addTarget(self, action: #selector(agregarGuia_nuevo(_:)), for: .editingDidEnd)
+        cell.numeroGuia.tag = indexPath.row
         cell.quitarButton.tag = indexPath.row
         return cell
     }
@@ -58,6 +66,10 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
     @objc func quitar(_ sender: UIButton){
         objetoCarga.remove(at: sender.tag)
         tableLista.reloadData()
+    }
+    @objc func agregarGuia_nuevo(_ sender: UITextField){
+        objetoCarga[sender.tag].setNumeroGuia(numeroGuia: sender.text!)
+        print(objetoCarga[sender.tag].getNumeroGuia())
     }
 
     

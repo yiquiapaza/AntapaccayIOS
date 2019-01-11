@@ -128,7 +128,7 @@ class TerminarViewController: UIViewController {
                     
                     self.delay(seconds: 0.0, completion: {
                         
-                        SwiftSpinner.show("Subiendo Imagenes")
+                        //xSwiftSpinner.show("Subiendo Imagenes")
                         
                         var imagenes_nuevas =  [UIImage]()
                         let fileManager = FileManager.default

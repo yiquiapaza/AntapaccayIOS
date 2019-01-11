@@ -18,6 +18,7 @@ class Item {
     private var idProveedor: String
     private var transportista : String
     private var verificadoAlmacen: Bool
+    private var numeroGuia: String
     
     init() {
         self.id = VACIO
@@ -29,18 +30,7 @@ class Item {
         self.idProveedor = VACIO
         self.transportista = VACIO
         self.verificadoAlmacen = false
-    }
-    
-    init(id:String, rowVersion:String, numeroItem:String, descripcion:String, cantidad:String, idOrdenDetalle:String, idProveedor: String, transportista: String, verificadoAlmacen:Bool) {
-        self.id = id
-        self.numeroItem = numeroItem
-        self.rowVersion = rowVersion
-        self.descripcion = descripcion
-        self.cantidad = cantidad
-        self.idOrdenDetalle = idOrdenDetalle
-        self.idProveedor = idProveedor
-        self.transportista = transportista
-        self.verificadoAlmacen = verificadoAlmacen
+        self.numeroGuia = VACIO
     }
     
     func setId(id:String) -> Void {
@@ -104,6 +94,13 @@ class Item {
     }
     func getVerificadoAlmacen() -> Bool {
         return self.verificadoAlmacen
+    }
+    
+    func setNumeroGuia(numeroGuia: String) -> Void {
+        self.numeroGuia = numeroGuia
+    }
+    func getNumeroGuia() -> String {
+        return self.numeroGuia
     }
     
 }

@@ -78,7 +78,6 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             self.nombreProveedor.text = _item.getNombreProveedor()
-            //self.descripcion.adjustsFontSizeToFitWidth = true
             self.descripcion.numberOfLines = 0
             self._idProveedor = _item.getIdProveedor()
             self.descripcion.text = _item.getDescripcion()

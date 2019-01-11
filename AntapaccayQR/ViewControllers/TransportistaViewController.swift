@@ -15,6 +15,8 @@ import SwiftSpinner
 class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     @IBOutlet var vista: UIView!
     
+    var guias_listas = Array<String>()
+    
     var listaGuias: Array<String> = Array<String>()
     @IBOutlet weak var tablaGuias: UITableView!
     @IBOutlet weak var guia: UITextField!
@@ -44,7 +46,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
     var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
     
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
@@ -56,7 +58,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         self.objectoCarga =  data.objetoCarga
         self.objectoOrden = data.objetoOrden
         self.dropDownAlmacenes.direction = .top
-        
+        guias_listas = numerosGuias(obj: objectoCarga )
         self.viewAlmacenes.frame(forAlignmentRect: rect)
         
         let parametres: Parameters = [
@@ -98,7 +100,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         
         tablaGuias.delegate = self
         tablaGuias.dataSource = self
-        tablaGuias.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tablaGuias.register(UINib(nibName: "GuiaComponentTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         self.vista.addSubview(tablaGuias)
         // Do any additional setup after loading the view.
     }
@@ -167,19 +169,18 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.listaGuias.count
+        return self.guias_listas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tablaGuias.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.listaGuias[indexPath.row].description
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 300))
-        button.addTarget(self, action: #selector(quitar(_:)), for: .touchDown)
-        button.setTitle("", for : .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.setImage(UIImage(named:"icons8-delete_filled"), for: .normal)
-        cell.accessoryView = button
+        let cell = self.tablaGuias.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GuiaComponentTableViewCell
+        cell.numeroGuia.text! = guias_listas[indexPath.row]
+        cell.guardarImagen.addTarget(self, action: #selector(algoDebeHacer(_:)), for: .touchDown)
         return cell
+    }
+    
+    @objc func algoDebeHacer(_ sender: UIButton ){
+        print()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -193,24 +194,6 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         self.guia.text = VACIO
     }
     
-    @objc func quitar(_ sneder: UIButton){
-        print("Elimine la filas")
-        if index == -1{
-            //let error = MessageView.viewFromNib(layout: .tabView)
-            //error.configureTheme(.error)
-            //error.configureContent(title:"Error",body:"Es necesario Seleccionar una Celda" )
-            //error.button?.isHidden = true
-            //var configError = SwiftMessages.defaultConfig
-            //configError.presentationStyle = .center
-            //configError.duration = .seconds(seconds: 2)
-            //SwiftMessages.show(config: configError , view:error)
-        }
-        else{
-            self.listaGuias.remove(at: index)
-            index = -1
-            tablaGuias.reloadData()
-        }
-    }
     @objc func cerrarSession(){
         UserDefaults.standard.set(VACIO, forKey: "user")
         UserDefaults.standard.set(VACIO, forKey: "pass")
@@ -222,4 +205,22 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         guia.resignFirstResponder()
         return true
     }
+    
+    func numerosGuias(obj: Array<Item>) -> Array<String> {
+        var out = Array<String>()
+        if !obj.isEmpty{
+            var guia = obj[0].getNumeroGuia()
+            out.append(guia)
+            for item in obj{
+                if guia == item.getNumeroGuia(){
+                    guia = item.getNumeroGuia()
+                }
+                else{
+                    out.append(guia)
+                }
+            }
+        }
+        return out
+    }
+    
 }

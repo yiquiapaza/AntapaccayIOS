@@ -13,7 +13,8 @@ class BultoComponentTableViewCell: UITableViewCell {
     @IBOutlet weak var quitarButton: UIButton!
     @IBOutlet weak var descripcionOrden: UILabel!
     @IBOutlet weak var numeroOrden: UILabel!
-
+    @IBOutlet weak var numeroGuia: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
