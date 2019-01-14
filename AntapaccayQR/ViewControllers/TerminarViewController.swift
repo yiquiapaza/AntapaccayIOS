@@ -14,6 +14,7 @@ class TerminarViewController: UIViewController {
     
     var shouldHideNavBar = false
     
+    var item_imagenes = Dictionary<String,Array<String>>()
     
     @IBOutlet weak var generarQR: UIButton!
     var listaGuias = Array<String>()

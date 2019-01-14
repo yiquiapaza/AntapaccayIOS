@@ -12,14 +12,13 @@ import DropDown
 import SwiftSpinner
 
 
-class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
+class TransportistaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     @IBOutlet var vista: UIView!
     
     var guias_listas = Array<String>()
     
     var listaGuias: Array<String> = Array<String>()
     @IBOutlet weak var tablaGuias: UITableView!
-    @IBOutlet weak var guia: UITextField!
     var index:Int = -1
     let cellReuseIdentifier = "cell"
     
@@ -45,10 +44,18 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var nombreTransportista: UILabel!
     var rect = CGRect(x: 10, y: 10, width: 100, height: 100)
     
+    let imagenSelect = UIImagePickerController()
+    
+    var constante_index = Int()
+    
+    var item_imagenes = Dictionary<String,Array<String>>()
+    
+    var elementos = Array<String>()
+    
     override func viewDidLoad() {
-
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        self.imagenSelect.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Session", style: .plain, target: self, action: #selector(cerrarSession))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -104,10 +111,10 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         self.vista.addSubview(tablaGuias)
         // Do any additional setup after loading the view.
     }
-//*****************************************Action*****************************************
-/**
+    //*****************************************Action*****************************************
+    /**
      #Action Button for Get all depot using Alamofire
-*/
+     */
     @IBAction func almacenesButton(_ sender: UIButton) {
         self.dropDownAlmacenes.dataSource.removeAll()
         self.dropDownAlmacenes.anchorView = self.viewAlmacenes
@@ -121,9 +128,9 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         }
         self.dropDownAlmacenes.show()
     }
-/**
+    /**
      #Action Button for Get all drives with states is active
-*/
+     */
     @IBAction func transportistasButton(_ sender: UIButton) {
         self.dropDownTranporter.dataSource.removeAll()
         self.dropDownTranporter.anchorView = self.viewAlmacenes
@@ -165,6 +172,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
             vs!.objectoOrden = self.objectoOrden
             vs!.objectoTransporte = self.objTransporte
             vs!.listaGuias = self.listaGuias
+            vs!.item_imagenes = self.item_imagenes
         }
     }
     
@@ -176,22 +184,40 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = self.tablaGuias.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GuiaComponentTableViewCell
         cell.numeroGuia.text! = guias_listas[indexPath.row]
         cell.guardarImagen.addTarget(self, action: #selector(algoDebeHacer(_:)), for: .touchDown)
+        cell.tag = indexPath.row
         return cell
     }
     
     @objc func algoDebeHacer(_ sender: UIButton ){
-        print()
+        print("nuevo")
+        constante_index = sender.tag
+        imagenSelect.allowsEditing = false
+        imagenSelect.sourceType = .photoLibrary
+        present(imagenSelect, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.index = indexPath.row
         print(indexPath.row)
     }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickImage = info[.originalImage] as? UIImage{
+            print("funciona")
+            
+            let nombre_imagen = String(Date().currentTimeMillis())
+            elementos.append(nombre_imagen)
+            item_imagenes.updateValue(elementos, forKey: objectoCarga[constante_index].getNumeroItem() + objectoCarga[constante_index].getNumeroGuia())
+            
+            saveImageDocumentDirectory(image: pickImage, imageName: nombre_imagen + ".png")
+            dismiss(animated: true, completion: nil)
+        }else{
+            print("no funciona")
+        }
+    }
     
-    @IBAction func agregarGuia(_ sender: Any) {
-        self.listaGuias.append(self.guia.text!)
-        tablaGuias.reloadData()
-        self.guia.text = VACIO
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func cerrarSession(){
@@ -201,26 +227,29 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         present(loginView, animated: true, completion: nil)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guia.resignFirstResponder()
-        return true
-    }
-    
     func numerosGuias(obj: Array<Item>) -> Array<String> {
         var out = Array<String>()
         if !obj.isEmpty{
-            var guia = obj[0].getNumeroGuia()
-            out.append(guia)
             for item in obj{
-                if guia == item.getNumeroGuia(){
-                    guia = item.getNumeroGuia()
-                }
-                else{
-                    out.append(guia)
-                }
+                out.append(item.getNumeroGuia())
+                item_imagenes.updateValue([], forKey: item.getNumeroItem() + item.getNumeroGuia())
             }
         }
         return out
+    }
+    
+    func saveImageDocumentDirectory(image: UIImage, imageName: String) {
+        let fileManager = FileManager.default
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("AntapaccayGuia")
+        if !fileManager.fileExists(atPath: path) {
+            try! fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+        }
+        let url = NSURL(string: path)
+        let imagePath = url!.appendingPathComponent(imageName)
+        let urlString: String = imagePath!.absoluteString
+        let imageData = image.pngData()
+        //let imageData = UIImagePNGRepresentation(image)
+        fileManager.createFile(atPath: urlString as String, contents: imageData, attributes: nil)
     }
     
 }

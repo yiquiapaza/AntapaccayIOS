@@ -60,8 +60,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="guardarImagen" destination="H2p-sc-9uM" id="gNO-yL-p6R"/>
-                <outlet property="guardarImagen2" destination="MKV-XH-H4I" id="dK2-Rk-gZ1"/>
+                <outlet property="guardarImagen" destination="MKV-XH-H4I" id="g9k-GJ-7SA"/>
                 <outlet property="numeroGuia" destination="tEc-uU-KEF" id="6sm-gk-5GE"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="157.42128935532236"/>
