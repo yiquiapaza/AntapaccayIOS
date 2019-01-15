@@ -33,6 +33,15 @@ class TerminarViewController: UIViewController {
     @IBAction func terminarBulto(_ sender: UIButton) {
     
         var guias : [[String:Any]] = []
+        for item in self.objectoCarga {
+            let tmp: [String:Any] = [
+                "Id": CONST_ID,
+                "RowVersion": CONST_ROW_VERSION,
+                "numeroGuia": item.getNumeroGuia()
+            ]
+            guias.append(tmp)
+        }
+        
         for item in self.listaGuias {
             let temp : Parameters = [
                 ID: CONST_ID,
@@ -108,6 +117,8 @@ class TerminarViewController: UIViewController {
                 ],
                 "listaOD": [
                     []
+                ],
+                "listaDiscrepancia": [
                 ]
             ]
         ]
@@ -144,6 +155,51 @@ class TerminarViewController: UIViewController {
                             }
                         }
                         CONTADOR_IMAGEN_2 = 0
+                        
+                        for item in self.objectoCarga{
+                            var imagenes_nuevas_guia = [UIImage]()
+                            let fileMager_nuevo = FileManager.default
+                            let lista = self.item_imagenes[item.getNumeroItem() + item.getNumeroGuia()]
+                            for item2 in lista ?? []{
+                                let imagePath = (self.getDirectoryPathGuia() as NSURL).appendingPathComponent(item2 + ".png")
+                                let urlString: String = imagePath!.absoluteString
+                                if fileMager_nuevo.fileExists(atPath: urlString) {
+                                    let image = UIImage(contentsOfFile: urlString)!
+                                    imagenes_nuevas_guia.append(image)
+                                } else {
+                                    print("No Image")
+                                }
+                            }
+                            
+                            for item3 in imagenes_nuevas_guia {
+                                self.delay(seconds: 0.0, completion: {
+                                    Alamofire.upload(multipartFormData: { multipartFormData in
+                                        multipartFormData.append(item.getId().data(using: String.Encoding.utf8)!, withName: "identificador")
+                                        multipartFormData.append("GUIAPROVEEDOR".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+                                        if item3.pngData() != nil {
+                                            multipartFormData.append(item3.pngData()!, withName: "imagen", fileName: "\(String(Date().currentTimeMillis())).png" , mimeType: "image/png")
+                                        }
+                                    }, usingThreshold: UInt64.init(),
+                                       to: PALETA_IMAGENES ,
+                                       method: .post,
+                                       headers: ["Content-type": "multipart/form-data"]) { (result) in
+                                        switch result {
+                                        case .success(let loaddas, _, _):
+                                            print(loaddas)
+                                            if let err = response.error{
+                                                print(err)
+                                                return
+                                            }
+                                            self.deleteDirectoryGuia()
+                                        case .failure(let error):
+                                            print("Error in upload: \(error.localizedDescription)")
+                                            print(error)
+                                        }
+                                    }
+                                })
+                            }
+                        }
+                        
                         for item in imagenes_nuevas{
                             self.delay(seconds: 0.0, completion: {
                                 Alamofire.upload(multipartFormData: { multipartFormData in
@@ -328,4 +384,21 @@ class TerminarViewController: UIViewController {
         let url = NSURL(string: path)
         return url!
     }
+    func getDirectoryPathGuia() -> NSURL {
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("AntapaccayGuia")
+        let url = NSURL(string: path)
+        return url!
+    }
+    func deleteDirectoryGuia() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("AntapaccayGuia")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("AntapaccayGuia")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
+    
 }
