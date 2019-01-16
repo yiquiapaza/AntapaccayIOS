@@ -51,3 +51,5 @@ let PALETA_IMAGENES = BASE_URL + "PaletaConsolidada/UploadImagenes"
 let TRANSPORTE_IMAGENES = BASE_URL + "TransporteConsolidado/UploadImagenes"
 let BULTOS_IMAGENES = BASE_URL + "Bulto/UploadImagenes"
 let TRANSPORTE_CONSOLIDADES_IMAGENES = BASE_URL + "PaletaConsolidada/GetPaletaConsolidadaById"
+
+let LISTA_DISCREPANCIA = BASE_URL + "DiscrepanciaItem/GetListaDiscrepanciaOnsiteOD"

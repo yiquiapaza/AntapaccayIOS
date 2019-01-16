@@ -49,6 +49,7 @@
 		FB43FD3421B9882700ABA054 /* AlmacenComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43FD3221B9882700ABA054 /* AlmacenComponentTableViewCell.swift */; };
 		FB43FD3521B9882700ABA054 /* AlmacenComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB43FD3321B9882700ABA054 /* AlmacenComponentTableViewCell.xib */; };
 		FB491CB521975A3300B0CC29 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB491CB421975A3300B0CC29 /* QRViewController.swift */; };
+		FB4CA08B21EFC60200FE51E2 /* Discrepancia.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4CA08A21EFC60200FE51E2 /* Discrepancia.swift */; };
 		FB5738BD21B8408500C22703 /* CellComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5738BB21B8408500C22703 /* CellComponentTableViewCell.swift */; };
 		FB5738BE21B8408500C22703 /* CellComponentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */; };
 		FB5738C021B84F3600C22703 /* ReporteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */; };
@@ -154,6 +155,7 @@
 		FB43FD3221B9882700ABA054 /* AlmacenComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmacenComponentTableViewCell.swift; sourceTree = "<group>"; };
 		FB43FD3321B9882700ABA054 /* AlmacenComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlmacenComponentTableViewCell.xib; sourceTree = "<group>"; };
 		FB491CB421975A3300B0CC29 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		FB4CA08A21EFC60200FE51E2 /* Discrepancia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discrepancia.swift; sourceTree = "<group>"; };
 		FB5738BB21B8408500C22703 /* CellComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponentTableViewCell.swift; sourceTree = "<group>"; };
 		FB5738BC21B8408500C22703 /* CellComponentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComponentTableViewCell.xib; sourceTree = "<group>"; };
 		FB5738BF21B84F3600C22703 /* ReporteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteUserViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				FB2FAB1521B076A1003AB115 /* Llegada.swift */,
 				FB5738C121B853F800C22703 /* Reporte.swift */,
 				FB38FB3221D40B3900D839A3 /* ItemBulto.swift */,
+				FB4CA08A21EFC60200FE51E2 /* Discrepancia.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				FB7C9EE32188D47700F0466F /* ConstSegen.swift in Sources */,
 				FB345CFA21ADC53500B5BF5E /* DataDTO.swift in Sources */,
 				FB1F08BC21BB00C700AAFE81 /* ListaBultosViewController.swift in Sources */,
+				FB4CA08B21EFC60200FE51E2 /* Discrepancia.swift in Sources */,
 				FB89359F219CCC31007A04E3 /* TransportistaViewController.swift in Sources */,
 				FB1A9D392193457B00F8ED32 /* TerminarViewController.swift in Sources */,
 				FB38FB3321D40B3900D839A3 /* ItemBulto.swift in Sources */,

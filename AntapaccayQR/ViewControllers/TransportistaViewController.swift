@@ -248,8 +248,25 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         let imagePath = url!.appendingPathComponent(imageName)
         let urlString: String = imagePath!.absoluteString
         let imageData = image.pngData()
-        //let imageData = UIImagePNGRepresentation(image)
         fileManager.createFile(atPath: urlString as String, contents: imageData, attributes: nil)
     }
     
+    func numeroGuias2(obj : Array<Item>) -> Array<String>{
+        var out = Array<String>()
+        
+        if !obj.isEmpty{
+            var lista = Array<String>()
+            for item in obj{
+                let nuevo = item.getNumeroGuia()
+                lista.append(nuevo)
+            }
+            for item in lista{
+                if !lista.contains(item){
+                    out.append(item)
+                }
+            }
+        }
+        
+        return out
+    }
 }
