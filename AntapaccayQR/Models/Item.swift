@@ -19,6 +19,8 @@ class Item {
     private var transportista : String
     private var verificadoAlmacen: Bool
     private var numeroGuia: String
+    private var creadoDeDiscOnsite: Bool
+    private var idDiscrepanciaPadre: String
     
     init() {
         self.id = VACIO
@@ -31,6 +33,8 @@ class Item {
         self.transportista = VACIO
         self.verificadoAlmacen = false
         self.numeroGuia = VACIO
+        self.creadoDeDiscOnsite = false
+        self.idDiscrepanciaPadre = VACIO
     }
     
     func setId(id:String) -> Void {
@@ -103,4 +107,17 @@ class Item {
         return self.numeroGuia
     }
     
+    func setCreadoDeDiscOnsite(creadoDeDiscOnsite: Bool) -> Void {
+        self.creadoDeDiscOnsite = creadoDeDiscOnsite
+    }
+    func getCreadoDeDiscOnsite() -> Bool {
+        return self.creadoDeDiscOnsite
+    }
+    
+    func setIdDiscrepanciaPadre(idDiscrepanciaPadre:String) -> Void {
+        self.idDiscrepanciaPadre = idDiscrepanciaPadre
+    }
+    func getIdDiscrepanciaPadre() -> String {
+        return self.idDiscrepanciaPadre
+    }
 }
