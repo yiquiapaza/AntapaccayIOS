@@ -69,6 +69,64 @@ class TerminarViewController: UIViewController {
             items.append(temp)
         }
         
+        var items_discrepancia: [[String:Any]] = []
+        for items in self.objectoCarga{
+            let tem: Parameters = [
+                "idDiscrepancia": "falta este",
+                "idOrdenDetalle": "falta este",
+                "idBultoOrden": CONST_ID,
+                "valorOrden": self.objectoOrden.getValorOrden(),
+                "numeroItem":"",
+                "descripcion": items.getDescripcion(),
+                "numeroWaybil":"",
+                "comentario": "falta este",
+                "unidad": "falta este",
+                "cantidad": items.getMAL_USO_REST_API(),
+                "cantidadPorRecibir": "falta este",
+                "cantidadRecibida" : "falta este",
+                "tipoDiscrepancia": "2",
+                "estadoDiscrepancia": "2",
+                "centroCosto" : "",
+                "idProveedor" : items.getIdProveedor(),
+                "nombreProveedor": "",
+                "alamacen" : "",
+                "ESTADO" : true,
+                "DISPONIBILIDAD": true,
+                "FECHA_CREACION": 0,
+                "FECHA_MODIFICACION": 0,
+                "USER_CREACION": "",
+                "USER_MODIFICACION": "",
+                "Id" : CONST_ID,
+                "numeroBulto":"",
+                "numeroGuia": items.getNumeroGuia(),
+                "almacenDestino" : ""
+            ]
+            items_discrepancia.append(tem)
+        }
+        
+        /*
+        for item in items {
+            "Id": "",
+            "valorOrden": "",
+            "numeroItem":"",
+            "tipoOrden":"",
+            "distrito": "",
+            "almacen": "",
+            "unidad":"",
+            "partNumber": "",
+            "descripcion": "",
+            "nombreProveedor":"",
+            "idProveedor": "",
+            "cantidadPO": "",
+            "pr": "",
+            "recibido": "",
+            "cantidadRecibida": "",
+         "centroCosto":"",
+         "RowVersion": "",
+         "cantidadPorRecibir:""
+        }
+         */
+        
         let datos: [[String:Any]] = [
             [
                 "bulto": [
@@ -118,7 +176,8 @@ class TerminarViewController: UIViewController {
                 "listaOD": [
                     []
                 ],
-                "listaDiscrepancia": [
+                "listaDiscrepancia":[
+                    items_discrepancia
                 ]
             ]
         ]

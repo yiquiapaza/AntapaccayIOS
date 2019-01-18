@@ -59,6 +59,8 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     var constante = String()
     var lista_item_discrepancia = Array<String>()
     
+    var idDiscrepanciaPadreConst = String()
+    var esta_mal_disenio = Int()
     
     @IBAction func discrepancia(_ sender: UIButton) {
         self.opciones_discrepancia.removeAll()
@@ -180,6 +182,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                         break
                     }
                 }
+                self.idDiscrepanciaPadreConst = _item.getIdDiscrepancia()
                 self.nombreProveedor.text = _item.getNombreProveedor()
                 self.descripcion.numberOfLines = 0
                 self._idProveedor = _item.getIdProveedor()
@@ -187,6 +190,16 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 self.unidad.text = _item.getUnidad()
                 self.almacen.text = _item.getAlmacen()
                 self.disponible.text = String( _item.getCantidad() - (_item.getCantidadRecibida() + _item.getCantidadPorRecibir()))
+                
+                esta_mal_disenio = _item.getCantidadPorRecibir() + Int(self.disponible.text!)!
+                
+                if self._cantidadesItem.keys.contains(_item.getNumeroItem()){
+                    self.disponible.text = String(_item.getCantidad() - (_item.getCantidadRecibida() + _item.getCantidadPorRecibir()))
+                }
+                else{
+                    self.cantidadRequerida.isEnabled = true
+                    self.disponible.text = String(_item.getCantidad() - (_item.getCantidadRecibida() + _item.getCantidadPorRecibir()))
+                }
             }
         }
         else{
@@ -397,11 +410,16 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             self._idProveedor = VACIO
             nuevoItem.setTransportista(transportista: CONST_TRANSPORTISTA)
             nuevoItem.setVerificadoAlmacen(verificadoAlmacen: false)
-            self._listaItem.append(nuevoItem)
-            //self.cantidadItems.text = String(self._listaItem.count)
+            if constante == "Con Discrepancia"{
+                nuevoItem.setCreadoDeDiscOnsite(creadoDeDiscOnsite: true)
+                nuevoItem.setIdDiscrepanciaPadre(idDiscrepanciaPadre: self.idDiscrepanciaPadreConst)
+                nuevoItem.setMAL_USO_REST_API(MAL_USO_REST_API: self.esta_mal_disenio)
+            }
             if self._cantidadesItem.keys.contains(self._numeroItem){
                 if ( Int(self._cantidadesItem[self._numeroItem]!)! >= Int(nuevoItem.getCantidad())! ) {
+                    
                     self._cantidadesItem[self._numeroItem] = String( Int(self._cantidadesItem[self._numeroItem]!)! + Int(self.cantidadRequerida.text!)! )
+                    self._listaItem.append(nuevoItem)
                 }
                 else {
                     let alertOrden = UIAlertController(title: "Error", message: "La Cantidad no puede exceder al total", preferredStyle: UIAlertController.Style.alert)

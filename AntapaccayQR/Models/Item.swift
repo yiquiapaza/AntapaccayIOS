@@ -21,6 +21,7 @@ class Item {
     private var numeroGuia: String
     private var creadoDeDiscOnsite: Bool
     private var idDiscrepanciaPadre: String
+    private var MAL_USO_API_REST: Int
     
     init() {
         self.id = VACIO
@@ -35,6 +36,7 @@ class Item {
         self.numeroGuia = VACIO
         self.creadoDeDiscOnsite = false
         self.idDiscrepanciaPadre = VACIO
+        self.MAL_USO_API_REST = 0
     }
     
     func setId(id:String) -> Void {
@@ -119,5 +121,12 @@ class Item {
     }
     func getIdDiscrepanciaPadre() -> String {
         return self.idDiscrepanciaPadre
+    }
+    
+    func setMAL_USO_REST_API(MAL_USO_REST_API: Int) -> Void {
+        self.MAL_USO_API_REST = MAL_USO_REST_API
+    }
+    func getMAL_USO_REST_API() -> Int {
+        return self.MAL_USO_API_REST
     }
 }
