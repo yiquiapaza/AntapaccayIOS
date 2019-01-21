@@ -13,7 +13,9 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
 
     var objetoCarga = Array<Item>()
     var objetoOrden = OrdenDTO()
+    var objetoLista = Array<OrdenDetalle>()
     var lista_guias = Array<String>()
+    
     
     @IBOutlet weak var tableLista: UITableView!
     let cellReuseIdentifier = "cell"
@@ -45,6 +47,7 @@ class ListaViewController: UIViewController, UITableViewDelegate,   UITableViewD
             let vs = segue.destination as? TabBarViewController
             vs!.objetoCarga = self.objetoCarga
             vs!.objetoOrden = self.objetoOrden
+            vs!.objetoLista = self.objetoLista
         }
     }
     

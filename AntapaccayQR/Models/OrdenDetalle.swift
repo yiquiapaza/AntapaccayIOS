@@ -24,6 +24,13 @@ class OrdenDetalle {
     private var _pr: String
     private var _recibido: Int
     private var _cantidadRecibida: Int
+    
+    private var _centroCosto : String
+    private var _cantidadPorRecibir : Int
+    private var _discrepancia: Bool
+    private var _numeroGuia: String
+    private var _almacenDestino : String
+    
     private var _rowVersion: String
     private var _disponibilidad: Int
     
@@ -45,6 +52,11 @@ class OrdenDetalle {
         self._cantidadRecibida = 0
         self._rowVersion = ""
         self._disponibilidad = 0
+        self._centroCosto = VACIO
+        self._cantidadPorRecibir = 0
+        self._discrepancia = false
+        self._numeroGuia = VACIO
+        self._almacenDestino = VACIO
     }
     
     func setId(id:String) -> Void {
@@ -165,5 +177,40 @@ class OrdenDetalle {
     }
     func getDisponibilidad() -> Int {
         return self._disponibilidad
+    }
+    
+    func setCentroCosto(centroCosto: String) -> Void {
+        self._centroCosto = centroCosto
+    }
+    func getCentroCosto() -> String {
+        return self._centroCosto
+    }
+    
+    func setCantidadPorRecibir(cantidadPorRecibir:Int) -> Void {
+        self._cantidadPorRecibir = cantidadPorRecibir
+    }
+    func getCantidadPorRecibir() -> Int {
+        return self._cantidadPorRecibir
+    }
+    
+    func setDiscrepancia(discrepancia: Bool) -> Void {
+        self._discrepancia = discrepancia
+    }
+    func getDiscrepancia() -> Bool {
+        return self._discrepancia
+    }
+    
+    func setNumeroGuia(numeroGuia: String) -> Void {
+        self._numeroGuia = numeroGuia
+    }
+    func getNumeroGuia() -> String {
+        return self._numeroGuia
+    }
+    
+    func setAlmaceDestino(almacenDestino:String) -> Void {
+        self._almacenDestino = almacenDestino
+    }
+    func getAlmacenDestino() -> String {
+        return self._almacenDestino
     }
 }

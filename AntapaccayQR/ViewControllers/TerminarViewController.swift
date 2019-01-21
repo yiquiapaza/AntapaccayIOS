@@ -71,37 +71,39 @@ class TerminarViewController: UIViewController {
         
         var items_discrepancia: [[String:Any]] = []
         for items in self.objectoCarga{
-            let tem: Parameters = [
-                "idDiscrepancia": "falta este",
-                "idOrdenDetalle": "falta este",
-                "idBultoOrden": CONST_ID,
-                "valorOrden": self.objectoOrden.getValorOrden(),
-                "numeroItem":"",
-                "descripcion": items.getDescripcion(),
-                "numeroWaybil":"",
-                "comentario": "falta este",
-                "unidad": "falta este",
-                "cantidad": items.getMAL_USO_REST_API(),
-                "cantidadPorRecibir": "falta este",
-                "cantidadRecibida" : "falta este",
-                "tipoDiscrepancia": "2",
-                "estadoDiscrepancia": "2",
-                "centroCosto" : "",
-                "idProveedor" : items.getIdProveedor(),
-                "nombreProveedor": "",
-                "alamacen" : "",
-                "ESTADO" : true,
-                "DISPONIBILIDAD": true,
-                "FECHA_CREACION": 0,
-                "FECHA_MODIFICACION": 0,
-                "USER_CREACION": "",
-                "USER_MODIFICACION": "",
-                "Id" : CONST_ID,
-                "numeroBulto":"",
-                "numeroGuia": items.getNumeroGuia(),
-                "almacenDestino" : ""
-            ]
-            items_discrepancia.append(tem)
+            if items.getCreadoDeDiscOnsite() == true {
+                let tem: Parameters = [
+                    "idDiscrepancia": items.getMAL_USO_API_REST_idDiscrepancia(),
+                    "idOrdenDetalle": items.getMAL_USO_API_REST_idOrdenDetalle(),
+                    "idBultoOrden": CONST_ID,
+                    "valorOrden": self.objectoOrden.getValorOrden(),
+                    "numeroItem": items.getNumeroItem(),
+                    "descripcion": items.getDescripcion(),
+                    "numeroWaybil":"",
+                    "comentario": items.getMAL_USO_API_REST_comentario(),
+                    "unidad": items.getMAL_USO_API_REST_unidad(),
+                    "cantidad": items.getMAL_USO_REST_API(),
+                    "cantidadPorRecibir": items.getMAL_USO_API_REST_cantidadPorRecibir(),
+                    "cantidadRecibida" : items.getMAL_USO_API_REST_cantidadRecibida(),
+                    "tipoDiscrepancia": "2",
+                    "estadoDiscrepancia": "2",
+                    "centroCosto" : "",
+                    "idProveedor" : items.getIdProveedor(),
+                    "nombreProveedor": items.getMAL_USO_API_REST_nombreProveedor(),
+                    "alamacen" : "",
+                    "ESTADO" : true,
+                    "DISPONIBILIDAD": true,
+                    "FECHA_CREACION": 0,
+                    "FECHA_MODIFICACION": 0,
+                    "USER_CREACION": "",
+                    "USER_MODIFICACION": "",
+                    "Id" : CONST_ID,
+                    "numeroBulto": "1",
+                    "numeroGuia": items.getNumeroGuia(),
+                    "almacenDestino" : ""
+                ]
+                items_discrepancia.append(tem)
+            }
         }
         
         /*
@@ -121,9 +123,13 @@ class TerminarViewController: UIViewController {
             "pr": "",
             "recibido": "",
             "cantidadRecibida": "",
-         "centroCosto":"",
-         "RowVersion": "",
-         "cantidadPorRecibir:""
+            "centroCosto":"",
+            "RowVersion": "",
+            "cantidadPorRecibir:"",
+            "discrepancia":"",
+            "numeroBulto":"",
+            "numeroGuia": "",
+            "almacenDestino": ""
         }
          */
         

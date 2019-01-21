@@ -12,6 +12,8 @@ class TabBarViewController: UITabBarController {
 
     var objetoCarga = Array<Item>()
     var objetoOrden = OrdenDTO()
+    var objetoLista = Array<OrdenDetalle>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

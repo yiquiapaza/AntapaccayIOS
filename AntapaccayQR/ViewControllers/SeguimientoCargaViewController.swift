@@ -62,6 +62,16 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     var idDiscrepanciaPadreConst = String()
     var esta_mal_disenio = Int()
     
+    var id_dicrepancia_mal_disenio = String()
+    var id_orden_detalle_mal_disenio = String()
+    var comentario_mal_disenio = String()
+    var unidad_mal_disenio = String()
+    var nombreProveedor_mal_disenio = String()
+    var cantidadPorRecibir_mal_disenio = Int()
+    var cantodadRecibidad_mal_disenio = Int()
+    
+    var listaOrdenes_final = Array<OrdenDetalle>()
+    
     @IBAction func discrepancia(_ sender: UIButton) {
         self.opciones_discrepancia.removeAll()
         self.opciones_discrepancia.append("Sin Discrepancia")
@@ -114,6 +124,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                         break
                     }
                 }
+                self.listaOrdenes_final.append(_item)
                 self.nombreProveedor.text = _item.getNombreProveedor()
                 self.descripcion.numberOfLines = 0
                 self._idProveedor = _item.getIdProveedor()
@@ -193,6 +204,14 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 
                 esta_mal_disenio = _item.getCantidadPorRecibir() + Int(self.disponible.text!)!
                 
+                self.id_dicrepancia_mal_disenio = _item.getIdDiscrepancia()
+                self.id_orden_detalle_mal_disenio = _item.getIdOrdenDetalle()
+                self.comentario_mal_disenio = _item.getComentario()
+                self.unidad_mal_disenio = _item.getUnidad()
+                self.nombreProveedor_mal_disenio = _item.getNombreProveedor()
+                self.cantodadRecibidad_mal_disenio = _item.getCantidadRecibida()
+                self.cantidadPorRecibir_mal_disenio = _item.getCantidadPorRecibir()
+                
                 if self._cantidadesItem.keys.contains(_item.getNumeroItem()){
                     self.disponible.text = String(_item.getCantidad() - (_item.getCantidadRecibida() + _item.getCantidadPorRecibir()))
                 }
@@ -221,11 +240,6 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         self.cantidadRequerida.keyboardType = .numberPad
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar Sesion", style: .plain, target: self, action: #selector(cerrarSession))
-        //navigationItem.leftBarButtonItem     = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
-
-        // Do any additional setup after loading the view.
-        
     }
     
     @IBAction func buscarOrden(_ sender: UIButton) {
@@ -265,6 +279,13 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                             nuevo.setCantidad(cantidad: item["cantidad"] as? Int ?? 0)
                             nuevo.setCantidadRecibida(cantidadRecibida: item["cantidadRecibida"] as? Int ?? 0)
                             nuevo.setCantidadPorRecibir(cantidadPorRecibir: item["cantidadPorRecibir"] as? Int ?? 0)
+                            nuevo.setIdOrdenDetalle(idOrdenDetalle: item["idOrdenDetalle"] as? String ?? "")
+                            nuevo.setIdDiscrepancia(idDiscrepancia: item["idDiscrepancia"] as? String ?? "")
+                            nuevo.setUnidad(unidad: item["unidad"] as? String ?? "")
+                            nuevo.setComentario(comentario: item["comentario"] as? String ?? "")
+                            nuevo.setNombreProveedor(nombreProveedor: item["nombreProveedor"] as? String ?? "")
+                            nuevo.setCantidadPorRecibir(cantidadPorRecibir: item["cantidadPorRecibir"] as? Int ?? 0)
+                            nuevo.setCantidadRecibida(cantidadRecibida: item["cantidadRecibida"] as? Int ?? 0)
                             self._discrepancias.append(nuevo)
                         }
                         for item in self._discrepancias{
@@ -292,15 +313,30 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                                 var cantidad_recibida:Int = 0
                                 for ordenDetalle in ordenesDetalle {
                                     item = OrdenDetalle()
-                                    //item.setId(id: ordenDetalle[ID] as! String)
+                                    item.setId(id: ordenDetalle[ID] as! String)
+                                    item.setValorOrden(valoProveedor: ordenDetalle["valorOrden"] as! String)
                                     item.setNumeroItem(numeroItem: ordenDetalle[NUMERO_ITEM] as! String)
-                                    item.setNombreProoveedor(nombreProveedor: ordenDetalle[NOMBRE_PROVEEDOR] as! String)
-                                    item.setDescripcion(descripcion: ordenDetalle[DESCRIPCION] as? String ?? "")
-                                    item.setUnidad(unidad: ordenDetalle[UNIDAD] as! String)
+                                    item.setTipoOrden(tipoOrden: ordenDetalle["tipoOrden"] as! String)
+                                    item.setDistrito(distrito: ordenDetalle["distrito"] as! String)
                                     item.setAlmacen(almacen: ordenDetalle[ALMACEN] as! String)
+                                    item.setUnidad(unidad: ordenDetalle["unidad"] as! String)
+                                    item.setPartNumber(partNamber: ordenDetalle["partNumber"] as! String)
+                                    item.setDescripcion(descripcion: ordenDetalle[DESCRIPCION] as? String ?? "")
+                                    item.setNombreProoveedor(nombreProveedor: ordenDetalle[NOMBRE_PROVEEDOR] as! String)
+                                    item.setIdProveedor(idProveedor: ordenDetalle["idProveedor"] as! String)
+                                    item.setCantidadPO(cantidadPO: ordenDetalle["cantidadPO"] as! Float)
+                                    item.setRecibido(recibido: ordenDetalle["recibido"] as! Int)
+                                    item.setCantidadRecibida(cantidadRecibida: ordenDetalle["cantidadRecibida"] as! Int)
+                                    item.setCentroCosto(centroCosto: ordenDetalle["centroCosto"] as? String ?? "")
+                                    item.setRowVersion(rowVersion: ordenDetalle["RowVersion"] as? String ?? "")
+                                    item.setPR(pr: ordenDetalle["PR"] as? String ?? "")
+                                    item.setCentroCosto(centroCosto: ordenDetalle["centroCosto"] as? String ?? "")
+                                    
+                                    
                                     cantidad_po = ordenDetalle[CANTIDAD_PO] as! Int
                                     cantidad_recibida = ordenDetalle[CANTIDAD_RECIBIDA] as! Int
                                     item.setDisponibilidad(disponibilidad: cantidad_po-cantidad_recibida)
+                                    
                                     temp_orden.append(item)
                                 }
                                 self.listaOrdenDetalle = temp_orden
@@ -414,6 +450,13 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 nuevoItem.setCreadoDeDiscOnsite(creadoDeDiscOnsite: true)
                 nuevoItem.setIdDiscrepanciaPadre(idDiscrepanciaPadre: self.idDiscrepanciaPadreConst)
                 nuevoItem.setMAL_USO_REST_API(MAL_USO_REST_API: self.esta_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_idDiscrepancia(MAL_USO_API_REST_idDiscrepancia: self.id_dicrepancia_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_idOrdenDetalle(MAL_USO_API_REST_idOrdenDetalle: self.id_orden_detalle_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_comentario(MAL_USO_API_REST_comentario: self.comentario_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_unidad(MAL_USO_API_REST_unidad: self.unidad_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_nombreProveedor(MAL_USO_API_REST_nombreProveedor: self.nombreProveedor_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_cantidadPorRecibir(MAL_USO_API_REST_cantidadPorRecibir: self.cantidadPorRecibir_mal_disenio)
+                nuevoItem.setMAL_USO_API_REST_cantidadPorRecibir(MAL_USO_API_REST_cantidadPorRecibir: self.cantodadRecibidad_mal_disenio)
             }
             if self._cantidadesItem.keys.contains(self._numeroItem){
                 if ( Int(self._cantidadesItem[self._numeroItem]!)! >= Int(nuevoItem.getCantidad())! ) {
@@ -462,6 +505,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             let vs = segue.destination as? ListaViewController
             vs!.objetoCarga = self._listaItem
             vs!.objetoOrden = self._ordenDTO
+            vs!.objetoLista = self.listaOrdenes_final
         }
     }
     
