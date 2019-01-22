@@ -24,6 +24,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
     
     var objectoCarga = Array<Item>()
     var objectoOrden = OrdenDTO()
+    var objetoLista = Array<OrdenDetalle>()
     
     var _almacenes: Array<Dictionary<String,AnyObject>> = []
     var _transporte: Array<Dictionary<String,AnyObject>> = []
@@ -64,6 +65,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
         let data = self.parent as! TabBarViewController
         self.objectoCarga =  data.objetoCarga
         self.objectoOrden = data.objetoOrden
+        self.objetoLista = data.objetoLista
         self.dropDownAlmacenes.direction = .top
         guias_listas = numerosGuias(obj: objectoCarga )
         self.viewAlmacenes.frame(forAlignmentRect: rect)
@@ -173,6 +175,7 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
             vs!.objectoTransporte = self.objTransporte
             vs!.listaGuias = self.listaGuias
             vs!.item_imagenes = self.item_imagenes
+            vs!.objetoLista = self.objetoLista
         }
     }
     

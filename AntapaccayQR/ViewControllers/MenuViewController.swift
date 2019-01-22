@@ -17,6 +17,13 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var correoMenu: UILabel!
     
     override func viewDidLoad() {
+        self.deleteDirectoryGuia()
+        self.deleteDirectoryAntapaccay1()
+        self.deleteDirectoryAntapaccay2()
+        self.deleteDirectoryAntapaccay3()
+        CONTADOR_IMAGEN = 0
+        CONTADOR_IMAGEN_2 = 0
+        CONTADOR_IMAGEN_3 = 0
         imageViewIntro(image: imagenMenu)
         startView(vistaIntro: menuView)
         super.viewDidLoad()
@@ -42,5 +49,50 @@ class MenuViewController: UIViewController {
         image.layer.masksToBounds = false
         image.layer.borderColor = UIColor.white.cgColor
         image.clipsToBounds = true
+    }
+    
+    func deleteDirectoryGuia() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("AntapaccayGuia")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("AntapaccayGuia")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
+    func deleteDirectoryAntapaccay1() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
+    func deleteDirectoryAntapaccay2() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay_2")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay_2")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
+    }
+    func deleteDirectoryAntapaccay3() {
+        let fileManager = FileManager.default
+        let yourProjectImagesPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay3")
+        if fileManager.fileExists(atPath: yourProjectImagesPath) {
+            try! fileManager.removeItem(atPath: yourProjectImagesPath)
+        }
+        let yourProjectDirectoryPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Antapaccay3")
+        if fileManager.fileExists(atPath: yourProjectDirectoryPath) {
+            try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
+        }
     }
 }

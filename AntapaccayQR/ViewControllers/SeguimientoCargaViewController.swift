@@ -116,6 +116,11 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         dropDown.dataSource.removeAll()
         if self._numeroItem != VACIO {
             if constante == "Sin Discrepancia"{
+                
+                if filtro_orden(lista: listaOrdenDetalle, orden: _numeroItem){
+                    print("funciona")
+                }
+                
                 self.cantidadRequerida.isEnabled = true
                 var _item = OrdenDetalle()
                 for item in self.listaOrdenDetalle{
@@ -124,7 +129,6 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                         break
                     }
                 }
-                self.listaOrdenes_final.append(_item)
                 self.nombreProveedor.text = _item.getNombreProveedor()
                 self.descripcion.numberOfLines = 0
                 self._idProveedor = _item.getIdProveedor()
@@ -183,6 +187,9 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                     self.cantidadRequerida.isEnabled = true
                     self.disponible.text = String(_item.getDisponibilidad())
                 }
+                //cantidadPorRecibir + la cantidad que se ingreso
+                _item.setCantidadRecibida(cantidadRecibida: Int(self.disponible.text!)!)
+                self.listaOrdenes_final.append(_item)
             }
             if constante == "Con Discrepancia"{
                 self.cantidadRequerida.isEnabled = true
@@ -228,6 +235,30 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             self.almacen.text = "Almacen"
             self.disponible.text = "0"
         }
+    }
+    
+    func filtro_orden(lista: Array<OrdenDetalle>, orden: String) -> Bool {
+        var out = Bool()
+        if !lista.isEmpty{
+            for item in lista{
+                if item.getNumeroItem() == orden{
+                    let alertOrden = PMAlertController(title: "Error", description: "Ya ingreso este item", image: UIImage(named: "error"), style: .alert)
+                    alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                    self.present(alertOrden, animated: true, completion: nil)
+                    out = false
+                }
+                else {
+                    let alertOrden = PMAlertController(title: "Exito", description: "Se Agrego correctamente el item", image: UIImage(named: "exito"), style: .alert)
+                    alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                    self.present(alertOrden, animated: true, completion: nil)
+                    out =  true
+                }
+            }
+        }
+        else{
+            out = false
+        }
+        return out
     }
         
     override func viewDidLoad() {
@@ -458,11 +489,11 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 nuevoItem.setMAL_USO_API_REST_cantidadPorRecibir(MAL_USO_API_REST_cantidadPorRecibir: self.cantidadPorRecibir_mal_disenio)
                 nuevoItem.setMAL_USO_API_REST_cantidadPorRecibir(MAL_USO_API_REST_cantidadPorRecibir: self.cantodadRecibidad_mal_disenio)
             }
+            self._listaItem.append(nuevoItem)
             if self._cantidadesItem.keys.contains(self._numeroItem){
                 if ( Int(self._cantidadesItem[self._numeroItem]!)! >= Int(nuevoItem.getCantidad())! ) {
                     
                     self._cantidadesItem[self._numeroItem] = String( Int(self._cantidadesItem[self._numeroItem]!)! + Int(self.cantidadRequerida.text!)! )
-                    self._listaItem.append(nuevoItem)
                 }
                 else {
                     let alertOrden = UIAlertController(title: "Error", message: "La Cantidad no puede exceder al total", preferredStyle: UIAlertController.Style.alert)

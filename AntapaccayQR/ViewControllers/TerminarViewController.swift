@@ -20,6 +20,8 @@ class TerminarViewController: UIViewController {
     var listaGuias = Array<String>()
     var objectoCarga = Array<Item>()
     var objectoOrden = OrdenDTO()
+    var objetoLista = Array<OrdenDetalle>()
+
     var objectoTransporte = TransporteDTO()
     var id_qr = ""
 
@@ -106,32 +108,34 @@ class TerminarViewController: UIViewController {
             }
         }
         
-        /*
-        for item in items {
-            "Id": "",
-            "valorOrden": "",
-            "numeroItem":"",
-            "tipoOrden":"",
-            "distrito": "",
-            "almacen": "",
-            "unidad":"",
-            "partNumber": "",
-            "descripcion": "",
-            "nombreProveedor":"",
-            "idProveedor": "",
-            "cantidadPO": "",
-            "pr": "",
-            "recibido": "",
-            "cantidadRecibida": "",
-            "centroCosto":"",
-            "RowVersion": "",
-            "cantidadPorRecibir:"",
-            "discrepancia":"",
-            "numeroBulto":"",
-            "numeroGuia": "",
-            "almacenDestino": ""
+        
+        var items_orden: [[String:Any]] = []
+        for item in objetoLista{
+            let parametres_orden: Parameters = [
+                "Id": CONST_ID,
+                "valorOrden": item.getValorOrden(),
+                "numeroItem": item.getNumeroItem(),
+                "tipoOrden": item.getTipoOrden(),
+                "distrito": item.getDistrito(),
+                "almacen": item.getAlmace(),
+                "unidad": item.getUnidad(),
+                "partNumber": item.getPartNumber(),
+                "descripcion": item.getDescripcion(),
+                "nombreProveedor": item.getNombreProveedor(),
+                "idProveedor": item.getIdProveedor(),
+                "cantidadPO": item.getCantidadPO(),
+                "pr": item.getPR(),
+                "recibido": item.getRecibido(),
+                "cantidadRecibida": item.getCantidaRecibida(),
+                "centroCosto": item.getCentroCosto(),
+                "RowVersion": item.getRowVersion(),
+                "cantidadPorRecibir": item.getCantidadPorRecibir(),
+                "discrepancia": item.getDiscrepancia(),
+                "numeroBulto" : "1",
+                "almacenDestino" : item.getAlmacenDestino()
+            ]
+            items_orden.append(parametres_orden)
         }
-         */
         
         let datos: [[String:Any]] = [
             [
@@ -180,7 +184,7 @@ class TerminarViewController: UIViewController {
                     guias
                 ],
                 "listaOD": [
-                    []
+                    items_orden
                 ],
                 "listaDiscrepancia":[
                     items_discrepancia
@@ -236,26 +240,127 @@ class TerminarViewController: UIViewController {
                                 }
                             }
                             
-                            for item3 in imagenes_nuevas_guia {
+                            if !imagenes_nuevas_guia.isEmpty{
+                                for item3 in imagenes_nuevas_guia {
+                                    self.delay(seconds: 0.0, completion: {
+                                        Alamofire.upload(multipartFormData: { multipartFormData in
+                                            multipartFormData.append(item.getId().data(using: String.Encoding.utf8)!, withName: "identificador")
+                                            multipartFormData.append("GUIAPROVEEDOR".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+                                            if item3.pngData() != nil {
+                                                multipartFormData.append(item3.pngData()!, withName: "imagen", fileName: "\(String(Date().currentTimeMillis())).png" , mimeType: "image/png")
+                                            }
+                                        }, usingThreshold: UInt64.init(),
+                                           to: PALETA_IMAGENES ,
+                                           method: .post,
+                                           headers: ["Content-type": "multipart/form-data"]) { (result) in
+                                            switch result {
+                                            case .success(let loaddas, _, _):
+                                                print(loaddas)
+                                                if let err = response.error{
+                                                    print(err)
+                                                    return
+                                                }
+                                                self.deleteDirectoryGuia()
+                                            case .failure(let error):
+                                                print("Error in upload: \(error.localizedDescription)")
+                                                print(error)
+                                            }
+                                        }
+                                    })
+                                }
+                            }
+                        }
+                        
+                        if !imagenes_nuevas.isEmpty{
+                            for item in imagenes_nuevas{
                                 self.delay(seconds: 0.0, completion: {
                                     Alamofire.upload(multipartFormData: { multipartFormData in
-                                        multipartFormData.append(item.getId().data(using: String.Encoding.utf8)!, withName: "identificador")
-                                        multipartFormData.append("GUIAPROVEEDOR".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
-                                        if item3.pngData() != nil {
-                                            multipartFormData.append(item3.pngData()!, withName: "imagen", fileName: "\(String(Date().currentTimeMillis())).png" , mimeType: "image/png")
+                                        multipartFormData.append((self.id_qr).data(using: String.Encoding.utf8)!, withName: "identificador")
+                                        multipartFormData.append("BULTO".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+                                        if item.pngData() != nil {
+                                            multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
                                         }
+                                        
                                     }, usingThreshold: UInt64.init(),
-                                       to: PALETA_IMAGENES ,
+                                       to: PALETA_IMAGENES,
                                        method: .post,
-                                       headers: ["Content-type": "multipart/form-data"]) { (result) in
+                                       headers: ["Content-type": "multipart/form-data"]){ (result) in
                                         switch result {
-                                        case .success(let loaddas, _, _):
-                                            print(loaddas)
+                                        case .success(let uploaddos, _, _):
+                                            print("Succesfully uploaded")
+                                            print(uploaddos)
+                                            if (paleta_nuevo != "00000000-0000-0000-0000-000000000000"){
+                                                Alamofire.upload(multipartFormData: { multipartFormData in
+                                                    multipartFormData.append(paleta_nuevo.data(using: String.Encoding.utf8)!, withName: "identificador")
+                                                    multipartFormData.append("PALETA".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+                                                    if item.pngData() != nil {
+                                                        multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
+                                                    }
+                                                }, usingThreshold: UInt64.init(),
+                                                   to: BULTOS_IMAGENES,
+                                                   method: .post,
+                                                   headers: ["Content-type": "multipart/form-data"]){ (result) in
+                                                    switch result {
+                                                    case .success(let uploaddos, _ , _):
+                                                        print(uploaddos)
+                                                        let parameters : Parameters = [
+                                                            "Logical": "AND",
+                                                            "PropertyName": "id",
+                                                            "Value": paleta_nuevo,
+                                                            "Operator": "Equals"
+                                                        ]
+                                                        Alamofire.request(TRANSPORTE_CONSOLIDADES_IMAGENES, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                                                            .responseJSON(){
+                                                                response in switch response.result{
+                                                                case .success(let data):
+                                                                    let out = data as! [Dictionary<String,Any>]
+                                                                    var transporte = String()
+                                                                    transporte  = out[0]["idTransporteConsolidado"] as! String
+                                                                    let constante = "00000000-0000-0000-0000-000000000000"
+                                                                    if !out.isEmpty{
+                                                                        if transporte != constante {
+                                                                            Alamofire.upload(multipartFormData: { multipartFormData in
+                                                                                multipartFormData.append(paleta_nuevo.data(using: String.Encoding.utf8)!, withName: "identificador")
+                                                                                multipartFormData.append("TRANSPORTE".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
+                                                                                
+                                                                            }, usingThreshold: UInt64.init(),
+                                                                               to: BULTOS_IMAGENES,
+                                                                               method: .post,
+                                                                               headers: ["Content-type": "multipart/form-data"]) { (result) in
+                                                                                switch result{
+                                                                                case .success(let uploaddos, _, _):
+                                                                                    print(uploaddos)
+                                                                                    if let err = response.error{
+                                                                                        print(err)
+                                                                                        return
+                                                                                    }
+                                                                                case .failure(let error):
+                                                                                    print("Error in upload: \(error.localizedDescription)")
+                                                                                    print(error)
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    print(data)
+                                                                case .failure(let error):
+                                                                    print(error)
+                                                                }
+                                                        }
+                                                        if let err = response.error{
+                                                            print(err)
+                                                            return
+                                                        }
+                                                    case .failure( let error):
+                                                        print("Error in upload: \(error.localizedDescription)")
+                                                        print(error)
+                                                    }
+                                                }
+                                            }
+                                            self.deleteDirectory()
                                             if let err = response.error{
                                                 print(err)
                                                 return
                                             }
-                                            self.deleteDirectoryGuia()
                                         case .failure(let error):
                                             print("Error in upload: \(error.localizedDescription)")
                                             print(error)
@@ -265,102 +370,6 @@ class TerminarViewController: UIViewController {
                             }
                         }
                         
-                        for item in imagenes_nuevas{
-                            self.delay(seconds: 0.0, completion: {
-                                Alamofire.upload(multipartFormData: { multipartFormData in
-                                    multipartFormData.append((self.id_qr).data(using: String.Encoding.utf8)!, withName: "identificador")
-                                    multipartFormData.append("BULTO".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
-                                    if item.pngData() != nil {
-                                        multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
-                                    }
-                                    
-                                }, usingThreshold: UInt64.init(),
-                                   to: PALETA_IMAGENES,
-                                   method: .post,
-                                   headers: ["Content-type": "multipart/form-data"]){ (result) in
-                                    switch result {
-                                    case .success(let uploaddos, _, _):
-                                        print("Succesfully uploaded")
-                                        print(uploaddos)
-                                        if (paleta_nuevo != "00000000-0000-0000-0000-000000000000"){
-                                            Alamofire.upload(multipartFormData: { multipartFormData in
-                                                multipartFormData.append(paleta_nuevo.data(using: String.Encoding.utf8)!, withName: "identificador")
-                                                multipartFormData.append("PALETA".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
-                                                if item.pngData() != nil {
-                                                    multipartFormData.append(item.pngData()!, withName: "image", fileName: "\(String(Date().currentTimeMillis())).png", mimeType: "image/png")
-                                                }
-                                            }, usingThreshold: UInt64.init(),
-                                               to: BULTOS_IMAGENES,
-                                               method: .post,
-                                               headers: ["Content-type": "multipart/form-data"]){ (result) in
-                                                switch result {
-                                                case .success(let uploaddos, _ , _):
-                                                    print(uploaddos)
-                                                    let parameters : Parameters = [
-                                                        "Logical": "AND",
-                                                        "PropertyName": "id",
-                                                        "Value": paleta_nuevo,
-                                                        "Operator": "Equals"
-                                                    ]
-                                                    Alamofire.request(TRANSPORTE_CONSOLIDADES_IMAGENES, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-                                                        .responseJSON(){
-                                                            response in switch response.result{
-                                                            case .success(let data):
-                                                                let out = data as! [Dictionary<String,Any>]
-                                                                var transporte = String()
-                                                                transporte  = out[0]["idTransporteConsolidado"] as! String
-                                                                let constante = "00000000-0000-0000-0000-000000000000"
-                                                                if !out.isEmpty{
-                                                                    if transporte != constante {
-                                                                        Alamofire.upload(multipartFormData: { multipartFormData in
-                                                                            multipartFormData.append(paleta_nuevo.data(using: String.Encoding.utf8)!, withName: "identificador")
-                                                                            multipartFormData.append("TRANSPORTE".data(using: String.Encoding.utf8)!, withName: "tipoImagen")
-
-                                                                        }, usingThreshold: UInt64.init(),
-                                                                           to: BULTOS_IMAGENES,
-                                                                           method: .post,
-                                                                           headers: ["Content-type": "multipart/form-data"]) { (result) in
-                                                                            switch result{
-                                                                            case .success(let uploaddos, _, _):
-                                                                                print(uploaddos)
-                                                                                if let err = response.error{
-                                                                                    print(err)
-                                                                                    return
-                                                                                }
-                                                                            case .failure(let error):
-                                                                                print("Error in upload: \(error.localizedDescription)")
-                                                                                print(error)
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
-                                                                print(data)
-                                                            case .failure(let error):
-                                                                print(error)
-                                                            }
-                                                        }
-                                                    if let err = response.error{
-                                                        print(err)
-                                                        return
-                                                    }
-                                                case .failure( let error):
-                                                    print("Error in upload: \(error.localizedDescription)")
-                                                    print(error)
-                                                }
-                                            }
-                                        }
-                                        self.deleteDirectory()
-                                        if let err = response.error{
-                                            print(err)
-                                            return
-                                        }
-                                    case .failure(let error):
-                                        print("Error in upload: \(error.localizedDescription)")
-                                        print(error)
-                                    }
-                                }
-                            })
-                        }
                     })
                     
                     SwiftSpinner.hide()
