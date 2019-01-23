@@ -11,7 +11,7 @@ import DropDown
 import Alamofire
 import SwiftSpinner
 import PMAlertController
-
+//TODO: eliminar las variables que no se usan
 class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
  
     @IBOutlet weak var switchOC: UISwitch!
@@ -34,7 +34,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
 
     var _ordenDTO = OrdenDTO()
     
-    var _cantidadesItem:Dictionary<String, String> = [:]
+    var _cantidadesItem = Dictionary<String, String>()
     
     @IBOutlet weak var nombreProveedor: UILabel!
     @IBOutlet weak var descripcion: UILabel!
@@ -113,83 +113,89 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func buscarItem(_ sender: UIButton) {
+        //TODO: quitar cada uno de los items cada se seleccione
         dropDown.dataSource.removeAll()
         if self._numeroItem != VACIO {
             if constante == "Sin Discrepancia"{
                 
-                if filtro_orden(lista: listaOrdenDetalle, orden: _numeroItem){
+                //if filtro_orden(lista: listaOrdenDetalle, orden: _numeroItem){
                     print("funciona")
-                }
-                
-                self.cantidadRequerida.isEnabled = true
-                var _item = OrdenDetalle()
-                for item in self.listaOrdenDetalle{
-                    if item.getNumeroItem() == self._numeroItem{
-                        _item = item
-                        break
-                    }
-                }
-                self.nombreProveedor.text = _item.getNombreProveedor()
-                self.descripcion.numberOfLines = 0
-                self._idProveedor = _item.getIdProveedor()
-                self.descripcion.text = _item.getDescripcion()
-                self.unidad.text = _item.getUnidad()
-                self.almacen.text = _item.getAlmace()
-                
-                let parametres : Parameters = [
-                    "filtros": [
-                        [
-                            "PropertyName": "valorOrden",
-                            "Operator": "Contains",
-                            "value": self.numeroOrden.text!,
-                            "Logical": "AND"
-                        ],
-                        [
-                            "PropertyName": "numeroItem",
-                            "Operator": "Contains",
-                            "value": _item.getNumeroItem(),
-                            "Logical": "AND"
-                        ]
-                    ],
-                    "orden": [
-                        [
-                            "OrderType": "DESC",
-                            "Property" : "Id",
-                            "Index": "1"
-                        ]
-                    ],
-                    "startIndex": 0,
-                    "length": 1000
-                ]
-                
-                var cantidad_nueva = 0
-                self.delay(seconds: 0.0, completion: {
-                    SwiftSpinner.show("Consultado Cantidad Actual")
-                    Alamofire.request(OBTENER_CANTIDAD_ACTUAL, method: .post, parameters: parametres, encoding:  JSONEncoding.default)
-                        .responseJSON() {
-                            response in switch response.result{
-                            case .success(let data):
-                                print(data)
-                                let out = data as! [Dictionary<String, AnyObject>]
-                                cantidad_nueva = out[0]["cantidadPorRecibir"] as! Int
-                                SwiftSpinner.hide()
-                            case .failure(let data):
-                                print(data)
-                                SwiftSpinner.hide()
-                            }
-                    }
-                }
-                )
-                if self._cantidadesItem.keys.contains(_item.getNumeroItem()){
-                    self.disponible.text = String(_item.getDisponibilidad() - Int(self._cantidadesItem[_item.getNumeroItem()]!)! + cantidad_nueva)
-                }
-                else{
                     self.cantidadRequerida.isEnabled = true
-                    self.disponible.text = String(_item.getDisponibilidad())
-                }
-                //cantidadPorRecibir + la cantidad que se ingreso
-                _item.setCantidadRecibida(cantidadRecibida: Int(self.disponible.text!)!)
-                self.listaOrdenes_final.append(_item)
+                    var _item = OrdenDetalle()
+                    var indice_nuevo = Int()
+                    for (index, item) in self.listaOrdenDetalle.enumerated(){
+                        if item.getNumeroItem() == self._numeroItem{
+                            _item = item
+                            indice_nuevo = index
+                            break
+                        }
+                    }
+                    self.nombreProveedor.text = _item.getNombreProveedor()
+                    self.descripcion.numberOfLines = 0
+                    self._idProveedor = _item.getIdProveedor()
+                    self.descripcion.text = _item.getDescripcion()
+                    self.unidad.text = _item.getUnidad()
+                    self.almacen.text = _item.getAlmace()
+                    
+                    let parametres : Parameters = [
+                        "filtros": [
+                            [
+                                "PropertyName": "valorOrden",
+                                "Operator": "Contains",
+                                "value": self.numeroOrden.text!,
+                                "Logical": "AND"
+                            ],
+                            [
+                                "PropertyName": "numeroItem",
+                                "Operator": "Contains",
+                                "value": _item.getNumeroItem(),
+                                "Logical": "AND"
+                            ]
+                        ],
+                        "orden": [
+                            [
+                                "OrderType": "DESC",
+                                "Property" : "Id",
+                                "Index": "1"
+                            ]
+                        ],
+                        "startIndex": 0,
+                        "length": 1000
+                    ]
+                    
+                    var cantidad_nueva = 0
+                    self.delay(seconds: 0.0, completion: {
+                        SwiftSpinner.show("Consultado Cantidad Actual")
+                        Alamofire.request(OBTENER_CANTIDAD_ACTUAL, method: .post, parameters: parametres, encoding:  JSONEncoding.default)
+                            .responseJSON() {
+                                response in switch response.result{
+                                case .success(let data):
+                                    print(data)
+                                    let out = data as! [Dictionary<String, AnyObject>]
+                                    cantidad_nueva = out[0]["cantidadPorRecibir"] as! Int
+                                    SwiftSpinner.hide()
+                                case .failure(let data):
+                                    print(data)
+                                    SwiftSpinner.hide()
+                                }
+                        }
+                    }
+                    )
+                    if self._cantidadesItem.keys.contains(_item.getNumeroItem()){
+                        self.disponible.text = String(_item.getDisponibilidad() - Int(self._cantidadesItem[_item.getNumeroItem()]!)! + cantidad_nueva)
+                    }
+                    else{
+                        self.cantidadRequerida.isEnabled = true
+                        self.disponible.text = String(_item.getDisponibilidad())
+                    }
+                    //cantidadPorRecibir + la cantidad que se ingreso
+                    _item.setCantidadRecibida(cantidadRecibida: Int(self.disponible.text!)!)
+                    self.listaOrdenes_final.append(_item)
+                self.listaOrdenDetalle.remove(at: indice_nuevo)
+                //self.listItems.remove(at: indice_nuevo)
+                //}
+                
+                
             }
             if constante == "Con Discrepancia"{
                 self.cantidadRequerida.isEnabled = true
@@ -256,7 +262,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             }
         }
         else{
-            out = false
+            out = true
         }
         return out
     }
@@ -274,6 +280,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func buscarOrden(_ sender: UIButton) {
+        //TODO: cambiar toda la implementacion y agregar los campos necesarios
         self.listaOrdenDetalle.removeAll()
         self.dropDown.dataSource.removeAll()
         if (numeroOrden.text!.trimmingCharacters(in: .whitespacesAndNewlines) != VACIO && orden.getTipoOrden() != VACIO) {
@@ -460,6 +467,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func agregarItem(_ sender: UIButton) {
+        //TODO: comparar las cantidadas y quitar la agregada
         if Int(self.cantidadRequerida.text!) != nil {
             let nuevoItem = Item()
             nuevoItem.setId(id: CONST_ID)
@@ -492,7 +500,6 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             self._listaItem.append(nuevoItem)
             if self._cantidadesItem.keys.contains(self._numeroItem){
                 if ( Int(self._cantidadesItem[self._numeroItem]!)! >= Int(nuevoItem.getCantidad())! ) {
-                    
                     self._cantidadesItem[self._numeroItem] = String( Int(self._cantidadesItem[self._numeroItem]!)! + Int(self.cantidadRequerida.text!)! )
                 }
                 else {
@@ -512,7 +519,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                     alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                     self.present(alertOrden, animated: true, completion: nil)
                 }
-            }
+            }   
             self.cantidadRequerida.text = VACIO
         }
         else {
