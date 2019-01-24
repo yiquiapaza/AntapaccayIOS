@@ -13,12 +13,14 @@ class DataDTO {
     private var data1: String
     private var data2: String
     private var data3: String
+    private var data4: Bool
     
     init() {
         self.id = 0
         self.data1 = VACIO
         self.data2 = VACIO
         self.data3 = VACIO
+        self.data4 = false
     }
     
     func setId(id: Int) -> Void {
@@ -47,5 +49,12 @@ class DataDTO {
     }
     func getData3() -> String {
         return self.data3
+    }
+    
+    func setData4(data4: Bool) -> Void {
+        self.data4 = data4
+    }
+    func getData4() -> Bool {
+        return self.data4
     }
 }
