@@ -32,6 +32,8 @@ class Item {
     private var MAL_USO_API_REST_cantidadPorRecibir : Int
     private var MAL_USO_API_REST_cantidadRecibida : Int
     
+    private var MAL_USO_API_REST_CANTIDAD : Int
+    
     
     init() {
         self.id = VACIO
@@ -56,6 +58,7 @@ class Item {
         self.MAL_USO_API_REST_nombreProveedor = VACIO
         self.MAL_USO_API_REST_cantidadPorRecibir = 0
         self.MAL_USO_API_REST_cantidadRecibida = 0
+        self.MAL_USO_API_REST_CANTIDAD = 0
     }
     
     func setId(id:String) -> Void {

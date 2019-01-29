@@ -111,7 +111,6 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
         dropDown.show()
     }
     
-    
     @IBAction func buscarItem(_ sender: UIButton) {
         //TODO: quitar cada uno de los items cada se seleccione
         dropDown.dataSource.removeAll()
@@ -168,19 +167,18 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                                 SwiftSpinner.show("Consultado Cantidad Actual")
                                 Alamofire.request(OBTENER_CANTIDAD_ACTUAL, method: .post, parameters: parametres, encoding:  JSONEncoding.default)
                                     .responseJSON() {
-                                        response in switch response.result{
-                                        case .success(let data):
-                                            print(data)
-                                            let out = data as! [Dictionary<String, AnyObject>]
-                                            cantidad_nueva = out[0]["cantidadPorRecibir"] as? Int ?? 0
-                                            SwiftSpinner.hide()
-                                        case .failure(let data):
-                                            print(data)
-                                            SwiftSpinner.hide()
-                                        }
+                                    response in switch response.result{
+                                    case .success(let data):
+                                        print(data)
+                                        let out = data as! [Dictionary<String, AnyObject>]
+                                        cantidad_nueva = out[0]["cantidadPorRecibir"] as? Int ?? 0
+                                        SwiftSpinner.hide()
+                                    case .failure(let data):
+                                        print(data)
+                                        SwiftSpinner.hide()
+                                    }
                                 }
-                            }
-                            )
+                            })
                             if self._cantidadesItem.keys.contains(_item.getNumeroItem()){
                                 self.disponible.text = String(_item.getDisponibilidad() - Int(self._cantidadesItem[_item.getNumeroItem()]!)! + cantidad_nueva)
                             }
@@ -201,7 +199,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                             present(alertOrden, animated: true, completion: nil)
                         }
                     }
-                    else{
+                        if item.getData4() == false{
                         let alertOrden = PMAlertController(title: "Error", description: "No puede agregar mas una vez un bulto", image: UIImage(named:"error"), style: .alert)
                         alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel, action: nil))
                         present(alertOrden, animated: true, completion: nil)
@@ -378,7 +376,7 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                             item.setNombreProoveedor(nombreProveedor: ordenDetalle[NOMBRE_PROVEEDOR] as! String)
                             item.setIdProveedor(idProveedor: ordenDetalle["idProveedor"] as! String)
                             item.setCantidadPO(cantidadPO: ordenDetalle["cantidadPO"] as! Float)
-                            item.setRecibido(recibido: ordenDetalle["recibido"] as! Int)
+                            item.setRecibido(recibido: ordenDetalle["recibido"] as? Int ?? 0)
                             item.setCantidadRecibida(cantidadRecibida: ordenDetalle["cantidadRecibida"] as! Int)
                             item.setCentroCosto(centroCosto: ordenDetalle["centroCosto"] as? String ?? "")
                             item.setRowVersion(rowVersion: ordenDetalle["RowVersion"] as? String ?? "")
@@ -506,6 +504,12 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
             self._idProveedor = VACIO
             nuevoItem.setTransportista(transportista: CONST_TRANSPORTISTA)
             nuevoItem.setVerificadoAlmacen(verificadoAlmacen: false)
+            for item in self.listaOrdenes_final{
+                if item.getNumeroItem() == self._numeroItem{
+                    item.setCantidadPorRecibir(cantidadPorRecibir: item.getCantidadPorRecibir() + Int(self.cantidadRequerida.text ?? "0")!)
+                    break
+                }
+            }
             if constante == "Con Discrepancia"{
                 nuevoItem.setCreadoDeDiscOnsite(creadoDeDiscOnsite: true)
                 nuevoItem.setIdDiscrepanciaPadre(idDiscrepanciaPadre: self.idDiscrepanciaPadreConst)
@@ -517,6 +521,12 @@ class SeguimientoCargaViewController: UIViewController, UITextFieldDelegate {
                 nuevoItem.setMAL_USO_API_REST_nombreProveedor(MAL_USO_API_REST_nombreProveedor: self.nombreProveedor_mal_disenio)
                 nuevoItem.setMAL_USO_API_REST_cantidadPorRecibir(MAL_USO_API_REST_cantidadPorRecibir: self.cantidadPorRecibir_mal_disenio)
                 nuevoItem.setMAL_USO_API_REST_cantidadPorRecibir(MAL_USO_API_REST_cantidadPorRecibir: self.cantodadRecibidad_mal_disenio)
+                for item in self.listaOrdenes_final{
+                    if item.getNumeroItem() == self._numeroItem{
+                         item.setCantidadPorRecibir(cantidadPorRecibir: item.getCantidadPorRecibir() + Int(self.cantidadRequerida.text ?? "0")!)
+                        break
+                    }
+                }
             }
             print(self._cantidadesItem)
             self._listaItem.append(nuevoItem)

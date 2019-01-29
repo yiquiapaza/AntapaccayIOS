@@ -130,7 +130,6 @@ class TerminarViewController: UIViewController {
                 "centroCosto": item.getCentroCosto(),
                 "RowVersion": item.getRowVersion(),
                 "cantidadPorRecibir": item.getCantidadPorRecibir(),
-                "discrepancia": item.getDiscrepancia(),
                 "numeroBulto" : "1",
                 "almacenDestino" : item.getAlmacenDestino()
             ]
