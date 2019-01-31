@@ -55,44 +55,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             delay(seconds: 0.0, completion: {
                 SwiftSpinner.show("Verificando al Usuario")
                 let parameters : Parameters = [
-                    "Logical": "AND",
-                    "PropertyName": "userid",
-                    "Value": self.userLoginVC.text!,
-                    "Operator": "Equals"
+                    "UserName": self.userLoginVC.text!,
+                    "Password": self.passLoginVC.text!,
+                    "RememberMe": ""
                 ]
                 Alamofire.request(LOGIN_USER, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                 .responseJSON(){
                     response in switch response.result{
                     case .success(let data):
-                        let out = data as! [Dictionary<String,AnyObject>]
+                        let out = data as! Dictionary<String,AnyObject>
                         if out.isEmpty {
-                            let alertOrden = PMAlertController(title: "Error", description: "El Usuario no existe", image: UIImage(named: "error"), style: .alert)
+                            let alertOrden = PMAlertController(title: "Error", description: "El Usuario o la Contraseña estan erroneas", image: UIImage(named: "error"), style: .alert)
                             alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                             self.present(alertOrden, animated: true, completion: nil)
                             SwiftSpinner.hide()
                         }
                         else {
-                            for item in out {
-                                let nuevo = User()
-                                nuevo.setUserid(userid: item["userid"] as! String)
-                                nuevo.setPassword(password: item["password"] as! String)
-                                self.user.append(nuevo)
-                            }
-                            if self.user[0].getPassword() == self.passLoginVC.text! {
-                                let alertOrden = PMAlertController(title: "Exito", description: "Bienvenido", image: UIImage(named: "exito"), style: .alert)
-                                alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
-                                SwiftSpinner.hide()
-                                //self.present(alertOrden, animated: true, completion: nil)
-                                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                                    self.performSegue(withIdentifier: SESSION_SEGUE, sender: self)
-                                }
-                                
-                            }
-                            else{
-                                let alertOrden = PMAlertController(title: "Precaucion", description: "La contraseña es incorrecta", image: UIImage(named: "precaucion"), style: .alert)
-                                alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
-                                self.present(alertOrden, animated: true, completion: nil)
-                                SwiftSpinner.hide()
+                            let alertOrden = PMAlertController(title: "Exito", description: "Bienvenido", image: UIImage(named: "exito"), style: .alert)
+                            alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+                            SwiftSpinner.hide()
+                            let rol = out["Roles"] as! [Dictionary<String, Any>]
+                            UserDefaults.standard.set( rol[0]["RoleName"],forKey:"rol")
+                            //self.present(alertOrden, animated: true, completion: nil)
+                            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                self.performSegue(withIdentifier: SESSION_SEGUE, sender: self)
                             }
                         }
                         print(data)

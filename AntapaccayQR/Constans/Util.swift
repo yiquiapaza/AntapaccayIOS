@@ -121,3 +121,8 @@ var LISTA_PALETA = Array<Data>()
 var CONTADOR_IMAGEN = 0
 var CONTADOR_IMAGEN_2 = 0
 var CONTADOR_IMAGEN_3 = 0
+
+var ROL_ADMINISTRADOR = "administrador"
+var ROL_COORDINADOR = "cordinador"
+var ROL_TRANSPORTISTA = "transportista"
+var ROL_USUARIOMINA = "usuriomina"

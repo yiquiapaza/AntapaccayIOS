@@ -232,13 +232,28 @@ class TransportistaViewController: UIViewController, UITableViewDelegate, UITabl
     
     func numerosGuias(obj: Array<Item>) -> Array<String> {
         var out = Array<String>()
-        if !obj.isEmpty{
-            for item in obj{
-                out.append(item.getNumeroGuia())
-                item_imagenes.updateValue([], forKey: item.getNumeroItem() + item.getNumeroGuia())
+        var _obj = obj
+        var contador = 0
+        if !_obj.isEmpty{
+            let nuevo = _obj[0]
+            for (index,item) in _obj.enumerated(){
+                if (index > 0){
+                    if item.getNumeroGuia() != _obj[contador].getNumeroGuia(){
+                        if !out.contains(item.getNumeroGuia()) {
+                            contador = contador + 1
+                            out.append(item.getNumeroGuia())
+                        }
+                    }
+                }
+                else {
+                    out.append(nuevo.getNumeroGuia())
+                }
+                //item_imagenes.updateValue([], forKey: item.getNumeroItem() + item.getNumeroGuia())
             }
         }
+        
         return out
+        
     }
     
     func saveImageDocumentDirectory(image: UIImage, imageName: String) {

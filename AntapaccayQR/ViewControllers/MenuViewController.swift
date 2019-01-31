@@ -31,6 +31,10 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    //TODO: AGREGAR BOTONES PARA EL MENU
+    //TODO: TRATAR DE HACER DINAMICO
+    //TODO: TRATAR DE HACERLO CON HUMBURGER
     func startView(vistaIntro:UIView) -> Void {
         let layer = CAGradientLayer()
         layer.frame = vistaIntro.bounds

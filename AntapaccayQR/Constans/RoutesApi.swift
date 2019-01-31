@@ -46,7 +46,7 @@ let OBTENER_ITEMS_BULTO = BASE_URL + "BultoOrden/GetPaged"
 
 let VERIFICA_ITEM = BASE_URL + "BultoOrden/UpdateBOandODinsertDis"
 
-let LOGIN_USER = BASE_URL + "Users/GetUserByFilter"
+let LOGIN_USER = BASE_URL + "Users/Login"
 let PALETA_IMAGENES = BASE_URL + "PaletaConsolidada/UploadImagenes"
 let TRANSPORTE_IMAGENES = BASE_URL + "TransporteConsolidado/UploadImagenes"
 let BULTOS_IMAGENES = BASE_URL + "Bulto/UploadImagenes"
