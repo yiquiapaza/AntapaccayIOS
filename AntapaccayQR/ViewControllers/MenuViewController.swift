@@ -27,7 +27,6 @@ class MenuViewController: UIViewController {
         CONTADOR_IMAGEN_3 = 0
         imageViewIntro(image: imagenMenu)
         startView(vistaIntro: menuView)
-        print(UserDefaults.standard.string(forKey: "rol"))
         super.viewDidLoad()
     }
     

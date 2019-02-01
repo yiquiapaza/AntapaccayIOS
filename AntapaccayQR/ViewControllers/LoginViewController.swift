@@ -76,7 +76,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             SwiftSpinner.hide()
                             let rol = out["Roles"] as! [Dictionary<String, Any>]
                             print(rol)
-                            print(rol[0]["RoleName"])
                             UserDefaults.standard.set( rol[0]["RoleName"] as! String,forKey:"rol" )
                             //self.present(alertOrden, animated: true, completion: nil)
                             DispatchQueue.main.asyncAfter(deadline: .now()) {
