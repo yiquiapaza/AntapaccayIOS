@@ -38,6 +38,11 @@ class OrdenDetalle {
     private var _cantodadY : Int
     private var _cantidadZ : Int
     
+    
+    private var cantidadDiscrepancia: Int
+    private var creadoDeDiscOnsite: String
+    private var idDiscrepanciaPadre: String
+    
     init() {
         self._id = ""
         self._idProveedor = ""
@@ -64,6 +69,11 @@ class OrdenDetalle {
         self._cantidadX = 0
         self._cantodadY = 0
         self._cantidadZ = 0
+        
+        
+        self.cantidadDiscrepancia = 0
+        self.creadoDeDiscOnsite = VACIO
+        self.idDiscrepanciaPadre = VACIO
         
     }
     
@@ -234,5 +244,26 @@ class OrdenDetalle {
     }
     func getCantidadZ() -> Int {
         return self._cantidadZ
+    }
+    
+    func setCantidadDiscrepancia(cantidadDiscrepancia:Int) -> Void {
+        self.cantidadDiscrepancia = cantidadDiscrepancia
+    }
+    func getCantidadDiscrepancia() -> Int {
+        return self.cantidadDiscrepancia
+    }
+    
+    func setCreadoDeDiscOnsite(creadoDeDiscOnsite: String) -> Void {
+        self.creadoDeDiscOnsite = creadoDeDiscOnsite
+    }
+    func getCreadoDeDiscOnsite() -> String {
+        return self.creadoDeDiscOnsite
+    }
+    
+    func setIdDiscrepanciaPadre(idDiscrepanciaPadre: String) -> Void {
+        self.idDiscrepanciaPadre = idDiscrepanciaPadre
+    }
+    func getIdDiscrepanciaPadre() -> String {
+        return self.idDiscrepanciaPadre
     }
 }

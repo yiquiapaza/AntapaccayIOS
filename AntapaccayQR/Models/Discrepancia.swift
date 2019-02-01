@@ -175,4 +175,5 @@ class Discrepancia {
     func getAlmacen() -> String {
         return self.almacen 
     }
+    
 }
