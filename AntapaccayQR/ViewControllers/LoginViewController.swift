@@ -75,7 +75,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             alertOrden.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
                             SwiftSpinner.hide()
                             let rol = out["Roles"] as! [Dictionary<String, Any>]
-                            UserDefaults.standard.set( rol[0]["RoleName"],forKey:"rol")
+                            print(rol)
+                            print(rol[0]["RoleName"])
+                            UserDefaults.standard.set( rol[0]["RoleName"] as! String,forKey:"rol" )
                             //self.present(alertOrden, animated: true, completion: nil)
                             DispatchQueue.main.asyncAfter(deadline: .now()) {
                                 self.performSegue(withIdentifier: SESSION_SEGUE, sender: self)

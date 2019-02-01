@@ -164,45 +164,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U1-XM-6we">
                                 <rect key="frame" x="0.0" y="202" width="375" height="465"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-fJ-ck1">
-                                        <rect key="frame" x="40" y="43" width="114" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="114" id="2U1-cG-hQs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Recepcion de Carga">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="JGr-GA-620" kind="show" id="dce-Jh-MSH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7B-4g-JAQ">
-                                        <rect key="frame" x="40" y="133" width="140" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="chD-I7-hgY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Consolidacion de unidad">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="CZ8-cN-wvb" kind="show" id="YpK-dB-jpJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvm-Dw-Sn4">
-                                        <rect key="frame" x="40" y="193" width="95" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="gRX-td-a5w"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Registrar Partida">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="3DN-XT-gw0" kind="show" id="vjs-jM-Z4M"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Despacho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-Lj-xju">
                                         <rect key="frame" x="30" y="110" width="73.5" height="18"/>
                                         <constraints>
@@ -236,55 +197,6 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZf-Iv-Ecd">
-                                        <rect key="frame" x="40" y="73" width="136" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="WOE-dJ-c9C"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Consolidacion de paleta">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BiT-Yw-uDc" kind="show" id="Pyk-s3-u2p"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBR-y0-gSs">
-                                        <rect key="frame" x="40" y="225" width="89" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89" id="W3A-hI-UlF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Registrar Salida">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="f8c-UH-WfK" kind="show" id="syQ-94-yao"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVG-op-SuH">
-                                        <rect key="frame" x="40" y="285" width="124" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Seguimiento Usuarios">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="mqR-z0-atg" kind="show" id="YVe-1C-Qlu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STj-i5-7Ps">
-                                        <rect key="frame" x="40" y="345" width="59" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="DnB-1P-Leg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Operacion">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="JMH-pX-CrJ" kind="show" id="gYA-yM-15E"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recepcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwn-fb-SzS">
                                         <rect key="frame" x="30" y="20" width="76.5" height="18"/>
                                         <constraints>
@@ -294,45 +206,129 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esy-UN-bno">
+                                        <rect key="frame" x="40" y="343" width="72" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="3ks-k4-a6a"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Operaciones"/>
+                                        <connections>
+                                            <action selector="operaciones:" destination="4pN-zY-gNH" eventType="touchUpInside" id="qLI-sw-zFC"/>
+                                            <segue destination="JMH-pX-CrJ" kind="show" identifier="Operacines_Segue" id="eFS-hG-xYn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukv-c3-usy">
+                                        <rect key="frame" x="40" y="285" width="124" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="KcS-Ac-ozr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Seguimiento Usuarios"/>
+                                        <connections>
+                                            <action selector="seguimiento:" destination="4pN-zY-gNH" eventType="touchUpInside" id="Ibj-Lh-p7w"/>
+                                            <segue destination="mqR-z0-atg" kind="show" id="qGr-7Y-uQR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdQ-0i-Kcc">
+                                        <rect key="frame" x="40" y="193" width="95" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="GY2-LB-qt4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Registrar Partida"/>
+                                        <connections>
+                                            <action selector="RegistroPartida:" destination="4pN-zY-gNH" eventType="touchUpInside" id="Dbe-WV-QpE"/>
+                                            <segue destination="3DN-XT-gw0" kind="show" id="Yoc-JB-b0T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PK-dt-Ape">
+                                        <rect key="frame" x="40" y="225" width="89" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="VNY-Ew-KPX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Registrar Salida"/>
+                                        <connections>
+                                            <action selector="RegistroSalida:" destination="4pN-zY-gNH" eventType="touchUpInside" id="YbN-3r-ms0"/>
+                                            <segue destination="f8c-UH-WfK" kind="show" id="z02-36-nFF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uor-QO-rH1">
+                                        <rect key="frame" x="40" y="133" width="141" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="emP-yL-rAV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Consolidacion de Unidad"/>
+                                        <connections>
+                                            <action selector="ConsolidacionUnidad:" destination="4pN-zY-gNH" eventType="touchUpInside" id="6XE-ak-pXY"/>
+                                            <segue destination="CZ8-cN-wvb" kind="show" id="r5l-VF-pkG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x02-p9-zlO">
+                                        <rect key="frame" x="40" y="43" width="114" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="vZ6-pa-52m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Recepcion de Carga"/>
+                                        <connections>
+                                            <action selector="RecepcionCarga:" destination="4pN-zY-gNH" eventType="touchUpInside" id="IxC-4S-tKy"/>
+                                            <segue destination="JGr-GA-620" kind="show" id="v4y-eA-SLU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3f-eM-4lB">
+                                        <rect key="frame" x="40" y="75" width="136" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="MXb-c8-Ytb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Consolidacion de Paleta"/>
+                                        <connections>
+                                            <action selector="ConsolidadcionPaleta:" destination="4pN-zY-gNH" eventType="touchUpInside" id="iRN-Sl-or6"/>
+                                            <segue destination="BiT-Yw-uDc" kind="show" id="6bE-Ji-zcn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Q7B-4g-JAQ" firstAttribute="top" secondItem="tZY-Lj-xju" secondAttribute="bottom" constant="5" id="6aF-JB-pRU"/>
-                                    <constraint firstItem="Q7B-4g-JAQ" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="6yf-qY-Fbb"/>
-                                    <constraint firstItem="Xvm-Dw-Sn4" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="7Tq-uT-YA3"/>
-                                    <constraint firstItem="vVG-op-SuH" firstAttribute="top" secondItem="tyX-nb-4EJ" secondAttribute="bottom" constant="5" id="7bT-QI-UZ5"/>
-                                    <constraint firstItem="STj-i5-7Ps" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="8ng-G7-a2q"/>
-                                    <constraint firstItem="Xvm-Dw-Sn4" firstAttribute="top" secondItem="x36-mf-GTK" secondAttribute="bottom" constant="5" id="CgX-u6-s9W"/>
+                                    <constraint firstItem="uor-QO-rH1" firstAttribute="top" secondItem="tZY-Lj-xju" secondAttribute="bottom" constant="5" id="1bh-rQ-0Jj"/>
+                                    <constraint firstItem="6PK-dt-Ape" firstAttribute="top" secondItem="BdQ-0i-Kcc" secondAttribute="bottom" constant="5" id="2SJ-ZO-osO"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ukv-c3-usy" secondAttribute="trailing" constant="211" id="4OL-eQ-A0Z"/>
+                                    <constraint firstItem="uor-QO-rH1" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="9li-bT-vB2"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="esy-UN-bno" secondAttribute="trailing" constant="263" id="AdW-i7-uG6"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uor-QO-rH1" secondAttribute="trailing" constant="194" id="Ahn-z4-tqI"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="tyX-nb-4EJ" secondAttribute="trailing" constant="280" id="DQT-8q-qC7"/>
                                     <constraint firstItem="gwn-fb-SzS" firstAttribute="top" secondItem="9U1-XM-6we" secondAttribute="top" constant="20" id="EBm-ih-rR6"/>
+                                    <constraint firstItem="x02-p9-zlO" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="ESV-ni-EXG"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6PK-dt-Ape" secondAttribute="trailing" constant="246" id="Fth-WW-uWV"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="x36-mf-GTK" secondAttribute="trailing" constant="264" id="Gsx-yR-yIm"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="BSn-mp-UNA" secondAttribute="trailing" constant="281" id="H1g-AF-Sgx"/>
-                                    <constraint firstItem="tyX-nb-4EJ" firstAttribute="top" secondItem="zBR-y0-gSs" secondAttribute="bottom" constant="10" id="HES-b7-mD7"/>
-                                    <constraint firstItem="STj-i5-7Ps" firstAttribute="top" secondItem="BSn-mp-UNA" secondAttribute="bottom" constant="5" id="HJn-c6-eda"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vVG-op-SuH" secondAttribute="trailing" constant="211" id="Hi9-dr-UkW"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="zBR-y0-gSs" secondAttribute="trailing" constant="246" id="LmD-v2-F5l"/>
-                                    <constraint firstItem="zBR-y0-gSs" firstAttribute="top" secondItem="Xvm-Dw-Sn4" secondAttribute="bottom" constant="5" id="MIh-1s-5bP"/>
-                                    <constraint firstItem="zBR-y0-gSs" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="PXK-nD-mWR"/>
-                                    <constraint firstItem="NWJ-fJ-ck1" firstAttribute="top" secondItem="gwn-fb-SzS" secondAttribute="bottom" constant="5" id="QKX-eF-ZDI"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="STj-i5-7Ps" secondAttribute="trailing" constant="276" id="RC5-DT-gtr"/>
+                                    <constraint firstItem="Ukv-c3-usy" firstAttribute="top" secondItem="tyX-nb-4EJ" secondAttribute="bottom" constant="5" id="Pvb-4M-hOR"/>
+                                    <constraint firstItem="esy-UN-bno" firstAttribute="top" secondItem="BSn-mp-UNA" secondAttribute="bottom" constant="3" id="Qwg-7g-OQS"/>
+                                    <constraint firstItem="x02-p9-zlO" firstAttribute="top" secondItem="gwn-fb-SzS" secondAttribute="bottom" constant="5" id="RIo-RB-1iK"/>
+                                    <constraint firstItem="6PK-dt-Ape" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="RN3-Qe-eZk"/>
                                     <constraint firstItem="gwn-fb-SzS" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="30" id="SMX-Db-1u4"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gwn-fb-SzS" secondAttribute="trailing" constant="268.5" id="Suo-EH-P6D"/>
-                                    <constraint firstItem="tZY-Lj-xju" firstAttribute="top" secondItem="XZf-Iv-Ecd" secondAttribute="bottom" constant="10" id="Tyb-me-kRU"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Q7B-4g-JAQ" secondAttribute="trailing" constant="195" id="Uh7-Gf-vvC"/>
-                                    <constraint firstItem="XZf-Iv-Ecd" firstAttribute="top" secondItem="NWJ-fJ-ck1" secondAttribute="bottom" constant="3" id="a7C-hS-D0f"/>
-                                    <constraint firstItem="XZf-Iv-Ecd" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="bl8-qg-Tds"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="NWJ-fJ-ck1" secondAttribute="trailing" constant="221" id="dbJ-8Q-vaW"/>
+                                    <constraint firstItem="A3f-eM-4lB" firstAttribute="top" secondItem="x02-p9-zlO" secondAttribute="bottom" constant="5" id="VSk-Dl-ocV"/>
+                                    <constraint firstItem="esy-UN-bno" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="baG-zJ-wDN"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="x02-p9-zlO" secondAttribute="trailing" constant="221" id="dP3-1w-wFS"/>
                                     <constraint firstItem="tyX-nb-4EJ" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="30" id="dly-Qm-C9s"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="tZY-Lj-xju" secondAttribute="trailing" constant="271.5" id="dq1-Zg-v2R"/>
-                                    <constraint firstItem="BSn-mp-UNA" firstAttribute="top" secondItem="vVG-op-SuH" secondAttribute="bottom" constant="10" id="feq-Tt-jDN"/>
-                                    <constraint firstItem="vVG-op-SuH" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="fih-h6-eMu"/>
+                                    <constraint firstItem="BSn-mp-UNA" firstAttribute="top" secondItem="Ukv-c3-usy" secondAttribute="bottom" constant="10" id="el5-lg-u1I"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="A3f-eM-4lB" secondAttribute="trailing" constant="199" id="fxm-SI-FpA"/>
+                                    <constraint firstItem="BdQ-0i-Kcc" firstAttribute="top" secondItem="x36-mf-GTK" secondAttribute="bottom" constant="5" id="hLo-f5-Afn"/>
                                     <constraint firstItem="tZY-Lj-xju" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="30" id="kOB-ET-zGG"/>
-                                    <constraint firstItem="NWJ-fJ-ck1" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="oqy-aS-tVE"/>
+                                    <constraint firstItem="A3f-eM-4lB" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="lT9-Nk-PyM"/>
+                                    <constraint firstItem="Ukv-c3-usy" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="pag-w6-7HH"/>
                                     <constraint firstItem="BSn-mp-UNA" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="30" id="psA-O7-oEb"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="XZf-Iv-Ecd" secondAttribute="trailing" constant="199" id="qy0-8Z-NaB"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="BdQ-0i-Kcc" secondAttribute="trailing" constant="240" id="qLJ-Sm-Gij"/>
+                                    <constraint firstItem="BdQ-0i-Kcc" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="40" id="tcR-N4-29G"/>
                                     <constraint firstItem="x36-mf-GTK" firstAttribute="leading" secondItem="9U1-XM-6we" secondAttribute="leading" constant="30" id="tzX-co-b1m"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Xvm-Dw-Sn4" secondAttribute="trailing" constant="240" id="unR-0Q-FTm"/>
-                                    <constraint firstItem="x36-mf-GTK" firstAttribute="top" secondItem="Q7B-4g-JAQ" secondAttribute="bottom" constant="10" id="zYS-1L-JV2"/>
+                                    <constraint firstItem="tyX-nb-4EJ" firstAttribute="top" secondItem="6PK-dt-Ape" secondAttribute="bottom" constant="10" id="uEJ-yQ-5UC"/>
+                                    <constraint firstItem="tZY-Lj-xju" firstAttribute="top" secondItem="A3f-eM-4lB" secondAttribute="bottom" constant="8" id="vUX-Jg-X1X"/>
+                                    <constraint firstItem="x36-mf-GTK" firstAttribute="top" secondItem="uor-QO-rH1" secondAttribute="bottom" constant="10" id="z3e-R9-uhP"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Android Studio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USp-rd-Vyn">
@@ -2361,7 +2357,7 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
@@ -2384,7 +2380,7 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -2403,7 +2399,7 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -2473,7 +2469,7 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -2732,6 +2728,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Ktf-tx-QDa" kind="show" id="cp8-fD-PDN"/>
@@ -2796,7 +2795,7 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
@@ -2816,7 +2815,7 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>
@@ -2860,6 +2859,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro de Llegada" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdl-Gj-K4c" customClass="LabelComponent" customModule="AntapaccayQR" customModuleProvider="target">
                                 <rect key="frame" x="20" y="84" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wjt-UC-PVm"/>
                                 </constraints>
@@ -2871,7 +2871,7 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>
@@ -2897,7 +2897,7 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
@@ -2943,7 +2943,7 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>
@@ -2983,7 +2983,7 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.70812182739999996" blue="0.52173939999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>

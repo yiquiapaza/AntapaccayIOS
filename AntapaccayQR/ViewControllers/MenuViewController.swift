@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PMAlertController
 
 class MenuViewController: UIViewController {
 
@@ -26,9 +27,8 @@ class MenuViewController: UIViewController {
         CONTADOR_IMAGEN_3 = 0
         imageViewIntro(image: imagenMenu)
         startView(vistaIntro: menuView)
+        print(UserDefaults.standard.string(forKey: "rol"))
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -99,4 +99,95 @@ class MenuViewController: UIViewController {
             try! fileManager.removeItem(atPath: yourProjectDirectoryPath)
         }
     }
+    @IBAction func operaciones(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operacines_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func seguimiento(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Transportista" ||  rol == "UsuarioMina" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operaciones_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func RegistroSalida(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operaciones_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func RegistroPartida(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operaciones_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func ConsolidacionUnidad(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operaciones_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func ConsolidadcionPaleta(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operaciones_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func RecepcionCarga(_ sender: UIButton) {
+        let rol = UserDefaults.standard.string(forKey: "rol")
+        if( rol == "Administrador" || rol == "Coordinador") {
+            /*DispatchQueue.main.asyncAfter(deadline: .now()){
+                self.performSegue(withIdentifier: "Operaciones_Segue" , sender: self)
+            }*/
+        }else{
+            let datos = PMAlertController(title: "No Autorizado", description: "usted no tiene acceso a esta operacion", image: UIImage(named: "error"), style: .alert)
+            datos.addAction(PMAlertAction(title: "Aceptar", style: .cancel))
+            self.present(datos, animated: true, completion: nil)
+        }
+    }
+    
 }
